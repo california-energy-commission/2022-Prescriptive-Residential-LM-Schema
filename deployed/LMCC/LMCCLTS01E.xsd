@@ -84,7 +84,7 @@
                         <xsd:documentation source="FieldText">Occupancy Types within Project</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="A03a_OccupancyApplies" type="comp:OccupancyApplies">
+                  <xsd:element name="A03_IsBuildingHeathcare" type="com:IsBuildingHeathcare">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Healthcare Facility</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">User input;  If checked result = true; Else result = false. If result == true
@@ -100,6 +100,12 @@ End If</xsd:documentation>
 If result == true
 A06_WholeBuildingOccupancy += MultiFamilyMixedUseLT4
 End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="A04_RequestedMMB" type="comp:RequestedMMB" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This is a flag set by the agent that generates the report XML data to indicate that the user requested a Mandatory Measures Note Block which is placed after the DeclarationBlock in the XML output.</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="A05_ProjectScopeNR">
@@ -1333,7 +1339,7 @@ End If</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_I" minOccurs="1">
+         <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>I. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
@@ -1342,7 +1348,7 @@ End If</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="I_BeginNote1" minOccurs="0">
+                  <xsd:element name="Lmci_BeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
@@ -1350,14 +1356,14 @@ End If</xsd:documentation>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="I01_RequireLMCILts01E" type="comp:RequireLMCILts01E" fixed="true">
+                  <xsd:element name="Lmci01_RequireLMCILts01E" type="comp:RequireLMCILts01E" fixed="true">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">LMCI-LTS-E - Must be submitted for all buildings</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Result = true and can not be changed by user</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="I01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmci01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
@@ -1365,7 +1371,7 @@ End If</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_J" minOccurs="0">
+         <xsd:element name="Section_Lmca" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>J. DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE </d:b>
@@ -1374,7 +1380,7 @@ End If</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="J_BeginNote1" minOccurs="0">
+                  <xsd:element name="Lmca_BeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">

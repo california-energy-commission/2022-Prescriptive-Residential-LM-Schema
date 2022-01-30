@@ -93,6 +93,12 @@
                         <xsd:documentation source="CalculationsAndRules">User input</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element name="A05_RequestedMMB" type="comp:RequestedMMB" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This is a flag set by the agent that generates the report XML data to indicate that the user requested a Mandatory Measures Note Block which is placed after the DeclarationBlock in the XML output.</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="A05_WholeBuildingOccupancy" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Occupancy Types within Project</xsd:documentation>
@@ -115,7 +121,7 @@
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
-                  <xsd:element name="A05a_WholeBuildingOccupancy" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element name="A06_WholeBuildingOccupancy" minOccurs="0" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">This field records all applicable 8 occupancies types captured in the report plus additional  types useful in data analysis,</xsd:documentation>
@@ -2737,16 +2743,20 @@ End If</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_O" minOccurs="1">
+         <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>O.  DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
                </xsd:documentation>
+               <xsd:documentation source="CalculationsAndRules">If any selection is changed by the user, 
+Then
+D03  ExceptionalConditionMessageCCLTOE += UserChangedSelectionInCI
+End If</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="O_BeginNote1" minOccurs="0">
+                  <xsd:element name="Lmci_BeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
@@ -2754,14 +2764,14 @@ End If</xsd:documentation>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="O01_RequireLMCILto01E" type="comp:RequireLMCILto01E">
+                  <xsd:element name="Lmci01_RequireLMCILto01E" type="comp:RequireLMCILto01E">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">LMCI-LTO-E - Must be submitted for all buildings</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Result = true and can not be changed by user</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="O01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmci01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
@@ -2769,16 +2779,20 @@ End If</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_P" minOccurs="1">
+         <xsd:element name="Section_Lmca" minOccurs="1">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>P.  DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
                </xsd:documentation>
+               <xsd:documentation source="CalculationsAndRules">If any selection is changed by the user, 
+Then
+D03  ExceptionalConditionMessageCCLTOE += UserChangedSelectionInCA
+End If</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="P_BeginNote1" minOccurs="0">
+                  <xsd:element name="Lmca_BeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
@@ -2786,7 +2800,7 @@ End If</xsd:documentation>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="P01_RequireLMCALto02A" type="comp:RequireLMCALto02A">
+                  <xsd:element name="Lmca01_RequireLMCALto02A" type="comp:RequireLMCALto02A">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">LMCA-LTO-02-A - Must be submitted for all outdoor lighting controls except for alterations where controls are added to 
@@ -2794,23 +2808,23 @@ End If</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = true display term Yes represented as a radio button.  If user changes this value to false display term No represented as a radio button, an explanation is required in Section E Additional Remarks.</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="P01_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element name="Lmca01_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If P01_RequireLMCALto02A == true; this field is loaded with systems/spaces that satisfy this condition:
+                        <xsd:documentation source="CalculationsAndRules">If Lmca01_RequireLMCALto02A == true; this field is loaded with systems/spaces that satisfy this condition:
  
 If Section H is required,  
 load value in H01_SpaceDescription
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="P01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                  <xsd:element name="Lmca01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If P01_RequireLMCALto02A == true; this field is displayed and loaded with a string that concatenates systems/spaces from P01_SystemFieldVerified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmca01_RequireLMCALto02A == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmca01_SystemFieldVerified</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="P01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmca01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>

@@ -71,13 +71,13 @@
                         <xsd:documentation source="FieldText">Project Location (city)</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="A02_ClimateZone" type="com:ClimateZone">
+                  <xsd:element name="A01a_ClimateZone" type="com:ClimateZone">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Climate Zone</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">User selects from climate zones 1 -16 the climate zone where the project is located</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="A03_WholeBuildingOccupancy" maxOccurs="unbounded">
+                  <xsd:element name="A02_WholeBuildingOccupancy" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Occupancy Types Within Project:</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">User selects as many types as apply from the 26 occupancy type checkboxes in the UI.  Only the  types checked by the user are stored in A04_WholeBuildingOccupancy and displayed in the report pdf</xsd:documentation>
@@ -117,6 +117,12 @@
                            <xsd:enumeration value="Warehouse"/>
                         </xsd:restriction>
                      </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="A03_RequestedMMB" type="comp:RequestedMMB" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This is a flag set by the agent that generates the report XML data to indicate that the user requested a Mandatory Measures Note Block which is placed after the DeclarationBlock in the XML output.</xsd:documentation>
+                     </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="A04_ProjectScopeNR">
                      <xsd:annotation>
@@ -502,7 +508,7 @@ End If</xsd:documentation>
                            <xsd:documentation source="FieldText">Electric Ready 
                               <d:t24refnolink/>160.9 
                               <d:line1/> (See Table J)</xsd:documentation>
-                           <xsd:documentation source="CalculationsAndRules">If J01e_NotApplicableMessage == true
+                           <xsd:documentation source="CalculationsAndRules">If J01e_NotApplicableMessage == NotApplicableRequirement
 result = true
 Else
 J01a_SingleUnitFurnace == true And J02_Ready240V  And J03_Future240V ==false
@@ -1445,16 +1451,16 @@ If J01d_CommonAreaDryer == true</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_K" minOccurs="1">
+         <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
-                  <d:b>J. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
+                  <d:b>K. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
                </xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="K_BeginNote1" minOccurs="0">
+                  <xsd:element name="Lmci_BeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
@@ -1462,14 +1468,14 @@ If J01d_CommonAreaDryer == true</xsd:documentation>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="K01a_RequireLMCIElc01E" type="comp:RequireLMCIElc01E">
+                  <xsd:element name="Lmci01a_RequireLMCIElc01E" type="comp:RequireLMCIElc01E">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">LMCI-ELC-E - Must be submitted for all buildings</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Result = true and can not be changed by user</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="K01b_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmci01b_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
@@ -1477,16 +1483,16 @@ If J01d_CommonAreaDryer == true</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_L" minOccurs="0">
+         <xsd:element name="Section_Lmca" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
-                  <d:b>K. DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
+                  <d:b>L. DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
                </xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="L_BeginNote1" minOccurs="0">
+                  <xsd:element name="Lmca_BeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">

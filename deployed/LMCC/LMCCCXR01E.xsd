@@ -71,7 +71,7 @@
                         <xsd:documentation source="FieldText">Occupancy Type</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">User input selected from occupancy types in dropdown</xsd:documentation>
                         <xsd:appinfo source="displayterm">
-                           <dtyp:displayterm value="HighRiseResidential">Multifamily Residential (R occ only)</dtyp:displayterm>
+                           <dtyp:displayterm value="MultifamilyResidential">Multifamily Residential (R occ only)</dtyp:displayterm>
                            <dtyp:displayterm value="HotelMotel">Hotel/ Motel (w Nonres occ)</dtyp:displayterm>
                         </xsd:appinfo>
                      </xsd:annotation>
@@ -150,9 +150,16 @@ this Stop Message is displayed to the user
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element name="A07a_RequestedMMB" type="comp:RequestedMMB" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This is a flag set by the agent that generates the report XML data to indicate that the user requested a Mandatory Measures Note Block which is placed after the DeclarationBlock in the XML output.</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="A08_ProjectScopeNR">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This non-reported field has scope values consistent across all CC's</xsd:documentation>
                         <xsd:appinfo source="displayterm">
                            <dtyp:displayterm value="AdditionComplete">Addition</dtyp:displayterm>
                            <dtyp:displayterm value="ExistingAdditionAndAlteration">Addition Alteration</dtyp:displayterm>
@@ -172,12 +179,13 @@ End If</xsd:documentation>
                   <xsd:element name="A09_IsProjectAllElectric" type="comp:IsProjectAllElectric">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This non-reported field defines projects that are all electric</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="A10_WholeBuildingOccupancy" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">Non-reported field that holds the finer grained occupancy types in the project</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This non-reported field that defines finer grained occupancy types in the project consistent across all CC's</xsd:documentation>
                      </xsd:annotation>
                      <xsd:simpleType>
                         <xsd:restriction base="com:WholeBuildingOccupancy">
@@ -213,7 +221,7 @@ End If</xsd:documentation>
                   <xsd:element name="A11_GasType" type="com:GasType">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">Values are NaturalGas, Propane and None</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This non-reported field that defines whether project has access to Natural Gas, Propane or no gas</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
@@ -2332,7 +2340,7 @@ End If</xsd:documentation>
                <xsd:documentation source="FieldText">
                   <d:b>K.  FUNCTIONAL PERFORMANCE TESTING</d:b>
                </xsd:documentation>
-               <xsd:documentation source="CalculationsAndRules">This section is required If A05_ConditionedFloorAreaRangeNR Not== LT10000Ft2</xsd:documentation>
+               <xsd:documentation source="CalculationsAndRules">This section is required If A05_ConditionedFloorAreaRangeNR != LT10000Ft2</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -2395,7 +2403,11 @@ End If</xsd:documentation>
                                     <xsd:element name="K05_IsAcceptanceTestTechRequired" type="comp:IsAcceptanceTestTechRequired">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Certified Acceptance Test Technician Required?</xsd:documentation>
-                                          <xsd:documentation source="CalculationsAndRules">Calculated field: If K04_TestingT24AppendixRef == any of these values: NA751, NA752, NA753, NA754, NA755, NA756, NA757, NA758, NA759, NA7510, NA7511, NA7512, NA7513, NA7514, NA7515, NA7516, NA7517,  NA761, NA762, NA763, NA764, NA765, NA781, NA782, Or NA785  result = true Else result = false</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">Calculated field: 
+If K04_TestingT24AppendixRef == any of these values: NA751, NA752, NA753, NA754, NA755, NA756, NA757, NA758, NA759, NA7510, NA7511, NA7512, NA7513, NA7514, NA7515, NA7516, NA7517,  NA761, NA762, NA763, NA764, NA765, NA781, NA782, Or NA785  
+result = true 
+Else result = false
+End If</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                  </xsd:sequence>
@@ -2548,7 +2560,7 @@ End If</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_N" minOccurs="0">
+         <xsd:element name="Section_Lmci" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>N. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
@@ -2557,7 +2569,7 @@ End If</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="N_BeginNote1" minOccurs="0">
+                  <xsd:element name="Lmci_BeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
@@ -2568,7 +2580,7 @@ End If</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_O" minOccurs="0">
+         <xsd:element name="Section_Lmca" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>O.  DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
@@ -2577,7 +2589,7 @@ End If</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="O_BeginNote1" minOccurs="0">
+                  <xsd:element name="Lmca_BeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">

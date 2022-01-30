@@ -154,6 +154,12 @@ End If</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">User input</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element name="A07_RequestedMMB" type="comp:RequestedMMB" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This is a flag set by the agent that generates the report XML data to indicate that the user requested a Mandatory Measures Note Block which is placed after the DeclarationBlock in the XML output.</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="A08_ProjectScopeNR">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
@@ -5788,7 +5794,7 @@ Else store result in Q18_ShutOffControlsArea
 End If
  
 If Q18_ShutOffControlsBuilding result == WholeBuildingAutoTimeSwitch, WholeBuildingEMCS Or WholeBuildingOccupancySensors
-V01_RequireNRCALti02A = true
+Nrca01_RequireNRCALti02A = true
 End If</xsd:documentation>
                                              <xsd:appinfo source="displayterm">
                                                 <dtyp:displayterm value="WholeBuildingOccupancySensors">Whole Building: Occ Sensor</dtyp:displayterm>
@@ -5815,7 +5821,7 @@ Else store result in Q18_ShutOffControlsArea
 End If
  
 If Q18_ShutOffControlsArea result == OccupancySensor Or EMCS Or AutomaticTimerSwitch
-V01_RequireNRCALti02A = true
+Nrca1_RequireNRCALti02A = true
 End If</xsd:documentation>
                                              <xsd:appinfo source="displayterm">
                                                 <dtyp:displayterm value="PartialOffShutOffControl">Partial Off 130.1(c)/ 160.5(b)4C</dtyp:displayterm>
@@ -6551,20 +6557,20 @@ Lighting internal to drawers and cabinetry with opaque fronts or doors or with a
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_U" minOccurs="1">
+         <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>U.  DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
                </xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If any selection is changed by the user, 
 Then
-D03  ExceptionalConditionMessageCCLTIE += UserChangedSelectionInU
+D03  ExceptionalConditionMessageCCLTIE += UserChangedSelectionInCI
 End If</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="U_BeginNote1" minOccurs="0">
+                  <xsd:element name="Lmci_BeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
@@ -6572,14 +6578,14 @@ End If</xsd:documentation>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="U01_RequireLMCILti01E" type="comp:RequireLMCILti01E">
+                  <xsd:element name="Lmci01_RequireLMCILti01E" type="comp:RequireLMCILti01E">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCI-LTI-E - Must be submitted for all buildings</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCI-LTI-E - Must be submitted for all buildings</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Result = true and can not be changed by user</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="U01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmci01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
@@ -6587,20 +6593,20 @@ End If</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_V" minOccurs="1">
+         <xsd:element name="Section_Lmca" minOccurs="1">
             <xsd:annotation>
                <xsd:documentation source="FieldText">
                   <d:b>V.  DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
                </xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If any selection is changed by the user, 
 Then
-D03  ExceptionalConditionMessageCCLTIE += UserChangedSelectionInV
+D03  ExceptionalConditionMessageCCLTIE += UserChangedSelectionInCA
 End If</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="V_BeginNote1" minOccurs="0">
+                  <xsd:element name="Lmca_BeginNote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
                         <xsd:documentation source="AdditionalRequirements">
@@ -6608,10 +6614,10 @@ End If</xsd:documentation>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V01_RequireLMCALti02A" type="comp:RequireLMCALti02A">
+                  <xsd:element name="Lmca01_RequireLMCALti02A" type="comp:RequireLMCALti02A">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-02-A - Must be submitted for occupancy sensors and automatic time switch controls.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-02-A - Must be submitted for occupancy sensors and automatic time switch controls.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = false represented as a selected No radio button.  
  
 If H02_ShutOffControlsBuilding ==WholeBuildingAutoTimeSwitch 
@@ -6624,10 +6630,10 @@ End If
  If user changes this value to false, an explanation is required in Section E Additional Remarks.</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V01_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element name="Lmca01_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If V01_RequireLMCALti02A == true; this field is loaded with systems/spaces that satisfy any of these conditions:
+                        <xsd:documentation source="CalculationsAndRules">If Lmca01_RequireLMCALti02A == true; this field is loaded with systems/spaces that satisfy any of these conditions:
  
 If H02_ShutOffControlsBuilding ==WholeBuildingAutoTimeSwitch 
 Or H08_ShutOffControlsArea == AutomaticTimerSwitch Or OccupancySensor
@@ -6640,92 +6646,92 @@ Or Q18_ShutOffControlsArea == AutomaticTimerSwitch Or OccupancySensor
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                  <xsd:element name="Lmca01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If V01_RequireLMCALti02A == true this field is displayed and loaded with a string that concatenates systems/spaces from V01_SystemFieldVerified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmca01_RequireLMCALti02A == true this field is displayed and loaded with a string that concatenates systems/spaces from Lmca01_SystemFieldVerified</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmca01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V02_RequireLMCALti03A" type="comp:RequireLMCALti03A">
+                  <xsd:element name="Lmca02_RequireLMCALti03A" type="comp:RequireLMCALti03A">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-03-A - Must be submitted for automatic daylight controls.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-03-A - Must be submitted for automatic daylight controls.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = false represented as a selected No radio button. 
  
 If all values for H09_PrimarySkylitDaylightControlsIncluded Or H10_SecondaryDaylightControlsIncluded == Included result = true represented as a selected Yes radio button; Else result = false   If user changes this value an explanation is required in Section E Additional Remarks.</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V02_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element name="Lmca02_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If V02_RequireLMCALti03A == true; this field is loaded with systems/spaces that satisfy this condition:
+                        <xsd:documentation source="CalculationsAndRules">If Lmca02_RequireLMCALti03A == true; this field is loaded with systems/spaces that satisfy this condition:
  
 If  value for H09_PrimarySkylitDaylightControlsIncluded Or H10_SecondaryDaylightControlsIncluded == Included
  load value in H04_SpaceDescription
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V02_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                  <xsd:element name="Lmca02_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If V02_RequireLMCALti03A == true this field is displayed and loaded with a string that concatenates systems/spaces from V02_SystemFieldVerified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmca02_RequireLMCALti03A == true this field is displayed and loaded with a string that concatenates systems/spaces from Lmca02_SystemFieldVerified</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V02a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmca02a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V03_RequireLMCALti04A" type="comp:RequireLMCALti04A">
+                  <xsd:element name="Lmca03_RequireLMCALti04A" type="comp:RequireLMCALti04A">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-04-A - Must be submitted for demand responsive lighting controls.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-04-A - Must be submitted for demand responsive lighting controls.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = false represented as a selected No radio button.. 
  
 If H01_MandatoryLightingDemandResponseNR  == RequiredGT10000SF  Or H11_InterlockedLightingSystems == true 
 result = true represented as a selected Yes radio button.  If user changes the value an explanation is required in Section E Additional Remarks.</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V03_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element name="Lmca03_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If V03_RequireLMCALti04A == true; this field is loaded with systems/spaces that satisfy this condition:
+                        <xsd:documentation source="CalculationsAndRules">If Lmca03_RequireLMCALti04A == true; this field is loaded with systems/spaces that satisfy this condition:
  
 If H01_MandatoryLightingDemandResponseNR  == RequiredGT10000SF  Or H11_InterlockedLightingSystems == true
  load value in H04_SpaceDescription
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V03_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                  <xsd:element name="Lmca03_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If V03_RequireLMCALti04A == true this field is displayed and loaded with a string that concatenates systems/spaces from V03_SystemFieldVerified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmca03_RequireLMCALti04A == true this field is displayed and loaded with a string that concatenates systems/spaces from Lmca03_SystemFieldVerified</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V03a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmca03a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V04_RequireLMCALti05A" type="comp:RequireLMCALti05A">
+                  <xsd:element name="Lmca04_RequireLMCALti05A" type="comp:RequireLMCALti05A">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-05-A. - Must be submitted for institutional tuning power adjustment factor (PAF)</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-05-A. - Must be submitted for institutional tuning power adjustment factor (PAF)</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = false represented as a selected No radio button.. 
  
 If Pc02e_ApplyInstitutionalTuningNonDaylit Or Pc02f_ApplyInstitutionalTuningDaylit == true   Or Pu02e_ApplyInstitutionalTuningNonDaylit Or Pu02f_ApplyInstitutionalTuningDaylit == true  
 result = true represented as a selected Yes radio button. If user changes the value an explanation is required in Section E Additional Remarks.</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V04_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element name="Lmca04_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If V04_RequireLMCALti05A == true; this field is loaded with systems/spaces that satisfy any of these conditions:
+                        <xsd:documentation source="CalculationsAndRules">If Lmca04_RequireLMCALti05A == true; this field is loaded with systems/spaces that satisfy any of these conditions:
  
 If Pc02e_ApplyInstitutionalTuningNonDaylit Or Pc02f_ApplyInstitutionalTuningDaylit == true   
 load value in Pc01_SpaceDescription
@@ -6736,31 +6742,31 @@ If Pu02e_ApplyInstitutionalTuningNonDaylit Or Pu02f_ApplyInstitutionalTuningDayl
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V04_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                  <xsd:element name="Lmca04_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If V04_RequireLMCALti05A == true this field is displayed and loaded with a string that concatenates systems/spaces from V04_SystemFieldVerified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmca04_RequireLMCALti05A == true this field is displayed and loaded with a string that concatenates systems/spaces from Lmca04_SystemFieldVerified</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V04a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmca04a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V05_RequireLMCAEnv03F" type="comp:RequireLMCAEnv03F">
+                  <xsd:element name="Lmca05_RequireLMCAEnv03F" type="comp:RequireLMCAEnv03F">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-ENV-03-F. - Must be submitted for daylighting design power adjustment factors (PAF)</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCA-ENV-03-F. - Must be submitted for daylighting design power adjustment factors (PAF)</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = false represented as a selected No radio button. . 
  
 If Pc02h_ApplyClerestoryFenestrationPAF, Pc02i_ApplyHorizontalSlatsPAF Or Pc02j_ApplyLightShelvesPAF == true Or If Pu02h_ApplyClerestoryFenestrationPAF, Pu02i_ApplyHorizontalSlatsPAF Or Pu02j_ApplyLightShelvesPAF == true 
 result = true represented as a selected Yes radio button.   If user changes the value an explanation is required in Section E Additional Remarks.</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V05_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element name="Lmca05_SystemFieldVerified" type="comp:SystemFieldVerified" minOccurs="0" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If V05_RequireLMCAEnv03F == true; this field is loaded with systems/spaces that satisfy any of these conditions:
+                        <xsd:documentation source="CalculationsAndRules">If Lmca05_RequireLMCAEnv03F == true; this field is loaded with systems/spaces that satisfy any of these conditions:
  
 If Pc02h_ApplyClerestoryFenestrationPAF, Pc02i_ApplyHorizontalSlatsPAF Or Pc02j_ApplyLightShelvesPAF == true
 load value in Pc01_SpaceDescription
@@ -6771,13 +6777,13 @@ load value in Pu01_SpaceDescription
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V05_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                  <xsd:element name="Lmca05_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If V05_RequireLMCAEnv03F == true this field is displayed and loaded with a string that concatenates systems/spaces from V05_SystemFieldVerified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmca05_RequireLMCAEnv03F == true this field is displayed and loaded with a string that concatenates systems/spaces from Lmca05_SystemFieldVerified</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="V05a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmca05a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
