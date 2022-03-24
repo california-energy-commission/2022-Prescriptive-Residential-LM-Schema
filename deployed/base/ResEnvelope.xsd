@@ -11,6 +11,9 @@
       </xsd:annotation>
       <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="Adding16SkyMF">
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="AirInfiltrationRate">
       <xsd:annotation>
          <xsd:documentation>Uncontrolled inward air leakage from outside a building or unconditioned space, including leakage through cracks and interstices, around windows and doors, and through any other exterior or demising partition or pipe or duct penetration.  Units: ft3 per min ft2</xsd:documentation>
@@ -404,14 +407,70 @@
    <xsd:simpleType name="ConcreteFill">
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ConcreteSandwichInsulation">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="R14_0">3.0 in/ R14.0</dtyp:displayterm>
+            <dtyp:displayterm value="R18_6">4.0 in/ R18.6</dtyp:displayterm>
+            <dtyp:displayterm value="R27_9">6.0 in/ R27.9</dtyp:displayterm>
+            <dtyp:displayterm value="R7_0">1.5 in/ R7.0</dtyp:displayterm>
+            <dtyp:displayterm value="R9_3">2.0 in/ R9.3</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="R14_0"/>
+         <xsd:enumeration value="R18_6"/>
+         <xsd:enumeration value="R27_9"/>
+         <xsd:enumeration value="R7_0"/>
+         <xsd:enumeration value="R9_3"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ConcreteThickness">
       <xsd:annotation>
          <xsd:documentation>Thickness of concrete topping on metal deck roofs or reinforced concrete roofs.  Evaluated in order to assign UFactor.</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Roof Concrete Thickness</dtyp:displayterm>
          </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="2In">2 in.</dtyp:displayterm>
+            <dtyp:displayterm value="4In">4 in.</dtyp:displayterm>
+            <dtyp:displayterm value="6In">6 in.</dtyp:displayterm>
+            <dtyp:displayterm value="None">None</dtyp:displayterm>
+         </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant"/>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="2In"/>
+         <xsd:enumeration value="4In"/>
+         <xsd:enumeration value="6In"/>
+         <xsd:enumeration value="None"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ConcreteThicknessOther">
+      <xsd:annotation>
+         <xsd:documentation>Thickness of concrete topping on metal deck roofs or reinforced concrete roofs.  Evaluated in order to assign UFactor.</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Roof Concrete Thickness</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ConcreteWebPercent">
+      <xsd:annotation>
+         <xsd:documentation>An attribute of concrete sandwich panel wall construction assembly and affects the assignment of building performance metrics like UFactor</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Percent Concrete Web</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="0pct">0%</dtyp:displayterm>
+            <dtyp:displayterm value="10pct">10%</dtyp:displayterm>
+            <dtyp:displayterm value="20pct">20%</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="0pct"/>
+         <xsd:enumeration value="10pct"/>
+         <xsd:enumeration value="20pct"/>
+      </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ConditionedFloorAreaRangeNR">
       <xsd:annotation>
@@ -452,13 +511,13 @@
             <dtyp:displayterm>Shading Type</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="HorizontalSlats">Exterior Horizontal Slats</dtyp:displayterm>
             <dtyp:displayterm value="Overhang">Overhang</dtyp:displayterm>
-            <dtyp:displayterm value="VerticalFin">Vertical fin</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="HorizontalSlats"/>
          <xsd:enumeration value="Overhang"/>
-         <xsd:enumeration value="VerticalFin"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ConstructionAssemblyName">
@@ -614,10 +673,64 @@
       <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="CoreICF">
-      <xsd:restriction base="dtyp:EnumerationConstant"/>
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="10core">10 in</dtyp:displayterm>
+            <dtyp:displayterm value="12core">12 in</dtyp:displayterm>
+            <dtyp:displayterm value="4core">4 in</dtyp:displayterm>
+            <dtyp:displayterm value="6core">6 in</dtyp:displayterm>
+            <dtyp:displayterm value="8core">8 in</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="10core"/>
+         <xsd:enumeration value="12core"/>
+         <xsd:enumeration value="4core"/>
+         <xsd:enumeration value="6core"/>
+         <xsd:enumeration value="8core"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="CoreInsulation">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="R14">R-14</dtyp:displayterm>
+            <dtyp:displayterm value="R18">R-18</dtyp:displayterm>
+            <dtyp:displayterm value="R22">R-22</dtyp:displayterm>
+            <dtyp:displayterm value="R28">R-28</dtyp:displayterm>
+            <dtyp:displayterm value="R33">R-33</dtyp:displayterm>
+            <dtyp:displayterm value="R36">R-36</dtyp:displayterm>
+            <dtyp:displayterm value="R44">R-44</dtyp:displayterm>
+            <dtyp:displayterm value="R55">R-55</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="R14"/>
+         <xsd:enumeration value="R18"/>
+         <xsd:enumeration value="R22"/>
+         <xsd:enumeration value="R28"/>
+         <xsd:enumeration value="R33"/>
+         <xsd:enumeration value="R36"/>
+         <xsd:enumeration value="R44"/>
+         <xsd:enumeration value="R55"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="CoreInsulationOther">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
    <xsd:simpleType name="CrawlSpaceName">
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DisplayPerimeter">
+      <xsd:annotation>
+         <xsd:documentation>The length of an exterior wall in a building of CBC Occupancy Group B; F Div1, or M, that immediately abuts a public sidewalk, measured at the sidewalk level for each story that abuts a public sidewalk.  It can be derived using the CBC Occupancy type and the Width dimension of the Exterior Wall.  Units: ft</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Display Perimeter</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="DividerMinimumSpacing">
       <xsd:annotation>
@@ -685,6 +798,7 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="InsulatedSingleLayerSectionalMetal">Insulated single layer metal sectional doors with EPS</dtyp:displayterm>
             <dtyp:displayterm value="InsulatedSwingingMetal">Insulated metal swing doors</dtyp:displayterm>
+            <dtyp:displayterm value="RatedNFRC">NFRC rated</dtyp:displayterm>
             <dtyp:displayterm value="UninsulatedDoubleLayerMetal">Uninsulated double-layer metal</dtyp:displayterm>
             <dtyp:displayterm value="UninsulatedSingleLayerMetal">Uninsulated single-layer metal</dtyp:displayterm>
             <dtyp:displayterm value="UninsulatedSingleLayerRollupMetal">Uninsulated single-layer metal rollup door</dtyp:displayterm>
@@ -696,6 +810,7 @@
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="InsulatedSingleLayerSectionalMetal"/>
          <xsd:enumeration value="InsulatedSwingingMetal"/>
+         <xsd:enumeration value="RatedNFRC"/>
          <xsd:enumeration value="UninsulatedDoubleLayerMetal"/>
          <xsd:enumeration value="UninsulatedSingleLayerMetal"/>
          <xsd:enumeration value="UninsulatedSingleLayerRollupMetal"/>
@@ -708,6 +823,43 @@
    </xsd:simpleType>
    <xsd:simpleType name="DoorName">
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DoorOperation">
+      <xsd:annotation>
+         <xsd:documentation>An enumeration with values of swinging and non-swinging.  Non-swinging would include sliding doors and roll-up doors.</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Door Type</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="DoorOther">Other</dtyp:displayterm>
+            <dtyp:displayterm value="NonSwinging">Non-swinging</dtyp:displayterm>
+            <dtyp:displayterm value="Swinging">Swinging</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="DoorOther"/>
+         <xsd:enumeration value="NonSwinging"/>
+         <xsd:enumeration value="Swinging"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="DoorTypeMF">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Multifamily Door Type</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="CommonAreaEntry">MF Common Use Area Entry Swinging</dtyp:displayterm>
+            <dtyp:displayterm value="CommonAreaEntryNonswinging">MF Common Use Area Entry Non-swinging</dtyp:displayterm>
+            <dtyp:displayterm value="DwellingUnitEntry">MF Dwelling Unit Entry</dtyp:displayterm>
+            <dtyp:displayterm value="FireRated">Multifamily Fire Rated Swinging</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="CommonAreaEntry"/>
+         <xsd:enumeration value="CommonAreaEntryNonswinging"/>
+         <xsd:enumeration value="DwellingUnitEntry"/>
+         <xsd:enumeration value="FireRated"/>
+      </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DynamicGlazingType">
       <xsd:annotation>
@@ -796,6 +948,12 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="SlabHeated"/>
          <xsd:enumeration value="SlabOnGrade"/>
       </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ExteriorSurfaceGrossArea">
+      <xsd:annotation>
+         <xsd:documentation>This is the entire surface area of an exterior surface such as an exterior wall or roof and includes the area of any openings in the exterior surfance such as a window, door or skylight.  Units: ft2</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="ExteriorWallArea">
       <xsd:annotation>
@@ -977,6 +1135,36 @@ Not Shared</dtyp:displayterm>
       </xsd:annotation>
       <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="FenestrationModification">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="AddGT50ft2">Alt. (Adding New 
+               <d:gt/> 50ft<d:sup>2</d:sup>)</dtyp:displayterm>
+            <dtyp:displayterm value="AddLTE50ft2">Alt. (Adding New 
+               <d:lte/> 50ft<d:sup>2</d:sup>)</dtyp:displayterm>
+            <dtyp:displayterm value="AddSky16PlusMF">Alt. (Adding 
+               <d:gt/> 16 ft<d:sup>2</d:sup>)</dtyp:displayterm>
+            <dtyp:displayterm value="AllNew">New</dtyp:displayterm>
+            <dtyp:displayterm value="NewSky16MF">
+               <d:lte/> 16 ft<d:sup>2</d:sup> new skylight per dwelling unit</dtyp:displayterm>
+            <dtyp:displayterm value="ReplaceGT150ft2">Alt. (Replacement 
+               <d:gt/> 150ft<d:sup>2</d:sup>)</dtyp:displayterm>
+            <dtyp:displayterm value="ReplaceLTE150ft2">Alt. (Replacement 
+               <d:lte/> 150ft<d:sup>2</d:sup>)</dtyp:displayterm>
+            <dtyp:displayterm value="ReplaceSkyMF">Alt. (Replacement)</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="AddGT50ft2"/>
+         <xsd:enumeration value="AddLTE50ft2"/>
+         <xsd:enumeration value="AddSky16PlusMF"/>
+         <xsd:enumeration value="AllNew"/>
+         <xsd:enumeration value="NewSky16MF"/>
+         <xsd:enumeration value="ReplaceGT150ft2"/>
+         <xsd:enumeration value="ReplaceLTE150ft2"/>
+         <xsd:enumeration value="ReplaceSkyMF"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="FenestrationName">
       <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
@@ -1031,19 +1219,44 @@ Not Shared</dtyp:displayterm>
    <xsd:simpleType name="FenestrationProductType">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ChromogenicFen">Chromogenic Glazing</dtyp:displayterm>
             <dtyp:displayterm value="CurtainWall">Curtain wall</dtyp:displayterm>
+            <dtyp:displayterm value="DemisingWallFen">Fenestration in Demising Wall</dtyp:displayterm>
+            <dtyp:displayterm value="FixedSkylight">Fixed</dtyp:displayterm>
             <dtyp:displayterm value="FixedWindow">Fixed window</dtyp:displayterm>
+            <dtyp:displayterm value="FixedWindowMF">Architectural Window - Fixed (Multifamily only)</dtyp:displayterm>
             <dtyp:displayterm value="GlazedDoor">Glazed door</dtyp:displayterm>
+            <dtyp:displayterm value="GlazedDoorMF">
+               <d:lte/> 3ft<d:sup>2</d:sup> glass in dwelling unit door</dtyp:displayterm>
+            <dtyp:displayterm value="OperableSkylight">Operable</dtyp:displayterm>
             <dtyp:displayterm value="OperableWindow">Operable window</dtyp:displayterm>
+            <dtyp:displayterm value="OperableWindowMF">Architectural Window - Operable (Multifamily only)</dtyp:displayterm>
             <dtyp:displayterm value="Skylight">Skylight</dtyp:displayterm>
+            <dtyp:displayterm value="SkylightGlassCurb">Glass, curb mounted</dtyp:displayterm>
+            <dtyp:displayterm value="SkylightGlassDeck">Glass, deck mounted</dtyp:displayterm>
+            <dtyp:displayterm value="SkylightPlasticCurb">Plastic, curb mounted</dtyp:displayterm>
+            <dtyp:displayterm value="SkylightTubular">Tubular Daylight Devices</dtyp:displayterm>
+            <dtyp:displayterm value="StoreFront">Storefront</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ChromogenicFen"/>
          <xsd:enumeration value="CurtainWall"/>
+         <xsd:enumeration value="DemisingWallFen"/>
+         <xsd:enumeration value="FixedSkylight"/>
          <xsd:enumeration value="FixedWindow"/>
+         <xsd:enumeration value="FixedWindowMF"/>
          <xsd:enumeration value="GlazedDoor"/>
+         <xsd:enumeration value="GlazedDoorMF"/>
+         <xsd:enumeration value="OperableSkylight"/>
          <xsd:enumeration value="OperableWindow"/>
+         <xsd:enumeration value="OperableWindowMF"/>
          <xsd:enumeration value="Skylight"/>
+         <xsd:enumeration value="SkylightGlassCurb"/>
+         <xsd:enumeration value="SkylightGlassDeck"/>
+         <xsd:enumeration value="SkylightPlasticCurb"/>
+         <xsd:enumeration value="SkylightTubular"/>
+         <xsd:enumeration value="StoreFront"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="FenestrationSkylightCount">
@@ -1126,11 +1339,20 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="NoFireProofing"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="FireProofingOther">
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
    <xsd:simpleType name="FloorAreaGross">
       <xsd:annotation>
          <xsd:documentation>The total floor area inside the building envelope, including the external walls, and excluding the roof  Units: ft2</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FloorAssemblyName">
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="FloorDescription">
+      <xsd:restriction base="xsd:string"/>
    </xsd:simpleType>
    <xsd:simpleType name="FloorSlabArea">
       <xsd:annotation>
@@ -1216,6 +1438,38 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="RaisedConcreteFloor"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="FramingDepth">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="0_5In">0.50 in</dtyp:displayterm>
+            <dtyp:displayterm value="0_75In">0.75 in</dtyp:displayterm>
+            <dtyp:displayterm value="1_5In">1.50 in</dtyp:displayterm>
+            <dtyp:displayterm value="1_0In">1 in</dtyp:displayterm>
+            <dtyp:displayterm value="2_5In">2.5 in</dtyp:displayterm>
+            <dtyp:displayterm value="2In">2 in</dtyp:displayterm>
+            <dtyp:displayterm value="3_5In">3.5 in</dtyp:displayterm>
+            <dtyp:displayterm value="3In">3 in</dtyp:displayterm>
+            <dtyp:displayterm value="4_5In">4.5 in</dtyp:displayterm>
+            <dtyp:displayterm value="4In">4 in</dtyp:displayterm>
+            <dtyp:displayterm value="5_5In">5.5 in</dtyp:displayterm>
+            <dtyp:displayterm value="5In">5 in</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="0_5In"/>
+         <xsd:enumeration value="0_75In"/>
+         <xsd:enumeration value="1_5In"/>
+         <xsd:enumeration value="1_0In"/>
+         <xsd:enumeration value="2_5In"/>
+         <xsd:enumeration value="2In"/>
+         <xsd:enumeration value="3_5In"/>
+         <xsd:enumeration value="3In"/>
+         <xsd:enumeration value="4_5In"/>
+         <xsd:enumeration value="4In"/>
+         <xsd:enumeration value="5_5In"/>
+         <xsd:enumeration value="5In"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="FramingDescriptionCBECC_Res">
       <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
@@ -1243,6 +1497,9 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="TopChordRoofTruss"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="FramingMaterialOther">
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
    <xsd:simpleType name="FramingSize">
       <xsd:annotation>
          <xsd:documentation>The nominal size of construction framing members and is evaluated in some Joint Appendix 4 tables to assign UFactor to the ConstructionAssembly.</xsd:documentation>
@@ -1256,6 +1513,7 @@ Not Shared</dtyp:displayterm>
             <dtyp:displayterm value="2x4">2x4</dtyp:displayterm>
             <dtyp:displayterm value="2x6">2x6</dtyp:displayterm>
             <dtyp:displayterm value="2x8">2x8</dtyp:displayterm>
+            <dtyp:displayterm value="AnySize">Any Size</dtyp:displayterm>
             <dtyp:displayterm value="Other">Other</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -1266,6 +1524,7 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="2x4"/>
          <xsd:enumeration value="2x6"/>
          <xsd:enumeration value="2x8"/>
+         <xsd:enumeration value="AnySize"/>
          <xsd:enumeration value="Other"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -1348,6 +1607,18 @@ Not Shared</dtyp:displayterm>
          <xsd:documentation>Units: in</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="GlassWallType">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="Curtain">CW</dtyp:displayterm>
+            <dtyp:displayterm value="Spandrel">Spandrel</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="Curtain"/>
+         <xsd:enumeration value="Spandrel"/>
+      </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="GlazingArea">
       <xsd:annotation>
@@ -1485,6 +1756,25 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="TintedGlazing"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="GreenhouseGardenWindow">
+      <xsd:annotation>
+         <xsd:documentation>Used in selection of default properties</xsd:documentation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="HasCrawlspace">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ICCESReportNumber">
       <xsd:annotation>
          <xsd:documentation>The ICC Evaluation Service Report number for a spray foam or other non-standard insulating product.</xsd:documentation>
@@ -1534,7 +1824,32 @@ Not Shared</dtyp:displayterm>
       <xsd:restriction base="dtyp:Decimal3PlacesNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="InsulationICF">
-      <xsd:restriction base="dtyp:EnumerationConstant"/>
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="1_5icf">1.5 in.</dtyp:displayterm>
+            <dtyp:displayterm value="2_25icf">2.25 in.</dtyp:displayterm>
+            <dtyp:displayterm value="2_5icf">2.5 in.</dtyp:displayterm>
+            <dtyp:displayterm value="2_625icf">2.625 in.</dtyp:displayterm>
+            <dtyp:displayterm value="2_75icf">2.75 in.</dtyp:displayterm>
+            <dtyp:displayterm value="2icf">2 in.</dtyp:displayterm>
+            <dtyp:displayterm value="3_5icf">3.5 in.</dtyp:displayterm>
+            <dtyp:displayterm value="3icf">3 in.</dtyp:displayterm>
+            <dtyp:displayterm value="4_5icf">4.5 in.</dtyp:displayterm>
+            <dtyp:displayterm value="4icf">4 in.</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="1_5icf"/>
+         <xsd:enumeration value="2_25icf"/>
+         <xsd:enumeration value="2_5icf"/>
+         <xsd:enumeration value="2_625icf"/>
+         <xsd:enumeration value="2_75icf"/>
+         <xsd:enumeration value="2icf"/>
+         <xsd:enumeration value="3_5icf"/>
+         <xsd:enumeration value="3icf"/>
+         <xsd:enumeration value="4_5icf"/>
+         <xsd:enumeration value="4icf"/>
+      </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="InsulationInteriorRValue">
       <xsd:annotation>
@@ -1583,6 +1898,9 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="StructuralInsulatedPanel"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="InsulationOther">
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
    <xsd:simpleType name="InsulationPlacement">
       <xsd:annotation>
          <xsd:documentation>An enumeration of possible placements of insulation in a construction assembly.</xsd:documentation>
@@ -1590,6 +1908,7 @@ Not Shared</dtyp:displayterm>
             <dtyp:displayterm>Insulation Placement</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="BetweenSlab">Between slab &amp;amp; outside foundation wall</dtyp:displayterm>
             <dtyp:displayterm value="CavityAttic">Cavity attic</dtyp:displayterm>
             <dtyp:displayterm value="CavityFraming">CavityFraming</dtyp:displayterm>
             <dtyp:displayterm value="CavityFurring">Cavity furring</dtyp:displayterm>
@@ -1600,13 +1919,16 @@ Not Shared</dtyp:displayterm>
             <dtyp:displayterm value="Core">Core</dtyp:displayterm>
             <dtyp:displayterm value="Exterior">Exterior</dtyp:displayterm>
             <dtyp:displayterm value="Interior">Interior</dtyp:displayterm>
+            <dtyp:displayterm value="OutsideEdge">Outside edge</dtyp:displayterm>
             <dtyp:displayterm value="OverSuspendedCeiling">Over suspended ceiling</dtyp:displayterm>
             <dtyp:displayterm value="SlabFullyInsulated">Slab fully insulated</dtyp:displayterm>
             <dtyp:displayterm value="SlabHorizontal">Slab horizontal</dtyp:displayterm>
+            <dtyp:displayterm value="SlabPerimeter">Slab floor perimeter</dtyp:displayterm>
             <dtyp:displayterm value="SlabVertical">Slab vertical</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="BetweenSlab"/>
          <xsd:enumeration value="CavityAttic"/>
          <xsd:enumeration value="CavityFraming"/>
          <xsd:enumeration value="CavityFurring"/>
@@ -1617,9 +1939,11 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="Core"/>
          <xsd:enumeration value="Exterior"/>
          <xsd:enumeration value="Interior"/>
+         <xsd:enumeration value="OutsideEdge"/>
          <xsd:enumeration value="OverSuspendedCeiling"/>
          <xsd:enumeration value="SlabFullyInsulated"/>
          <xsd:enumeration value="SlabHorizontal"/>
+         <xsd:enumeration value="SlabPerimeter"/>
          <xsd:enumeration value="SlabVertical"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -1875,6 +2199,34 @@ Not Shared</dtyp:displayterm>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="MassThickness">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="10mass">10 in</dtyp:displayterm>
+            <dtyp:displayterm value="11mass">11 in</dtyp:displayterm>
+            <dtyp:displayterm value="12mass">12 in</dtyp:displayterm>
+            <dtyp:displayterm value="3mass">3 in</dtyp:displayterm>
+            <dtyp:displayterm value="4mass">4 in</dtyp:displayterm>
+            <dtyp:displayterm value="5mass">5 in</dtyp:displayterm>
+            <dtyp:displayterm value="6mass">6 in</dtyp:displayterm>
+            <dtyp:displayterm value="7mass">7 in</dtyp:displayterm>
+            <dtyp:displayterm value="8mass">8 in</dtyp:displayterm>
+            <dtyp:displayterm value="9mass">9 in</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="10mass"/>
+         <xsd:enumeration value="11mass"/>
+         <xsd:enumeration value="12mass"/>
+         <xsd:enumeration value="3mass"/>
+         <xsd:enumeration value="4mass"/>
+         <xsd:enumeration value="5mass"/>
+         <xsd:enumeration value="6mass"/>
+         <xsd:enumeration value="7mass"/>
+         <xsd:enumeration value="8mass"/>
+         <xsd:enumeration value="9mass"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="MassWallThickness">
       <xsd:annotation>
          <xsd:documentation>Units: in</xsd:documentation>
@@ -1889,6 +2241,37 @@ Not Shared</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="MetalBldgInsulation">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="DoubleLayerBatt">Double Layer Batt Insulation</dtyp:displayterm>
+            <dtyp:displayterm value="SingleLayerBatt">Single Layer Batt Insulation</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="DoubleLayerBatt"/>
+         <xsd:enumeration value="SingleLayerBatt"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="MetalBldgRoofType">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="FilledThermalBlocks">Filled Cavity with thermal blocks</dtyp:displayterm>
+            <dtyp:displayterm value="ScrewDownRoof">Screw Down Roofs</dtyp:displayterm>
+            <dtyp:displayterm value="StandingSeam1Layer">Standing Seam - 1 Layer of Insulation</dtyp:displayterm>
+            <dtyp:displayterm value="StandingSeam2Layer">Standing Seam - 2  Layers of Insulation</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="FilledThermalBlocks"/>
+         <xsd:enumeration value="ScrewDownRoof"/>
+         <xsd:enumeration value="StandingSeam1Layer"/>
+         <xsd:enumeration value="StandingSeam2Layer"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="MetalBldgRoofTypeOther">
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="MetalFrameGauge">
       <xsd:annotation>
@@ -1908,8 +2291,23 @@ Not Shared</dtyp:displayterm>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Metal Panel Thickness</dtyp:displayterm>
          </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="2_5In">2.5 in.</dtyp:displayterm>
+            <dtyp:displayterm value="2In">2 in.</dtyp:displayterm>
+            <dtyp:displayterm value="3In">3 in.</dtyp:displayterm>
+            <dtyp:displayterm value="4In">4 in.</dtyp:displayterm>
+            <dtyp:displayterm value="5In">5 in.</dtyp:displayterm>
+            <dtyp:displayterm value="6In">6 in.</dtyp:displayterm>
+         </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant"/>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="2_5In"/>
+         <xsd:enumeration value="2In"/>
+         <xsd:enumeration value="3In"/>
+         <xsd:enumeration value="4In"/>
+         <xsd:enumeration value="5In"/>
+         <xsd:enumeration value="6In"/>
+      </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="NetAddedGlazingAreaAllOrientations">
       <xsd:annotation>
@@ -2058,7 +2456,7 @@ Not Shared</dtyp:displayterm>
    </xsd:simpleType>
    <xsd:simpleType name="OverhangProjection">
       <xsd:annotation>
-         <xsd:documentation>This is the horizontal distance, measured outward horizontally from the surface of exposed exterior glazing at the head of a window to the outward edge of an  overhang.  Also known as overhang depth  Units: ft</xsd:documentation>
+         <xsd:documentation>Units: ft</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
@@ -2079,6 +2477,45 @@ Not Shared</dtyp:displayterm>
          <xsd:documentation>The horizontal distance in feet from the right side of the window to the right side of the overhang  Units: ft</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OverhangSpacing">
+      <xsd:annotation>
+         <xsd:documentation>Units: ft</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PanelThickness">
+      <xsd:annotation>
+         <xsd:documentation>The measurement from one side of the SIP panel to the other side</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Panel Thickness</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="10_25In">10.25 in</dtyp:displayterm>
+            <dtyp:displayterm value="12_25In">12.25 in</dtyp:displayterm>
+            <dtyp:displayterm value="4_5In">4.5 in</dtyp:displayterm>
+            <dtyp:displayterm value="48In">48 in</dtyp:displayterm>
+            <dtyp:displayterm value="6_5In">6.5 in</dtyp:displayterm>
+            <dtyp:displayterm value="8_25In">8.25 in</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="10_25In"/>
+         <xsd:enumeration value="12_25In"/>
+         <xsd:enumeration value="4_5In"/>
+         <xsd:enumeration value="48In"/>
+         <xsd:enumeration value="6_5In"/>
+         <xsd:enumeration value="8_25In"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PanelThicknessOther">
+      <xsd:annotation>
+         <xsd:documentation>The measurement from one side of the SIP panel to the other side</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Panel Thickness</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="PanesDivider">
       <xsd:annotation>
@@ -2140,6 +2577,7 @@ Not Shared</dtyp:displayterm>
             <dtyp:displayterm value="ConcreteBrickICF">Concrete brick ICF</dtyp:displayterm>
             <dtyp:displayterm value="EIFS">EIFS</dtyp:displayterm>
             <dtyp:displayterm value="Metal">Metal</dtyp:displayterm>
+            <dtyp:displayterm value="NoFraming">No frame type</dtyp:displayterm>
             <dtyp:displayterm value="SIPS">SIPS</dtyp:displayterm>
             <dtyp:displayterm value="WoodFraming">Wood</dtyp:displayterm>
             <dtyp:displayterm value="Wood0_625Gypsum">Wood</dtyp:displayterm>
@@ -2149,6 +2587,7 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="ConcreteBrickICF"/>
          <xsd:enumeration value="EIFS"/>
          <xsd:enumeration value="Metal"/>
+         <xsd:enumeration value="NoFraming"/>
          <xsd:enumeration value="SIPS"/>
          <xsd:enumeration value="WoodFraming"/>
          <xsd:enumeration value="Wood0_625Gypsum"/>
@@ -2343,6 +2782,28 @@ Not Shared</dtyp:displayterm>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="R13"/>
          <xsd:enumeration value="R19"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RoofConstRangeSolar">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="AddAltRoofLTE2000ft2">Alteration/ Addition increases roof area 
+               <d:lte/>2,000 ft<d:sup>2</d:sup>
+            </dtyp:displayterm>
+            <dtyp:displayterm value="AddRoofGT2000ft2">Addition increases roof area 
+               <d:gt/>2,000 ft<d:sup>2</d:sup>
+            </dtyp:displayterm>
+            <dtyp:displayterm value="NewRoofGT533ft2">New construction</dtyp:displayterm>
+            <dtyp:displayterm value="NewRoofLTE533ft2">New construction w/ roof 
+               <d:lte/>533 ft<d:sup>2</d:sup>
+            </dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="AddAltRoofLTE2000ft2"/>
+         <xsd:enumeration value="AddRoofGT2000ft2"/>
+         <xsd:enumeration value="NewRoofGT533ft2"/>
+         <xsd:enumeration value="NewRoofLTE533ft2"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="RoofDescription">
@@ -2600,6 +3061,7 @@ For selection of NA-6 properties</xsd:documentation>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="R0">R-0</dtyp:displayterm>
+            <dtyp:displayterm value="R10">R-10</dtyp:displayterm>
             <dtyp:displayterm value="R10Vertical">R-10 vertical</dtyp:displayterm>
             <dtyp:displayterm value="R10VR7H">R10 vertical and R-7 horizontal</dtyp:displayterm>
             <dtyp:displayterm value="R4">R-4</dtyp:displayterm>
@@ -2610,6 +3072,7 @@ For selection of NA-6 properties</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="R0"/>
+         <xsd:enumeration value="R10"/>
          <xsd:enumeration value="R10Vertical"/>
          <xsd:enumeration value="R10VR7H"/>
          <xsd:enumeration value="R4"/>
@@ -2753,6 +3216,66 @@ For selection of NA-6 properties</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="SpaceDaylitArea">
+      <xsd:annotation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SpaceDaylitAreaLimit">
+      <xsd:annotation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SpandrelCW_FinishOther">
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SpandrelCW_TypeOther">
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SpandrelCurtainFinish">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="DoubleLowE">Dual Pane Glass with Low-E</dtyp:displayterm>
+            <dtyp:displayterm value="DoubleNoLowE">Dual Pane Glass, no Low-E</dtyp:displayterm>
+            <dtyp:displayterm value="SinglePaneGlass">Single Pane Glass</dtyp:displayterm>
+            <dtyp:displayterm value="StoneMetalConcrete">Stone Veneer, Metal, or Concrete Panel</dtyp:displayterm>
+            <dtyp:displayterm value="TriplePaneGlass">Triple Pane Glass</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="DoubleLowE"/>
+         <xsd:enumeration value="DoubleNoLowE"/>
+         <xsd:enumeration value="SinglePaneGlass"/>
+         <xsd:enumeration value="StoneMetalConcrete"/>
+         <xsd:enumeration value="TriplePaneGlass"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="SpandrelCurtainType">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="AluminumNoThermalBreak">Spandrel: Aluminum, no thermal break</dtyp:displayterm>
+            <dtyp:displayterm value="AluminumNoThermalBreakCW">CW: Aluminum, no thermal break</dtyp:displayterm>
+            <dtyp:displayterm value="AluminumThermalBreak">Spandrel: Aluminum, with thermal break</dtyp:displayterm>
+            <dtyp:displayterm value="AluminumThermalBreakCW">CW: Aluminum, with thermal break</dtyp:displayterm>
+            <dtyp:displayterm value="NoFrameContinuousInsul">Spandrel: No framing/ Continuous insulation</dtyp:displayterm>
+            <dtyp:displayterm value="NoFrameContinuousInsulCW">CW: No framing/ Continuous insulation</dtyp:displayterm>
+            <dtyp:displayterm value="StructuralGlazing">Spandrel: Structural Glazing</dtyp:displayterm>
+            <dtyp:displayterm value="StructuralGlazingCW">CW: Structural Glazing</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="AluminumNoThermalBreak"/>
+         <xsd:enumeration value="AluminumNoThermalBreakCW"/>
+         <xsd:enumeration value="AluminumThermalBreak"/>
+         <xsd:enumeration value="AluminumThermalBreakCW"/>
+         <xsd:enumeration value="NoFrameContinuousInsul"/>
+         <xsd:enumeration value="NoFrameContinuousInsulCW"/>
+         <xsd:enumeration value="StructuralGlazing"/>
+         <xsd:enumeration value="StructuralGlazingCW"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="SplineType">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -2769,6 +3292,32 @@ For selection of NA-6 properties</xsd:documentation>
          <xsd:enumeration value="OSB"/>
          <xsd:enumeration value="Single2x"/>
          <xsd:enumeration value="SteelFraming"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="SplineTypeOther">
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SteelThroughInsulation">
+      <xsd:annotation>
+         <xsd:documentation>A Boolean attribute of concrete sandwich panel wall construction assembly and affects the assignment of building performance metrics like UFactor.</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Steel Penetrates Insulation</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="StrawBaleRvalue">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="R30straw">R-30</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="R30straw"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="StructureFireRating">
@@ -2859,6 +3408,12 @@ For selection of NA-6 properties</xsd:documentation>
    <xsd:simpleType name="TotalExistingGlazingAreaWestFacing">
       <xsd:annotation>
          <xsd:documentation>The sum of all existing fenestration glazing area for west orientation only  Units: ft2</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="TotalFenestrationVerticalArea">
+      <xsd:annotation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
@@ -2974,7 +3529,30 @@ For selection of NA-6 properties</xsd:documentation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="TypeICF">
-      <xsd:restriction base="dtyp:EnumerationConstant"/>
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="Flat">Flat</dtyp:displayterm>
+            <dtyp:displayterm value="GridScreen">Screen Grid</dtyp:displayterm>
+            <dtyp:displayterm value="GridWaffle">Waffle Grid</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="Flat"/>
+         <xsd:enumeration value="GridScreen"/>
+         <xsd:enumeration value="GridWaffle"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="Ufactor110Default">
+      <xsd:annotation>
+         <xsd:documentation>Units: Btu in per h ft2 F</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="UfactorNA6">
+      <xsd:annotation>
+         <xsd:documentation>Units: Btu in per h ft2 F</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="UfactorTradeOffRange">
       <xsd:annotation>
@@ -3071,6 +3649,12 @@ For selection of NA-6 properties</xsd:documentation>
          <xsd:enumeration value="LTE0_042"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="VT_110Default">
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="VT_NA6">
+      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+   </xsd:simpleType>
    <xsd:simpleType name="VerticalFinProjection">
       <xsd:annotation>
          <xsd:documentation>This is the horizontal distance, measured outward horizontally from the surface
@@ -3099,6 +3683,12 @@ of exposed exterior glazing at the jamb of a window to the outward edge of a fin
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="WallAssemblyName">
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="WallDescription">
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
    <xsd:simpleType name="WallFramingMaterialCBECC_Res">
       <xsd:annotation>
          <xsd:documentation>This property is for values in the CF1R-PRF from CBECC-Res reported in the CF2R-ENV-03</xsd:documentation>
@@ -3112,6 +3702,36 @@ of exposed exterior glazing at the jamb of a window to the outward edge of a fin
          <xsd:enumeration value="SIPS_Walls"/>
          <xsd:enumeration value="SteelFramedWalls"/>
          <xsd:enumeration value="WoodFramedWalls"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="WallMass">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="Heavy">Heavy Mass</dtyp:displayterm>
+            <dtyp:displayterm value="Light">Light Mass</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="Heavy"/>
+         <xsd:enumeration value="Light"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="WallType">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="DemisingWall">Demising wall</dtyp:displayterm>
+            <dtyp:displayterm value="ExteriorWall">Exterior wall</dtyp:displayterm>
+            <dtyp:displayterm value="InteriorWall">Interior wall</dtyp:displayterm>
+            <dtyp:displayterm value="UndergroundWall">Underground wall</dtyp:displayterm>
+            <dtyp:displayterm value="WallTypeOther">Other wall type</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="DemisingWall"/>
+         <xsd:enumeration value="ExteriorWall"/>
+         <xsd:enumeration value="InteriorWall"/>
+         <xsd:enumeration value="UndergroundWall"/>
+         <xsd:enumeration value="WallTypeOther"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="WestFacingFenestrationRange">
@@ -3152,6 +3772,15 @@ of exposed exterior glazing at the jamb of a window to the outward edge of a fin
    </xsd:simpleType>
    <xsd:simpleType name="WindowFrameAndDividerName">
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="WindowProjecting">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="WindowStyle">
       <xsd:annotation>

@@ -605,6 +605,20 @@
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="BatteryCapacityMinPerArea">
+      <xsd:annotation>
+         <xsd:documentation>  Units: kW per h</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="BatteryCapacityMinTotal">
+      <xsd:annotation>
+         <xsd:documentation>  Units: kW per h</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="BatteryControl">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -636,6 +650,27 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:token">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="BatteryPower">
+      <xsd:annotation>
+         <xsd:documentation>  Units: kW</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="BatteryPowerMinPerArea">
+      <xsd:annotation>
+         <xsd:documentation>  Units: kW</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="BatteryPowerMinTotal">
+      <xsd:annotation>
+         <xsd:documentation>  Units: kW</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="BoilerAFUE">
@@ -735,6 +770,13 @@
    <xsd:simpleType name="CapacityRated">
       <xsd:annotation>
          <xsd:documentation>The cooling or heating capacity of HVAC equipment at prescribed rating conditions.  Units: Btu per h</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ChargeDischargeEfficiency">
+      <xsd:annotation>
+         <xsd:documentation>  Units: none</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
@@ -1502,12 +1544,16 @@
             <dtyp:displayterm value="DuctMounted">Duct Mounted</dtyp:displayterm>
             <dtyp:displayterm value="FilterGrille">Filter Grille</dtyp:displayterm>
             <dtyp:displayterm value="FurnaceMounted">Furnace Mounted</dtyp:displayterm>
+            <dtyp:displayterm value="Mounted">Mounted at air handler</dtyp:displayterm>
+            <dtyp:displayterm value="MountedInline">Mounted in line between return grille and air handler</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="DuctMounted"/>
          <xsd:enumeration value="FilterGrille"/>
          <xsd:enumeration value="FurnaceMounted"/>
+         <xsd:enumeration value="Mounted"/>
+         <xsd:enumeration value="MountedInline"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DuctSystemName">
@@ -1713,6 +1759,16 @@
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="EfficiencyEER2">
+      <xsd:annotation>
+         <xsd:documentation>  Units: Btu per W h</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Efficiency EER2</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="EfficiencyExistingValueAFUE">
       <xsd:annotation>
          <xsd:documentation>  Units: none</xsd:documentation>
@@ -1758,6 +1814,16 @@
          <xsd:documentation>  Units: Btu per W h</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Efficiency HSPF</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="EfficiencyHSPF2">
+      <xsd:annotation>
+         <xsd:documentation>  Units: Btu per W h</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Efficiency HSPF2</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
@@ -1864,11 +1930,31 @@
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="EfficiencyMinimumValueEER2">
+      <xsd:annotation>
+         <xsd:documentation>  Units: Btu per W h</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Efficiency Minimum EER2 Value</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="EfficiencyMinimumValueHSPF">
       <xsd:annotation>
          <xsd:documentation>  Units: Btu per W h</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Efficiency Minimum HSPF Value</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="EfficiencyMinimumValueHSPF2">
+      <xsd:annotation>
+         <xsd:documentation>  Units: Btu per W h</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Efficiency Minimum HSPF2 Value</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
@@ -1884,11 +1970,31 @@
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="EfficiencyMinimumValueSEER2">
+      <xsd:annotation>
+         <xsd:documentation>  Units: Btu per W h</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Efficiency Minimum SEER2 Value</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="EfficiencySEER">
       <xsd:annotation>
          <xsd:documentation>  Units: Btu per W h</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>SEER Efficiency</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="EfficiencySEER2">
+      <xsd:annotation>
+         <xsd:documentation>  Units: Btu per W h</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Efficiency SEER2</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
@@ -1904,6 +2010,7 @@
             <dtyp:displayterm value="CEER">CEER</dtyp:displayterm>
             <dtyp:displayterm value="COP">COP</dtyp:displayterm>
             <dtyp:displayterm value="EER">EER</dtyp:displayterm>
+            <dtyp:displayterm value="EER2">EER2</dtyp:displayterm>
             <dtyp:displayterm value="EER2SEER2">EER2/SEER2</dtyp:displayterm>
             <dtyp:displayterm value="EERSEER">EER/SEER</dtyp:displayterm>
             <dtyp:displayterm value="EnergyFactor">EF</dtyp:displayterm>
@@ -1914,6 +2021,7 @@
             <dtyp:displayterm value="NEEA">NEEA Rated</dtyp:displayterm>
             <dtyp:displayterm value="SCOP">SCOP</dtyp:displayterm>
             <dtyp:displayterm value="SEER">SEER</dtyp:displayterm>
+            <dtyp:displayterm value="SEER2">SEER2</dtyp:displayterm>
             <dtyp:displayterm value="ThermalEfficiency">TE</dtyp:displayterm>
             <dtyp:displayterm value="UniformEnergyFactor">UEF</dtyp:displayterm>
          </xsd:appinfo>
@@ -1923,6 +2031,7 @@
          <xsd:enumeration value="CEER"/>
          <xsd:enumeration value="COP"/>
          <xsd:enumeration value="EER"/>
+         <xsd:enumeration value="EER2"/>
          <xsd:enumeration value="EER2SEER2"/>
          <xsd:enumeration value="EERSEER"/>
          <xsd:enumeration value="EnergyFactor"/>
@@ -1933,6 +2042,7 @@
          <xsd:enumeration value="NEEA"/>
          <xsd:enumeration value="SCOP"/>
          <xsd:enumeration value="SEER"/>
+         <xsd:enumeration value="SEER2"/>
          <xsd:enumeration value="ThermalEfficiency"/>
          <xsd:enumeration value="UniformEnergyFactor"/>
       </xsd:restriction>
@@ -3973,6 +4083,16 @@
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="IsWaterHeaterElectricResistance">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="LoopTankBrandModel">
       <xsd:restriction base="xsd:token">
       </xsd:restriction>
@@ -5227,6 +5347,7 @@
             <dtyp:displayterm value="InstantaneousResDutyCommercial">Residential-Duty Commercial Instantaneous</dtyp:displayterm>
             <dtyp:displayterm value="InstantaneousSmall">Small Instantaneous</dtyp:displayterm>
             <dtyp:displayterm value="NEEA_Tier3HP">NEEA Tier 3 heat pump water heater</dtyp:displayterm>
+            <dtyp:displayterm value="SolarElectBackup">Solar water heating system with backup electric</dtyp:displayterm>
             <dtyp:displayterm value="StorageCommercial">Commercial Storage</dtyp:displayterm>
             <dtyp:displayterm value="StorageConsumer">Consumer Storage</dtyp:displayterm>
             <dtyp:displayterm value="StorageLarge">Large Storage</dtyp:displayterm>
@@ -5244,6 +5365,7 @@
          <xsd:enumeration value="InstantaneousResDutyCommercial"/>
          <xsd:enumeration value="InstantaneousSmall"/>
          <xsd:enumeration value="NEEA_Tier3HP"/>
+         <xsd:enumeration value="SolarElectBackup"/>
          <xsd:enumeration value="StorageCommercial"/>
          <xsd:enumeration value="StorageConsumer"/>
          <xsd:enumeration value="StorageLarge"/>
