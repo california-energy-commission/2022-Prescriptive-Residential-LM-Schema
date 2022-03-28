@@ -1766,10 +1766,14 @@ End If</xsd:documentation>
                            <d:t24refnolink/>110.12(c)</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">User selects from dropdown list: RequiredGTE4000W, RequiredUsingPAF, NotRequiredLT4000W, NotRequiredHealthSafety, HealthcareNA, NA_LT80PctAllowedLP    
 If result == RequiredGTE4000W Or  RequiredUsingPAF 
-V03_RequireNRCALti04A = true
+Lmca03_RequireLMCALti04A = true
 End If 
  
-If result == NA_LT80PctAllowedLP then If Bnew01 and Bpark01 LightingProjectScopeNR == NotApplicableLightingScope And Baltered01 LightingProjectScopeNR == AlteredLightingSystem And C08 GT (C01 + C02) x 0.8 then   D03  ExceptionalConditionMessageCCLTIE += LP80PercentAlterationIssueInH
+If result == NA_LT80PctAllowedLP then If Bnew01 and Bpark01 LightingProjectScopeNR == NotApplicableLightingScope And Baltered01 LightingProjectScopeNR == AlteredLightingSystem And 
+C08Row01_LightingPowerInstalledTotalConditionedAdjusted IsPresent And  GTE  (C05Row01_LightingPowerAllowanceTotalConditioned   x 0.8)  
+Or C08Row02_LightingPowerInstalledTotalUnconditionedAdjusted IsPresent And  GTE  (C05Row02_LightingPowerAllowanceTotalUnconditioned   x 0.8)  
+ 
+then   D03_ExceptionalConditionMessageCCLTIE += LP80PercentAlterationOnlyIssueInH
  
 Mandatory Measure Block Triggers:</xsd:documentation>
                      </xsd:annotation>
@@ -1781,8 +1785,8 @@ Mandatory Measure Block Triggers:</xsd:documentation>
                            <d:t24refnolink/>160.5(b)4C</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">User selects from dropdown list: WholeBuildingAutoTimeSwitch display term Whole Building Timeswitch, WholeBuildingEMCS display term EMCS, AreaLevelControls display term See Area/Space Level Controls
  
-If result == EMCS 
-V01_RequireNRCALti02A = true
+If result == WholeBuildingEMCS 
+Lmca01_RequireLMCALti02A = true
 End If 
  
 Mandatory Measure Triggers:
@@ -1997,7 +2001,16 @@ End If</xsd:documentation>
                                              <d:t24refnolink/>160.5(b)4B</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">User selects from dropdown list. 
  
-If result == NA_LT80PctAllowedLP then If Bnew01 and Bpark01 LightingProjectScopeNR == NotApplicableLightingScope And Baltered01 LightingProjectScopeNR == AlteredLightingSystem And C08 GT ((C01+ C02) x 0.8)  D03_ExceptionalConditionMessageCCLTIE += LP80PercentAlterationIssueInH
+ 
+If result == NA_LT80PctAllowedLP then 
+If Bnew01 And Bpark01 LightingProjectScopeNR == NotApplicableLightingScope And Baltered01 LightingProjectScopeNR == AlteredLightingSystem And 
+C08Row01_LightingPowerInstalledTotalConditionedAdjusted IsPresent And  GTE  (C05Row01_LightingPowerAllowanceTotalConditioned   x 0.8)  
+Or C08Row02_LightingPowerInstalledTotalUnconditionedAdjusted IsPresent And  GTE  (C05Row02_LightingPowerAllowanceTotalUnconditioned   x 0.8)  
+ 
+D03_ExceptionalConditionMessageCCLTIE += LP80PercentAlterationOnlyIssueInH
+End If
+End If
+ 
  
 Mandatory Measure Triggers:
 If result == BilevelSwitchControl Or DimmerControl
@@ -2013,7 +2026,7 @@ End If</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">User selects from dropdown list.  
 If result == ElecEquipRoomNA Or HealthcareNA Or NA24x7Operation  And 
 H02_ShutOffControlsBuilding == AreaLevelControls
-V01_RequireNRCALti02A = false
+Lmca01_RequireLMCALti02A = false
 End If 
  
 Mandatory Measure Block Triggers:
@@ -2049,11 +2062,16 @@ Multi-field triggers: See H02_ShutOffControlsBuilding CalculationsAndRules for t
                                              <d:t24refnolink/>160.5(b)4D</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">User selects from dropdown list.  
 For all rows If result != Included
-V02_RequireNRCALti03A = false
+Lmca02_RequireLMCALti03A = false
 End If 
  
+If result == NA_LT80PctAllowedLP then 
+If Bnew01 And Bpark01 LightingProjectScopeNR == NotApplicableLightingScope And Baltered01 LightingProjectScopeNR == AlteredLightingSystem And 
+C08Row01_LightingPowerInstalledTotalConditionedAdjusted IsPresent And  GTE  (C05Row01_LightingPowerAllowanceTotalConditioned   x 0.8)  
+Or C08Row02_LightingPowerInstalledTotalUnconditionedAdjusted IsPresent And  GTE  (C05Row02_LightingPowerAllowanceTotalUnconditioned   x 0.8)  
  
-If result == NA_LT80PctAllowedLP then If Bnew01 and Bpark01 LightingProjectScopeNR == NotApplicableLightingScope And Baltered01 LightingProjectScopeNR == AlteredLightingSystem And C08 GT PRODUCT (SUM (C01, C02), 0.8)  D03_ExceptionalConditionMessageCCLTIE += LP80PercentAlterationIssueInH
+D03_ExceptionalConditionMessageCCLTIE += LP80PercentAlterationOnlyIssueInH
+End If
 End If
  
 Mandatory Measure Block Triggers:
@@ -2071,10 +2089,17 @@ Note: MM130_1d includes text for 130.1d,  130.1d3, 130.1d4, and 130.1d5,</xsd:do
                                              <d:t24refnolink/>160.5(b)4D</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">User selects from dropdown list.  
  For all rows If result != Included
-V02_RequireNRCALti03A = false
+Lmca02_RequireLMCALti03A = false
 End If 
  
-If result == NA_LT80PctAllowedLP then If Bnew01 and Bpark01 LightingProjectScopeNR == NotApplicableLightingScope And Baltered01 LightingProjectScopeNR == AlteredLightingSystem And C08 GT PRODUCT (SUM (C01, C02), 0.8)  D03_ExceptionalConditionMessageCCLTIE += LP80PercentAlterationIssueInH</xsd:documentation>
+If result == NA_LT80PctAllowedLP then 
+If Bnew01 And Bpark01 LightingProjectScopeNR == NotApplicableLightingScope And Baltered01 LightingProjectScopeNR == AlteredLightingSystem And 
+C08Row01_LightingPowerInstalledTotalConditionedAdjusted IsPresent And  LTE  (C05Row01_LightingPowerAllowanceTotalConditioned   x 0.8)  
+Or C08Row02_LightingPowerInstalledTotalUnconditionedAdjusted IsPresent And  LTE  (C05Row02_LightingPowerAllowanceTotalUnconditioned   x 0.8)  
+ 
+D03_ExceptionalConditionMessageCCLTIE += LP80PercentAlterationOnlyIssueInH
+End If
+End If</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="H11_InterlockedLightingSystems" type="lit:InterlockedLightingSystems">
@@ -2084,7 +2109,7 @@ If result == NA_LT80PctAllowedLP then If Bnew01 and Bpark01 LightingProjectScope
                                              <d:t24refnolink/>170.2(e)2A</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">User input.  If checked result = true; Else If unchecked result = false
 If result == true 
-V03_RequireNRCALti04A = true
+Lmca03_RequireLMCALti04A = true
 End If</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -5035,7 +5060,7 @@ End If</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User input: checked result = true, unchecked result = false.  
 If result == true 
 add 0.10 to PAF value used in calculation for Pc07_PAF_AllowedInArea
-And V04_RequireNRCALti05A = true
+And Lmca04_RequireLMCALti05A = true
 End If</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
@@ -5045,7 +5070,7 @@ End If</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User input: checked result = true, unchecked result = false.  
 If result == true 
 Add 0.05 to PAF value used in calculation for Pc07_PAF_AllowedInArea
-And V04_RequireNRCALti05A = true
+And Lmca04_RequireLMCALti05A = true
 End If</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
@@ -5068,7 +5093,7 @@ End If</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User input: checked result = true, unchecked result = false. 
 If result == true 
 Add 0.05 to PAF value used in calculation for Pc07_PAF_AllowedInArea And
-V05_RequireNRCAEnv03F = true
+Lmca05_RequireLMCAEnv03F = true
 End If</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
@@ -5078,7 +5103,7 @@ End If</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User input: checked result = true, unchecked result = false. 
 If result == true 
 Add 0.05 to PAF value used in calculation for Pc07_PAF_AllowedInArea And
-V05_RequireNRCAEnv03F = true
+Lmca05_RequireLMCAEnv03F = true
 End If</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
@@ -5088,8 +5113,7 @@ End If</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User input: checked result = true, unchecked result = false.  
 If result == true 
 Add 0.10 to PAF value used in calculation for Pc07_PAF_AllowedInArea And
-V05_RequireNRCAEnv03F = true
-End If</xsd:documentation>
+Lmca05_RequireLMCAEnv03F = trueEnd If</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
                                              <xsd:element name="Pc03_LuminaireName" type="lit:LuminaireName">
@@ -5241,7 +5265,7 @@ End If</xsd:documentation>
                                                    <xsd:documentation source="FieldText">3A*</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User input; If checked 
 Add 0.10 to PAF value used in calculation for Pu07_PAF_AllowedInArea And
-V04_RequireNRCALti05A = true
+Lmca04_RequireLMCALti05A = true
 End If</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
@@ -5250,14 +5274,9 @@ End If</xsd:documentation>
                                                    <xsd:documentation source="FieldText">3B*</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User input; If checked 
 Add 0.05 to PAF value used in calculation for Pu07_PAF_AllowedInArea And
-V04_RequireNRCALti05A = true
+Lmca04_RequireLMCALti05A = true
+ 
 End If</xsd:documentation>
-                                                </xsd:annotation>
-                                             </xsd:element>
-                                             <xsd:element name="Pu02g_ApplyDemandResponsiveControl" type="comp:ApplyDemandResponsiveControl" minOccurs="0">
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText">4*</xsd:documentation>
-                                                   <xsd:documentation source="CalculationsAndRules">User input; If checked add 0.05 to PAF value used in calculation for Pu07_PAF_AllowedInArea</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
                                              <xsd:element name="P_ColumnSubheading02hTo02j" minOccurs="0">
@@ -5267,13 +5286,19 @@ End If</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User can select one PAF credit type from this group 5, 6, 7</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
+                                             <xsd:element name="Pu02g_ApplyDemandResponsiveControl" type="comp:ApplyDemandResponsiveControl" minOccurs="0">
+                                                <xsd:annotation>
+                                                   <xsd:documentation source="FieldText">4*</xsd:documentation>
+                                                   <xsd:documentation source="CalculationsAndRules">User input; If checked add 0.05 to PAF value used in calculation for Pu07_PAF_AllowedInArea</xsd:documentation>
+                                                </xsd:annotation>
+                                             </xsd:element>
                                              <xsd:element name="Pu02h_ApplyClerestoryFenestrationPAF" type="comp:ApplyClerestoryFenestrationPAF">
                                                 <xsd:annotation>
                                                    <xsd:documentation source="FieldText">5*</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User input: checked result = true, unchecked result = false.  
 If result == true 
 Add 0.05 to PAF value used in calculation for Pu07_PAF_AllowedInArea And
-V05_RequireNRCAEnv03F = true
+Lmca05_RequireLMCAEnv03F = true
 End If</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
@@ -5283,8 +5308,7 @@ End If</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User input: checked result = true, unchecked result = false.  
 If result == true 
 Add 0.05 to PAF value used in calculation for Pu07_PAF_AllowedInArea And
-V05_RequireNRCAEnv03F = true
-End If</xsd:documentation>
+Lmca05_RequireLMCAEnv03F = trueEnd If</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
                                              <xsd:element name="Pu02j_ApplyLightShelvesPAF" type="comp:ApplyLightShelvesPAF">
@@ -5293,7 +5317,7 @@ End If</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">User input: checked result = true, unchecked result = false.  
 If result == true 
 Add 0.10 to PAF value used in calculation for Pu07_PAF_AllowedInArea And
-V05_RequireNRCAEnv03F = true
+Lmca05_RequireLMCAEnv03F = true
 End If</xsd:documentation>
                                                 </xsd:annotation>
                                              </xsd:element>
@@ -5794,7 +5818,7 @@ Else store result in Q18_ShutOffControlsArea
 End If
  
 If Q18_ShutOffControlsBuilding result == WholeBuildingAutoTimeSwitch, WholeBuildingEMCS Or WholeBuildingOccupancySensors
-Nrca01_RequireNRCALti02A = true
+Lmca01_RequireLMCALti02A = true
 End If</xsd:documentation>
                                              <xsd:appinfo source="displayterm">
                                                 <dtyp:displayterm value="WholeBuildingOccupancySensors">Whole Building: Occ Sensor</dtyp:displayterm>
@@ -5821,8 +5845,7 @@ Else store result in Q18_ShutOffControlsArea
 End If
  
 If Q18_ShutOffControlsArea result == OccupancySensor Or EMCS Or AutomaticTimerSwitch
-Nrca1_RequireNRCALti02A = true
-End If</xsd:documentation>
+Lmca01_RequireLMCALti02A = trueEnd If</xsd:documentation>
                                              <xsd:appinfo source="displayterm">
                                                 <dtyp:displayterm value="PartialOffShutOffControl">Partial Off 130.1(c)/ 160.5(b)4C</dtyp:displayterm>
                                                 <dtyp:displayterm value="PartialOnShutOffControl">Partial On 130.1(c)/ 160.5(b)4C</dtyp:displayterm>
@@ -5866,7 +5889,11 @@ User is required to provide a note; Else field is grayed out</xsd:documentation>
                   <d:b>R. 80% LIGHTING POWER FOR ALL ALTERATIONS - CONTROLS EXCEPTIONS</d:b>
                </xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If Bnew01__LightingProjectScopeNR == NewLightingSystem AND Baltered01_LightingProjectScopeNR == AlteredlightingSystem  
-And If H01_MandatoryLightingDemandResponseNR Or H07_MultilevelControls Or H09_PrimarySkylitDaylightControlsIncluded Or H10_ SecondaryDaylightControlsIncluded == NA_LTE80PctAllowedLP</xsd:documentation>
+And If H01_MandatoryLightingDemandResponseNR Or H07_MultilevelControls Or H09_PrimarySkylitDaylightControlsIncluded Or H10_ SecondaryDaylightControlsIncluded == NA_LTE80PctAllowedLP   
+ 
+If this section is required all rows must have data in  R01, R02, R03, R04, R06, R07 and R08 
+Else  D03  ExceptionalConditionMessageCCLTIE += LP80PercentAlterationMissingDataInR 
+End If</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -6173,7 +6200,10 @@ End If</xsd:documentation>
                   <xsd:element name="R09bPercentAllowance_LightingPowerInstalledPowerAllowedRatio" type="comp:LightingPowerInstalledPowerAllowedRatio">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Percent of Indoor Lighting Power Allowance:</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">Calculated value:   result = RTotals09_LightingPowerInstalledTotal / RTotals05_LightingPowerAllowedTotal. Display of percent = result x 100.  If result GT .80  add LP80PercentAlterationExceededInR to  D03_ ExceptionalConditionMessageCCLTIE</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">Calculated value:   result = RTotals09_LightingPowerInstalledTotal / RTotals05_LightingPowerAllowedTotal. Display of percent = result x 100.  
+If result GT .80  
+D03_ ExceptionalConditionMessageCCLTIE += LP80PercentAlterationExceededInR
+End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>

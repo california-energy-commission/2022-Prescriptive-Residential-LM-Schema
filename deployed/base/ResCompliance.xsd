@@ -3607,7 +3607,6 @@ Document Data</dtyp:displayterm>
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="ControlledReceptacle50PercentHotelMotel">50 % are controlled receptacle (hotel/motel room)</dtyp:displayterm>
-            <dtyp:displayterm value="ControlledReceptacleAtEachWorkstation">At each workstation (modular furniture only)</dtyp:displayterm>
             <dtyp:displayterm value="SplitWiredReceptacle">Split-wired receptacle</dtyp:displayterm>
             <dtyp:displayterm value="ControlledWithin6ftOfUncontrolledAndSplitWiredReceptacle">Within 6ft of uncontrolled AND Split-wired receptacle</dtyp:displayterm>
             <dtyp:displayterm value="ControlledWithin6ftOfUncontrolledReceptacle">Within 6ft of uncontrolled receptacle</dtyp:displayterm>
@@ -3615,7 +3614,6 @@ Document Data</dtyp:displayterm>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="ControlledReceptacle50PercentHotelMotel"/>
-         <xsd:enumeration value="ControlledReceptacleAtEachWorkstation"/>
          <xsd:enumeration value="SplitWiredReceptacle"/>
          <xsd:enumeration value="ControlledWithin6ftOfUncontrolledAndSplitWiredReceptacle"/>
          <xsd:enumeration value="ControlledWithin6ftOfUncontrolledReceptacle"/>
@@ -3635,6 +3633,30 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="HealthSafetyRegNA"/>
          <xsd:enumeration value="NotRequiredDR"/>
          <xsd:enumeration value="ProvidingDR"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ControlledReceptacleNA">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="CircuitGT20AmpNA">NA: Circuit 
+               <d:gt/> 20 Amperes</dtyp:displayterm>
+            <dtyp:displayterm value="ClockNA">NA: Clock 
+               <d:gte/> 6 Ft Above Floor</dtyp:displayterm>
+            <dtyp:displayterm value="DataReceptacleNA">NA: Data Equipment Receptacle</dtyp:displayterm>
+            <dtyp:displayterm value="HealthNA">NA: Healthcare Facility</dtyp:displayterm>
+            <dtyp:displayterm value="NrccNA">NRCC NA</dtyp:displayterm>
+            <dtyp:displayterm value="RefrigWaterNA">NA: Refrigerator/Water Dispenser Receptacle</dtyp:displayterm>
+            <dtyp:displayterm value="UninterruptibleNA">NA: Uninterruptible Power Supply Receptacle</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="CircuitGT20AmpNA"/>
+         <xsd:enumeration value="ClockNA"/>
+         <xsd:enumeration value="DataReceptacleNA"/>
+         <xsd:enumeration value="HealthNA"/>
+         <xsd:enumeration value="NrccNA"/>
+         <xsd:enumeration value="RefrigWaterNA"/>
+         <xsd:enumeration value="UninterruptibleNA"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ControlledReceptacleShutOffControl">
