@@ -1030,7 +1030,7 @@
    <xsd:simpleType name="AreDuctsInConditionedSpaceRValueExceptionCompliant">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="true">The space conditioning space is considered entirely in conditioned space and Duct R-Value less than minimum is allowable.</dtyp:displayterm>
+            <dtyp:displayterm value="true">The duct system is considered entirely in directly conditioned space and duct insulation is not required</dtyp:displayterm>
             <dtyp:displayterm value="false">The system does not meet the criteria for ducts entirely in conditioned space.</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -2212,6 +2212,43 @@
             <dtyp:displayterm value="LMCC-LTO-01-E">LMCC-LTO-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-LTS-01-E">LMCC-LTS-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-SAB-01-E">LMCC-SAB-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-ELC-01-E">LMCI-ELC-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-ENV-21-H">LMCI-ENV-21-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-ENV-22-H">LMCI-ENV-22-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-LTG-01-E">LMCI-LTG-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-LTG-02-E">LMCI-LTG-21-E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-01-E">LMCI-MCH-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-20-H">LMCI-MCH-20-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-21-H">LMCI-MCH-21-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-22-H">LMCI-MCH-22-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-23-H">LMCI-MCH-23-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-24-H">LMCI-MCH-24-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-25-H">LMCI-MCH-25-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-26-H">LMCI-MCH-26-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-28-H">LMCI-MCH-28-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-29-H">LMCI-MCH-29-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-32-H">LMCI-MCH-32-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-33-H">LMCI-MCH-33-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-PLB-01-E">LMCI-PLB-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-PLB-02-E">LMCI-PLB-02-E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-PLB-21-H">LMCI-PLB-21-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-PLB-22-H">LMCI-PLB-22-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-ENV-20-H">LMCV-ENV-20-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-ENV-21-H">LMCV-ENV-21-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-ENV-22-H">LMCV-ENV-22-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-20-H">LMCV-MCH-20-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-21-H">LMCV-MCH-21-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-22-H">LMCV-MCH-22-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-23-H">LMCV-MCH-23-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-24-H">LMCV-MCH-24-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-25-H">LMCV-MCH-25-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-26-H">LMCV-MCH-26-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-28-H">LMCV-MCH-28-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-29-H">LMCV-MCH-29-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-32-H">LMCV-MCH-32-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-33-H">LMCV-MCH-33-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-PLB-21-H">LMCV-PLB-21-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-PLB-22-H">LMCV-PLB-22-H</dtyp:displayterm>
             <dtyp:displayterm value="NRCV-MCH-04-H">NRCV-MCH-04-H</dtyp:displayterm>
             <dtyp:displayterm value="NRCV-MCH-24-H">NRCV-MCH-24-H</dtyp:displayterm>
             <dtyp:displayterm value="NRCV-MCH-27-H">NRCV-MCH-27-H</dtyp:displayterm>
@@ -2320,6 +2357,43 @@
          <xsd:enumeration value="LMCC-LTO-01-E"/>
          <xsd:enumeration value="LMCC-LTS-01-E"/>
          <xsd:enumeration value="LMCC-SAB-01-E"/>
+         <xsd:enumeration value="LMCI-ELC-01-E"/>
+         <xsd:enumeration value="LMCI-ENV-21-H"/>
+         <xsd:enumeration value="LMCI-ENV-22-H"/>
+         <xsd:enumeration value="LMCI-LTG-01-E"/>
+         <xsd:enumeration value="LMCI-LTG-02-E"/>
+         <xsd:enumeration value="LMCI-MCH-01-E"/>
+         <xsd:enumeration value="LMCI-MCH-20-H"/>
+         <xsd:enumeration value="LMCI-MCH-21-H"/>
+         <xsd:enumeration value="LMCI-MCH-22-H"/>
+         <xsd:enumeration value="LMCI-MCH-23-H"/>
+         <xsd:enumeration value="LMCI-MCH-24-H"/>
+         <xsd:enumeration value="LMCI-MCH-25-H"/>
+         <xsd:enumeration value="LMCI-MCH-26-H"/>
+         <xsd:enumeration value="LMCI-MCH-28-H"/>
+         <xsd:enumeration value="LMCI-MCH-29-H"/>
+         <xsd:enumeration value="LMCI-MCH-32-H"/>
+         <xsd:enumeration value="LMCI-MCH-33-H"/>
+         <xsd:enumeration value="LMCI-PLB-01-E"/>
+         <xsd:enumeration value="LMCI-PLB-02-E"/>
+         <xsd:enumeration value="LMCI-PLB-21-H"/>
+         <xsd:enumeration value="LMCI-PLB-22-H"/>
+         <xsd:enumeration value="LMCV-ENV-20-H"/>
+         <xsd:enumeration value="LMCV-ENV-21-H"/>
+         <xsd:enumeration value="LMCV-ENV-22-H"/>
+         <xsd:enumeration value="LMCV-MCH-20-H"/>
+         <xsd:enumeration value="LMCV-MCH-21-H"/>
+         <xsd:enumeration value="LMCV-MCH-22-H"/>
+         <xsd:enumeration value="LMCV-MCH-23-H"/>
+         <xsd:enumeration value="LMCV-MCH-24-H"/>
+         <xsd:enumeration value="LMCV-MCH-25-H"/>
+         <xsd:enumeration value="LMCV-MCH-26-H"/>
+         <xsd:enumeration value="LMCV-MCH-28-H"/>
+         <xsd:enumeration value="LMCV-MCH-29-H"/>
+         <xsd:enumeration value="LMCV-MCH-32-H"/>
+         <xsd:enumeration value="LMCV-MCH-33-H"/>
+         <xsd:enumeration value="LMCV-PLB-21-H"/>
+         <xsd:enumeration value="LMCV-PLB-22-H"/>
          <xsd:enumeration value="NRCV-MCH-04-H"/>
          <xsd:enumeration value="NRCV-MCH-24-H"/>
          <xsd:enumeration value="NRCV-MCH-27-H"/>
@@ -2529,16 +2603,16 @@
             <dtyp:displayterm value="CF2RMCH32H">CF2RMCH32H</dtyp:displayterm>
             <dtyp:displayterm value="CF2RMCH33H">CF2RMCH33H</dtyp:displayterm>
             <dtyp:displayterm value="CF2RMCH34E">CF2RMCH34E</dtyp:displayterm>
-            <dtyp:displayterm value="CF2RPLB01aE">CF2RPLB01aE</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPLB01bE">CF2RPLB01bE</dtyp:displayterm>
+            <dtyp:displayterm value="CF2RPLB01E">CF2RPLB01E</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPLB02E">CF2RPLB02E</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPLB03E">CF2RPLB03E</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPLB04E">CF2RPLB04E</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPLB05E">CF2RPLB05E</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPLB06E">CF2RPLB06E</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPLB20H">CF2RPLB20H</dtyp:displayterm>
-            <dtyp:displayterm value="CF2RPLB21aH">CF2RPLB21aH</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPLB21bH">CF2RPLB21bH</dtyp:displayterm>
+            <dtyp:displayterm value="CF2RPLB21H">CF2RPLB21H</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPLB22H">CF2RPLB22H</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPVB01E">CF2RPVB01E</dtyp:displayterm>
             <dtyp:displayterm value="CF2RPVB02E">CF2RPVB02E</dtyp:displayterm>
@@ -2608,24 +2682,83 @@
             <dtyp:displayterm value="LMCCLTO01E">LMCCLTO01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCCLTS01E">LMCCLTS01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCCSAB01E">LMCCSAB01E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIELC01E">LMCIELC01E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIENV20aH">LMCIENV20aH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIENV20bH">LMCIENV20bH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIENV21H">LMCIENV21H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIENV22H">LMCIENV22H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCILTG01E">LMCIELC01E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCILTG02E">LMCIELC02E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH01aE">LMCIMCH01aE</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH01bE">LMCIMCH01bE</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH01cE">LMCIMCH01cE</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH01dE">LMCIMCH01dE</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH20aH">LMCIMCH20aH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH20bH">LMCIMCH20bH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH20cH">LMCIMCH20cH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH20dH">LMCIMCH20dH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH20eH">LMCIMCH20eH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH21H">LMCIMCH21H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH22aH">LMCIMCH22aH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH22bH">LMCIMCH22bH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH22cH">LMCIMCH22cH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH22dH">LMCIMCH22dH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH23aH">LMCIMCH23aH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH23bH">LMCIMCH23bH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH23cH">LMCIMCH23cH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH23dH">LMCIMCH23dH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH23eH">LMCIMCH23eH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH23fH">LMCIMCH23fH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH24aH">LMCIMCH24aH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH24bH">LMCIMCH24bH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH25aH">LMCIMCH25aH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH25bH">LMCIMCH25bH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH25cH">LMCIMCH25cH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH25eH">LMCIMCH25eH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH25fH">LMCIMCH25fH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH26H">LMCIMCH26H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH28H">LMCIMCH28H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH29H">LMCIMCH29H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH32H">LMCIMCH32H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH33H">LMCIMCH33H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIPLB01E">LMCIPLB01E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIPLB02E">LMCIPLB02E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIPLB21H">LMCIPLB21H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIPLB22H">LMCIPLB22H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVENV20aH">LMCVENV20aH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVENV20bH">LMCVENV20bH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVENV21H">LMCVENV21H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVENV22H">LMCVENV22H</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH20aH">LMCVMCH20aH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH20bH">LMCVMCH20bH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH20cH">LMCVMCH20cH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH20dH">LMCVMCH20dH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH20eH">LMCVMCH20eH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH21H">LMCVMCH21H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH22aH">LMCVMCH22aH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH22bH">LMCVMCH22bH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH22cH">LMCVMCH22cH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH22dH">LMCVMCH22dH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH23aH">LMCVMCH23aH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH23bH">LMCVMCH23bH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH23cH">LMCVMCH23cH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH23dH">LMCVMCH23dH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH23eH">LMCVMCH23eH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH23fH">LMCVMCH23fH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH24aH">LMCVMCH24aH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH24bH">LMCVMCH24bH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH25aH">LMCVMCH25aH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH25bH">LMCVMCH25bH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH25cH">LMCVMCH25cH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH25dH">LMCVMCH25dH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH25eH">LMCVMCH25eH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH26H">LMCVMCH26H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH28H">LMCVMCH28H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH29H">LMCVMCH29H</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH32H">LMCVMCH32H</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH33H">LMCVMCH33H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVPLB21H">LMCVPLB21H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVPLB22H">LMCVPLB22H</dtyp:displayterm>
             <dtyp:displayterm value="NotApplicable">N/A</dtyp:displayterm>
             <dtyp:displayterm value="NRCVMCH04aH">NRCVMCH04aH</dtyp:displayterm>
             <dtyp:displayterm value="NRCVMCH04cH">NRCVMCH04cH</dtyp:displayterm>
@@ -2725,16 +2858,16 @@
          <xsd:enumeration value="CF2RMCH32H"/>
          <xsd:enumeration value="CF2RMCH33H"/>
          <xsd:enumeration value="CF2RMCH34E"/>
-         <xsd:enumeration value="CF2RPLB01aE"/>
          <xsd:enumeration value="CF2RPLB01bE"/>
+         <xsd:enumeration value="CF2RPLB01E"/>
          <xsd:enumeration value="CF2RPLB02E"/>
          <xsd:enumeration value="CF2RPLB03E"/>
          <xsd:enumeration value="CF2RPLB04E"/>
          <xsd:enumeration value="CF2RPLB05E"/>
          <xsd:enumeration value="CF2RPLB06E"/>
          <xsd:enumeration value="CF2RPLB20H"/>
-         <xsd:enumeration value="CF2RPLB21aH"/>
          <xsd:enumeration value="CF2RPLB21bH"/>
+         <xsd:enumeration value="CF2RPLB21H"/>
          <xsd:enumeration value="CF2RPLB22H"/>
          <xsd:enumeration value="CF2RPVB01E"/>
          <xsd:enumeration value="CF2RPVB02E"/>
@@ -2804,24 +2937,83 @@
          <xsd:enumeration value="LMCCLTO01E"/>
          <xsd:enumeration value="LMCCLTS01E"/>
          <xsd:enumeration value="LMCCSAB01E"/>
+         <xsd:enumeration value="LMCIELC01E"/>
+         <xsd:enumeration value="LMCIENV20aH"/>
+         <xsd:enumeration value="LMCIENV20bH"/>
+         <xsd:enumeration value="LMCIENV21H"/>
+         <xsd:enumeration value="LMCIENV22H"/>
+         <xsd:enumeration value="LMCILTG01E"/>
+         <xsd:enumeration value="LMCILTG02E"/>
+         <xsd:enumeration value="LMCIMCH01aE"/>
+         <xsd:enumeration value="LMCIMCH01bE"/>
+         <xsd:enumeration value="LMCIMCH01cE"/>
+         <xsd:enumeration value="LMCIMCH01dE"/>
          <xsd:enumeration value="LMCIMCH20aH"/>
          <xsd:enumeration value="LMCIMCH20bH"/>
          <xsd:enumeration value="LMCIMCH20cH"/>
          <xsd:enumeration value="LMCIMCH20dH"/>
          <xsd:enumeration value="LMCIMCH20eH"/>
          <xsd:enumeration value="LMCIMCH21H"/>
+         <xsd:enumeration value="LMCIMCH22aH"/>
+         <xsd:enumeration value="LMCIMCH22bH"/>
+         <xsd:enumeration value="LMCIMCH22cH"/>
+         <xsd:enumeration value="LMCIMCH22dH"/>
+         <xsd:enumeration value="LMCIMCH23aH"/>
+         <xsd:enumeration value="LMCIMCH23bH"/>
+         <xsd:enumeration value="LMCIMCH23cH"/>
+         <xsd:enumeration value="LMCIMCH23dH"/>
+         <xsd:enumeration value="LMCIMCH23eH"/>
+         <xsd:enumeration value="LMCIMCH23fH"/>
+         <xsd:enumeration value="LMCIMCH24aH"/>
+         <xsd:enumeration value="LMCIMCH24bH"/>
+         <xsd:enumeration value="LMCIMCH25aH"/>
+         <xsd:enumeration value="LMCIMCH25bH"/>
+         <xsd:enumeration value="LMCIMCH25cH"/>
+         <xsd:enumeration value="LMCIMCH25eH"/>
+         <xsd:enumeration value="LMCIMCH25fH"/>
          <xsd:enumeration value="LMCIMCH26H"/>
+         <xsd:enumeration value="LMCIMCH28H"/>
+         <xsd:enumeration value="LMCIMCH29H"/>
          <xsd:enumeration value="LMCIMCH32H"/>
          <xsd:enumeration value="LMCIMCH33H"/>
+         <xsd:enumeration value="LMCIPLB01E"/>
+         <xsd:enumeration value="LMCIPLB02E"/>
+         <xsd:enumeration value="LMCIPLB21H"/>
+         <xsd:enumeration value="LMCIPLB22H"/>
+         <xsd:enumeration value="LMCVENV20aH"/>
+         <xsd:enumeration value="LMCVENV20bH"/>
+         <xsd:enumeration value="LMCVENV21H"/>
+         <xsd:enumeration value="LMCVENV22H"/>
          <xsd:enumeration value="LMCVMCH20aH"/>
          <xsd:enumeration value="LMCVMCH20bH"/>
          <xsd:enumeration value="LMCVMCH20cH"/>
          <xsd:enumeration value="LMCVMCH20dH"/>
          <xsd:enumeration value="LMCVMCH20eH"/>
          <xsd:enumeration value="LMCVMCH21H"/>
+         <xsd:enumeration value="LMCVMCH22aH"/>
+         <xsd:enumeration value="LMCVMCH22bH"/>
+         <xsd:enumeration value="LMCVMCH22cH"/>
+         <xsd:enumeration value="LMCVMCH22dH"/>
+         <xsd:enumeration value="LMCVMCH23aH"/>
+         <xsd:enumeration value="LMCVMCH23bH"/>
+         <xsd:enumeration value="LMCVMCH23cH"/>
+         <xsd:enumeration value="LMCVMCH23dH"/>
+         <xsd:enumeration value="LMCVMCH23eH"/>
+         <xsd:enumeration value="LMCVMCH23fH"/>
+         <xsd:enumeration value="LMCVMCH24aH"/>
+         <xsd:enumeration value="LMCVMCH24bH"/>
+         <xsd:enumeration value="LMCVMCH25aH"/>
+         <xsd:enumeration value="LMCVMCH25bH"/>
+         <xsd:enumeration value="LMCVMCH25cH"/>
+         <xsd:enumeration value="LMCVMCH25dH"/>
+         <xsd:enumeration value="LMCVMCH25eH"/>
          <xsd:enumeration value="LMCVMCH26H"/>
+         <xsd:enumeration value="LMCVMCH28H"/>
+         <xsd:enumeration value="LMCVMCH29H"/>
          <xsd:enumeration value="LMCVMCH32H"/>
          <xsd:enumeration value="LMCVMCH33H"/>
+         <xsd:enumeration value="LMCVPLB21H"/>
+         <xsd:enumeration value="LMCVPLB22H"/>
          <xsd:enumeration value="NotApplicable"/>
          <xsd:enumeration value="NRCVMCH04aH"/>
          <xsd:enumeration value="NRCVMCH04cH"/>
@@ -2860,10 +3052,12 @@
             <dtyp:displayterm value="EZ Frame Worksheet">EZ Frame Worksheet</dtyp:displayterm>
             <dtyp:displayterm value="Fan Efficacy (Fan Watt Draw)">Fan Efficacy (Fan Watt Draw)</dtyp:displayterm>
             <dtyp:displayterm value="Fenestration Installation">Fenestration Installation</dtyp:displayterm>
+            <dtyp:displayterm value="HERS Verified  Individual  Dwelling Unit Hot Water System Distribution">HERS Verified  Individual  Dwelling Unit Hot Water System Distribution</dtyp:displayterm>
             <dtyp:displayterm value="HERS Verified Multifamily Central Hot Water System Distribution">HERS Verified Multifamily Central Hot Water System Distribution</dtyp:displayterm>
             <dtyp:displayterm value="HERS Verified Single Dwelling Unit Hot Water System Distribution">HERS Verified Single Dwelling Unit Hot Water System Distribution</dtyp:displayterm>
             <dtyp:displayterm value="Hydronic Heating System Worksheet">Hydronic Heating System Worksheet</dtyp:displayterm>
             <dtyp:displayterm value="Ice Storage Air Conditioning (ISAC) Units">Ice Storage Air Conditioning (ISAC) Units</dtyp:displayterm>
+            <dtyp:displayterm value="Individual Dwelling Unit Hot Water System Distribution">Individual Dwelling Unit Hot Water System Distribution</dtyp:displayterm>
             <dtyp:displayterm value="Indoor Air Quality and Mechanical Ventilation">Indoor Air Quality and Mechanical Ventilation</dtyp:displayterm>
             <dtyp:displayterm value="Indoor Lighting">Indoor Lighting</dtyp:displayterm>
             <dtyp:displayterm value="Insulation Installation">Insulation Installation</dtyp:displayterm>
@@ -2894,6 +3088,7 @@
             <dtyp:displayterm value="Residential Alterations">Residential Alterations</dtyp:displayterm>
             <dtyp:displayterm value="Residential Performance Compliance Method">Residential Performance Compliance Method</dtyp:displayterm>
             <dtyp:displayterm value="Return Duct Design and Air Filter Device Sizing According to Tables 150 B or C">Return Duct Design and Air Filter Device Sizing According to Tables 150 B or C</dtyp:displayterm>
+            <dtyp:displayterm value="Return Duct Design and Air Filter Device Sizing According to Tables 160.3-A or B">Return Duct Design and Air Filter Device Sizing According to Tables 160.3-A or B</dtyp:displayterm>
             <dtyp:displayterm value="Roofing-Ventilation-Radiant Barrier">Roofing-Ventilation-Radiant Barrier</dtyp:displayterm>
             <dtyp:displayterm value="Sign Lighting">Sign Lighting</dtyp:displayterm>
             <dtyp:displayterm value="Single Dwelling Unit Hot Water System Distribution">Single Dwelling Unit Hot Water System Distribution</dtyp:displayterm>
@@ -2932,10 +3127,12 @@
          <xsd:enumeration value="EZ Frame Worksheet"/>
          <xsd:enumeration value="Fan Efficacy (Fan Watt Draw)"/>
          <xsd:enumeration value="Fenestration Installation"/>
+         <xsd:enumeration value="HERS Verified  Individual  Dwelling Unit Hot Water System Distribution"/>
          <xsd:enumeration value="HERS Verified Multifamily Central Hot Water System Distribution"/>
          <xsd:enumeration value="HERS Verified Single Dwelling Unit Hot Water System Distribution"/>
          <xsd:enumeration value="Hydronic Heating System Worksheet"/>
          <xsd:enumeration value="Ice Storage Air Conditioning (ISAC) Units"/>
+         <xsd:enumeration value="Individual Dwelling Unit Hot Water System Distribution"/>
          <xsd:enumeration value="Indoor Air Quality and Mechanical Ventilation"/>
          <xsd:enumeration value="Indoor Lighting"/>
          <xsd:enumeration value="Insulation Installation"/>
@@ -2966,6 +3163,7 @@
          <xsd:enumeration value="Residential Alterations"/>
          <xsd:enumeration value="Residential Performance Compliance Method"/>
          <xsd:enumeration value="Return Duct Design and Air Filter Device Sizing According to Tables 150 B or C"/>
+         <xsd:enumeration value="Return Duct Design and Air Filter Device Sizing According to Tables 160.3-A or B"/>
          <xsd:enumeration value="Roofing-Ventilation-Radiant Barrier"/>
          <xsd:enumeration value="Sign Lighting"/>
          <xsd:enumeration value="Single Dwelling Unit Hot Water System Distribution"/>
@@ -3804,7 +4002,7 @@
             <dtyp:displayterm value="ClockNA">NA: Clock [d:gte/] 6 Ft Above Floor</dtyp:displayterm>
             <dtyp:displayterm value="DataReceptacleNA">NA: Data Equipment Receptacle</dtyp:displayterm>
             <dtyp:displayterm value="HealthNA">NA: Healthcare Facility</dtyp:displayterm>
-            <dtyp:displayterm value="NrccNA">NRCC NA</dtyp:displayterm>
+            <dtyp:displayterm value="NrccNA">NA</dtyp:displayterm>
             <dtyp:displayterm value="RefrigWaterNA">NA: Refrigerator/Water Dispenser Receptacle</dtyp:displayterm>
             <dtyp:displayterm value="UninterruptibleNA">NA: Uninterruptible Power Supply Receptacle</dtyp:displayterm>
          </xsd:appinfo>
@@ -4805,6 +5003,16 @@
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="DoesLMCV_Pass">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Complies: All specified verification protocol requirements on this document are met.</dtyp:displayterm>
+            <dtyp:displayterm value="false">Does not comply: One or more specified verification protocol requirements on this document are not met.</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="DoesLoadSeparationMonitoringComply">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -5358,6 +5566,9 @@
             <dtyp:displayterm>Minimum Duct R-value Exceptions</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="AllDuctsEntirelyInConditionedCredit">All Ducts Entirely in Conditioned Space Performance Credit</dtyp:displayterm>
+            <dtyp:displayterm value="DuctsInConditionedCredit">Ducts Located in Conditioned Space Performance Credit</dtyp:displayterm>
+            <dtyp:displayterm value="DuctSystemEntirelyConditionedNoReq">Duct Systems Located Entirely in Conditioned Space No Insulation Requirement</dtyp:displayterm>
             <dtyp:displayterm value="NoException">No Exception</dtyp:displayterm>
             <dtyp:displayterm value="RValueGTE4_2EntirelyInConditioned">Ducts [d:gte/]R4.2 Entirely in Conditioned Space</dtyp:displayterm>
             <dtyp:displayterm value="RValueLT6EntirelyInConditioned">Ducts uninsulated or less than R-6 entirely in Conditioned Space</dtyp:displayterm>
@@ -5366,6 +5577,9 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="AllDuctsEntirelyInConditionedCredit"/>
+         <xsd:enumeration value="DuctsInConditionedCredit"/>
+         <xsd:enumeration value="DuctSystemEntirelyConditionedNoReq"/>
          <xsd:enumeration value="NoException"/>
          <xsd:enumeration value="RValueGTE4_2EntirelyInConditioned"/>
          <xsd:enumeration value="RValueLT6EntirelyInConditioned"/>
@@ -5512,6 +5726,17 @@
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DuctSystemConditionedNoInsulationReq">
+      <xsd:annotation>
+         <xsd:documentation>MCH-01, MCH-21</xsd:documentation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">True</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not applicable</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="DuctSystemConditionedPerformanceCredit">
       <xsd:annotation>
          <xsd:documentation>MCH-01, MCH-21</xsd:documentation>
          <xsd:appinfo source="displayterm">
@@ -10111,6 +10336,10 @@
             <dtyp:displayterm value="SystemDoesNotComplyCF2RMCH28Required">System does not comply.  A registered CF2R-MCH-28 is required (do not allow this MCH-25 to be registered)</dtyp:displayterm>
             <dtyp:displayterm value="SystemDoesNotComplyCF3RMCH23Required">System does not comply. A registered CF3R-MCH-23 for this system is required  (do not allow this MCH-25 to be registered)</dtyp:displayterm>
             <dtyp:displayterm value="SystemDoesNotComplyCF3RMCH28Required">System does not comply.  A registered CF3R-MCH-28 is required (do not allow this MCH-25 to be registered)</dtyp:displayterm>
+            <dtyp:displayterm value="SystemDoesNotComplyLMCIMCH23Required">System does not comply. A registered LMCI-MCH-23 for this system is required  (do not allow this MCH-25 to be registered)</dtyp:displayterm>
+            <dtyp:displayterm value="SystemDoesNotComplyLMCIMCH28Required">System does not comply.  A registered LMCI-MCH-28 is required (do not allow this MCH-25 to be registered)</dtyp:displayterm>
+            <dtyp:displayterm value="SystemDoesNotComplyLMCVMCH23Required">System does not comply. A registered LMCV-MCH-23 for this system is required  (do not allow this MCH-25 to be registered)</dtyp:displayterm>
+            <dtyp:displayterm value="SystemDoesNotComplyLMCVMCH28Required">System does not comply.  A registered LMCV-MCH-28 is required (do not allow this MCH-25 to be registered)</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -10122,6 +10351,10 @@
          <xsd:enumeration value="SystemDoesNotComplyCF2RMCH28Required"/>
          <xsd:enumeration value="SystemDoesNotComplyCF3RMCH23Required"/>
          <xsd:enumeration value="SystemDoesNotComplyCF3RMCH28Required"/>
+         <xsd:enumeration value="SystemDoesNotComplyLMCIMCH23Required"/>
+         <xsd:enumeration value="SystemDoesNotComplyLMCIMCH28Required"/>
+         <xsd:enumeration value="SystemDoesNotComplyLMCVMCH23Required"/>
+         <xsd:enumeration value="SystemDoesNotComplyLMCVMCH28Required"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="MinimumContinuousAirflow">
@@ -12239,13 +12472,15 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="ReadyElecCooktop">Electric Cooktop Ready (For systems using gas or proprane cooktop)</dtyp:displayterm>
-            <dtyp:displayterm value="ReadyElecDryer">Electric Clothes Dryer Ready (For systems using gas or proprane plumbing)</dtyp:displayterm>
+            <dtyp:displayterm value="ReadyElecDryer">Electric Clothes Dryer Ready - Systems Serving Individual Dwelling Units (Clothes dryers with gas or proprane plumbing)</dtyp:displayterm>
+            <dtyp:displayterm value="ReadyElecDryerCommon">Electric Clothes Dryer Ready - Systems in Common Areas (Clothes dryers with gas or proprane plumbing)</dtyp:displayterm>
             <dtyp:displayterm value="ReadyHeatingHP">Heat Pump Space Heater Ready (For systems using gas or proprane furnace)</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="ReadyElecCooktop"/>
          <xsd:enumeration value="ReadyElecDryer"/>
+         <xsd:enumeration value="ReadyElecDryerCommon"/>
          <xsd:enumeration value="ReadyHeatingHP"/>
       </xsd:restriction>
    </xsd:simpleType>
