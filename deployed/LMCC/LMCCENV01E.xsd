@@ -164,6 +164,12 @@
                         </xsd:simpleType>
                      </xsd:element>
                   </xsd:choice>
+                  <xsd:element name="A09_RequestedMMB" type="comp:RequestedMMB" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This is a flag set by the agent that generates the report XML data to indicate that the user requested a Mandatory Measures Note Block which is placed after the DeclarationBlock in the XML output.</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="AFootnote1" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"/>
@@ -355,7 +361,7 @@ result = BlankGrayedOut stored in NotApplicableMessage; Else User input.  If che
                               <d:lte/>700 ft<d:sup>2</d:sup>
                            </xsd:documentation>
                            <xsd:documentation source="CalculationsAndRules">User input
-If user checks Addition is less than or equal to 700 ft2 in the UI, store resutl in this choice
+If user checks Addition is less than or equal to 700 ft2 in the UI, store result in this choice
 result = LTE700Ft2   
 End If</xsd:documentation>
                         </xsd:annotation>
@@ -371,7 +377,7 @@ End If</xsd:documentation>
                               <d:gt/>700 ft<d:sup>2</d:sup>
                            </xsd:documentation>
                            <xsd:documentation source="CalculationsAndRules">User input
-If user checks Addition is greater than 700 ft2 in the UI, store resutl in this choice
+If user checks Addition is greater than 700 ft2 in the UI, store result in this choice
 result = GT700Ft2
 End If
 If result == GT700Ft2 And A04_WholeBuildingOccupancy  == LowriseResidential
@@ -1631,7 +1637,7 @@ End If</xsd:documentation>
                                                       <xsd:documentation source="CalculationsAndRules">If Fframed04_Status == New result = BlankGrayedOut stored in NotApplicableMessage; 
  
 Else default result = NoExceptionApplies but user can select from list: 
-RecoverAboveDeckRvalue display term  Roof recovers with new R-10 insulation added abov deck
+RecoverAboveDeckRvalue display term  Roof recovers with new R-10 insulation added above deck
  
 MechanicalEquipmentOnRoof display term  Existing mechanical equipment located on the roof will not be disconnected and lifted, insulation added is the greater of R-10 or the maximum installed thickness that will allow the distance between the height of the roof membrane surface to the top of the base flashing to remain in accordance with the manufacturer's instructions.
  
@@ -3236,7 +3242,7 @@ Else If A03_ClimateZoneNumber == 3, 5 Or 6 result = 0.034;
 Else If A03_ClimateZoneNumber == 7 result = 0.039;
 End If 
  
-case ResidentialNR: 
+case ResidentialMF: 
 If A03_ClimateZoneNumber == 1, 2, 4 Or  InRange (8, 16) result = 0.028; 
 Else If A03_ClimateZoneNumber == 3, 5 Or 6 result = 0.034; 
 Else If A03_ClimateZoneNumber == 7 result = 0.039;
@@ -3246,15 +3252,14 @@ case RelocableSchoolBuildingAllZones:  result = 0.034;
 End Switch
  
 Else If FSIPS04_Status == ExistingAlteration And FSIPS13_ConstructionSpecificationMethod == UFactor  
-If FSIPS06_TopLevelOccupancy != ResidentialNR
+If FSIPS06_TopLevelOccupancy != ResidentialMF
 If A03_ClimateZoneNumber == InRange(1,5) Or InRange(9,16)  
 result = 0.037
 Else If A03_ClimateZoneNumber == 6, 7 Or 8
 result = 0.047
 End If;
  
-Else If FSIPS06_TopLevelOccupancy == ResidentialNR
- 
+Else If FSIPS06_TopLevelOccupancy == ResidentialMF 
 Else If A03_ClimateZoneNumber == 1, 2, 4 Or InRange(8,16)  result =  0.039;
 End If
 End if</xsd:documentation>
@@ -3265,14 +3270,14 @@ End if</xsd:documentation>
                                                       <xsd:documentation source="FieldText">Required Thermal Performance<d:sup>3</d:sup>
                                                       </xsd:documentation>
                                                       <xsd:documentation source="CalculationsAndRules">If FSIPS04_Status == ExistingAlteration And FSIPS13_ConstructionSpecificationMethod == RValue 
-If FSIPS06_TopLevelOccupancy != ResidentialNR
+If FSIPS06_TopLevelOccupancy != ResidentialMF
 If A03_ClimateZoneNumber == InRange(1,5) Or InRange(9,16)  
 result = R23
 Else If A03_ClimateZoneNumber == 6, 7 Or 8
 result = R17
 End If;
  
-Else If FSIPS06_TopLevelOccupancy == ResidentialNR
+Else If FSIPS06_TopLevelOccupancy == ResidentialMF
 If A03_ClimateZoneNumber == 1, 2, 4 Or InRange(8,16)  
 result =  R14;
 End If
@@ -3284,9 +3289,11 @@ End If</xsd:documentation>
                                                    <xsd:annotation>
                                                       <xsd:documentation source="FieldText">Required Thermal Performance<d:sup>3</d:sup>
                                                       </xsd:documentation>
-                                                      <xsd:documentation source="CalculationsAndRules">If FSIPS04_Status == ExistingAlteration And  FSIPS05_RoofInsulationException  != NoExceptionApplies 
-Or FSIPS06_TopLevelOccupancy == ResidentialNR And A03_ClimateZoneNumber == 3, 5, 6 Or 7 
+                                                      <xsd:documentation source="CalculationsAndRules">If FSIPS04_Status == ExistingAlteration 
+If FSIPS05_RoofInsulationException  != NoExceptionApplies 
+Or FSIPS06_TopLevelOccupancy == ResidentialMF And A03_ClimateZoneNumber == 3, 5, 6 Or 7 
 result = BlankGrayedOut stored in NotApplicableMessage
+End If
 End If</xsd:documentation>
                                                    </xsd:annotation>
                                                    <xsd:simpleType>
@@ -4586,7 +4593,7 @@ Else If A03_ClimateZoneNumber == 3, 5 Or 6 result = 0.034;
 Else If A03_ClimateZoneNumber == 7 result = 0.039;
 End If 
  
-case ResidentialNR: 
+case ResidentialMF: 
 If A03_ClimateZoneNumber == 1, 2, 4 Or  InRange (8, 16) result = 0.028; 
 Else If A03_ClimateZoneNumber == 3, 5 Or 6 result = 0.034; 
 Else If A03_ClimateZoneNumber == 7 result = 0.039;
@@ -4596,11 +4603,11 @@ case RelocableSchoolBuildingAllZones:  result = 0.034;
 End Switch
  
 Else If Fmetalp04_Status == ExistingAlteration  
-If Fmetalp06_TopLevelOccupancy != ResidentialNR
+If Fmetalp06_TopLevelOccupancy != ResidentialMF
  If A03_ClimateZoneNumber == InRange(1,5) Or InRange(9,16)  result =  0.037;
 Else If A03_ClimateZoneNumber == InRange(6,8) result = 0.047; 
 End If
-Else If Fmetalp06_TopLevelOccupancy == ResidentialNR
+Else If Fmetalp06_TopLevelOccupancy == ResidentialMF
 If A03_ClimateZoneNumber == 1, 2, 4 Or InRange(8,16)  result = 0.039
 End If
  
@@ -4613,7 +4620,7 @@ End if</xsd:documentation>
                                                       <xsd:documentation source="FieldText">Required Thermal Performance</xsd:documentation>
                                                       <xsd:documentation source="CalculationsAndRules">If Fmetalp04_Status == ExistingAlteration 
 If Fmetalp05_RoofInsulationException  != NoExceptionApplies  Or 
-If Fmetalp06_TopLevelOccupancy == ResidentialNR And A03_ClimateZoneNumber == 3, 5, 6 Or 7
+If Fmetalp06_TopLevelOccupancy == ResidentialMF And A03_ClimateZoneNumber == 3, 5, 6 Or 7
  result = BlankGrayedOut
 End If</xsd:documentation>
                                                    </xsd:annotation>
@@ -5067,11 +5074,11 @@ Else result = UFactor and cannot be changed by user</xsd:documentation>
  
 Else If Fmetalb04_Status == ExistingAlteration And Fmetalb12_ConstructionSpecificationMethod == UFactor 
  
-If Fmetalb06_TopLevelOccupancy != ResidentialNR 
+If Fmetalb06_TopLevelOccupancy != ResidentialMF 
 If A03_ClimateZoneNumber == InRange(1,5) Or InRange(9,16)  result =  0.037;
 Else If A03_ClimateZoneNumber == InRange(6,8) result = 0.047; 
 End If
-Else If Fmetalb06_TopLevelOccupancy == ResidentialNR
+Else If Fmetalb06_TopLevelOccupancy == ResidentialMF
 If A03_ClimateZoneNumber == 1, 2, 4 Or InRange (8, 16) result = 0.039
 End If;
  
@@ -5083,11 +5090,11 @@ End if</xsd:documentation>
                                                       <xsd:documentation source="FieldText">Required Thermal Performance<d:sup>3</d:sup>
                                                       </xsd:documentation>
                                                       <xsd:documentation source="CalculationsAndRules">If Fmetalb04_Status == ExistingAlteration And Fmetalb12_ConstructionSpecificationMethod == RValue 
-If Fmetalb06_TopLevelOccupancy != ResidentialNR
+If Fmetalb06_TopLevelOccupancy != ResidentialMF
 If A03_ClimateZoneNumber == InRange(1,5) Or InRange(9,16)  result = R23;
 Else If A03_ClimateZoneNumber == InRange(6,8) result = R17; 
 End If
-Else If Fmetalb06_TopLevelOccupancy == ResidentialNR
+Else If Fmetalb06_TopLevelOccupancy == ResidentialMF
 If A03_ClimateZoneNumber == 1, 2, 4 Or InRange(8, 16)  result = R14
 End If;
  
@@ -5100,7 +5107,7 @@ End If</xsd:documentation>
                                                       </xsd:documentation>
                                                       <xsd:documentation source="CalculationsAndRules">If Fmetalb04_Status == ExistingAlteration 
 If Fmetalb05_RoofInsulationException  != NoExceptionApplies Or 
-If Fmetalb06_TopLevelOccupancy == ResidentialNR And A03_ClimateZoneNumber == 3, 5, 6 Or 7
+If Fmetalb06_TopLevelOccupancy == ResidentialMF And A03_ClimateZoneNumber == 3, 5, 6 Or 7
 result = BlankGrayedOut
 End If
 End If</xsd:documentation>
@@ -6088,7 +6095,7 @@ End If</xsd:documentation>
                                                 </xsd:annotation>
                                                 <xsd:complexType>
                                                    <xsd:choice>
-                                                      <xsd:element name="FframedMF16_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                                      <xsd:element name="FframedMF16_NotApplicableMessage">
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText">U-factor per Design</xsd:documentation>
                                                             <xsd:documentation source="CalculationsAndRules">If FframedMF04_RoofSlope IsPresent Then
@@ -6097,6 +6104,11 @@ result = BlankGrayedOut
 End If
 End If</xsd:documentation>
                                                          </xsd:annotation>
+                                                         <xsd:simpleType>
+                                                            <xsd:restriction base="comp:NotApplicableMessage">
+                                                               <xsd:enumeration value="BlankGrayedOut"/>
+                                                            </xsd:restriction>
+                                                         </xsd:simpleType>
                                                       </xsd:element>
                                                       <xsd:element name="FframedMF16JA4">
                                                          <xsd:annotation>
@@ -12412,7 +12424,7 @@ End If</xsd:documentation>
                                                    </xsd:restriction>
                                                 </xsd:simpleType>
                                              </xsd:element>
-                                             <xsd:element name="Hmetalp03c_StructureFireRating" type="env:StructureFireRating">
+                                             <xsd:element name="Hmetalp04c_StructureFireRating" type="env:StructureFireRating">
                                                 <xsd:annotation>
                                                    <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">If Hmetalp03a_TopLevelOccupancy == ResidentialMF
@@ -13395,7 +13407,7 @@ End If</xsd:documentation>
                                                    </xsd:restriction>
                                                 </xsd:simpleType>
                                              </xsd:element>
-                                             <xsd:element name="Hmetalp03b_StructureFireRating" type="env:StructureFireRating">
+                                             <xsd:element name="HICF03b_StructureFireRating" type="env:StructureFireRating">
                                                 <xsd:annotation>
                                                    <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                                    <xsd:documentation source="CalculationsAndRules">If HICF03_TopLevelOccupancy == ResidentialMF
@@ -14046,7 +14058,7 @@ End If
 As all cases have the same value,  0.440 only need the first instance for result and there in no need to average. If the values in HCalc2UF03_UfactorMandatory were different would need the average of all of them as the result.</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="HCalc2UF03Light_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                       <xsd:element name="HCalc2UF03Light_NotApplicableMessage">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Mandatory U-factor Required</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">For all row with HCalc2UF01a_WallMass == Light 
@@ -14054,6 +14066,11 @@ If all rows have HCalc2UF03_NotApplicableMessage present (NO rows have HCalc2UF0
 result = HCalc2UF03_NotApplicableMessage  
 End If</xsd:documentation>
                                           </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="comp:NotApplicableMessage">
+                                                <xsd:enumeration value="NotApplicable"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:element name="HCalc2UF04to05Label" minOccurs="0">
@@ -14130,7 +14147,7 @@ End If
 As all cases have the same value,  0.440 only need the first instance for result and there in no need to average. If the values in HCalc2UF03_UfactorMandatory were different would need the average of all of them as the result.</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
-                                       <xsd:element name="HCalc2UF03Heavy_NotApplicableMessage" type="comp:NotApplicableMessage">
+                                       <xsd:element name="HCalc2UF03Heavy_NotApplicableMessage">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Mandatory U-factor Required</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">For all row with HCalc2UF01a_WallMass == Heavy 
@@ -14138,6 +14155,11 @@ If all rows have HCalc2UF03_NotApplicableMessage present (NO rows have HCalc2UF0
 result = HCalc2UF03_NotApplicableMessage  
 End If</xsd:documentation>
                                           </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="comp:NotApplicableMessage">
+                                                <xsd:enumeration value="NotApplicable"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:element name="HCalc2UF04to05Label" minOccurs="0">
@@ -18343,7 +18365,6 @@ End If</xsd:documentation>
                                                             <xsd:simpleType>
                                                                <xsd:restriction base="comp:NotApplicableMessage">
                                                                   <xsd:enumeration value="BlankGrayedOut"/>
-                                                                  <xsd:enumeration value="NotApplicable"/>
                                                                </xsd:restriction>
                                                             </xsd:simpleType>
                                                          </xsd:element>
@@ -18450,12 +18471,12 @@ result = BlankGrayedOut
 Else
 If Kvertperf22_FenestrationFramingNR ==  MetalFramingWithThermalBreak: 
 And  Kvertperf23_FenestrationPanes == SinglePane  Or GlassBlock
-result = NotApplicable stored in NotApplicableMessage
+result = NotApplicable display term N/A stored in NotApplicableMessage
 Else
 If Kvertperf22_FenestrationFramingNR ==  MetalFraming Or NonMetalFraming 
 And  If Kvertperf24_GlazingTint == TintedGlazing
 And If Kvertperf23_FenestrationPanes == GlassBlock
-result = NotApplicable stored in NotApplicableMessage
+result = NotApplicable display term N/A stored in NotApplicableMessage
 End If</xsd:documentation>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>

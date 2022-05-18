@@ -1644,6 +1644,26 @@
       <xsd:restriction base="xsd:token">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="DwellingUnitWaterHeater">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="HeatPumpWaterHeater240V">A single 240 volt heat pump water heater serving the dwelling unit.  (New Construction and Additions Only)</dtyp:displayterm>
+            <dtyp:displayterm value="HeatPumpConditionedInsulated">A single heat pump water heater with storage tank located in the garage or conditioned space and be placed on an incompressible, rigid insulated surface with minimum R-10. The water heater shall be installed with a communication interface that meets either the requirements of 110.12(a) or has a ANSI/CTA-2045-B communication port (Alterations Only)</dtyp:displayterm>
+            <dtyp:displayterm value="HeatPumpNEEA">A single heat pump water heater that meets the requirements of NEEA Advanced Water Heater Specification Tier 3 or higher.</dtyp:displayterm>
+            <dtyp:displayterm value="InstantaneousConsumerNoTank">Gas/propane instantaneous water heater with input rating [d:lte/] 200,000 BTUH and no storage tank. Note: Can not comply using the prescriptive path with a storage tank per [d:t24refnolink/]170.2(d)1C (New Construction and Additions Only)</dtyp:displayterm>
+            <dtyp:displayterm value="StorageConsumerReplacement">Replacement or altered gas or propane water heater  (Alterations Only)</dtyp:displayterm>
+            <dtyp:displayterm value="WaterHeaterConsumerElectric">If the existing water heater is an electric resistance water heater, a consumer electric water heater (Alterations Only)</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="HeatPumpWaterHeater240V"/>
+         <xsd:enumeration value="HeatPumpConditionedInsulated"/>
+         <xsd:enumeration value="HeatPumpNEEA"/>
+         <xsd:enumeration value="InstantaneousConsumerNoTank"/>
+         <xsd:enumeration value="StorageConsumerReplacement"/>
+         <xsd:enumeration value="WaterHeaterConsumerElectric"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="DWHR_Type">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -1737,6 +1757,13 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="EfficiencyCapWeightedAvg">
+      <xsd:annotation>
+         <xsd:documentation>  Units: percent</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="EfficiencyCEER">
@@ -1902,7 +1929,6 @@
    <xsd:simpleType name="EfficiencyMinimumValueAFUE">
       <xsd:annotation>
          <xsd:documentation>  Units: none</xsd:documentation>
-         <xsd:documentation source="propertyrules">Value is stored as the fraction expressed as decimal and for display the value is multiplied by 100 and has % sign e.g. .80 stored value and 80% display value</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Efficiency Minimum AFUE Value</dtyp:displayterm>
          </xsd:appinfo>
@@ -2017,6 +2043,7 @@
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AFUE">AFUE</dtyp:displayterm>
+            <dtyp:displayterm value="CapWeightedAvg">Capacity Weighted Average Efficiency</dtyp:displayterm>
             <dtyp:displayterm value="CEER">CEER</dtyp:displayterm>
             <dtyp:displayterm value="COP">COP</dtyp:displayterm>
             <dtyp:displayterm value="EER">EER</dtyp:displayterm>
@@ -2038,6 +2065,7 @@
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="AFUE"/>
+         <xsd:enumeration value="CapWeightedAvg"/>
          <xsd:enumeration value="CEER"/>
          <xsd:enumeration value="COP"/>
          <xsd:enumeration value="EER"/>
@@ -2274,6 +2302,25 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:ObjectNamePermissive">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="FirstHourRatingRange">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>First Hour Rating (FHR)</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="GTE0LT18">0[d:lte/] FHR [d:lt/]18</dtyp:displayterm>
+            <dtyp:displayterm value="GTE18LT51">18[d:lte/] FHR [d:lt/]51</dtyp:displayterm>
+            <dtyp:displayterm value="GTE51LT75">51[d:lte/] FHR [d:lt/]75</dtyp:displayterm>
+            <dtyp:displayterm value="GTE75">FHR [d:gte/]75</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="GTE0LT18"/>
+         <xsd:enumeration value="GTE18LT51"/>
+         <xsd:enumeration value="GTE51LT75"/>
+         <xsd:enumeration value="GTE75"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="FluidSegmentName">
@@ -4097,6 +4144,16 @@
       <xsd:restriction base="dtyp:String50Char">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="IsEfficiencyCapWeightedAvg">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="IsSystemSDHV">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -4208,6 +4265,16 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal4Places">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="MinimumRequiredUEF">
+      <xsd:annotation>
+         <xsd:documentation>  Units: none</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Minimum Required Uniform Energy Factor (UEF)</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="NaturalVentilationHeight">
@@ -4446,6 +4513,28 @@
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="PipeFluidTempRange">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="105To140">105-140</dtyp:displayterm>
+            <dtyp:displayterm value="141To200">141-200</dtyp:displayterm>
+            <dtyp:displayterm value="201To250">201-250</dtyp:displayterm>
+            <dtyp:displayterm value="251To350">251-350</dtyp:displayterm>
+            <dtyp:displayterm value="40To60">40-60</dtyp:displayterm>
+            <dtyp:displayterm value="GT350">Above 350</dtyp:displayterm>
+            <dtyp:displayterm value="LT40">Below 40</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="105To140"/>
+         <xsd:enumeration value="141To200"/>
+         <xsd:enumeration value="201To250"/>
+         <xsd:enumeration value="251To350"/>
+         <xsd:enumeration value="40To60"/>
+         <xsd:enumeration value="GT350"/>
+         <xsd:enumeration value="LT40"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="PipeHeatLoss">
       <xsd:annotation>
          <xsd:documentation>Heat loss factor for pipes in hydronic heating systems  Units: kBtu per year</xsd:documentation>
@@ -4464,6 +4553,29 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PipeInsInchRvalueMin">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="1_0InRvalue7_7">1.0 in or R-7.7</dtyp:displayterm>
+            <dtyp:displayterm value="1_5InRvalue11_0">1.5 in or R-11</dtyp:displayterm>
+            <dtyp:displayterm value="1_5InRvalue12_5">1.5 in or R-12.5</dtyp:displayterm>
+            <dtyp:displayterm value="2_0InRvalue16_0">2.0 in or R-16</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="1_0InRvalue7_7"/>
+         <xsd:enumeration value="1_5InRvalue11_0"/>
+         <xsd:enumeration value="1_5InRvalue12_5"/>
+         <xsd:enumeration value="2_0InRvalue16_0"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PipeInsMeanRatingTemp">
+      <xsd:annotation>
+         <xsd:documentation>  Units: F</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:IntegerNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="PipeInsulationRValue">
@@ -4510,13 +4622,25 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="0_75In">0.75 in</dtyp:displayterm>
             <dtyp:displayterm value="1_0In">1.0 in</dtyp:displayterm>
+            <dtyp:displayterm value="1_0ToLT1_5">1 to [d:lt/]1.5</dtyp:displayterm>
             <dtyp:displayterm value="1_5In">1.5 in</dtyp:displayterm>
+            <dtyp:displayterm value="1_5ToLT4_0">1.5 to [d:lt/]4</dtyp:displayterm>
+            <dtyp:displayterm value="1_5ToLT4_0mf">1.5 to [d:lt/]4 Multifamily &amp; Hotel/Motel</dtyp:displayterm>
+            <dtyp:displayterm value="4_0ToLT8_0">4 to [d:lt/]8</dtyp:displayterm>
+            <dtyp:displayterm value="GTE8_0">8+</dtyp:displayterm>
+            <dtyp:displayterm value="LT1_0">[d:lt/]1</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="0_75In"/>
          <xsd:enumeration value="1_0In"/>
+         <xsd:enumeration value="1_0ToLT1_5"/>
          <xsd:enumeration value="1_5In"/>
+         <xsd:enumeration value="1_5ToLT4_0"/>
+         <xsd:enumeration value="1_5ToLT4_0mf"/>
+         <xsd:enumeration value="4_0ToLT8_0"/>
+         <xsd:enumeration value="GTE8_0"/>
+         <xsd:enumeration value="LT1_0"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="PipesTotalHeatLoss">
@@ -4527,6 +4651,30 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PipeThermalConductivity">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="0_20To0_26">0.20 - 0.26</dtyp:displayterm>
+            <dtyp:displayterm value="0_21To0_27">0.21 - 0.27</dtyp:displayterm>
+            <dtyp:displayterm value="0_22To0_28">0.22 - 0.28</dtyp:displayterm>
+            <dtyp:displayterm value="0_25To0_29">0.25 - 0.29</dtyp:displayterm>
+            <dtyp:displayterm value="0_27To0_30">0.27 - 0.30</dtyp:displayterm>
+            <dtyp:displayterm value="0_29To0_32">0.29 - 0.32</dtyp:displayterm>
+            <dtyp:displayterm value="0_32To0_34">0.32 - 0.34</dtyp:displayterm>
+            <dtyp:displayterm value="OtherConductivity">Other</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="0_20To0_26"/>
+         <xsd:enumeration value="0_21To0_27"/>
+         <xsd:enumeration value="0_22To0_28"/>
+         <xsd:enumeration value="0_25To0_29"/>
+         <xsd:enumeration value="0_27To0_30"/>
+         <xsd:enumeration value="0_29To0_32"/>
+         <xsd:enumeration value="0_32To0_34"/>
+         <xsd:enumeration value="OtherConductivity"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="PoolFilterSurfaceArea">
@@ -6319,6 +6467,13 @@
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ThermalEfficiencyMinimum">
+      <xsd:annotation>
+         <xsd:documentation>  Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ThermalZoneDescription">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -6326,10 +6481,6 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:String50Char">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="ThermalZoneDwellingUnitName">
-      <xsd:restriction base="dtyp:ObjectNamePermissive">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ThermalZoneFloorArea">
@@ -6348,10 +6499,6 @@
             <dtyp:displayterm>Thermal Zone Name</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:ObjectNamePermissive">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="ThermalZoneResSpaceConditioningName">
       <xsd:restriction base="dtyp:ObjectNamePermissive">
       </xsd:restriction>
    </xsd:simpleType>
@@ -6804,6 +6951,16 @@
       <xsd:restriction base="dtyp:Decimal3Places">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="WaterHeaterCapacityRated">
+      <xsd:annotation>
+         <xsd:documentation>  Units: Btu per h</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Water Heater Capacity Rated</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="WaterHeaterCount">
       <xsd:annotation>
          <xsd:documentation>The number of WaterHeaters in the water heating system that are identical.  Because all the features are the same in each unit, the Count can be used as a multiplier for calculating values like capacity of all the units  Units: none</xsd:documentation>
@@ -6842,6 +6999,25 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="WaterHeaterFlow">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Max GPM</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="GTE0LT1_7">0[d:lte/] GPM [d:lt/]1.7</dtyp:displayterm>
+            <dtyp:displayterm value="GTE1_7LT2_8">1.7[d:lte/] GPM [d:lt/]2.8</dtyp:displayterm>
+            <dtyp:displayterm value="GTE2_8LT4">2.8[d:lte/] GPM [d:lt/] 4.0</dtyp:displayterm>
+            <dtyp:displayterm value="GTE4">GPM [d:gte/] 4.0</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="GTE0LT1_7"/>
+         <xsd:enumeration value="GTE1_7LT2_8"/>
+         <xsd:enumeration value="GTE2_8LT4"/>
+         <xsd:enumeration value="GTE4"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="WaterHeaterFlowRate">
@@ -6956,6 +7132,16 @@
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="WaterHeaterTankVolume">
+      <xsd:annotation>
+         <xsd:documentation>  Units: gal</xsd:documentation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Water Heater Tank Volume</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="WaterHeaterTotalSystemCount">
       <xsd:annotation>
          <xsd:documentation>The number of WaterHeaters in the water heating system that are identical.  Because all the features are the same in each unit, the Count can be used as a multiplier for calculating values like capacity of all the units  Units: none</xsd:documentation>
@@ -6964,6 +7150,77 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:IntegerNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="WaterHeaterType">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="BoilerCommercialGTE1MMBtu">Commercial Package Gas Hot Water Supply Boilers ([d:gte/] 1MM Btu/h)</dtyp:displayterm>
+            <dtyp:displayterm value="BoilerResDutyCommercial">Residential-duty Gas Hot Water Supply Boilers ([d:lt/]300k Btu/h)</dtyp:displayterm>
+            <dtyp:displayterm value="BoilerWaterHeater">Commercial Gas Hot Water Supply Boilers</dtyp:displayterm>
+            <dtyp:displayterm value="CentralHeatPumpWH">Central Heat Pump Water Heater</dtyp:displayterm>
+            <dtyp:displayterm value="BoilerCommercialLT1MMBtu">Commercial Package Gas Hot Water Supply Boilers (300k - [d:lt/]1MMBtu/h)</dtyp:displayterm>
+            <dtyp:displayterm value="InstantaneousCommercial">Commercial Gas Instantaneous Water Heater</dtyp:displayterm>
+            <dtyp:displayterm value="InstantaneousConsumer">Consumer Rated Gas-Fired Instantaneous (50,000-200,000 BTUH)</dtyp:displayterm>
+            <dtyp:displayterm value="InstantaneousConsumerElectric">Consumer Rated Electric Instantaneous ([d:lte/]12kW)</dtyp:displayterm>
+            <dtyp:displayterm value="InstantaneousResDutyCommercial">Residential-Duty Commercial Electric Instantaneous (12-58.6kW)</dtyp:displayterm>
+            <dtyp:displayterm value="StorageCommercial">Commercial Gas Storage Water Heater</dtyp:displayterm>
+            <dtyp:displayterm value="StorageCommercialElectric">Commercial Electric Storage Water Heater</dtyp:displayterm>
+            <dtyp:displayterm value="StorageConsumer">Consumer Rated Gas-Fired Storage ([d:lte/] 75,000 BTUH)</dtyp:displayterm>
+            <dtyp:displayterm value="StorageConsumerElectric">Consumer Rated Electric Storage</dtyp:displayterm>
+            <dtyp:displayterm value="StorageResDutyCommercial">Residential-Duty Commercial Gas-Fired Storage (75,000-105,000 BTUH)</dtyp:displayterm>
+            <dtyp:displayterm value="TableTopElectric">Consumer Rated Electric Tabletop Water Heater</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="BoilerCommercialGTE1MMBtu"/>
+         <xsd:enumeration value="BoilerResDutyCommercial"/>
+         <xsd:enumeration value="BoilerWaterHeater"/>
+         <xsd:enumeration value="CentralHeatPumpWH"/>
+         <xsd:enumeration value="BoilerCommercialLT1MMBtu"/>
+         <xsd:enumeration value="InstantaneousCommercial"/>
+         <xsd:enumeration value="InstantaneousConsumer"/>
+         <xsd:enumeration value="InstantaneousConsumerElectric"/>
+         <xsd:enumeration value="InstantaneousResDutyCommercial"/>
+         <xsd:enumeration value="StorageCommercial"/>
+         <xsd:enumeration value="StorageCommercialElectric"/>
+         <xsd:enumeration value="StorageConsumer"/>
+         <xsd:enumeration value="StorageConsumerElectric"/>
+         <xsd:enumeration value="StorageResDutyCommercial"/>
+         <xsd:enumeration value="TableTopElectric"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="WaterHeaterVolume">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Water Heater Tank Volume</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="31To40Gal">31-40</dtyp:displayterm>
+            <dtyp:displayterm value="41To50Gal">41-50</dtyp:displayterm>
+            <dtyp:displayterm value="51To55Gal">51-55</dtyp:displayterm>
+            <dtyp:displayterm value="51To60Gal">51-60</dtyp:displayterm>
+            <dtyp:displayterm value="56To60Gal">56-60</dtyp:displayterm>
+            <dtyp:displayterm value="61To75Gal">61-75</dtyp:displayterm>
+            <dtyp:displayterm value="GT30Gal">[d:gt/]30</dtyp:displayterm>
+            <dtyp:displayterm value="GT75Gal">[d:gt/]75</dtyp:displayterm>
+            <dtyp:displayterm value="LTE2Gal">[d:lte/]2</dtyp:displayterm>
+            <dtyp:displayterm value="LTE30Gal">[d:lte/]30</dtyp:displayterm>
+            <dtyp:displayterm value="LTE50Gal">[d:lte/]50</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="31To40Gal"/>
+         <xsd:enumeration value="41To50Gal"/>
+         <xsd:enumeration value="51To55Gal"/>
+         <xsd:enumeration value="51To60Gal"/>
+         <xsd:enumeration value="56To60Gal"/>
+         <xsd:enumeration value="61To75Gal"/>
+         <xsd:enumeration value="GT30Gal"/>
+         <xsd:enumeration value="GT75Gal"/>
+         <xsd:enumeration value="LTE2Gal"/>
+         <xsd:enumeration value="LTE30Gal"/>
+         <xsd:enumeration value="LTE50Gal"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="WaterHeatingBrakeHorsepower">
@@ -7009,6 +7266,26 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal3PlacesNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="WaterHeatingSystem">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="CentralDwellingUnits">Central System (serving 2 or more dwelling units)</dtyp:displayterm>
+            <dtyp:displayterm value="CentralNonresSpaces">Central System (serving nonresidential spaces)</dtyp:displayterm>
+            <dtyp:displayterm value="CombinedHydronic">Combined Hydronic System</dtyp:displayterm>
+            <dtyp:displayterm value="IndividualDwellingUnits">Individual Dwelling Units System(s)</dtyp:displayterm>
+            <dtyp:displayterm value="IndividualNonresSpaces">Individual System (serving nonresidential spaces)</dtyp:displayterm>
+            <dtyp:displayterm value="SolarThermalSystem">Dwelling Unit Solar Thermal System</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="CentralDwellingUnits"/>
+         <xsd:enumeration value="CentralNonresSpaces"/>
+         <xsd:enumeration value="CombinedHydronic"/>
+         <xsd:enumeration value="IndividualDwellingUnits"/>
+         <xsd:enumeration value="IndividualNonresSpaces"/>
+         <xsd:enumeration value="SolarThermalSystem"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="WaterHeatingSystemName">

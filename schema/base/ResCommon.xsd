@@ -2160,10 +2160,6 @@ receives the most illumination.  Units: ft2</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Solar Heat Gain Coefficient</dtyp:displayterm>
          </xsd:appinfo>
-         <xsd:appinfo source="CBECCresXML">
-            <dtyp:CBECCresXMLterm>AltSHGC; WinSHGC</dtyp:CBECCresXMLterm>
-            <dtyp:termConditions>{{CONDITIONS}}</dtyp:termConditions>
-         </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal4PlacesNonnegative">
       </xsd:restriction>
@@ -2442,10 +2438,6 @@ receives the most illumination.  Units: ft2</xsd:documentation>
    <xsd:simpleType name="SolarHeatGainCoefficientNFRC">
       <xsd:annotation>
          <xsd:documentation>The solar heat gain coefficient given by the NFRC and displayed on a label on the fenestration product  Units: none</xsd:documentation>
-         <xsd:appinfo source="CBECCresXML">
-            <dtyp:CBECCresXMLterm>NFRCSHGC; exNFRCSHGC</dtyp:CBECCresXMLterm>
-            <dtyp:termConditions>{{CONDITIONS}}</dtyp:termConditions>
-         </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
@@ -2916,6 +2908,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm value="RelocableSchoolBuildingAllZones">Relocable Public School Building for use in all climate zones Occupancy: E</dtyp:displayterm>
             <dtyp:displayterm value="ResidentialMF">Multifamily</dtyp:displayterm>
             <dtyp:displayterm value="ResidentialNR">High-rise Res/ Hotel/ Motel</dtyp:displayterm>
+            <dtyp:displayterm value="StateBuilding">State Building</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -2929,6 +2922,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          <xsd:enumeration value="RelocableSchoolBuildingAllZones"/>
          <xsd:enumeration value="ResidentialMF"/>
          <xsd:enumeration value="ResidentialNR"/>
+         <xsd:enumeration value="StateBuilding"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="TotalConditionedFloorArea">
@@ -3642,6 +3636,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm value="RetailBuilding">Retail</dtyp:displayterm>
             <dtyp:displayterm value="SchoolBuilding">School or Classroom</dtyp:displayterm>
             <dtyp:displayterm value="SportsArenaBuilding">Sports Arena</dtyp:displayterm>
+            <dtyp:displayterm value="StateBuilding">State Building</dtyp:displayterm>
             <dtyp:displayterm value="SupportArea">Support Areas</dtyp:displayterm>
             <dtyp:displayterm value="TheaterBuilding">Theater</dtyp:displayterm>
             <dtyp:displayterm value="UnleasedTenantSpace">Unleased Tenant Space</dtyp:displayterm>
@@ -3681,6 +3676,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          <xsd:enumeration value="RetailBuilding"/>
          <xsd:enumeration value="SchoolBuilding"/>
          <xsd:enumeration value="SportsArenaBuilding"/>
+         <xsd:enumeration value="StateBuilding"/>
          <xsd:enumeration value="SupportArea"/>
          <xsd:enumeration value="TheaterBuilding"/>
          <xsd:enumeration value="UnleasedTenantSpace"/>

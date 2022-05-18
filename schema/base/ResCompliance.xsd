@@ -474,6 +474,20 @@
          <xsd:enumeration value="SinglePointTestManualMeter"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="AirReleaseValve">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="AllExtraPowerAllowedForArea">
       <xsd:annotation>
          <xsd:documentation>  Units: W</xsd:documentation>
@@ -1101,6 +1115,20 @@
          <xsd:enumeration value="TunnelsNA"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="BackflowCheckValve">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="BackLightRatingBUG">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -1223,6 +1251,20 @@
       <xsd:restriction base="dtyp:String50Char">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="BoilerAirShutOffReq">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="BoilerFanControl">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -1237,6 +1279,20 @@
          <xsd:enumeration value="FanVarSpeedDrive"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="BoilerFanMotorReq">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="BoilerStackControl">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -1245,6 +1301,20 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="BoilerStackGasReq">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="BuildingAirLeakageTestMethod">
@@ -1526,6 +1596,34 @@
          <xsd:documentation>  Units: none</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="CenralGasWHRequirement">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="CenralHPWHRequirement">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="CentralDHW_DistributionVerificationRequired">
@@ -1835,6 +1933,20 @@
          <xsd:enumeration value="VoltageDropLT5Percent"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="CirculatingPumpControls">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="City">
       <xsd:annotation>
          <xsd:documentation>This is a string representing a city in an address.</xsd:documentation>
@@ -1893,6 +2005,20 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ColdWaterCheckValve">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="CombustionAirShutOff">
@@ -3120,6 +3246,7 @@
             <dtyp:displayterm value="Building Air Leakage Diagnostic Test - Building Enclosures and Dwelling Unit Enclosures">Building Air Leakage Diagnostic Test - Building Enclosures and Dwelling Unit Enclosures</dtyp:displayterm>
             <dtyp:displayterm value="Building Air Leakage Diagnostic Test Worksheet - Building Enclosures and Dwelling Unit Enclosures">Building Air Leakage Diagnostic Test Worksheet - Building Enclosures and Dwelling Unit Enclosures</dtyp:displayterm>
             <dtyp:displayterm value="Central Fan Ventilation Cooling Systems (VCS)">Central Fan Ventilation Cooling Systems (VCS)</dtyp:displayterm>
+            <dtyp:displayterm value="Domestic Water Heating System">Domestic Water Heating System</dtyp:displayterm>
             <dtyp:displayterm value="Duct Leakage Diagnostic Test">Duct Leakage Diagnostic Test</dtyp:displayterm>
             <dtyp:displayterm value="Duct Location">Duct Location</dtyp:displayterm>
             <dtyp:displayterm value="Duct Surface Area Reduction, R-Value, Buried Ducts Compliance Credit">Duct Surface Area Reduction, R-Value, Buried Ducts Compliance Credit</dtyp:displayterm>
@@ -3196,6 +3323,7 @@
          <xsd:enumeration value="Building Air Leakage Diagnostic Test - Building Enclosures and Dwelling Unit Enclosures"/>
          <xsd:enumeration value="Building Air Leakage Diagnostic Test Worksheet - Building Enclosures and Dwelling Unit Enclosures"/>
          <xsd:enumeration value="Central Fan Ventilation Cooling Systems (VCS)"/>
+         <xsd:enumeration value="Domestic Water Heating System"/>
          <xsd:enumeration value="Duct Leakage Diagnostic Test"/>
          <xsd:enumeration value="Duct Location"/>
          <xsd:enumeration value="Duct Surface Area Reduction, R-Value, Buried Ducts Compliance Credit"/>
@@ -3625,6 +3753,7 @@
             <dtyp:displayterm value="Performance">Performance (CF1R-PRF)</dtyp:displayterm>
             <dtyp:displayterm value="PrescriptiveAdditions">Prescriptive additions (CF1R-ADD)</dtyp:displayterm>
             <dtyp:displayterm value="PrescriptiveAlterations">Prescriptive alterations (CF1R-ALT )</dtyp:displayterm>
+            <dtyp:displayterm value="PrescriptiveLMCC">Prescriptive  (LMCC)</dtyp:displayterm>
             <dtyp:displayterm value="PrescriptiveNewConstruction">Prescriptive newly constructed (CF1R-NCB)</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -3632,6 +3761,7 @@
          <xsd:enumeration value="Performance"/>
          <xsd:enumeration value="PrescriptiveAdditions"/>
          <xsd:enumeration value="PrescriptiveAlterations"/>
+         <xsd:enumeration value="PrescriptiveLMCC"/>
          <xsd:enumeration value="PrescriptiveNewConstruction"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -4666,6 +4796,20 @@
       <xsd:restriction base="xsd:token">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="DHW_Compliance">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="Complies">COMPLIES</dtyp:displayterm>
+            <dtyp:displayterm value="CompliesExceptionalConditions">COMPLIES with Exceptional Conditions</dtyp:displayterm>
+            <dtyp:displayterm value="DoesNotComply">DOES NOT COMPLY</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="Complies"/>
+         <xsd:enumeration value="CompliesExceptionalConditions"/>
+         <xsd:enumeration value="DoesNotComply"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="DigitalRefrigerantGaugeCalibrationDate">
       <xsd:annotation>
          <xsd:documentation>  Units: none</xsd:documentation>
@@ -5520,6 +5664,32 @@
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="DoesWaterHeatingDistributionComply">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Distribution Systems</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="DoesWaterHeatingEquipmentComply">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Distribution Systems</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="DoesWHF_AirFlowEfficacyComply">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -5642,6 +5812,19 @@
          <xsd:enumeration value="DoorClosuresNA"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="DoWaterHeatingControlsComply">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Distribution Systems</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="DuctDesignType">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -5709,6 +5892,7 @@
             <dtyp:displayterm value="ExemptVCHP">Exempt - VCHP System</dtyp:displayterm>
             <dtyp:displayterm value="HERS_FanEfficacyAirflowRate">HERS verified fan efficacy (W/cfm) and airflow rate (cfm/ton)</dtyp:displayterm>
             <dtyp:displayterm value="HERS_ReturnDuctDesignTable150">HERS verified return duct design per Table 150.0-B, C</dtyp:displayterm>
+            <dtyp:displayterm value="HERS_ReturnDuctDesignTable160_3">HERS verified return duct design per Table 160.3-A, B</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstantPermissive">
@@ -5719,6 +5903,7 @@
          <xsd:enumeration value="ExemptVCHP"/>
          <xsd:enumeration value="HERS_FanEfficacyAirflowRate"/>
          <xsd:enumeration value="HERS_ReturnDuctDesignTable150"/>
+         <xsd:enumeration value="HERS_ReturnDuctDesignTable160_3"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DuctLeakageAllowed">
@@ -6081,6 +6266,16 @@
          <xsd:documentation>  Units: none</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:IntegerNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="DwellingUnitsPipeInsulationComplies">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="DWHR_CertifiedByCEC">
@@ -7098,6 +7293,16 @@
       <xsd:restriction base="xsd:token">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="EquipmentTypeApplies">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="EquivalentLeakageAreaDepressurization">
       <xsd:annotation>
          <xsd:documentation>  Units: ft2</xsd:documentation>
@@ -7323,21 +7528,19 @@
             <dtyp:displayterm>NRCC-PLB-E Exceptional Condition Message</dtyp:displayterm>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="ElectricWaterHeaterNoGas">Table F indicates an electric water heater is being used because natural gas is not available to the water heater location.</dtyp:displayterm>
-            <dtyp:displayterm value="ReplaceHPinCZ16">Table F indicates a heat pump water heater replacement in Climate Zone 16.  In addition to meeting the minimum Uniform Energy Factor (UEF), this requires a solar water heating systems with solar savings fraction [d:gte/] 0.4.  Document the solar water heating system on the NRCC-SRA-E compliance document.</dtyp:displayterm>
+            <dtyp:displayterm value="ElectricWaterHeaterReplacement">Table F indicates an electric water heater is being used to replace existing electric resistance water heater.</dtyp:displayterm>
             <dtyp:displayterm value="StateBuilding">Tables A and  B indicate the project is a new State building.  This requires 60% of energy for service water heating from site solar energy or recovered energy per [d:t24ref/]110.3(c)6.</dtyp:displayterm>
-            <dtyp:displayterm value="UseNRCCMCHE">Table B indicates a combined hydronic system will be used to comply with title 24, Part 6.  These systems shall be documented on the NRCC-MCH-E compliance document.</dtyp:displayterm>
-            <dtyp:displayterm value="UseNRCCSRAE">Table B indicates a solar water heating system will be used to comply with title 24, Part 6.  These systems shall be documented on the NRCC-SRA-E compliance document.</dtyp:displayterm>
+            <dtyp:displayterm value="UseLMCCMCH01E">Table B indicates a combined hydronic system will be used to comply with title 24, Part 6.  These systems shall be documented on the LMCC-MCH-01E compliance document.</dtyp:displayterm>
+            <dtyp:displayterm value="UseLMCCSAB01E">Table B indicates a solar water heating system will be used to comply with title 24, Part 6.  These systems shall be documented on the LMCC-SAB-01E compliance document.</dtyp:displayterm>
             <dtyp:displayterm value="UserChangedSelectionInCI">Selections made in Certificates of Installation Table have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
             <dtyp:displayterm value="UserChangedSelectionInCV">Selections made in Certificates of VerificationTable  have been changed by the permit applicant.  See Table E. Additional Remarks for permit applicant's explanation.</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
-         <xsd:enumeration value="ElectricWaterHeaterNoGas"/>
-         <xsd:enumeration value="ReplaceHPinCZ16"/>
+         <xsd:enumeration value="ElectricWaterHeaterReplacement"/>
          <xsd:enumeration value="StateBuilding"/>
-         <xsd:enumeration value="UseNRCCMCHE"/>
-         <xsd:enumeration value="UseNRCCSRAE"/>
+         <xsd:enumeration value="UseLMCCMCH01E"/>
+         <xsd:enumeration value="UseLMCCSAB01E"/>
          <xsd:enumeration value="UserChangedSelectionInCI"/>
          <xsd:enumeration value="UserChangedSelectionInCV"/>
       </xsd:restriction>
@@ -7395,6 +7598,24 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ExceptionsToPrescReqsDHW">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ExceptionAddLargeGasSolarWH">Adding gas SWH system [d:gte/] 1MMBtu/h input capacity to existing building</dtyp:displayterm>
+            <dtyp:displayterm value="ExceptionGasCZ10to16MF">Gas system serves multifamily dwelling units only in CZ 10-16</dtyp:displayterm>
+            <dtyp:displayterm value="ExceptionHeatPumpMF">HeatpPump systems serves multifamily dwelling units only  ([d:t24refnolink/]170.2(d)2)</dtyp:displayterm>
+            <dtyp:displayterm value="ExceptionsNoneApply">Exceptions Do Not Apply</dtyp:displayterm>
+            <dtyp:displayterm value="ExceptionSolarRecovered25pctWH">25% of annual service water-heating requirement is provided by site-solar energy or site-recovered energy</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ExceptionAddLargeGasSolarWH"/>
+         <xsd:enumeration value="ExceptionGasCZ10to16MF"/>
+         <xsd:enumeration value="ExceptionHeatPumpMF"/>
+         <xsd:enumeration value="ExceptionsNoneApply"/>
+         <xsd:enumeration value="ExceptionSolarRecovered25pctWH"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ExemptFromDuctRvalueMinimum">
@@ -8074,6 +8295,26 @@
       <xsd:restriction base="dtyp:String50Char">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="HeatPumpDistRequirement">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqHeatPumpCompact">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="ReqHeatPumpCompactDWHR">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="ReqHeatPumpDWHR">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="ReqHeatPumpNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqHeatPumpNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqHeatPumpYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqHeatPumpCompact"/>
+         <xsd:enumeration value="ReqHeatPumpCompactDWHR"/>
+         <xsd:enumeration value="ReqHeatPumpDWHR"/>
+         <xsd:enumeration value="ReqHeatPumpNA"/>
+         <xsd:enumeration value="ReqHeatPumpNo"/>
+         <xsd:enumeration value="ReqHeatPumpYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="HeatPumpHeatCapacity17F">
       <xsd:annotation>
          <xsd:documentation>  Units: Btu per h</xsd:documentation>
@@ -8345,6 +8586,20 @@
          <xsd:enumeration value="LightingLoadMonitoring"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="HoseBibb">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="HSPP_PSPP_ComplianceMethod">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -8563,6 +8818,26 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="IndividualSysDistRequirement">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqDemandRecirc">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="ReqDemandRecircNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqDemandRecircNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqDWHRCZ16">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="ReqDWHRCZ16NA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqDWHRCZ16No">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqDemandRecirc"/>
+         <xsd:enumeration value="ReqDemandRecircNA"/>
+         <xsd:enumeration value="ReqDemandRecircNo"/>
+         <xsd:enumeration value="ReqDWHRCZ16"/>
+         <xsd:enumeration value="ReqDWHRCZ16NA"/>
+         <xsd:enumeration value="ReqDWHRCZ16No"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="IndoorAirDensityCorrection">
@@ -8851,6 +9126,20 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="InstantaneousIsolationValves">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="InteriorEnclosedLuminairesInstalled">
@@ -9368,6 +9657,20 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="IsolationValves">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="IsProjectAllElectric">
@@ -11026,6 +11329,20 @@
          <xsd:enumeration value="RestroomsNA"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="MultipleUnitsPumpControls">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="MultiTenantException">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -11089,6 +11406,20 @@
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="NewUnitGasWaterHeater">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="NoBypassDimmerSensorReq">
@@ -11163,6 +11494,16 @@
          <xsd:enumeration value="EnvelopeAirSealingRequirements"/>
          <xsd:enumeration value="EnvelopeInsulationCoolRoofFenestration"/>
          <xsd:enumeration value="ProperInsulationInstallation"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="NonresPipeInsulationComplies">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="NormalizedLeakageValue">
@@ -11493,6 +11834,20 @@
          <xsd:enumeration value="OutdoorLZ2"/>
          <xsd:enumeration value="OutdoorLZ3"/>
          <xsd:enumeration value="OutdoorLZ4"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="OutletTempControls">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="OverhangForRSHGC">
@@ -11886,6 +12241,16 @@
          <xsd:enumeration value="MinimalShadingCritierion"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="PipeInsulationProtectionComplies">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="PipeInsulationVerificationRequired">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -11901,6 +12266,20 @@
          <xsd:documentation>  Units: ft</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:IntegerNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PlumbingProjectScope">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="AlteredSystem">Altered Plumbing System</dtyp:displayterm>
+            <dtyp:displayterm value="NewSystem">New Plumbing System</dtyp:displayterm>
+            <dtyp:displayterm value="NotApplicableScope">N/A</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="AlteredSystem"/>
+         <xsd:enumeration value="NewSystem"/>
+         <xsd:enumeration value="NotApplicableScope"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="PoolSpaOneTenantReqs">
@@ -12099,6 +12478,32 @@
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasControls">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Controls</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasDistribution">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Distribution</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasElevatorControls">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -12111,6 +12516,19 @@
    </xsd:simpleType>
    <xsd:simpleType name="ProjectHasEnclosedParking">
       <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasEquipment">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Equipment</dtyp:displayterm>
+         </xsd:appinfo>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -12490,6 +12908,48 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RecircFuelHP">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RecircLoopCount">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RecircLoopHP">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="RecirculationControlVerificationRequired">
@@ -13005,6 +13465,17 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCIPlb01E">
+      <xsd:annotation>
+         <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireLMCIPrc01E">
       <xsd:annotation>
          <xsd:documentation source="propertyrules">Boolean value: true if compliance document is required and false if it is not.  If using integers, zero must represent false and one represent true</xsd:documentation>
@@ -13304,7 +13775,7 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="MechanicalEquipmentOnRoof">Existing mechanical equipment located on the roof will not be disconnected and lifted, insulation added is the greater of R-10 or the maximum installed thickness that will allow the distance between the height of the roof membrane surface to the top of the base flashing to remain in accordance with the manufacturer's instructions.</dtyp:displayterm>
             <dtyp:displayterm value="NoExceptionApplies">No exception applies</dtyp:displayterm>
-            <dtyp:displayterm value="RecoverAboveDeckRvalue">Roof recovers with new R-10 insulation added abov deck</dtyp:displayterm>
+            <dtyp:displayterm value="RecoverAboveDeckRvalue">Roof recovers with new R-10 insulation added above deck</dtyp:displayterm>
             <dtyp:displayterm value="RoofRecoat">The area of the roof recoat is not required to be insulated.</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -13532,6 +14003,20 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:date">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="SchoolHeatPumpWH">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ScopeIncludeNew">
@@ -13887,6 +14372,20 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="SingleUnitOnOffControls">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="SiteBuiltFenestrationSHGC">
@@ -14422,6 +14921,20 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="dtyp:StateAbbreviation">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="StateBuildingWaterHeatingEnergy">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="StateString">
       <xsd:annotation>
          <xsd:documentation>String representing a state in an address associated with the project reported in the CF1R PRF.  This is used because CBECC-Res allows any text input fr this field</xsd:documentation>
@@ -14452,6 +14965,20 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          <xsd:enumeration value="Strainer3ftFromTrap"/>
          <xsd:enumeration value="StrainerIntegral"/>
          <xsd:enumeration value="UpdateFDD"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="StorageTankInsulation">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="StoriesTooManySRA">
@@ -14750,6 +15277,20 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="TankDrainPort">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="TargetSubcooling">
       <xsd:annotation>
          <xsd:documentation>  Units: F</xsd:documentation>
@@ -14789,6 +15330,20 @@ Time Dependent Valuation (TDV) Electricity energy is calculated by multiplying t
 Time Dependent Valuation (TDV) Gas Propane energy is calculated by multiplying the site energy use (in natural gas therms, or fuel oil or LPG gallons) for each energy type times the applicable TDV multiplier. TDV multipliers vary for each hour of the year and by natural gas or propane energy type, by climate zone and by building type (low-rise residential or nonresidential, high-rise residential or hotel/motel).  Units: kBtu per thm</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="TempControlsCertification">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="TemperatureCorrectionFactor">
@@ -16501,6 +17056,20 @@ Time Dependent Valuation (TDV) Gas Propane energy is calculated by multiplying t
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:token">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="WaterHeatingRequirementsComply">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ReqNA">Not Applicable</dtyp:displayterm>
+            <dtyp:displayterm value="ReqNo">No</dtyp:displayterm>
+            <dtyp:displayterm value="ReqYes">Yes</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ReqNA"/>
+         <xsd:enumeration value="ReqNo"/>
+         <xsd:enumeration value="ReqYes"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="WaterHeatingSystemAlteredOption">
