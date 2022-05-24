@@ -2306,6 +2306,7 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-24-H">LMCI-MCH-24-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-25-H">LMCI-MCH-25-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-26-H">LMCI-MCH-26-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-27-H">LMCI-MCH-27-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-28-H">LMCI-MCH-28-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-29-H">LMCI-MCH-29-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-32-H">LMCI-MCH-32-H</dtyp:displayterm>
@@ -2327,6 +2328,7 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-MCH-24-H">LMCV-MCH-24-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-MCH-25-H">LMCV-MCH-25-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-MCH-26-H">LMCV-MCH-26-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-MCH-27-H">LMCV-MCH-27-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-MCH-28-H">LMCV-MCH-28-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-MCH-29-H">LMCV-MCH-29-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-MCH-32-H">LMCV-MCH-32-H</dtyp:displayterm>
@@ -2462,6 +2464,7 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCI-MCH-24-H"/>
          <xsd:enumeration value="LMCI-MCH-25-H"/>
          <xsd:enumeration value="LMCI-MCH-26-H"/>
+         <xsd:enumeration value="LMCI-MCH-27-H"/>
          <xsd:enumeration value="LMCI-MCH-28-H"/>
          <xsd:enumeration value="LMCI-MCH-29-H"/>
          <xsd:enumeration value="LMCI-MCH-32-H"/>
@@ -2483,6 +2486,7 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCV-MCH-24-H"/>
          <xsd:enumeration value="LMCV-MCH-25-H"/>
          <xsd:enumeration value="LMCV-MCH-26-H"/>
+         <xsd:enumeration value="LMCV-MCH-27-H"/>
          <xsd:enumeration value="LMCV-MCH-28-H"/>
          <xsd:enumeration value="LMCV-MCH-29-H"/>
          <xsd:enumeration value="LMCV-MCH-32-H"/>
@@ -2807,6 +2811,7 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH25eH">LMCIMCH25eH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH25fH">LMCIMCH25fH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH26H">LMCIMCH26H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH27bH">LMCIMCH27bH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH28H">LMCIMCH28H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH29H">LMCIMCH29H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH32H">LMCIMCH32H</dtyp:displayterm>
@@ -2846,6 +2851,7 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH25dH">LMCVMCH25dH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH25eH">LMCVMCH25eH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH26H">LMCVMCH26H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVMCH27bH">LMCVMCH27bH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH28H">LMCVMCH28H</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH29H">LMCVMCH29H</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH32H">LMCVMCH32H</dtyp:displayterm>
@@ -3073,6 +3079,7 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCIMCH25eH"/>
          <xsd:enumeration value="LMCIMCH25fH"/>
          <xsd:enumeration value="LMCIMCH26H"/>
+         <xsd:enumeration value="LMCIMCH27bH"/>
          <xsd:enumeration value="LMCIMCH28H"/>
          <xsd:enumeration value="LMCIMCH29H"/>
          <xsd:enumeration value="LMCIMCH32H"/>
@@ -3112,6 +3119,7 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCVMCH25dH"/>
          <xsd:enumeration value="LMCVMCH25eH"/>
          <xsd:enumeration value="LMCVMCH26H"/>
+         <xsd:enumeration value="LMCVMCH27bH"/>
          <xsd:enumeration value="LMCVMCH28H"/>
          <xsd:enumeration value="LMCVMCH29H"/>
          <xsd:enumeration value="LMCVMCH32H"/>
@@ -3234,7 +3242,7 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="EZ Frame Worksheet"/>
          <xsd:enumeration value="Fan Efficacy (Fan Watt Draw)"/>
          <xsd:enumeration value="Fenestration Installation"/>
-         <xsd:enumeration value="HERS Verified  Individual  Dwelling Unit Hot Water System Distribution"/>
+         <xsd:enumeration value="HERS Verified Individual Dwelling Unit Hot Water System Distribution"/>
          <xsd:enumeration value="HERS Verified Multifamily Central Hot Water System Distribution"/>
          <xsd:enumeration value="HERS Verified Single Dwelling Unit Hot Water System Distribution"/>
          <xsd:enumeration value="Hydronic Heating System Worksheet"/>
