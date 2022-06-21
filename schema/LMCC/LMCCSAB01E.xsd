@@ -91,10 +91,11 @@ When PV/battery/solar thermal requirements don't apply or are traded using the p
                   <xsd:element name="A04_WholeBuildingOccupancy" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Building Occupancies</xsd:documentation>
-                        <xsd:appinfo source="displayterm">
-                           <dtyp:displayterm value="MultiFamilyMixedUseLT4">Multi-family/ Mixed-use</dtyp:displayterm>
-                        </xsd:appinfo>
-                        
+                        <xsd:documentation source="CalculationsAndRules">result = MultiFamilyMixedUseLT4 and display term depends on values in A04a_LocalJurisdiction  as follows:
+If A04a_LocalJurisdiction == TrinityPublicUtilityDist display term = Multi-family in Trinity Public Utility Dist 
+Else If A04a_LocalJurisdiction == CityOfNeedles display term =  Multi-family in City Of Needles 
+Else If A04a_LocalJurisdiction == LocalAuthorityNA display term = Multi-family/ Mixed-use
+End If</xsd:documentation>
                      </xsd:annotation>
                      <xsd:simpleType>
                         <xsd:restriction base="com:WholeBuildingOccupancy">
@@ -102,9 +103,22 @@ When PV/battery/solar thermal requirements don't apply or are traded using the p
                         </xsd:restriction>
                      </xsd:simpleType>
                   </xsd:element>
+                  <xsd:element name="A04a_LocalJurisdiction" type="comp:LocalJurisdiction" >
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This field records if the user indicated the project is in an area where CEC approved local building energy standards have been apply which includes 
+TrinityPublicUtilityDist, CityOfNeedles and LocalAuthorityNA
+ 
+If result == TrinityPublicUtilityDist   the display term in Trinity Public Utility Dist is appended to the occupancy A04_WholeBuildingOccupancy
+Else If result == CityOfNee value indles the display term in City Of Needles is appended to the occupancy  value in A04_WholeBuildingOccupancy
+Else If result == LocalAuthorityNA there is no display term appended 
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                   <xsd:element name="A05_RoofConstRangeSolar" type="env:RoofConstRangeSolar" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Construction Type</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">User selects from list</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="A06_BuildingStoryRange" >
@@ -130,11 +144,6 @@ When PV/battery/solar thermal requirements don't apply or are traded using the p
                         <xsd:documentation source="CalculationsAndRules">This is a flag set by the agent that generates the report XML data to indicate that the user requested a Mandatory Measures Note Block which is placed after the DeclarationBlock in the XML output.</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="AErrorMessage_SectionErrorMessage" type="comp:SectionErrorMessage"  minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"></xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
@@ -156,14 +165,18 @@ When PV/battery/solar thermal requirements don't apply or are traded using the p
                         <xsd:documentation source="FieldText">Compliance with Solar Requirements in [d:t24refnolink/]110.10(b)1B</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If this subsection is required,  one and only one item can be checked with a result == true and it is the only item that is displayed in the final report.
  
-This subsection is required  If A04_WholeBuildngOccupancy ==  MultiFamilyMixedUseLT4
-And A05_RoofConstRangeSolar == AddRoofGT2000ft2 
+This subsection is required  as follows:
+If A04_WholeBuildngOccupancy ==  MultiFamilyMixedUseLT4
+And A05_RoofConstRangeSolar == AddRoofGT2000ft2 Or NewRoofLTE533ft2, NewRoofGT533ft2, Or EmergencyRebuild
+ 
 Or
 If Bpv01c_RequiredLT1_8kW == true
 Or
 Bpv01d_NoContiguousAccess == true
 Or
-Bpv01e_SnowloadException == true</xsd:documentation>
+Bpv01e_SnowloadException == true
+Or
+Bpv0g_PerfTradeOffException == true</xsd:documentation>
                      </xsd:annotation>
                      <xsd:complexType>
                         <xsd:sequence>
@@ -335,6 +348,18 @@ field NOT REPORTED IN PDF
 End If</xsd:documentation>
                               </xsd:annotation>
                            </xsd:element>
+                           <xsd:element name="Bpv0g_PerfTradeOffException" type="comp:PerfTradeOffException" >
+                              <xsd:annotation>
+                                 <xsd:documentation source="FieldText">The prescriptive PV/battery requirement has been traded off using the performance compliance approach as documented on the PRF Certificate of Compliance form.</xsd:documentation>
+                                 <xsd:documentation source="AdditionalRequirements">The project is a multi-tenant building in an area where a load serving entity does not provide either a Virtual Net Metering (VNEM) or community solar program.</xsd:documentation>
+                                 <xsd:documentation source="CalculationsAndRules">User input
+If result == true 
+BSolarReady subsection is triggered
+Else If result == false And Bpv0e_SnowLoadException And Bpv0f_MultiTenantException == false 
+Section_J is triggered  
+End If</xsd:documentation>
+                              </xsd:annotation>
+                           </xsd:element>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
@@ -355,11 +380,6 @@ If result == true Section_H is required</xsd:documentation>
                            </xsd:element>
                         </xsd:sequence>
                      </xsd:complexType>
-                  </xsd:element>
-                  <xsd:element name="BErrorMessage_SectionErrorMessage" type="comp:SectionErrorMessage"  minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"></xsd:documentation>
-                     </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
@@ -1252,11 +1272,6 @@ End If</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">[d:sup]1[/d:sup]FOOTNOTE:  This field is used to document how the percentage of annual solar access was determined per [d:t24ref/]110.10(b)1B.  Solar access is the ratio of solar insolation including shade to the solar insolation without shade.  Shading from obstructions located on the roof or any other part of the building shall not be included in the determination of annual solar access.</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="FErrorMessage_SectionErrorMessage" type="comp:SectionErrorMessage"  minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"></xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
@@ -1264,7 +1279,7 @@ End If</xsd:documentation>
             <xsd:annotation>
                <xsd:documentation source="FieldText">[d:b]G. PERMANENTLY INSTALLED SOLAR PV FOR SOLAR READY EXCEPTION[/d:b]</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Section G is not required for the LMCC, so no data is collected and only the section title and Begin Note are displayed</xsd:documentation>
-               <xsd:documentation source="MinOccurs">This section is not required.</xsd:documentation>
+               <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
@@ -1349,11 +1364,6 @@ D03_ExceptionalConditionMessageCCSABE += CalculatorOutputAttachedForH</xsd:docum
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">[d:i][d:sup]1[/d:sup]FOOTNOTES: Built-up SWH systems using OG-100 collectors must calculate the Designed Solar Savings Fraction using the SWH module in the CEC's CBECC software.  The calculation output must be included within the permit application. [/d:i]</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="HErrorMessage_SectionErrorMessage" type="comp:SectionErrorMessage"  minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"></xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
@@ -1496,15 +1506,10 @@ D03_ExceptionalConditionMessageCCSABE += CalculatorOutputAttachedForH</xsd:docum
                         <xsd:documentation source="CalculationsAndRules">User input</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="IErrorMessage_SectionErrorMessage" type="comp:SectionErrorMessage"  minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText"></xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_Pv" minOccurs="0">
+         <xsd:element name="Section_J" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">[d:b]J. PHOTOVOLTAIC (PV) SYSTEMS[/d:b]</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if Bpv01e_SnowLoadException == true</xsd:documentation>

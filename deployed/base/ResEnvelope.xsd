@@ -477,6 +477,7 @@
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="10000To49999Ft2">10,000 - 49,999 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
+            <dtyp:displayterm value="AlteredNA">NA: Altered per 141.0(b)2E</dtyp:displayterm>
             <dtyp:displayterm value="GT25000Ft2">
                <d:gt/> 25,000 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
@@ -497,6 +498,7 @@
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="10000To49999Ft2"/>
+         <xsd:enumeration value="AlteredNA"/>
          <xsd:enumeration value="GT25000Ft2"/>
          <xsd:enumeration value="GT700Ft2"/>
          <xsd:enumeration value="GTE50000Ft2"/>
@@ -2818,6 +2820,7 @@ Not Shared</dtyp:displayterm>
             <dtyp:displayterm value="AddRoofGT2000ft2">Addition increases roof area 
                <d:gt/>2,000 ft<d:sup>2</d:sup>
             </dtyp:displayterm>
+            <dtyp:displayterm value="EmergencyRebuild">Declared Emergency Area Rebuild</dtyp:displayterm>
             <dtyp:displayterm value="NewRoofGT533ft2">New construction</dtyp:displayterm>
             <dtyp:displayterm value="NewRoofLTE533ft2">New construction w/ roof 
                <d:lte/>533 ft<d:sup>2</d:sup>
@@ -2827,6 +2830,7 @@ Not Shared</dtyp:displayterm>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="AddAltRoofLTE2000ft2"/>
          <xsd:enumeration value="AddRoofGT2000ft2"/>
+         <xsd:enumeration value="EmergencyRebuild"/>
          <xsd:enumeration value="NewRoofGT533ft2"/>
          <xsd:enumeration value="NewRoofLTE533ft2"/>
       </xsd:restriction>
@@ -3584,7 +3588,7 @@ For selection of NA-6 properties</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="0_0241To0_025">0.0241-0.025</dtyp:displayterm>
             <dtyp:displayterm value="0_0251To0_026">0.0251-0.026</dtyp:displayterm>
-            <dtyp:displayterm value="0_0251To0_026">0.0261-0.028</dtyp:displayterm>
+            <dtyp:displayterm value="0_0261To0_028">0.0261-0.028</dtyp:displayterm>
             <dtyp:displayterm value="0_0281To0_029">0.0281-0.029</dtyp:displayterm>
             <dtyp:displayterm value="0_0291To0_030">0.0291-0.030</dtyp:displayterm>
             <dtyp:displayterm value="0_0291To0_031">0.0291-0.031</dtyp:displayterm>
@@ -3634,7 +3638,7 @@ For selection of NA-6 properties</xsd:documentation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="0_0241To0_025"/>
          <xsd:enumeration value="0_0251To0_026"/>
-         <xsd:enumeration value="0_0251To0_026"/>
+         <xsd:enumeration value="0_0261To0_028"/>
          <xsd:enumeration value="0_0281To0_029"/>
          <xsd:enumeration value="0_0291To0_030"/>
          <xsd:enumeration value="0_0291To0_031"/>
