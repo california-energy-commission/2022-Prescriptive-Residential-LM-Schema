@@ -2995,6 +2995,7 @@
             <dtyp:displayterm value="LMCVENV20bH">LMCVENV20bH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVENV21H">LMCVENV21H</dtyp:displayterm>
             <dtyp:displayterm value="LMCVENV22H">LMCVENV22H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCVEXC20H">LMCVEXC20H</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH20aH">LMCVMCH20aH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH20bH">LMCVMCH20bH</dtyp:displayterm>
             <dtyp:displayterm value="LMCVMCH20cH">LMCVMCH20cH</dtyp:displayterm>
@@ -3265,6 +3266,7 @@
          <xsd:enumeration value="LMCVENV20bH"/>
          <xsd:enumeration value="LMCVENV21H"/>
          <xsd:enumeration value="LMCVENV22H"/>
+         <xsd:enumeration value="LMCVEXC20H"/>
          <xsd:enumeration value="LMCVMCH20aH"/>
          <xsd:enumeration value="LMCVMCH20bH"/>
          <xsd:enumeration value="LMCVMCH20cH"/>
@@ -3564,6 +3566,7 @@
             <dtyp:displayterm value="MCH27a Single Family Attached/Detached Ventilation">MCH27a Single Family Attached/Detached Ventilation</dtyp:displayterm>
             <dtyp:displayterm value="MCH27b High-rise Residential Multifamily Ventilation">MCH27b High-rise Residential Multifamily Ventilation</dtyp:displayterm>
             <dtyp:displayterm value="MCH27b Multifamily Ventilation">MCH27b Multifamily Ventilation</dtyp:displayterm>
+            <dtyp:displayterm value="MCH27c Highrise Residential Multifamily Scheduled or Real-Time Control Ventilation system">MCH27c Highrise Residential Multifamily Scheduled or Real-Time Control Ventilation system</dtyp:displayterm>
             <dtyp:displayterm value="MCH27c Single Family Scheduled or Real-Time Control">MCH27c Single Family Scheduled or Real-Time Control</dtyp:displayterm>
             <dtyp:displayterm value="MCH27d Non-dwelling Unit">MCH27d Non-Dwelling Unit</dtyp:displayterm>
             <dtyp:displayterm value="MCH31a Whole House Fan Airflow and Fan Efficacy - Aiflow and watts measured per whole house fan">MCH31a Whole House Fan Airflow and Fan Efficacy - Aiflow and watts measured per whole house fan</dtyp:displayterm>
@@ -3620,6 +3623,7 @@
          <xsd:enumeration value="MCH27a Single Family Attached/Detached Ventilation"/>
          <xsd:enumeration value="MCH27b High-rise Residential Multifamily Ventilation"/>
          <xsd:enumeration value="MCH27b Multifamily Ventilation"/>
+         <xsd:enumeration value="MCH27c Highrise Residential Multifamily Scheduled or Real-Time Control Ventilation system"/>
          <xsd:enumeration value="MCH27c Single Family Scheduled or Real-Time Control"/>
          <xsd:enumeration value="MCH27d Non-dwelling Unit"/>
          <xsd:enumeration value="MCH31a Whole House Fan Airflow and Fan Efficacy - Aiflow and watts measured per whole house fan"/>
@@ -16046,6 +16050,18 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          <xsd:documentation>  Units: ft2</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="SoundRatingException">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ExceptionSoundRating">Remote mounted fan with min. 4ft of duct between fan and intake grille</dtyp:displayterm>
+            <dtyp:displayterm value="NoSoundException">No Exception</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ExceptionSoundRating"/>
+         <xsd:enumeration value="NoSoundException"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceFunctionTailored">
