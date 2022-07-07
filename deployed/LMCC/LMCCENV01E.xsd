@@ -3289,7 +3289,7 @@ End If</xsd:documentation>
                                                    <xsd:annotation>
                                                       <xsd:documentation source="FieldText">Required Thermal Performance<d:sup>3</d:sup>
                                                       </xsd:documentation>
-                                                      <xsd:documentation source="CalculationsAndRules">If FSIPS04_Status == ExistingAlteration 
+                                                      <xsd:documentation source="CalculationsAndRules">If FSIPS04_Status == ExistingAlteration Then
 If FSIPS05_RoofInsulationException  != NoExceptionApplies 
 Or FSIPS06_TopLevelOccupancy == ResidentialMF And A03_ClimateZoneNumber == 3, 5, 6 Or 7 
 result = BlankGrayedOut stored in NotApplicableMessage
@@ -5105,7 +5105,7 @@ End If</xsd:documentation>
                                                    <xsd:annotation>
                                                       <xsd:documentation source="FieldText">Required Thermal Performance<d:sup>3</d:sup>
                                                       </xsd:documentation>
-                                                      <xsd:documentation source="CalculationsAndRules">If Fmetalb04_Status == ExistingAlteration 
+                                                      <xsd:documentation source="CalculationsAndRules">If Fmetalb04_Status == ExistingAlteration Then
 If Fmetalb05_RoofInsulationException  != NoExceptionApplies Or 
 If Fmetalb06_TopLevelOccupancy == ResidentialMF And A03_ClimateZoneNumber == 3, 5, 6 Or 7
 result = BlankGrayedOut
@@ -20297,39 +20297,7 @@ End If</xsd:documentation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Lmci02" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCI-HERS-ENV-20a-H - Enclosure Air Leakage Single Point Test- Manual Meter 
-                           <d:line1/>
-                           <d:i>(Applies to "R" occupancy only) 
-                              <d:line1/>Note: The requirement for this LMCI is indicated on the LMCC-MCH (prescriptive) or LMCC-PRF (performance) because it is only relevant if the mechanical IAQ system is not balanced. </d:i>
-                        </xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">The static text is displayed but no data is collected and the user controls are grayed out</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Lmci02a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Lmci03" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCI-HERS-ENV-20b-H - Enclosure Air Leakage Single Point Test- Automatic Meter 
-                           <d:line1/>
-                           <d:i>(Applies to "R" occupancy only) 
-                              <d:line1/>Note: The requirement for this LMCI is indicated on the LMCC-MCH (prescriptive) or LMCC-PRF (performance) because it is only relevant if the mechanicl IAQ system is not balanced. </d:i>
-                        </xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">The static text is displayed but no data is collected and the user controls are grayed out</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Lmci03a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Lmci04_RequireLMCIEnv21H" type="comp:RequireLMCIEnv21H">
+                  <xsd:element name="Lmci02_RequireLMCIEnv21H" type="comp:RequireLMCIEnv21H">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">LMCI-HERS-ENV-21-H - QII Framing Stage 
@@ -20343,12 +20311,12 @@ Else use input
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Lmci04a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmci02a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Lmci05_RequireLMCIEnv22H" type="comp:RequireLMCIEnv22H">
+                  <xsd:element name="Lmci03_RequireLMCIEnv22H" type="comp:RequireLMCIEnv22H">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">LMCI-HERS-ENV-22-H - QII Insulation Stage 
@@ -20362,7 +20330,7 @@ Else use input
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Lmci05a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
+                  <xsd:element name="Lmci03a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
