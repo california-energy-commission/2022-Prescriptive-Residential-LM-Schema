@@ -36,7 +36,7 @@
             <xsd:element name="DocumentData">
                <xsd:complexType>
                   <xsd:sequence>
-                     <xsd:element name="Header" type="comp:HeaderCF2R_3R" />
+                     <xsd:element name="Header" type="comp:HeaderHERS" />
                      <xsd:element ref="lMCVMCH22aH" />
                      <xsd:element name="DocAuthor" type="comp:DocumentAuthor" />
                      <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF3R" />

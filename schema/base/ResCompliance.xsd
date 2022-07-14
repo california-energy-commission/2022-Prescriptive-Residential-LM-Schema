@@ -18966,6 +18966,22 @@ Document Data</dtyp:displayterm>
          <xsd:element name="header04_InputFilenameEXC" type="comp:BuildingInputFileName" ></xsd:element>
       </xsd:sequence>
    </xsd:complexType>
+   <xsd:complexType name="HeaderHERS">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Compliance Document Header</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element name="header01_ProjectName" type="comp:ProjectName" ></xsd:element>
+         <xsd:element name="header02_EnforcementAgency" type="comp:EnforcementAgency" ></xsd:element>
+         <xsd:element name="header03_PermitNumber" type="comp:PermitNumber" ></xsd:element>
+         <xsd:element name="header04_ProjectAddress" type="comp:StreetAddress" ></xsd:element>
+         <xsd:element name="header05_City" type="comp:City" ></xsd:element>
+         <xsd:element name="header06_Zipcode" type="comp:Zipcode" ></xsd:element>
+         <xsd:element name="header07_PermitDate" type="comp:ComplianceApplicationDate" ></xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>   
    <xsd:complexType name="HeaderLMCC">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
