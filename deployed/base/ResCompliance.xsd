@@ -21,6 +21,12 @@
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ACH50EnvelopeHERS">
+      <xsd:annotation>
+         <xsd:documentation>The measured airflow in cubic feet per minute (cfm) at 50 pascals  Units: ACH</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal1PlaceNonnegative"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ACH50Existing">
       <xsd:annotation>
          <xsd:documentation>Units: ACH</xsd:documentation>
@@ -1705,7 +1711,7 @@
    </xsd:simpleType>
    <xsd:simpleType name="CFM50Existing">
       <xsd:annotation>
-         <xsd:documentation>Units: ACH</xsd:documentation>
+         <xsd:documentation>Units: ft3 per min</xsd:documentation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Verified Existing CFM 50</dtyp:displayterm>
          </xsd:appinfo>
@@ -2242,6 +2248,8 @@ Document Data</dtyp:displayterm>
          <xsd:element name="CF2R3R_ComplianceDocument" type="comp:CF2R3R_ComplianceDocument"/>
          <xsd:element name="DocumentAuthor" type="comp:DocumentAuthor"/>
          <xsd:element name="Footer" type="comp:Footer"/>
+         <xsd:element name="HeaderHERS" type="comp:HeaderHERS"/>
+         <xsd:element name="HeaderHERSCC" type="comp:HeaderHERSCC"/>
          <xsd:element name="HeaderNRCV" type="comp:HeaderNRCV"/>
          <xsd:element name="Payload" type="comp:Payload"/>
          <xsd:element name="ResponsiblePersonNRCV" type="comp:ResponsiblePersonNRCV"/>
@@ -3773,6 +3781,20 @@ Document Data</dtyp:displayterm>
    <xsd:simpleType name="CompliancePath">
       <xsd:restriction base="dtyp:EnumerationConstant"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ComplianceResultEDR">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="EdrComplies">PASS</dtyp:displayterm>
+            <dtyp:displayterm value="EdrFails">FAIL</dtyp:displayterm>
+            <dtyp:displayterm value="EdrFailsUMLH">DOES NOT COMPLY - UMLH</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="EdrComplies"/>
+         <xsd:enumeration value="EdrFails"/>
+         <xsd:enumeration value="EdrFailsUMLH"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ComplianceRunFilename">
       <xsd:annotation>
          <xsd:documentation>In performance compliance, this is name of the file that was generated as a result of the compliance analysis.</xsd:documentation>
@@ -4500,8 +4522,8 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="MinimumAirflowVCHP">Minimum Airflow according to RA3.3 and SC3.3.3.4.1</dtyp:displayterm>
             <dtyp:displayterm value="None">-- None --</dtyp:displayterm>
             <dtyp:displayterm value="RefrigerantCharge">Verified Refrigerant Charge</dtyp:displayterm>
-            <dtyp:displayterm value="VerifiedEER">Verified EER</dtyp:displayterm>
-            <dtyp:displayterm value="VerifiedSEER">Verified SEER</dtyp:displayterm>
+            <dtyp:displayterm value="VerifiedEER_EER2">Verified EER/EER2</dtyp:displayterm>
+            <dtyp:displayterm value="VerifiedSEER_SEER2">Verified SEER/SEER2</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -4512,8 +4534,8 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="MinimumAirflowVCHP"/>
          <xsd:enumeration value="None"/>
          <xsd:enumeration value="RefrigerantCharge"/>
-         <xsd:enumeration value="VerifiedEER"/>
-         <xsd:enumeration value="VerifiedSEER"/>
+         <xsd:enumeration value="VerifiedEER_EER2"/>
+         <xsd:enumeration value="VerifiedSEER_SEER2"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="CoolingSystemFeatureHERS_Data">
@@ -6480,7 +6502,19 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal1Place"/>
    </xsd:simpleType>
+   <xsd:simpleType name="EDR_MarginSourceEnergy">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal1Place"/>
+   </xsd:simpleType>
    <xsd:simpleType name="EDR_ProposedEfficiency">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal1Place"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EDR_ProposedSourceEnergy">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
       </xsd:annotation>
@@ -6498,11 +6532,26 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal1Place"/>
    </xsd:simpleType>
+   <xsd:simpleType name="EDR_StandardSourceEnergy">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal1Place"/>
+   </xsd:simpleType>
    <xsd:simpleType name="EDR_StandardTotal">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal1Place"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EER2_VerificationRequired">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Required</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Required</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="EER_VerificationRequired">
       <xsd:annotation>
@@ -6681,6 +6730,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
+   <xsd:simpleType name="EnergyUseImprovement">
+      <xsd:annotation>
+         <xsd:documentation>Units: percent</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal1Place"/>
+   </xsd:simpleType>
    <xsd:simpleType name="EnergyUseImprovementEffCompTotal">
       <xsd:annotation>
          <xsd:documentation>Units: percent</xsd:documentation>
@@ -6776,6 +6831,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    <xsd:simpleType name="EnergyUseMarginSelfUtilizCreditWest">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EnergyUseMarginSource">
+      <xsd:annotation>
+         <xsd:documentation>Units: kBtu per ft2 per yr</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
@@ -6923,7 +6984,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:simpleType>
    <xsd:simpleType name="EnergyUseProposedSource">
       <xsd:annotation>
-         <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
+         <xsd:documentation>Units: kBtu per ft2 per yr</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
@@ -7079,7 +7140,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:simpleType>
    <xsd:simpleType name="EnergyUseStandardSource">
       <xsd:annotation>
-         <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
+         <xsd:documentation>Units: kBtu per ft2 per yr</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
@@ -8421,6 +8482,13 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="Header07_PermitDate">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+         <xsd:documentation source="propertyrules">This value is am xsd:date data type with the format yyyy-mm-dd  For example 2013-12-17</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:date"/>
+   </xsd:simpleType>
    <xsd:complexType name="HeaderCF1R">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -8486,13 +8554,29 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:element name="header04_ProjectAddress" type="comp:StreetAddress"/>
          <xsd:element name="header05_City" type="comp:City"/>
          <xsd:element name="header06_Zipcode" type="comp:Zipcode"/>
-         <xsd:element name="header07_PermitDate" type="comp:ComplianceApplicationDate"/>
+         <xsd:element name="header07_PermitDate" type="comp:Header07_PermitDate"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="HeaderHERSCC">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>Compliance Document Header</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element name="header01_ProjectName" type="comp:ProjectName"/>
+         <xsd:element name="header02_EnforcementAgency" type="comp:EnforcementAgency"/>
+         <xsd:element name="header03_PermitNumberCC" type="comp:PermitNumber" minOccurs="0"/>
+         <xsd:element name="header04_ProjectAddress" type="comp:StreetAddress"/>
+         <xsd:element name="header05_City" type="comp:City"/>
+         <xsd:element name="header06_Zipcode" type="comp:Zipcode"/>
+         <xsd:element name="header07_PermitDateCC" type="comp:PermitDate" minOccurs="0"/>
       </xsd:sequence>
    </xsd:complexType>
    <xsd:complexType name="HeaderLMCC">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>Compliance Document Footer</dtyp:displayterm>
+            <dtyp:displayterm>Compliance Document Header</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:sequence>
@@ -8518,6 +8602,18 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:element name="header06_Zipcode" type="comp:Zipcode"/>
       </xsd:sequence>
    </xsd:complexType>
+   <xsd:simpleType name="HeatPumpCoolCapacity82F">
+      <xsd:annotation>
+         <xsd:documentation>Units: Btu per h</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="HeatPumpCoolCapacity95F">
+      <xsd:annotation>
+         <xsd:documentation>Units: Btu per h</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
    <xsd:simpleType name="HeatPumpDistRequirement">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -8545,6 +8641,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="HeatPumpHeatCapacity47F">
+      <xsd:annotation>
+         <xsd:documentation>Units: Btu per h</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="HeatPumpHeatCapacity5F">
       <xsd:annotation>
          <xsd:documentation>Units: Btu per h</xsd:documentation>
       </xsd:annotation>
@@ -9187,6 +9289,24 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="IncludesComponentWithRefrigerant">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="IncludesFID">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="IncludesHeatEnergyRecovery">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -11187,6 +11307,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="MarginEUI">
+      <xsd:annotation>
+         <xsd:documentation>Units: kBtu per ft2 per yr</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal"/>
+   </xsd:simpleType>
    <xsd:simpleType name="MarginGrossEUI">
       <xsd:annotation>
          <xsd:documentation>Units: kBtu per ft2 per yr</xsd:documentation>
@@ -12547,6 +12673,13 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="PermitDate">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+         <xsd:documentation source="propertyrules">Date of the permit set in format yyyy-mm-dd</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:date"/>
+   </xsd:simpleType>
    <xsd:simpleType name="PermitDay">
       <xsd:annotation>
          <xsd:documentation>The day that the permit application is submitted to the building department. Used to determine applicability of Standards requirements that become effective at future dates.  Units: none</xsd:documentation>
@@ -13350,6 +13483,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ProposedDesignEUI">
+      <xsd:annotation>
+         <xsd:documentation>Units: kBtu per ft2 per yr</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ProposedDesignEfficiency">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
@@ -13370,7 +13509,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
    </xsd:simpleType>
    <xsd:simpleType name="ProposedDesignSource">
       <xsd:annotation>
-         <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
+         <xsd:documentation>Units: kBtu per ft2 per yr</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
@@ -14705,6 +14844,15 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:annotation>
       <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="SEER2_VerificationRequired">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Required</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Required</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="SEER_EER_VerificationRequired">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -15488,6 +15636,7 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
             <dtyp:displayterm value="AtticReliefVentFreeArea">Attic Relief Vent Free Area</dtyp:displayterm>
             <dtyp:displayterm value="BalancedIAQVentilation">Indoor air quality, balanced fan</dtyp:displayterm>
             <dtyp:displayterm value="BatterySystem">Battery System</dtyp:displayterm>
+            <dtyp:displayterm value="BatterySystemStandalone">Standalone Battery System: X kWh</dtyp:displayterm>
             <dtyp:displayterm value="BatteryWithSelfUtilCredit">Battery System (Self Utilization Credit Taken)</dtyp:displayterm>
             <dtyp:displayterm value="CentralHeatPumpWaterHeater">Central Heat Pump Water Heater</dtyp:displayterm>
             <dtyp:displayterm value="CentralParallelPiping">Central parallel piping</dtyp:displayterm>
@@ -15498,12 +15647,15 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
             <dtyp:displayterm value="DuctsInCrawlSpace">Ducts in crawl space</dtyp:displayterm>
             <dtyp:displayterm value="DuctsLessThan40ft">New ductwork added is less than 40 ft. in length</dtyp:displayterm>
             <dtyp:displayterm value="DuctsNonstandardLocation">Non-standard duct location (any location other than attic)</dtyp:displayterm>
+            <dtyp:displayterm value="ElectInstantaneousPOU">Electric water heater exception - Exception 2 to Section 150.1(c)8: Instantaneous electric water heater with POU distribution</dtyp:displayterm>
+            <dtyp:displayterm value="ElectStoragePOU">Electric water heater exception - Exception 2 to Section 150.1(c)8: Electric resistance storage water heater 
+               <d:lte/> 20 gal with POU distribution</dtyp:displayterm>
             <dtyp:displayterm value="ExposedSlabFloor">Exposed slab floor in conditioned zone</dtyp:displayterm>
             <dtyp:displayterm value="ExteriorWindowShades">Exterior window shades</dtyp:displayterm>
             <dtyp:displayterm value="HeatedSlab">Heated slab</dtyp:displayterm>
             <dtyp:displayterm value="HeatPumpWaterHeaterNEEA">NEEA rated heat pump water heater or equivalent must be installed</dtyp:displayterm>
             <dtyp:displayterm value="IAQVentilationFanEfficacy">IAQ Ventilation System: low W/CFM</dtyp:displayterm>
-            <dtyp:displayterm value="IAQVentilationFID">IAQ Ventilation System: fault indicator display</dtyp:displayterm>
+            <dtyp:displayterm value="IAQVentilationFID">IAQ Ventilation System: fault indicator display (FID)</dtyp:displayterm>
             <dtyp:displayterm value="IAQVentilationHRV_SRE_ASRE">IAQ Ventilation System: HRV via SRE and ASRE</dtyp:displayterm>
             <dtyp:displayterm value="IAQVentilationSupplyAccessibility">IAQ Ventilation System: supply outside air inlet, filter, and H/ERV cores accessible per RACM Reference Manual</dtyp:displayterm>
             <dtyp:displayterm value="InsulationAboveRoofDeck">Insulation above roof deck</dtyp:displayterm>
@@ -15530,7 +15682,7 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
             <dtyp:displayterm value="PVExceptionSection10_109k">PV Exception: Section 10-109(k) determination</dtyp:displayterm>
             <dtyp:displayterm value="PVExceptionSnowLoad">PV Exception: Excessive snow load</dtyp:displayterm>
             <dtyp:displayterm value="PVExceptionSolarAccessAndHomeArea">PV Exception: Solar Access and Home area</dtyp:displayterm>
-            <dtyp:displayterm value="PVModuleTypePremium">PV Module Type: Premium</dtyp:displayterm>
+            <dtyp:displayterm value="PVModuleTypePremium">PV Module Type: Premium (~18-20%)</dtyp:displayterm>
             <dtyp:displayterm value="PVModuleTypeThinFilm">PV Module Type: Thin Film</dtyp:displayterm>
             <dtyp:displayterm value="PVPowerElecDCPowerOptimizer">PV Power Electric DC Power Optimizer</dtyp:displayterm>
             <dtyp:displayterm value="PVPowerElecMicroinverters">PV Power Electric Microinverters</dtyp:displayterm>
@@ -15556,6 +15708,7 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          <xsd:enumeration value="AtticReliefVentFreeArea"/>
          <xsd:enumeration value="BalancedIAQVentilation"/>
          <xsd:enumeration value="BatterySystem"/>
+         <xsd:enumeration value="BatterySystemStandalone"/>
          <xsd:enumeration value="BatteryWithSelfUtilCredit"/>
          <xsd:enumeration value="CentralHeatPumpWaterHeater"/>
          <xsd:enumeration value="CentralParallelPiping"/>
@@ -15566,6 +15719,8 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          <xsd:enumeration value="DuctsInCrawlSpace"/>
          <xsd:enumeration value="DuctsLessThan40ft"/>
          <xsd:enumeration value="DuctsNonstandardLocation"/>
+         <xsd:enumeration value="ElectInstantaneousPOU"/>
+         <xsd:enumeration value="ElectStoragePOU"/>
          <xsd:enumeration value="ExposedSlabFloor"/>
          <xsd:enumeration value="ExteriorWindowShades"/>
          <xsd:enumeration value="HeatedSlab"/>
@@ -15661,6 +15816,12 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="StandardDesignEUI">
+      <xsd:annotation>
+         <xsd:documentation>Units: kBtu per ft2 per yr</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal"/>
+   </xsd:simpleType>
    <xsd:simpleType name="StandardDesignEfficiency">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
@@ -15681,7 +15842,7 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
    </xsd:simpleType>
    <xsd:simpleType name="StandardDesignSource">
       <xsd:annotation>
-         <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
+         <xsd:documentation>Units: kBtu per ft2 per yr</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal"/>
    </xsd:simpleType>
