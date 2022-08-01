@@ -1231,6 +1231,13 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="HotelMotelGuestRoomCount">
+      <xsd:annotation>
+         <xsd:documentation>  Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:IntegerNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="HotWaterHeatingRate">
       <xsd:annotation>
          <xsd:documentation>The gallons of hot water for each person in a space during occupied hours  Units: gal per h person</xsd:documentation>
@@ -1660,6 +1667,13 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
          <xsd:enumeration value="FlowPerArea"/>
          <xsd:enumeration value="FlowPerPerson"/>
          <xsd:enumeration value="FlowPerZone"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="NonResBuildingTotalConditionedFloorArea">
+      <xsd:annotation>
+         <xsd:documentation>  Units: ft2</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:IntegerNonnegative">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="OA_SpaceRequiredMin">
@@ -2929,6 +2943,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm value="HighRiseResidential">High-Rise Residential</dtyp:displayterm>
             <dtyp:displayterm value="HotelMotel">Hotel/Motel</dtyp:displayterm>
             <dtyp:displayterm value="LowRiseResidential">Multifamily [d:lte/]3 stories</dtyp:displayterm>
+            <dtyp:displayterm value="MixedOccupancy">Mixed Occupancy</dtyp:displayterm>
             <dtyp:displayterm value="Nonresidential">Nonresidential</dtyp:displayterm>
             <dtyp:displayterm value="OtherOccupancy">Other</dtyp:displayterm>
             <dtyp:displayterm value="RelocableSchoolBuildingAllZones">Relocable Public School Building for use in all climate zones Occupancy: E</dtyp:displayterm>
@@ -2943,6 +2958,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          <xsd:enumeration value="HighRiseResidential"/>
          <xsd:enumeration value="HotelMotel"/>
          <xsd:enumeration value="LowRiseResidential"/>
+         <xsd:enumeration value="MixedOccupancy"/>
          <xsd:enumeration value="Nonresidential"/>
          <xsd:enumeration value="OtherOccupancy"/>
          <xsd:enumeration value="RelocableSchoolBuildingAllZones"/>

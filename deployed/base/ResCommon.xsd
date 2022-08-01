@@ -1183,6 +1183,12 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
+   <xsd:simpleType name="HotelMotelGuestRoomCount">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ImprovementStatus">
       <xsd:annotation>
          <xsd:documentation>Defines if a construction or equipment is new, existing,  modified, removed.  Standards such as efficiency standards may not apply if a construction or equipment in a project is existing.  equipment may be moved and reinstalled in the project.</xsd:documentation>
@@ -1569,6 +1575,12 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
          <xsd:enumeration value="FlowPerPerson"/>
          <xsd:enumeration value="FlowPerZone"/>
       </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="NonResBuildingTotalConditionedFloorArea">
+      <xsd:annotation>
+         <xsd:documentation>Units: ft2</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:IntegerNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="OA_SpaceRequiredMin">
       <xsd:annotation>
@@ -2768,6 +2780,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
             <dtyp:displayterm value="HotelMotel">Hotel/Motel</dtyp:displayterm>
             <dtyp:displayterm value="LowRiseResidential">Multifamily 
                <d:lte/>3 stories</dtyp:displayterm>
+            <dtyp:displayterm value="MixedOccupancy">Mixed Occupancy</dtyp:displayterm>
             <dtyp:displayterm value="Nonresidential">Nonresidential</dtyp:displayterm>
             <dtyp:displayterm value="OtherOccupancy">Other</dtyp:displayterm>
             <dtyp:displayterm value="RelocableSchoolBuildingAllZones">Relocable Public School Building for use in all climate zones Occupancy: E</dtyp:displayterm>
@@ -2782,6 +2795,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          <xsd:enumeration value="HighRiseResidential"/>
          <xsd:enumeration value="HotelMotel"/>
          <xsd:enumeration value="LowRiseResidential"/>
+         <xsd:enumeration value="MixedOccupancy"/>
          <xsd:enumeration value="Nonresidential"/>
          <xsd:enumeration value="OtherOccupancy"/>
          <xsd:enumeration value="RelocableSchoolBuildingAllZones"/>

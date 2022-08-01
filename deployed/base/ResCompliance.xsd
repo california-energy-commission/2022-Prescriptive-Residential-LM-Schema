@@ -2358,6 +2358,7 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-MCH-01E">LMCC-MCH-01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-PLB-01E">LMCC-PLB-01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-PRC-01-E">LMCC-PRC-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCC-PRF-01-E">LMCC-PRF-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-SAB-01-E">LMCC-SAB-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-ELC-01">LMCI-ELC-01</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-ELC-01-E">LMCI-ELC-01-E</dtyp:displayterm>
@@ -2517,6 +2518,7 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCC-MCH-01E"/>
          <xsd:enumeration value="LMCC-PLB-01E"/>
          <xsd:enumeration value="LMCC-PRC-01-E"/>
+         <xsd:enumeration value="LMCC-PRF-01-E"/>
          <xsd:enumeration value="LMCC-SAB-01-E"/>
          <xsd:enumeration value="LMCI-ELC-01"/>
          <xsd:enumeration value="LMCI-ELC-01-E"/>
@@ -2843,6 +2845,7 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCCMCH01E">LMCCMCH01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCCPLB01E">LMCCPLB01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCCPRC01E">LMCCPRC01E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCCPRF01E">LMCCPRF01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCCSAB01E">LMCCSAB01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCIELC01">LMCIELC01</dtyp:displayterm>
             <dtyp:displayterm value="LMCIELC01E">LMCIELC01E</dtyp:displayterm>
@@ -3114,6 +3117,7 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCCMCH01E"/>
          <xsd:enumeration value="LMCCPLB01E"/>
          <xsd:enumeration value="LMCCPRC01E"/>
+         <xsd:enumeration value="LMCCPRF01E"/>
          <xsd:enumeration value="LMCCSAB01E"/>
          <xsd:enumeration value="LMCIELC01"/>
          <xsd:enumeration value="LMCIELC01E"/>
@@ -3256,6 +3260,7 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="Interior and Exterior Insulation Layers Worksheet">Interior and Exterior Insulation Layers Worksheet</dtyp:displayterm>
             <dtyp:displayterm value="Lighting Multi Family Dwellings">Lighting Multi Family Dwellings</dtyp:displayterm>
             <dtyp:displayterm value="Lighting Single Family Dwellings">Lighting Single Family Dwellings</dtyp:displayterm>
+            <dtyp:displayterm value="LMCC Performance Compliance">Lowrise Multifamily Mixed Use Performance Compliance Method</dtyp:displayterm>
             <dtyp:displayterm value="Local Mechanical Exhaust">Local Mechanical Exhaust</dtyp:displayterm>
             <dtyp:displayterm value="Mechanical Systems">Mechanical Systems</dtyp:displayterm>
             <dtyp:displayterm value="Minimum Solar Zone Area Worksheet New Construction">Minimum Solar Zone Area Worksheet New Construction</dtyp:displayterm>
@@ -3334,6 +3339,7 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="Interior and Exterior Insulation Layers Worksheet"/>
          <xsd:enumeration value="Lighting Multi Family Dwellings"/>
          <xsd:enumeration value="Lighting Single Family Dwellings"/>
+         <xsd:enumeration value="LMCC Performance Compliance"/>
          <xsd:enumeration value="Local Mechanical Exhaust"/>
          <xsd:enumeration value="Mechanical Systems"/>
          <xsd:enumeration value="Minimum Solar Zone Area Worksheet New Construction"/>
@@ -3383,6 +3389,7 @@ Document Data</dtyp:displayterm>
          <xsd:documentation>This defines whether the compliance report is a certificate of compliance, an installation certificate or a verification certificate</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="CERTIFICATE OF COMPLIANCE">CERTIFICATE OF COMPLIANCE</dtyp:displayterm>
+            <dtyp:displayterm value="CERTIFICATE OF COMPLIANCE -  LOWRISE MULTIFAMILY MIXED USE PERFORMANCE COMPLIANCE METHOD">CERTIFICATE OF COMPLIANCE -  LOWRISE MULTIFAMILY MIXED USE PERFORMANCE COMPLIANCE METHOD</dtyp:displayterm>
             <dtyp:displayterm value="CERTIFICATE OF COMPLIANCE -  RESIDENTIAL PERFORMANCE COMPLIANCE METHOD">CERTIFICATE OF COMPLIANCE -  RESIDENTIAL PERFORMANCE COMPLIANCE METHOD</dtyp:displayterm>
             <dtyp:displayterm value="CERTIFICATE OF INSTALLATION">CERTIFICATE OF INSTALLATION</dtyp:displayterm>
             <dtyp:displayterm value="CERTIFICATE OF VERIFICATION">CERTIFICATE OF VERIFICATION</dtyp:displayterm>
@@ -3391,6 +3398,7 @@ Document Data</dtyp:displayterm>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstantPhrase">
          <xsd:enumeration value="CERTIFICATE OF COMPLIANCE"/>
+         <xsd:enumeration value="CERTIFICATE OF COMPLIANCE -  LOWRISE MULTIFAMILY MIXED USE PERFORMANCE COMPLIANCE METHOD"/>
          <xsd:enumeration value="CERTIFICATE OF COMPLIANCE -  RESIDENTIAL PERFORMANCE COMPLIANCE METHOD"/>
          <xsd:enumeration value="CERTIFICATE OF INSTALLATION"/>
          <xsd:enumeration value="CERTIFICATE OF VERIFICATION"/>
@@ -5681,7 +5689,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="CompliantBat">COMPLIES</dtyp:displayterm>
             <dtyp:displayterm value="NotApplicableBat">Not Applicable</dtyp:displayterm>
-            <dtyp:displayterm value="NotCompliantBat">COMPLIES</dtyp:displayterm>
+            <dtyp:displayterm value="NotCompliantBat">DOES NOT COMPLY</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -6786,7 +6794,19 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
+   <xsd:simpleType name="EnergyUseMargin">
+      <xsd:annotation>
+         <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal"/>
+   </xsd:simpleType>
    <xsd:simpleType name="EnergyUseMarginFlexibility">
+      <xsd:annotation>
+         <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="EnergyUseMarginHR">
       <xsd:annotation>
          <xsd:documentation>Units: kTDV per ft2 per yr</xsd:documentation>
       </xsd:annotation>
@@ -15683,6 +15703,7 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
             <dtyp:displayterm value="PVExceptionSnowLoad">PV Exception: Excessive snow load</dtyp:displayterm>
             <dtyp:displayterm value="PVExceptionSolarAccessAndHomeArea">PV Exception: Solar Access and Home area</dtyp:displayterm>
             <dtyp:displayterm value="PVModuleTypePremium">PV Module Type: Premium (~18-20%)</dtyp:displayterm>
+            <dtyp:displayterm value="PVModuleTypeStandard">PV Module Type: Standard  (14-17%)</dtyp:displayterm>
             <dtyp:displayterm value="PVModuleTypeThinFilm">PV Module Type: Thin Film</dtyp:displayterm>
             <dtyp:displayterm value="PVPowerElecDCPowerOptimizer">PV Power Electric DC Power Optimizer</dtyp:displayterm>
             <dtyp:displayterm value="PVPowerElecMicroinverters">PV Power Electric Microinverters</dtyp:displayterm>
@@ -15754,6 +15775,7 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          <xsd:enumeration value="PVExceptionSnowLoad"/>
          <xsd:enumeration value="PVExceptionSolarAccessAndHomeArea"/>
          <xsd:enumeration value="PVModuleTypePremium"/>
+         <xsd:enumeration value="PVModuleTypeStandard"/>
          <xsd:enumeration value="PVModuleTypeThinFilm"/>
          <xsd:enumeration value="PVPowerElecDCPowerOptimizer"/>
          <xsd:enumeration value="PVPowerElecMicroinverters"/>

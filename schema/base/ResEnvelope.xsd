@@ -37,6 +37,26 @@
       <xsd:restriction base="xsd:string">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="AttachedADU">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="AttachedGarage">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="AtticAllVentMinimumNetFreeAreaRequired">
       <xsd:annotation>
          <xsd:documentation>  Units: in2</xsd:documentation>
@@ -1853,20 +1873,6 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="TintedGlazing"/>
       </xsd:restriction>
    </xsd:simpleType>
-   <xsd:simpleType name="GreenhouseAssembly">
-      <xsd:annotation>
-         <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="NonOpaqueEnvelope">Non-opaque envelope</dtyp:displayterm>
-            <dtyp:displayterm value="OpaqueRoof">Opaque Roof</dtyp:displayterm>
-            <dtyp:displayterm value="OpaqueWall">Opaque Wall</dtyp:displayterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant">
-         <xsd:enumeration value="NonOpaqueEnvelope"/>
-         <xsd:enumeration value="OpaqueRoof"/>
-         <xsd:enumeration value="OpaqueWall"/>
-      </xsd:restriction>
-   </xsd:simpleType>
    <xsd:simpleType name="GreenhouseGardenWindow">
       <xsd:annotation>
          <xsd:documentation>Used in selection of default properties</xsd:documentation>
@@ -1876,16 +1882,6 @@ Not Shared</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="GreenhouseNonOpaqueReq">
-      <xsd:annotation>
-         <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="GlazingCompliance">Has [d:gte/]2 glazings separated by air or gas</dtyp:displayterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant">
-         <xsd:enumeration value="GlazingCompliance"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="HasCrawlspace">
