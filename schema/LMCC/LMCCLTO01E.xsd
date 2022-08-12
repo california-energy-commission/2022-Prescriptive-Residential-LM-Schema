@@ -56,7 +56,7 @@
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]A. GENERAL INFORMATION[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">GENERAL INFORMATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -162,7 +162,7 @@
          </xsd:element>
          <xsd:element name="Section_B" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]B. PROJECT SCOPE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">PROJECT SCOPE</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -269,7 +269,7 @@ Else list = ExistingPowerMaintained</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_C" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]C. COMPLIANCE RESULTS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">COMPLIANCE RESULTS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -544,7 +544,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_D" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]D. EXCEPTIONAL CONDITIONS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">EXCEPTIONAL CONDITIONS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -594,7 +594,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_E" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]E. ADDITIONAL REMARKS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL REMARKS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if there are  comments from the permit applicant to the Authority Having Jurisdiction</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -616,7 +616,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_F" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]F. OUTDOOR LIGHTING FIXTURE SCHEDULE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">OUTDOOR LIGHTING FIXTURE SCHEDULE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is always required.</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
@@ -855,7 +855,7 @@ the user must enter an explanation on how wattage is determined for each luminai
          </xsd:element>
          <xsd:element name="Section_G" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]G. SHIELDING REQUIREMENTS (BUG)[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">SHIELDING REQUIREMENTS (BUG)</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if any luminaire in section F has F09_LuminairePowerCutoffCompliance == CutoffGTE6200Lumens</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1010,7 +1010,7 @@ the user must enter an explanation on how wattage is determined for each luminai
          </xsd:element>
          <xsd:element name="Section_H" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H. OUTDOOR LIGHTING CONTROLS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">OUTDOOR LIGHTING CONTROLS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if B01a_LightingProjectScopeNR == NewLightingSystem Or If B01b_LightingProjectScopeNR == AlteredLightingSystem AND B02_DoesAlterationIncreaseLightingLoad == true; Or If B01b_LightingProjectScopeNR == AlteredLightingSystem AND B02_DoesAlterationIncreaseLightingLoad == false And B03_LuminaireAlteredPercentRange == (GTE10PercentLT50Percent OR GTE50Percent) AND B04_LuminaireAddAlteredCount GTE 5</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1166,7 +1166,7 @@ v.  Lamps and other separable light sources that are not compliant with the JA8 
          </xsd:element>
          <xsd:element name="Section_I" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]I. LIGHTING POWER ALLOWANCE (per [d:t24refnolink/]140.7 /[d:t24refnolink/]170.2(e)) [/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">LIGHTING POWER ALLOWANCE (per [d:t24refnolink/]140.7 /[d:t24refnolink/]170.2(e))</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if B01a_LightingProjectScopeNR == NewLightingSystem Or B02_DoesAlterationIncreaseLightingLoad == true Or  B05_OutdoorLightingCalculationMethod == CalculatedAllowance</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1583,7 +1583,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_J" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]J. LIGHTING ALLOWANCE: PER APPLICATION[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">LIGHTING ALLOWANCE: PER APPLICATION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if in section I I01b_UsingApplicationAllowance == true.</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1778,7 +1778,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_K" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]K. LIGHTING ALLOWANCE: SALES FRONTAGE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">LIGHTING ALLOWANCE: SALES FRONTAGE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if I01c_UsingSalesFrontageAllowance == true.</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1925,7 +1925,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_L" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]L. LIGHTING ALLOWANCE: ORNAMENTAL[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">LIGHTING ALLOWANCE: ORNAMENTAL</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if I01d_UsingOrnamentalAllowance == true.</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -2063,7 +2063,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_M" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]M. LIGHTING ALLOWANCE: PER SPECIFIC AREA[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">LIGHTING ALLOWANCE: PER SPECIFIC AREA</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if I01e_UsingSpecificAreaAllowance == true.</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -2262,7 +2262,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_N" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]N. EXISTING CONDITIONS POWER ALLOWANCE (alterations only)[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">EXISTING CONDITIONS POWER ALLOWANCE (alterations only)</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if section B  B05_OutdoorLightingCalculationMethod == ExistingPowerReduction Or  ExistingPowerMaintained</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -2428,7 +2428,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]O.  DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If any selection is changed by the user, 
 Then
 D03  ExceptionalConditionMessageCCLTOE += UserChangedSelectionInCI
@@ -2460,7 +2460,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmca" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]P.  DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If any selection is changed by the user, 
 Then
 D03  ExceptionalConditionMessageCCLTOE += UserChangedSelectionInCA

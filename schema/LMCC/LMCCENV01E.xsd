@@ -56,7 +56,7 @@
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]A. GENERAL INFORMATION[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">GENERAL INFORMATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -177,7 +177,7 @@
          </xsd:element>
          <xsd:element name="Section_B" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]B. PROJECT SCOPE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">PROJECT SCOPE</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -560,7 +560,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_C" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]C. COMPLIANCE RESULTS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">COMPLIANCE RESULTS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -1361,7 +1361,7 @@ Else result = DoesNotComply  display term DOES NOT COMPLY</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_D" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]D. EXCEPTIONAL CONDITIONS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">EXCEPTIONAL CONDITIONS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -1409,7 +1409,7 @@ Else result = DoesNotComply  display term DOES NOT COMPLY</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_E" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]E. ADDITIONAL REMARKS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL REMARKS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if there are  comments from the permit applicant to the Authority Having Jurisdiction</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1431,7 +1431,7 @@ Else result = DoesNotComply  display term DOES NOT COMPLY</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_F" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]F. ROOF ASSEMBLY SCHEDULE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">ROOF ASSEMBLY SCHEDULE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If B02NewRoof_ComponentApplies, B02AddRoof_ComponentApplies Or B02AltRoof_ComponentApplies == true
  
 Mandatory Measure Triggers:
@@ -7221,7 +7221,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_G" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]G. RATED ROOFING MATERIAL (COOL ROOF)[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">RATED ROOFING MATERIAL (COOL ROOF)</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If B02NewRoof_ComponentApplies, B02AddRoof_ComponentApplies,  Or B02AltRoofmat_ComponentApplies  == true
 End If
  
@@ -8068,7 +8068,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_H" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H. WALL ASSEMBLY SCHEDULE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">WALL ASSEMBLY SCHEDULE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If B02NewWall_ComponentApplies, B02AddWall_ComponentApplies Or B02AltWall_ComponentApplies == true
  
  
@@ -14032,7 +14032,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_I" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]I. FLOOR ASSEMBLY SCHEDULE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">FLOOR ASSEMBLY SCHEDULE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If B02NewFloor_ComponentApplies, B02AddFloor_ComponentApplies Or B02AltFloor_ComponentApplies == true
  
 Mandatory Measure Triggers:
@@ -16222,7 +16222,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_J" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]J. EXTERIOR DOOR SCHEDULE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">EXTERIOR DOOR SCHEDULE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If B02AddDoor_ComponentApplies  Or B02NewDoor_ComponentApplies == true 
   
 Mandatory Measure Triggers:
@@ -16414,7 +16414,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_K" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]K. FENESTRATION AND GLAZED DOOR  SCHEDULE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">FENESTRATION AND GLAZED DOOR  SCHEDULE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If B02NewFen_ComponentApplies, B02AddFen_ComponentApplies Or B02AltFen_ComponentApplies == true
  
 Mandatory Measure Triggers:
@@ -19467,7 +19467,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_L" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]L. DAYLIGHT IN LARGE ENCLOSED SPACES[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">DAYLIGHT IN LARGE ENCLOSED SPACES</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If A08_SpaceGT5000Ft2CeilingGTE15Ft == true OR 
 B01New1_SpaceGT5000Ft2CeilingGTE15Ft == true OR 
 B01Add1_SpaceGT5000Ft2CeilingGTE15Ft OR 
@@ -19661,7 +19661,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]M. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If value is set to true by the software and the user changes this value from true to false, an explanation is required in Section E Additional Remarks And D03_ExceptionalConditionMessageCCENVE += UserChangedSelectionInCI</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
@@ -19727,7 +19727,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmca" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]N.  DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Values in this section are affected by data in other sections of the document which may change the result to true and select Yes radio button.  
  
 If value is set to true by the software and the user changes this value from true to false, an explanation is required in Section E Additional Remarks And D03_ExceptionalConditionMessageCCENVE += UserChangedSelectionInCA.
@@ -19785,7 +19785,7 @@ Values may come these field: Kvertperf04_FenestrationName Or Kskyperf04_SKylight
          </xsd:element>
          <xsd:element name="Section_Lmcv" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]O. DECLARATION OF REQUIRED CERTIFICATES OF VERIFICATION [/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF VERIFICATION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If value is set to true by the software and the user changes this value from true to false, an explanation is required in Section E Additional Remarks And D03_ExceptionalConditionMessageCCENVE += UserChangedSelectionInCV</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>

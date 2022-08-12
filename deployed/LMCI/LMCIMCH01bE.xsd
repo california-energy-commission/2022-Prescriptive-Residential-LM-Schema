@@ -1304,15 +1304,22 @@ End If</xsd:documentation>
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
-                                    <xsd:element name="G10_DuctMinimumRValueExceptions" type="comp:DuctMinimumRValueExceptions" maxOccurs="unbounded">
+                                    <xsd:element name="G10_DuctMinimumRValueExceptions">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Exception from Minimum R-Value</xsd:documentation>
-                                          <xsd:documentation source="CalculationsAndRules">Default result = NoException;  Allow user to override the default and select ,  UninsulatedInDirectConditioning display term  Portions of ducts uninsulated  or less than R-6 in conditioned space
+                                          <xsd:documentation source="CalculationsAndRules">Default result = NoException;  Allow user to override the default and select one from list:,  UninsulatedInDirectConditioning display term  Portions of ducts uninsulated  or less than R-6 in conditioned space
  
 Also 
 If G06_SupplyDuctLocation And G08_ReturnDuctLocation  == ConditionedSpace, allow user to select RValueLT6EntirelyInConditioned display term Ducts uninsulated or less than R-6 entirely in Conditioned Space
 End If</xsd:documentation>
                                        </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="comp:DuctMinimumRValueExceptions">
+                                             <xsd:enumeration value="NoException"/>
+                                             <xsd:enumeration value="RValueLT6EntirelyInConditioned"/>
+                                             <xsd:enumeration value="UninsulatedInDirectConditioning"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
                                     </xsd:element>
                                     <xsd:element name="G11_DuctFilterGrilleSizingComplianceMethod">
                                        <xsd:annotation>

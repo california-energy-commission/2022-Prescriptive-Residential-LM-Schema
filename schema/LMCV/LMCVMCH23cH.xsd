@@ -28,7 +28,7 @@
                   <xsd:attribute name="doc" type="comp:ComplianceDocumentTag" fixed="LMCVMCH23cH"/>
                   <xsd:attribute name="docType" type="comp:ComplianceDocumentType" fixed="CERTIFICATE OF VERIFICATION"/>
                   <xsd:attribute name="docTitle" type="comp:ComplianceDocumentTitleRes" fixed="Space Conditioning System Airflow Rate"/>
-                  <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH23c Alternative to Compliance with Minimum System Airflow Requirements for Altered Systems"/>
+                  <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH23c Forced Air System Airflow Rate Measurement -  Alternative to Compliance with Minimum System Airflow Requirements for Altered Systems"/>
                   <xsd:attribute name="docVariantLetter" type="comp:ComplianceDocumentVariant" fixed="c"/>
                </xsd:complexType>
             </xsd:element>
@@ -53,7 +53,7 @@
    </xsd:element>
    <xsd:complexType name="LMCVMCH23cH">
       <xsd:annotation>
-         <xsd:documentation>Space Conditioning System Airflow Rate - MCH23c Alternative to Compliance with Minimum System Airflow Requirements for Altered Systems</xsd:documentation>
+         <xsd:documentation>Space Conditioning System Airflow Rate - MCH23c Forced Air System Airflow Rate Measurement -  Alternative to Compliance with Minimum System Airflow Requirements for Altered Systems</xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">

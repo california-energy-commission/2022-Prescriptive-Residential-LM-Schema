@@ -43,9 +43,7 @@
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b> A. GENERAL INFORMATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">GENERAL INFORMATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -153,9 +151,7 @@
          </xsd:element>
          <xsd:element name="Section_B" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b> B. PROJECT SCOPE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">PROJECT SCOPE</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -296,9 +292,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_C" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>C. COMPLIANCE RESULTS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">COMPLIANCE RESULTS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -569,9 +563,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_D" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>D. EXCEPTIONAL CONDITIONS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">EXCEPTIONAL CONDITIONS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -623,9 +615,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_E" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>E. ADDITIONAL REMARKS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL REMARKS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if there are  comments from the permit applicant to the Authority Having Jurisdiction</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -650,9 +640,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_F" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>F. SERVICE ELECTRICAL METERING</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">SERVICE ELECTRICAL METERING</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If B02_ElectricalServiceProjectScope != AlterationsFeedersBranchCircuitsOnly Or ReplacementElectricalServiceNotMeter  And
 B04_UtilityProvidedMeterException130_5a == false And
 B05_DoesElectricalCodeExceptionApply == false And
@@ -772,9 +760,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_G" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>G. SEPARATION OF ELECTRICAL CIRCUITS FOR ENERGY MONITORING</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">SEPARATION OF ELECTRICAL CIRCUITS FOR ENERGY MONITORING</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Section G is required if any row in section B has B02_ElectricalServiceProjectScope == NewElectricalService Or ReplacementElectricalService Or ReplacementElectricalServiceNotMeter 
 And B05_DoesElectricalCodeExceptionApply == false And B07_DoesElectricalServicePowerMF == false
  
@@ -990,9 +976,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_H" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>H. VOLTAGE DROP </d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">VOLTAGE DROP</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Section H is required If B02_ElectricalServiceProjectScope !=  NewReplacementServiceMeterOnly</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1149,9 +1133,7 @@ EndIf</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_I" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>I. CIRCUIT CONTROLS FOR 120-VOLT RECEPTACLES AND CONTROLLED RECEPTACLES</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">CIRCUIT CONTROLS FOR 120-VOLT RECEPTACLES AND CONTROLLED RECEPTACLES</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Section I is required if  A02_WholeBuildingOccupancy != HospitalBuilding  And B02_ElectricalServiceProjectScope == NewElectricalService Or ReplacementElectricalService Or ReplacementElectricalServiceNotMeter
  
 Mandatory Measure Triggers:
@@ -1301,9 +1283,7 @@ And ControlledReceptacleNA values  which if selected are stored in this choice</
          </xsd:element>
          <xsd:element name="Section_J" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>J. ELECTRIC READY BUILDINGS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ELECTRIC READY BUILDINGS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If  A02_WholeBuildingOccupancy includes MultiFamilyMixedUseLT4</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1477,9 +1457,7 @@ If J01d_CommonAreaDryer == true</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>K. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -1509,9 +1487,7 @@ If J01d_CommonAreaDryer == true</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmca" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>L. DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>

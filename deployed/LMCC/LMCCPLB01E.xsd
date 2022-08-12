@@ -43,9 +43,7 @@
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b> A. GENERAL INFORMATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">GENERAL INFORMATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -169,9 +167,7 @@
          </xsd:element>
          <xsd:element name="Section_B" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b> B. PROJECT SCOPE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">PROJECT SCOPE</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -389,9 +385,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_C" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>C. COMPLIANCE RESULTS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">COMPLIANCE RESULTS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -579,9 +573,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_D" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>D. EXCEPTIONAL CONDITIONS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">EXCEPTIONAL CONDITIONS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -633,9 +625,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_E" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>E. ADDITIONAL REMARKS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL REMARKS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if there are  comments from the permit applicant to the Authority Having Jurisdiction</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -660,9 +650,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_F" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>F. DOMESTIC HOT WATER EQUIPMENT</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DOMESTIC HOT WATER EQUIPMENT</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required is in section B any row has B03aNew_ProjectHasEquipment == true Or B03aAltered_ProjectHasEquipment == true
  
 Mandatory Measure Triggers:
@@ -1062,17 +1050,17 @@ Else If F08_WaterHeaterType == InstantaneousResDutyCommercial result = 0.80;
 Else If F08_WaterHeaterType == TableTopElectric 
 Switch ( F10b_WaterHeaterFlow) 
 case GTE0LT1_7: 
-If F09_WaterHeaterVolume ==  30Gal: result = 0.46
+If F09_WaterHeaterVolume ==  LTE30Gal: result = 0.46
 Else If  F09_WaterHeaterVolume == 40Gal: result = 0.40; 
 End If
 case GTE1_7LT2_8: 
-If F09_WaterHeaterVolume ==30Gal: result = 0.83; Else result = 0.79; 
+If F09_WaterHeaterVolume ==LTE30Gal: result = 0.83; Else result = 0.79; 
 End If
 case GTE2_8LT4: 
-If F09_WaterHeaterVolume == 30Gal: result = 0.89; Else result = 0.87; 
+If F09_WaterHeaterVolume == LTE30Gal: result = 0.89; Else result = 0.87; 
 End If
 case GTE4:
-If F09_WaterHeaterVolume == 30Gal: result = 0.94; Else result = 0.92; 
+If F09_WaterHeaterVolume == LTE30Gal: result = 0.94; Else result = 0.92; 
 End If
 End Switch
  
@@ -1584,9 +1572,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_G" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>G. DOMESTIC HOT WATER DISTRIBUTION SYSTEM</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DOMESTIC HOT WATER DISTRIBUTION SYSTEM</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Section G is required if any row in section B has B03bNew_ProjectHasDistribution == true Or B03bAltered_ProjectHasDistribution == true
  
  
@@ -2037,9 +2023,7 @@ Multi-field triggers:  See G14_NonresPipeInsulationComplies CalculationsAndRules
          </xsd:element>
          <xsd:element name="Section_H" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>H.  DOMESTIC HOT WATER CONTROLS </d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DOMESTIC HOT WATER CONTROLS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Section H is required if any row in section B has B03cNew_ProjectHasControls == true Or B03cAltered_ProjectHasControls == true
  
 Mandatory Measure Triggers:
@@ -2156,9 +2140,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>I. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -2193,9 +2175,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmca" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>J. DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -2213,9 +2193,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmcv" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>K. DECLARATION OF REQUIRED CERTIFICATES OF VERIFICATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF VERIFICATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>

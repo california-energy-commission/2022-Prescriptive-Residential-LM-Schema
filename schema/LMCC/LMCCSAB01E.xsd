@@ -56,7 +56,7 @@
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]A. GENERAL INFORMATION[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">GENERAL INFORMATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -149,7 +149,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_B" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b] B. PROJECT SCOPE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">PROJECT SCOPE</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -386,7 +386,7 @@ If result == true Section_H is required</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_C" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]C. COMPLIANCE RESULTS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">COMPLIANCE RESULTS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -836,7 +836,7 @@ result = NotApplicableBat display term Not Applicable</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_D" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]D. EXCEPTIONAL CONDITIONS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">EXCEPTIONAL CONDITIONS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -885,7 +885,7 @@ result = NotApplicableBat display term Not Applicable</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_E" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]E. ADDITIONAL REMARKS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL REMARKS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if there are  comments from the permit applicant to the Authority Having Jurisdiction</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -908,7 +908,7 @@ result = NotApplicableBat display term Not Applicable</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_F" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]F. ALLOCATED SOLAR ZONE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">ALLOCATED SOLAR ZONE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Section F is required if B01a_IsProjectAllocatedSolarZone == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1277,7 +1277,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_G" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]G. PERMANENTLY INSTALLED SOLAR PV FOR SOLAR READY EXCEPTION[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">PERMANENTLY INSTALLED SOLAR PV FOR SOLAR READY EXCEPTION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Section G is not required for the LMCC, so no data is collected and only the section title and Begin Note are displayed</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1294,7 +1294,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_H" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]H. PERMANENTLY INSTALLED SOLAR HOT WATER SYSTEMS [/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">PERMANENTLY INSTALLED SOLAR HOT WATER SYSTEMS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Section H is required If Bdhw01a_SystemIncludesSolarDHW == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1371,7 +1371,7 @@ D03_ExceptionalConditionMessageCCSABE += CalculatorOutputAttachedForH</xsd:docum
          </xsd:element>
          <xsd:element name="Section_I" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]I. SMART THERMOSTATS AND ALTERNATIVE EFFICIENCY MEASURE FOR SOLAR READY EXCEPTION[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">SMART THERMOSTATS AND ALTERNATIVE EFFICIENCY MEASURE FOR SOLAR READY EXCEPTION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Section I is required if B01d_IsProjectSmartTstatPlusEE_Measure == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1511,7 +1511,7 @@ D03_ExceptionalConditionMessageCCSABE += CalculatorOutputAttachedForH</xsd:docum
          </xsd:element>
          <xsd:element name="Section_J" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]J. PHOTOVOLTAIC (PV) SYSTEMS[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">PHOTOVOLTAIC (PV) SYSTEMS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if Bpv01e_SnowLoadException == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1678,7 +1678,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]K. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Values in this section are affected by data in other sections of the document which may change the result to true and select Yes radio button.  
  
 If value is set to true by the software and the user changes this value from true to false, an explanation is required in Section E Additional Remarks And 
@@ -1724,7 +1724,7 @@ These documents must be provided to the building inspector during construction a
          </xsd:element>
          <xsd:element name="Section_Lmca" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">[d:b]L. DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE[/d:b]</xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>

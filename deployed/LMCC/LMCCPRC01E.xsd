@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/LMCCCPRC01E" version="2022.0.000" xmlns="http://www.lmonte.com/besm/LMCCCPRC01E" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:comp="http://www.lmonte.com/besm/comp" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:env="http://www.lmonte.com/besm/env" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:lit="http://www.lmonte.com/besm/lit" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.lmonte.com/besm/LMCCPRC01E" version="2022.0.000" xmlns="http://www.lmonte.com/besm/LMCCPRC01E" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns:bld="http://www.lmonte.com/besm/bld" xmlns:com="http://www.lmonte.com/besm/com" xmlns:comp="http://www.lmonte.com/besm/comp" xmlns:d="http://www.lmonte.com/besm/d" xmlns:dtyp="http://www.lmonte.com/besm/dtyp" xmlns:env="http://www.lmonte.com/besm/env" xmlns:hvac="http://www.lmonte.com/besm/hvac" xmlns:lit="http://www.lmonte.com/besm/lit" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <xsd:import namespace="http://www.lmonte.com/besm/bld" schemaLocation="../base/ResBuilding.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/com" schemaLocation="../base/ResCommon.xsd"/>
    <xsd:import namespace="http://www.lmonte.com/besm/comp" schemaLocation="../base/ResCompliance.xsd"/>
@@ -41,11 +41,9 @@
          <xsd:documentation>Process Systems</xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
-         <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">
+         <xsd:element name="Section_A" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>A. GENERAL INFORMATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">GENERAL INFORMATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -165,9 +163,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_B" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>B. PROJECT SCOPE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">PROJECT SCOPE</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -256,9 +252,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_C" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>C. COMPLIANCE RESULTS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">COMPLIANCE RESULTS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -549,9 +543,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_D" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>D. EXCEPTIONAL CONDITIONS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">EXCEPTIONAL CONDITIONS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -603,9 +595,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_E" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>E. ADDITIONAL REMARKS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL REMARKS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if there are  comments from the permit applicant to the Authority Having Jurisdiction</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -629,9 +619,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_H" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>H. ENCLOSED PARKING GARAGE EXHAUST</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ENCLOSED PARKING GARAGE EXHAUST</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if B01_ProjectHasEnclosedParking == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -846,9 +834,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_K" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>K. ELEVATOR LIGHTING AND VENTILATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ELEVATOR LIGHTING AND VENTILATION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If A03_WholeBuildingOccupancy == HospitalBuilding
 this section does not apply
 Else If B01_ProjectHasElevatorControls == true.
@@ -1127,9 +1113,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_N" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>N. COMMERCIAL KITCHEN EXHAUST AND VENTILATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">COMMERCIAL KITCHEN EXHAUST AND VENTILATION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If A03_WholeBuildingOccupancy == HospitalBuilding
 this section does not apply
 Else If  B01_ProjectHasCommercialKitchen == true
@@ -1464,9 +1448,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_R" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>R. Pool &amp;amp; SPAs</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">Pool &amp;amp; SPAs</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If  B01_ProjectHasPoolSpa == true
 this section is required
 End If</xsd:documentation>
@@ -1737,9 +1719,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>S.  DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">Values in this section are affected by data in other sections of the document which may change the result to true and select Yes radio button.  
  
 If value is set to true by the software and the user changes this value from true to false, an explanation is required in Section E Additional Remarks And 

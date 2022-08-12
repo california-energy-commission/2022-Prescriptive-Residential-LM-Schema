@@ -84,7 +84,7 @@
                      <xsd:element name="A03_FloorArea" type="com:FloorArea" >
                         <xsd:annotation>
                            <xsd:documentation source="FieldText">Total Kitchen Floor Area</xsd:documentation>
-                           <xsd:documentation source="CalculationsAndRules">If A06_EnclosedSpace == false And (C03_KitchenExhaustSystemType  == VentedRangeHood And C08_KitchenExhaustOperation == DemandControl for ALL systems)
+                           <xsd:documentation source="CalculationsAndRules">If A06_EnclosedSpace == false And (B03_KitchenExhaustSystemType  == VentedRangeHood And B08_KitchenExhaustOperation == DemandControl for ALL systems)
 allow NotApplicable stored in NotApplicableMessage
 Else User input numeric xx.xx 
 End If</xsd:documentation>
@@ -93,7 +93,7 @@ End If</xsd:documentation>
                      <xsd:element name="A03_NotApplicableMessage" type="comp:NotApplicableMessage" >
                         <xsd:annotation>
                            <xsd:documentation source="FieldText">Total Kitchen Floor Area</xsd:documentation>
-                           <xsd:documentation source="CalculationsAndRules">If A06_EnclosedSpace == false And (C03_KitchenExhaustSystemType  == VentedRangeHood And C08_KitchenExhaustOperation == DemandControl for ALL systems)
+                           <xsd:documentation source="CalculationsAndRules">If A06_EnclosedSpace == false And (B03_KitchenExhaustSystemType  == VentedRangeHood And B08_KitchenExhaustOperation == DemandControl for ALL systems)
 allow NotApplicable stored in NotApplicableMessage
 Else User input numeric xx.xx 
 End If</xsd:documentation>
@@ -104,7 +104,7 @@ End If</xsd:documentation>
                      <xsd:element name="A04_FloorToCeilingHeight" type="com:FloorToCeilingHeight" >
                         <xsd:annotation>
                            <xsd:documentation source="FieldText">Kitchen Average Ceiling Height</xsd:documentation>
-                           <xsd:documentation source="CalculationsAndRules">If A06_EnclosedSpace == false And (C03_KitchenExhaustSystemType  == VentedRangeHood And C08_KitchenExhaustOperation == DemandControl for ALL systems)
+                           <xsd:documentation source="CalculationsAndRules">If A06_EnclosedSpace == false And (B03_KitchenExhaustSystemType  == VentedRangeHood And B08_KitchenExhaustOperation == DemandControl for ALL systems)
 allow NotApplicable stored in NotApplicableMessage
 Else User input numeric xx.xx 
 End If</xsd:documentation>
@@ -113,7 +113,7 @@ End If</xsd:documentation>
                      <xsd:element name="A04_NotApplicableMessage" type="comp:NotApplicableMessage" >
                         <xsd:annotation>
                            <xsd:documentation source="FieldText">Kitchen Average Ceiling Height</xsd:documentation>
-                           <xsd:documentation source="CalculationsAndRules">If A06_EnclosedSpace == false And (C03_KitchenExhaustSystemType  == VentedRangeHood And C08_KitchenExhaustOperation == DemandControl for ALL systems)
+                           <xsd:documentation source="CalculationsAndRules">If A06_EnclosedSpace == false And (B03_KitchenExhaustSystemType  == VentedRangeHood And B08_KitchenExhaustOperation == DemandControl for ALL systems)
 allow NotApplicable stored in NotApplicableMessage
 Else User input numeric xx.xx 
 End If</xsd:documentation>
@@ -357,17 +357,35 @@ End If</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
+                                    <xsd:element name="B10a_SoundRatingException" type="comp:SoundRatingException" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Exception to Maximum Sound Rating</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">Default value = NoSoundException but allow user to override and select  ExceptionSoundRating display term Remote mounted fan with min. 4ft of duct between fan and intake grille</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="B10_KitchenExhaustSoundRating" type="com:KitchenExhaustSoundRating" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Maximum Sound Rating</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">Calculated field:  If B08_KitchenExhaustOperation == ContinuousOperation result = 1Sone; Else If B08_KitchenExhaustOperation == DemandControl And B07_KitchenExhaustMinimumAirFlow  LTE 400 result = 3Sone; Else result = N/A stored in NotapplicableMessage</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">Calculated field: 
+If B10a_SoundRatingException == ExceptionSoundRating
+result = N/A stored in NotApplicableMessage
+Else  If B08_KitchenExhaustOperation == ContinuousOperation result = 1Sone; 
+Else If B08_KitchenExhaustOperation == DemandControl And B07_KitchenExhaustMinimumAirFlow  LTE 400 result = 3Sone; 
+Else result = N/A stored in NotapplicableMessage
+End If</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="B10_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Maximum Sound Rating</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">Calculated field:  If B08_KitchenExhaustOperation == ContinuousOperation result = 1Sone; Else If B08_KitchenExhaustOperation == DemandControl And B07_KitchenExhaustMinimumAirFlow  LTE 400 result = 3Sone; Else result = N/A stored in NotapplicableMessage</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">Calculated field: 
+If B10a_SoundRatingException == ExceptionSoundRating
+result = N/A stored in NotApplicableMessage
+Else  If B08_KitchenExhaustOperation == ContinuousOperation result = 1Sone; 
+Else If B08_KitchenExhaustOperation == DemandControl And B07_KitchenExhaustMinimumAirFlow  LTE 400 result = 3Sone; 
+Else result = N/A stored in NotapplicableMessage
+End If</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>

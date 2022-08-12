@@ -94,7 +94,7 @@
                   <xsd:element name="A07_DuctsInConditionedSpaceRValueException" type="comp:DuctsInConditionedSpaceRValueException">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Status - Portions of Ducts Located In Conditioned Space,  R-6 Exception:</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">Calculated field: If MCH-01 DuctMinimumRValueExceptions includes UninsulatedInDirectConditioning then result = true display term: True and section E below should be displayed;   Else result = false  display term: Not applicable</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">Calculated field: If MCH-01 DuctMinimumRValueExceptions includes UninsulatedInDirectConditioning then result = true display term  Else result = false  display term: Not applicable</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>

@@ -15,7 +15,7 @@
                   <xsd:attribute name="doc" type="comp:ComplianceDocumentTag" fixed="LMCVMCH25dH"/>
                   <xsd:attribute name="docType" type="comp:ComplianceDocumentType" fixed="CERTIFICATE OF VERIFICATION"/>
                   <xsd:attribute name="docTitle" type="comp:ComplianceDocumentTitleRes" fixed="Refrigerant Charge Verification"/>
-                  <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH25d Verification of Fault Indicator Display"/>
+                  <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH25d Fault Indicator Display"/>
                   <xsd:attribute name="docVariantLetter" type="comp:ComplianceDocumentVariant" fixed="d"/>
                </xsd:complexType>
             </xsd:element>
@@ -40,7 +40,7 @@
    </xsd:element>
    <xsd:complexType name="LMCVMCH25dH">
       <xsd:annotation>
-         <xsd:documentation>Refrigerant Charge Verification - MCH25d Verification of Fault Indicator Display</xsd:documentation>
+         <xsd:documentation>Refrigerant Charge Verification - MCH25d Fault Indicator Display</xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1">

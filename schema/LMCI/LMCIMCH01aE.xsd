@@ -28,7 +28,7 @@
                   <xsd:attribute name="doc" type="comp:ComplianceDocumentTag" fixed="LMCIMCH01aE"/>
                   <xsd:attribute name="docType" type="comp:ComplianceDocumentType" fixed="CERTIFICATE OF INSTALLATION"/>
                   <xsd:attribute name="docTitle" type="comp:ComplianceDocumentTitleRes" fixed="Space Conditioning Systems, Ducts, and Fans"/>
-                  <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH01a Performance Approach"/>
+                  <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH01a For use with Performance Certificate of Compliance"/>
                   <xsd:attribute name="docVariantLetter" type="comp:ComplianceDocumentVariant" fixed="a"/>
                </xsd:complexType>
             </xsd:element>
@@ -53,7 +53,7 @@
    </xsd:element>
    <xsd:complexType name="LMCIMCH01aE">
       <xsd:annotation>
-         <xsd:documentation>Space Conditioning Systems, Ducts, and Fans - MCH01a Performance Approach</xsd:documentation>
+         <xsd:documentation>Space Conditioning Systems, Ducts, and Fans - MCH01a For use with Performance Certificate of Compliance</xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">
@@ -1677,17 +1677,22 @@ Also require one row of data to be entered for each indoor unit in E03_IndoorUni
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
-                                    <xsd:element name="J08_DuctMinimumRValueExceptions" type="comp:DuctMinimumRValueExceptions"  maxOccurs="unbounded">
+                                    <xsd:element name="J08_DuctMinimumRValueExceptions" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Exception from Min R-Value</xsd:documentation>
-                                          <xsd:documentation source="CalculationsAndRules">default result = NoException; Allow user to override and select one or more from list;  
+                                          <xsd:documentation source="CalculationsAndRules">default result = NoException; Allow user to override and select one from list;  
 UninsulatedInDirectConditioning display term Portions of Ducts uninsulated  or less than R-6 in conditioned space
  
-RValueLT6EntirelyInConditioned display term Ducts uninsulated or less than R-6 entirely in Conditioned Space
- 
 If J04_SupplyDuctLocation And J06_ReturnDuctLocation == ConditionedSpace add to list   
-RValueLT6EntirelyInConditioned display term Ducts [d:lt/]R6 Entirely in Conditioned Space</xsd:documentation>
+RValueLT6EntirelyInConditioned display term Ducts uninsulated or less than R-6 entirely in Conditioned Space</xsd:documentation>
                                        </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="comp:DuctMinimumRValueExceptions">
+                                             <xsd:enumeration value="NoException"/>
+                                             <xsd:enumeration value="RValueLT6EntirelyInConditioned"/>
+                                             <xsd:enumeration value="UninsulatedInDirectConditioning"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
                                     </xsd:element>
                                     <xsd:element name="J09_DuctFilterGrilleSizingComplianceMethod" >
                                        <xsd:annotation>

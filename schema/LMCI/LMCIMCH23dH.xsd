@@ -28,7 +28,7 @@
                   <xsd:attribute name="doc" type="comp:ComplianceDocumentTag" fixed="LMCIMCH23dH"/>
                   <xsd:attribute name="docType" type="comp:ComplianceDocumentType" fixed="CERTIFICATE OF INSTALLATION"/>
                   <xsd:attribute name="docTitle" type="comp:ComplianceDocumentTitleRes" fixed="Space Conditioning System Airflow Rate"/>
-                  <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH23d Newly Installed Heating Only Non-Zoned Systems Measurement Only - No Minimum Target Requirement"/>
+                  <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH23d  Newly Installed Heating Only Non-Zoned Systems or Zoned Multi-Speed Compressor Measurement Only - No Minimum Target Requirement"/>
                   <xsd:attribute name="docVariantLetter" type="comp:ComplianceDocumentVariant" fixed="d"/>
                </xsd:complexType>
             </xsd:element>
@@ -53,7 +53,7 @@
    </xsd:element>
    <xsd:complexType name="LMCIMCH23dH">
       <xsd:annotation>
-         <xsd:documentation>Space Conditioning System Airflow Rate - MCH23d Newly Installed Heating Only Non-Zoned Systems Measurement Only - No Minimum Target Requirement</xsd:documentation>
+         <xsd:documentation>Space Conditioning System Airflow Rate - MCH23d  Newly Installed Heating Only Non-Zoned Systems or Zoned Multi-Speed Compressor Measurement Only - No Minimum Target Requirement</xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">

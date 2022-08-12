@@ -41,11 +41,9 @@
          <xsd:documentation>Nonresidential Building Commissioning</xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
-         <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">
+         <xsd:element name="Section_A" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>A. GENERAL INFORMATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">GENERAL INFORMATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -228,9 +226,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_B" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>B. PROJECT SCOPE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">PROJECT SCOPE</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -399,9 +395,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_C" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>C. COMPLIANCE RESULTS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">COMPLIANCE RESULTS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -777,9 +771,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_D" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>D. EXCEPTIONAL CONDITIONS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">EXCEPTIONAL CONDITIONS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -828,9 +820,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_E" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>E. ADDITIONAL REMARKS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL REMARKS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if there are  comments from the permit applicant to the Authority Having Jurisdiction</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -854,9 +844,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_F" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>F. DESIGN REVIEW KICKOFF MEETING</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DESIGN REVIEW KICKOFF MEETING</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -1214,9 +1202,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_G" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>G. OWNER'S PROJECT REQUIREMENTS (OPR)</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">OWNER'S PROJECT REQUIREMENTS (OPR)</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If A05_ConditionedFloorAreaRangeNR Not== LT10000Ft2</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1641,9 +1627,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_H" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>H. BASIS OF DESIGN (BOD)</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">BASIS OF DESIGN (BOD)</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If A05_ConditionedFloorAreaRangeNR Not== LT10000Ft2</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -2099,9 +2083,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_I" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>I. CONSTRUCTION DOCUMENT DESIGN REVIEW CHECKLIST</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">CONSTRUCTION DOCUMENT DESIGN REVIEW CHECKLIST</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -2192,9 +2174,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_J" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>J. COMMISSIONING PLAN</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">COMMISSIONING PLAN</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If A05_ConditionedFloorAreaRangeNR Not== LT10000Ft2</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -2336,9 +2316,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_K" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>K.  FUNCTIONAL PERFORMANCE TESTING</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">FUNCTIONAL PERFORMANCE TESTING</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If A05_ConditionedFloorAreaRangeNR != LT10000Ft2</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -2478,9 +2456,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_L" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>L. DOCUMENTATION AND TRAINING</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DOCUMENTATION AND TRAINING</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If A05_ConditionedFloorAreaRangeNR Not== LT10000Ft2</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -2524,9 +2500,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_M" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>M. COMMISSIONING REPORT</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">COMMISSIONING REPORT</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If A05_ConditionedFloorAreaRangeNR Not== LT10000Ft2</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -2561,9 +2535,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmci" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>N. DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -2581,9 +2553,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmca" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>O.  DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>

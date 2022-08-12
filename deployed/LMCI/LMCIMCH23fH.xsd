@@ -15,7 +15,7 @@
                   <xsd:attribute name="doc" type="comp:ComplianceDocumentTag" fixed="LMCIMCH23fH"/>
                   <xsd:attribute name="docType" type="comp:ComplianceDocumentType" fixed="CERTIFICATE OF INSTALLATION"/>
                   <xsd:attribute name="docTitle" type="comp:ComplianceDocumentTitleRes" fixed="Space Conditioning System Airflow Rate"/>
-                  <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH23f Newly Installed Zoned Single-Speed Compressor Systems with Central Fan Ventilation Cooling System"/>
+                  <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH23f Forced Air System Airflow Rate Measurement -  Newly Installed Zoned Single-Speed Compressor Systems with Central Fan Ventilation Cooling System"/>
                   <xsd:attribute name="docVariantLetter" type="comp:ComplianceDocumentVariant" fixed="f"/>
                </xsd:complexType>
             </xsd:element>
@@ -40,7 +40,7 @@
    </xsd:element>
    <xsd:complexType name="LMCIMCH23fH">
       <xsd:annotation>
-         <xsd:documentation>Space Conditioning System Airflow Rate - MCH23f Newly Installed Zoned Single-Speed Compressor Systems with Central Fan Ventilation Cooling System</xsd:documentation>
+         <xsd:documentation>Space Conditioning System Airflow Rate - MCH23f Forced Air System Airflow Rate Measurement -  Newly Installed Zoned Single-Speed Compressor Systems with Central Fan Ventilation Cooling System</xsd:documentation>
       </xsd:annotation>
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">

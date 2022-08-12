@@ -392,18 +392,35 @@ End If</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
+                                    <xsd:element name="C10a_SoundRatingException" type="comp:SoundRatingException">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Exception to Maximum Sound Rating</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">Default value = NoSoundException but allow user to override and select  ExceptionSoundRating display term Remote mounted fan with min. 4ft of duct between fan and intake grille</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="C10_KitchenExhaustSoundRating" type="com:KitchenExhaustSoundRating">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Maximum Sound Rating</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Calculated field: 
- If C08_KitchenExhaustOperation == ContinuousOperation result = 1Sone; Else If C08_KitchenExhaustOperation == DemandControl And C07_KitchenExhaustMinimumAirFlow LTE 400 result = 3Sone; Else result = N/A stored in NotapplicableMessage</xsd:documentation>
+If C10a_SoundRatingException == ExceptionSoundRating
+result = N/A stored in NotApplicableMessage
+Else If C08_KitchenExhaustOperation == ContinuousOperation result = 1Sone;
+Else If C08_KitchenExhaustOperation == DemandControl And C07_KitchenExhaustMinimumAirFlow LTE 400 result = 3Sone; 
+Else result = N/A stored in NotApplicableMessage
+End If</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="C10_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Maximum Sound Rating</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">Calculated field:  If C08_KitchenExhaustOperation == ContinuousOperation result = 1Sone; Else If C08_KitchenExhaustOperation == DemandControl And C07_KitchenExhaustMinimumAirFlow LTE 400 result = 3Sone; Else result = N/A stored in NotapplicableMessage</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">Calculated field:  
+If C10a_SoundRatingException == ExceptionSoundRating
+result = N/A stored in NotApplicableMessage
+Else If C08_KitchenExhaustOperation == ContinuousOperation result = 1Sone;
+Else If C08_KitchenExhaustOperation == DemandControl And C07_KitchenExhaustMinimumAirFlow LTE 400 result = 3Sone; 
+Else result = N/A stored in NotApplicableMessage
+End If</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>

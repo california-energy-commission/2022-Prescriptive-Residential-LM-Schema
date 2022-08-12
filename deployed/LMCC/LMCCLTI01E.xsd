@@ -43,9 +43,7 @@
       <xsd:sequence>
          <xsd:element name="Section_A" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>A. GENERAL INFORMATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">GENERAL INFORMATION</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -184,9 +182,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_B" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>B. PROJECT SCOPE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">PROJECT SCOPE</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -482,9 +478,7 @@ D03  ExceptionalConditionMessageCCLTIE += FloorAreasInconsistentValues</xsd:docu
          </xsd:element>
          <xsd:element name="Section_C" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>C. COMPLIANCE RESULTS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">COMPLIANCE RESULTS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -1089,9 +1083,7 @@ End if</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_D" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>D. EXCEPTIONAL CONDITIONS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">EXCEPTIONAL CONDITIONS</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required.</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -1143,9 +1135,7 @@ End if</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_E" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>E. ADDITIONAL REMARKS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL REMARKS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if there are  comments from the permit applicant to the Authority Having Jurisdiction</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1169,9 +1159,7 @@ End if</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_F" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>F. INDOOR LIGHTING FIXTURE SCHEDULE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">INDOOR LIGHTING FIXTURE SCHEDULE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies If Bnew01_LightingProjectScope Or Bpark01_LightingProjectScope != NotApplicableLightingScope Or at least one instance of Baltered02_LightingPrescriptiveMethodNR Or Baltered04_LightingPrescriptiveMethodNR != RatedPowerReduction</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1496,9 +1484,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_G" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>G. MODULAR LIGHTING SYSTEMS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">MODULAR LIGHTING SYSTEMS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is applicable if in section F any row has Fc03_IsLuminaireTrackLighting or Fu03_IsLuminaireTrackLighting == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -1730,9 +1716,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_H" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>H. INDOOR LIGHTING CONTROLS (Not including PAFs)</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">INDOOR LIGHTING CONTROLS (Not including PAFs)</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies If Bnew01_LightingProjectScopeNR Or Bpark01_LightingProjectScopeNR != NotApplicableLightingScope Or at least one instance of Baltered02_LightingPrescriptiveMethodNR Or Baltered04_LightingPrescriptiveMethodNR != RatedPowerReduction And != NotApplicableLightingMethod</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -2135,9 +2119,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_I" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>I. LIGHTING POWER ALLOWANCE: COMPLETE BUILDING OR AREA CATEGORY METHODS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">LIGHTING POWER ALLOWANCE: COMPLETE BUILDING OR AREA CATEGORY METHODS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if in section B at least one value for  Bnew02_LightingPrescriptiveMethodNR, Bnew04_LightingPrescriptiveMethodNR,   Baltered02_LightingPrescriptiveMethodNR Or Baltered04_LightingPrescriptiveMethodNR == AreaCategory, AreaCategoryAndTailored Or CompleteBuilding   Or if at least one value for Bpark02_LightingPrescriptiveMethodNR Or Bpark04_LightingPrescriptiveMethodNR  == CompleteBuilding</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -2719,9 +2701,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_J" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>J. ADDITIONAL ALLOWANCE: AREA CATEGORY METHOD QUALIFYING LIGHTING SYSTEM</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL ALLOWANCE: AREA CATEGORY METHOD QUALIFYING LIGHTING SYSTEM</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies  If section I IsPresent And for at least one row of data:  Ic06a_AreaCategoryAdditionalAllowance == true Or  Iu06a_AreaCategoryAdditionalAllowance== true.</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -3390,9 +3370,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_K" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>K. TAILORED METHOD GENERAL LIGHTING POWER ALLOWANCE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">TAILORED METHOD GENERAL LIGHTING POWER ALLOWANCE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if in section B at least one value for Bnew02_LightingPrescriptiveMethodNR, Bnew04_LightingPrescriptiveMethodNR,   Baltered02_LightingPrescriptiveMethodNR Or Baltered04_LightingPrescriptiveMethodNR == Tailored Or AreaCategoryAndTailored</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -3880,9 +3858,7 @@ End Switch</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_L" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>L. ADDITIONAL LIGHTING ALLOWANCE: TAILORED WALL DISPLAY</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL LIGHTING ALLOWANCE: TAILORED WALL DISPLAY</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if in section K Kc00c1_TailoredWallDisplay or Ku00c1_TailoredWallDisplay == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -4206,9 +4182,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_M" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>M. ADDITIONAL LIGHTING ALLOWANCE: TAILORED FLOOR AND TASK LIGHTING</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL LIGHTING ALLOWANCE: TAILORED FLOOR AND TASK LIGHTING</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if in section K Kc00d1_TailoredFloorDisplayOrTask or Ku00d1_TailoredFloorDisplayOrTask == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -4531,9 +4505,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_N" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>N. ADDITIONAL LIGHTING ALLOWANCE: TAILORED DECORATIVE /SPECIAL EFFECTS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL LIGHTING ALLOWANCE: TAILORED DECORATIVE /SPECIAL EFFECTS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if in section K Kc00e1_TailoredOrnamentalSpecialEffects or Ku00e1_TailoredOrnamentalSpecialEffects  == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -4798,9 +4770,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_O" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>O. ADDITIONAL LIGHTING ALLOWANCE: TAILORED VERY VALUABLE MERCHANDISE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">ADDITIONAL LIGHTING ALLOWANCE: TAILORED VERY VALUABLE MERCHANDISE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if in section K Kc00f1_TailoredVeryValuableDisplay or  Ku00f1_TailoredVeryValuableDisplay == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -5120,9 +5090,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_P" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>P. POWER ADJUSTMENT: LIGHTING CONTROL CREDIT  (POWER ADJUSTMENT FACTOR (PAF))</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">POWER ADJUSTMENT: LIGHTING CONTROL CREDIT  (POWER ADJUSTMENT FACTOR (PAF))</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section applies if section I is required and in section I at least one value in Ic06b_AdditionalAllowanceForPAF Or Iu06b_AdditionalAllowanceForPAF == true Or if section K is required and at least one value in Kc09_AdditionalAllowanceForPAF or Ku09_AdditionalAllowanceForPAF == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -5583,9 +5551,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Q" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>Q. RATED POWER REDUCTION COMPLIANCE FOR ONE-FOR-ONE ALTERATIONS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">RATED POWER REDUCTION COMPLIANCE FOR ONE-FOR-ONE ALTERATIONS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if in section B there is at least one value in  Baltered02_LightingPrescriptiveMethodNR Or Baltered04_LightingPrescriptiveMethodNR  == RatedPowerReduction</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -6039,9 +6005,7 @@ User is required to provide a note; Else field is grayed out</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_R" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>R. 80% LIGHTING POWER FOR ALL ALTERATIONS - CONTROLS EXCEPTIONS</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">80% LIGHTING POWER FOR ALL ALTERATIONS - CONTROLS EXCEPTIONS</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If Bnew01__LightingProjectScopeNR == NewLightingSystem AND Baltered01_LightingProjectScopeNR == AlteredlightingSystem  
 And If H01_MandatoryLightingDemandResponseNR Or H07_MultilevelControls Or H09_PrimarySkylitDaylightControlsIncluded Or H10_ SecondaryDaylightControlsIncluded == NA_LTE80PctAllowedLP   
  
@@ -6365,9 +6329,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_S" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>S. DAYLIGHT DESIGN POWER ADJUSTMENT FACTOR (PAF)</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DAYLIGHT DESIGN POWER ADJUSTMENT FACTOR (PAF)</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If in section P Pc08 Or Pu08 == true</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -6565,9 +6527,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_T" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>T. DWELLING UNIT LIGHTING</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DWELLING UNIT LIGHTING</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required If A03_WholeBuildingOccupancy includes MultiFamilyMixedUseLT4</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>
@@ -6743,9 +6703,7 @@ Lighting internal to drawers and cabinetry with opaque fronts or doors or with a
          </xsd:element>
          <xsd:element name="Section_Lmci" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>U.  DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF INSTALLATION</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If any selection is changed by the user, 
 Then
 D03  ExceptionalConditionMessageCCLTIE += UserChangedSelectionInCI
@@ -6779,9 +6737,7 @@ End If</xsd:documentation>
          </xsd:element>
          <xsd:element name="Section_Lmca" minOccurs="1">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">
-                  <d:b>V.  DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</d:b>
-               </xsd:documentation>
+               <xsd:documentation source="FieldText">DECLARATION OF REQUIRED CERTIFICATES OF ACCEPTANCE</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">If any selection is changed by the user, 
 Then
 D03  ExceptionalConditionMessageCCLTIE += UserChangedSelectionInCA

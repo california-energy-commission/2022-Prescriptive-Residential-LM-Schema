@@ -1980,28 +1980,29 @@ End If</xsd:documentation>
                                        </xsd:element>
                                     </xsd:choice>
                                     <xsd:choice maxOccurs="1">
-                                       <xsd:element name="K10_DuctMinimumRValueExceptions" type="comp:DuctMinimumRValueExceptions" maxOccurs="unbounded">
+                                       <xsd:element name="K10_DuctMinimumRValueExceptions">
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Exception from Min R-Value</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">If K04_NewDuctingInstalled == NoNewDucts 
 result = N/A stored in NotApplicableMessage; 
- 
 Else default result = NoException.  
 End If
  
- 
-Allow user to override default and select one or both of the following: 
+Allow user to override default and select one from list:
 UninsulatedInDirectConditioning display term Portions of ducts uninsulated  or less than R-6 in conditioned space
  
 ALSO 
 If K06_SupplyDuctLocation And K08_ReturnDuctLocation == ConditionedSpace 
 allow user to select  RValueLT6EntirelyInConditioned display term  Ducts uninsulated or less than R-6 entirely in Conditioned Space
- 
-End if</xsd:documentation>
-                                             <xsd:appinfo source="displayterm">
-                                                <dtyp:displayterm value="UninsulatedInDirectConditioning">=Portions of duct system uninsulated or less than R-6 in conditioned space</dtyp:displayterm>
-                                             </xsd:appinfo>
+ End if</xsd:documentation>
                                           </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="comp:DuctMinimumRValueExceptions">
+                                                <xsd:enumeration value="NoException"/>
+                                                <xsd:enumeration value="RValueLT6EntirelyInConditioned"/>
+                                                <xsd:enumeration value="UninsulatedInDirectConditioning"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
                                        </xsd:element>
                                        <xsd:element name="K10_NotApplicableMessage" type="comp:NotApplicableMessage">
                                           <xsd:annotation>
@@ -2192,12 +2193,12 @@ End If</xsd:documentation>
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
-                                    <xsd:element name="L10_DuctMinimumRValueExceptions" type="comp:DuctMinimumRValueExceptions" maxOccurs="unbounded">
+                                    <xsd:element name="L10_DuctMinimumRValueExceptions">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Exception from Min R-Value</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">default result = NoException;  
  
-Allow user to override default and select one or both of the following: 
+Allow user to override default and select one from list: 
 UninsulatedInDirectConditioning display term Portions of ducts uninsulated  or less than R-6 in conditioned space
  
 ALSO 
@@ -2205,10 +2206,14 @@ If L06_SupplyDuctLocation And L08_ReturnDuctLocation == ConditionedSpace
 allow user to select  RValueLT6EntirelyInConditioned display term  Ducts uninsulated or less than R-6 entirely in Conditioned Space
  
 End if</xsd:documentation>
-                                          <xsd:appinfo source="displayterm">
-                                             <dtyp:displayterm value="UninsulatedInDirectConditioning">=Portions of duct system uninsulated or less than R-6 in conditioned space</dtyp:displayterm>
-                                          </xsd:appinfo>
                                        </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="comp:DuctMinimumRValueExceptions">
+                                             <xsd:enumeration value="NoException"/>
+                                             <xsd:enumeration value="RValueLT6EntirelyInConditioned"/>
+                                             <xsd:enumeration value="UninsulatedInDirectConditioning"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
                                     </xsd:element>
                                     <xsd:element name="L11_DuctFilterGrilleSizingComplianceMethod">
                                        <xsd:annotation>
