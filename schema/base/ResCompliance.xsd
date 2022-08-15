@@ -2481,6 +2481,7 @@
             <dtyp:displayterm value="LMCV-ENV-20-H">LMCV-ENV-20-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-ENV-21-H">LMCV-ENV-21-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-ENV-22-H">LMCV-ENV-22-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCV-EXC-20-H">LMCV-EXC-20-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-MCH-20-H">LMCV-MCH-20-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-MCH-21-H">LMCV-MCH-21-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCV-MCH-22-H">LMCV-MCH-22-H</dtyp:displayterm>
@@ -2641,6 +2642,7 @@
          <xsd:enumeration value="LMCV-ENV-20-H"/>
          <xsd:enumeration value="LMCV-ENV-21-H"/>
          <xsd:enumeration value="LMCV-ENV-22-H"/>
+         <xsd:enumeration value="LMCV-EXC-20-H"/>
          <xsd:enumeration value="LMCV-MCH-20-H"/>
          <xsd:enumeration value="LMCV-MCH-21-H"/>
          <xsd:enumeration value="LMCV-MCH-22-H"/>
