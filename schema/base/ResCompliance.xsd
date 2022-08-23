@@ -13265,6 +13265,96 @@
          <xsd:enumeration value="Standard"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="PerfBattery">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Performance</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Included</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PerfCondLTI">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Performance</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Included</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PerfDHW">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Performance</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Included</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PerfENV">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Performance</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Included</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PerfKitchenPRC">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Performance</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Included</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PerfLabPRC">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Performance</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Included</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PerfMCH">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Performance</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Included</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PerfPV">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Performance</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Included</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="PerfSolarWH">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Performance</dtyp:displayterm>
+            <dtyp:displayterm value="false">Not Included</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="PerfTradeOffException">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -16695,6 +16785,22 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="StoryAirBarrier">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="AirBarrierInspect">Air barrier - verified by visual inspection</dtyp:displayterm>
+            <dtyp:displayterm value="AirBarrierInspectLeakage">Air barrier - verified by air leakage inspection</dtyp:displayterm>
+            <dtyp:displayterm value="AirBarrierNotVerified">Air barrier - not verified</dtyp:displayterm>
+            <dtyp:displayterm value="NoAirBarrier">No air barrier</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="AirBarrierInspect"/>
+         <xsd:enumeration value="AirBarrierInspectLeakage"/>
+         <xsd:enumeration value="AirBarrierNotVerified"/>
+         <xsd:enumeration value="NoAirBarrier"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="StreetAddress">

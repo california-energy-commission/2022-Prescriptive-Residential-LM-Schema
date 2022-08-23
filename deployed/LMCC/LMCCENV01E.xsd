@@ -14866,14 +14866,19 @@ End If</xsd:documentation>
                                                    <xsd:annotation>
                                                       <xsd:documentation source="FieldText">Required Thermal Performance<d:sup>2</d:sup>
                                                       </xsd:documentation>
-                                                      <xsd:documentation source="CalculationsAndRules">If  Iframed03b_Status == ExistingAlteration And  Iframed09_ConstructionSpecificationMethod == RValue
- If  Iframed03a_TopLevelOccupancy == AlteredOccupancy  result =R11; 
+                                                      <xsd:documentation source="CalculationsAndRules">If  Iframed09_ConstructionSpecificationMethod == RValue
+ If Iframed03b_Status == ExistingAlteration And   Iframed03a_TopLevelOccupancy == AlteredOccupancy  
+result = R11; 
+ 
+Else If Iframed06a_PartitionFramingMaterial == WoodFraming And framed03a_TopLevelOccupancy == ResidentialMF 
+result = R19
 End If
 End If</xsd:documentation>
                                                    </xsd:annotation>
                                                    <xsd:simpleType>
                                                       <xsd:restriction base="env:InsulationRValueLimit">
                                                          <xsd:enumeration value="R11"/>
+                                                         <xsd:enumeration value="R19"/>
                                                       </xsd:restriction>
                                                    </xsd:simpleType>
                                                 </xsd:element>
