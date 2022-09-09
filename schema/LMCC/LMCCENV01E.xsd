@@ -2542,7 +2542,7 @@ End If
  
  
 Else If Fframed10_FramingSize == 2x8 Then 
-If  Fframed11_CavityInsulationOptionNR == R19Batt 
+If  Fframed11_CavityInsulationOptionNR == R19 
 Switch (Fframed12_ContinuousInsulationNR) 
 case R0: result = 0.096; case R2: result = 0.081; case R4: result = 0.069; case R6: result = 0.061; case R7: result = 0.057; case R8: result = 0.054; case R10: result = 0.049; case R14: result = 0.041; 
 End Switch
@@ -2647,7 +2647,7 @@ End If
  
  
 Else If Fframed10_FramingSize == 2x8 Then 
-If  Fframed11_CavityInsulationOptionNR == R19Batt 
+If  Fframed11_CavityInsulationOptionNR == R19
 Switch (Fframed12_ContinuousInsulationNR) 
 case R0: result = 0.080; case R2: result = 0.069; case R4: result = 0.061; case R6: result = 0.054; case R7: result = 0.051; case R8: result = 0.049; case R10: result = 0.044; case R14: result = 0.038; 
 End Switch
@@ -8562,7 +8562,9 @@ result = 0.057
 End If
 End If
  
-case ResidentialMF:
+End Switch
+ 
+Else If  Hframed04a_TopLevelOccupancy == ResidentialMF:
 If Hframed06a_StructureFireRating == GT1hr
 If A03_ClimateZoneNumber == InRange(1,5) Or 8 Or 9 Or 10 Or 12 Or 13   result = 0.059
 Else If A03_ClimateZoneNumber == 11 Or 14 Or 15 Or 16   result = 0.051
@@ -8573,7 +8575,6 @@ If A03_ClimateZoneNumber == InRange(1,5) Or InRange(8,16)  result = 0.051
 Else If A03_ClimateZoneNumber == 6 Or 7   result = 0.065
 End If
 End If
-End Switch
 End If</xsd:documentation>
                                                    </xsd:annotation>
                                                 </xsd:element>
@@ -16864,7 +16865,7 @@ End If</xsd:documentation>
                                                       <xsd:documentation source="FieldText">U-factor/ (R)SHGC Compliance Method</xsd:documentation>
                                                       <xsd:documentation source="CalculationsAndRules">If Kvertperf05_FenestrationProductType == ChromogenicFen Or DemisingWallFen Or GlazedDoorMF  
 Or 
-If Kvertperf06_TopLevelOccupancy == AlteredOccupancy Or   Kvertperf06_FenestrationModification == AddLTE50ft2  
+If Kvertperf06_TopLevelOccupancy == AlteredOccupancy Or   Kvertperf06_FenestrationModification == AddLTE50ft2  Or ReplaceLTE150ft2
 result = BlankGrayedOut
 End If</xsd:documentation>
                                                    </xsd:annotation>
@@ -16911,7 +16912,7 @@ End If</xsd:documentation>
                                                       <xsd:documentation source="FieldText">VT Compliance Method</xsd:documentation>
                                                       <xsd:documentation source="CalculationsAndRules">If Kvertperf05_FenestrationProductType == ChromogenicFen Or DemisingWallFen Or GlazedDoorMF 
 Or 
-If   Kvertperf06_FenestrationModification == AddGT50ft2
+If   Kvertperf06_FenestrationModification == AddGT50ft2 Or ReplaceLTE150ft2
 Or
 If Kvertperf06_TopLevelOccupancy == AlteredOccupancy Or  Kvertperf06_FenestrationModification == AddLTE150ft2  
 Or
@@ -17273,7 +17274,7 @@ GlazedDoorMF
 Or
 If Kvertperf06_FenestrationModification == ReplaceLTE150ft2 Or AddLTE50ft2  
 Or
- If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones and  Kvertperf06_FenestrationModification == AllNew Or AddGT50ft2  
+ If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones and  Kvertperf06_FenestrationModification == AllNew Or AddGT50ft2  Or ReplaceGT150ft2 
 Or
 If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones And  
 Kvertperf05_FenestrationProductType == GlazedDoor  
@@ -17706,7 +17707,7 @@ DoubleWithSpacers display term Double Pane- w/ spacers,
 DoublePaneDivided display term Double Pane- divided lite;
  
 Else If Kvertperf22_FenestrationFramingNR == NonMetalFraming Or MetalFraming 
- If Kvertperf20_GreenhouseGardenWindow == false 
+ If Kvertperf20_GreenhouseGardenWindow == false And Kvertperf05_FenestrationProductType != GlazedDoor
  list: 
 SinglePane display term Single Pane, 
 DoublePane display term Double Pane, 
