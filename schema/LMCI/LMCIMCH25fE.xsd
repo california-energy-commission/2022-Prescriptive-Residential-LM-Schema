@@ -25,7 +25,7 @@
          <xsd:sequence>
             <xsd:element name="DocID" minOccurs="0">
                <xsd:complexType>
-                  <xsd:attribute name="doc" type="comp:ComplianceDocumentTag" fixed="LMCIMCH25fH"/>
+                  <xsd:attribute name="doc" type="comp:ComplianceDocumentTag" fixed="LMCIMCH25fE"/>
                   <xsd:attribute name="docType" type="comp:ComplianceDocumentType" fixed="CERTIFICATE OF INSTALLATION"/>
                   <xsd:attribute name="docTitle" type="comp:ComplianceDocumentTitleRes" fixed="Refrigerant Charge Verification"/>
                   <xsd:attribute name="docVariantSubtitle" type="comp:ComplianceDocumentVariantSubtitle" fixed="MCH25f New Package Unit With Factory Charge"/>
@@ -37,7 +37,7 @@
                <xsd:complexType>
                   <xsd:sequence>
                      <xsd:element name="Header" type="comp:HeaderHERS" />
-                     <xsd:element ref="lMCIMCH25fH" />
+                     <xsd:element ref="lMCIMCH25fE" />
                      <xsd:element name="DocAuthor" type="comp:DocumentAuthor" />
                      <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF2R_H" />
                      <xsd:element name="Footer" type="comp:Footer" />
@@ -48,10 +48,10 @@
             <xsd:element name="ReportMMB" type="xsd:base64Binary" minOccurs="0"/>
          </xsd:sequence>
          <xsd:attribute name="revision" use="required" type="xsd:string" fixed="rev 20220101"/>
-         <xsd:attribute name="doc" use="required" type="comp:ComplianceDocumentTag" fixed="LMCIMCH25fH"/>
+         <xsd:attribute name="doc" use="required" type="comp:ComplianceDocumentTag" fixed="LMCIMCH25fE"/>
       </xsd:complexType>
    </xsd:element>
-   <xsd:complexType name="LMCIMCH25fH">
+   <xsd:complexType name="LMCIMCH25fE">
       <xsd:annotation>
          <xsd:documentation>Refrigerant Charge Verification - MCH25f New Package Unit With Factory Charge</xsd:documentation>
       </xsd:annotation>
@@ -367,9 +367,9 @@ End If</xsd:documentation>
          </xsd:element>
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:element name="lMCIMCH25fH" type="LMCIMCH25fH">
+   <xsd:element name="lMCIMCH25fE" type="LMCIMCH25fE">
       <xsd:annotation>
-         <xsd:documentation>This element contains all of the data and text required to generate the LMCIMCH25fH compliance report.</xsd:documentation>
+         <xsd:documentation>This element contains all of the data and text required to generate the LMCIMCH25fE compliance report.</xsd:documentation>
       </xsd:annotation>
    </xsd:element>
 </xsd:schema>

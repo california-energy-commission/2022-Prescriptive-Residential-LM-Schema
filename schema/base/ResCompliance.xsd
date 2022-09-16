@@ -2466,6 +2466,7 @@
             <dtyp:displayterm value="LMCI-MCH-22-H">LMCI-MCH-22-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-23-H">LMCI-MCH-23-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-24-H">LMCI-MCH-24-H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCI-MCH-25-E">LMCI-MCH-25-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-25-H">LMCI-MCH-25-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-26-H">LMCI-MCH-26-H</dtyp:displayterm>
             <dtyp:displayterm value="LMCI-MCH-27-H">LMCI-MCH-27-H</dtyp:displayterm>
@@ -2627,6 +2628,7 @@
          <xsd:enumeration value="LMCI-MCH-22-H"/>
          <xsd:enumeration value="LMCI-MCH-23-H"/>
          <xsd:enumeration value="LMCI-MCH-24-H"/>
+         <xsd:enumeration value="LMCI-MCH-25-E"/>
          <xsd:enumeration value="LMCI-MCH-25-H"/>
          <xsd:enumeration value="LMCI-MCH-26-H"/>
          <xsd:enumeration value="LMCI-MCH-27-H"/>
@@ -2989,7 +2991,7 @@
             <dtyp:displayterm value="LMCIMCH25bH">LMCIMCH25bH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH25cH">LMCIMCH25cH</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH25eH">LMCIMCH25eH</dtyp:displayterm>
-            <dtyp:displayterm value="LMCIMCH25fH">LMCIMCH25fH</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIMCH25fE">LMCIMCH25fE</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH25H">LMCIMCH25H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH26H">LMCIMCH26H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH27bH">LMCIMCH27bH</dtyp:displayterm>
@@ -3261,7 +3263,7 @@
          <xsd:enumeration value="LMCIMCH25bH"/>
          <xsd:enumeration value="LMCIMCH25cH"/>
          <xsd:enumeration value="LMCIMCH25eH"/>
-         <xsd:enumeration value="LMCIMCH25fH"/>
+         <xsd:enumeration value="LMCIMCH25fE"/>
          <xsd:enumeration value="LMCIMCH25H"/>
          <xsd:enumeration value="LMCIMCH26H"/>
          <xsd:enumeration value="LMCIMCH27bH"/>
@@ -12767,6 +12769,10 @@
          <xsd:documentation>This is a unitless value that represents the measure of tightness relative to the size of the building.  Units: none</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="NotApplicableExplanation">
+      <xsd:restriction base="xsd:string">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="NotApplicableLRMF">
