@@ -141,6 +141,9 @@
    <xsd:simpleType name="BuildingName">
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
+   <xsd:simpleType name="BuildingStoryName">
+      <xsd:restriction base="dtyp:ObjectNamePermissive"/>
+   </xsd:simpleType>
    <xsd:simpleType name="BuildingStoryRange">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -827,6 +830,26 @@
    <xsd:simpleType name="DwellingUnitName">
       <xsd:restriction base="dtyp:ObjectNamePermissive"/>
    </xsd:simpleType>
+   <xsd:simpleType name="DwellingUnitType">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="FivePlusBedroom">Five or more Bedrooms</dtyp:displayterm>
+            <dtyp:displayterm value="FourBedroom">Four Bedroom</dtyp:displayterm>
+            <dtyp:displayterm value="OneBedroom">One Bedroom</dtyp:displayterm>
+            <dtyp:displayterm value="StudioUnit">Studio Unit</dtyp:displayterm>
+            <dtyp:displayterm value="ThreeBedroom">Three Bedroom</dtyp:displayterm>
+            <dtyp:displayterm value="TwoBedroom">Two Bedroom</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="FivePlusBedroom"/>
+         <xsd:enumeration value="FourBedroom"/>
+         <xsd:enumeration value="OneBedroom"/>
+         <xsd:enumeration value="StudioUnit"/>
+         <xsd:enumeration value="ThreeBedroom"/>
+         <xsd:enumeration value="TwoBedroom"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="DwellingUnitsCount">
       <xsd:annotation>
          <xsd:documentation>Units: none</xsd:documentation>
@@ -1298,6 +1321,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
             <dtyp:displayterm value="BackshelfPassover">Backshelf / Passover</dtyp:displayterm>
             <dtyp:displayterm value="DoubleIsland">Double Island</dtyp:displayterm>
             <dtyp:displayterm value="Eyebrow">Eyebrow</dtyp:displayterm>
+            <dtyp:displayterm value="None">None</dtyp:displayterm>
             <dtyp:displayterm value="SingleIsland">Single Island</dtyp:displayterm>
             <dtyp:displayterm value="WallMountedCanopy">Wall-mounted Canopy</dtyp:displayterm>
          </xsd:appinfo>
@@ -1306,6 +1330,7 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
          <xsd:enumeration value="BackshelfPassover"/>
          <xsd:enumeration value="DoubleIsland"/>
          <xsd:enumeration value="Eyebrow"/>
+         <xsd:enumeration value="None"/>
          <xsd:enumeration value="SingleIsland"/>
          <xsd:enumeration value="WallMountedCanopy"/>
       </xsd:restriction>
@@ -1385,6 +1410,24 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
          <xsd:enumeration value="Type1"/>
          <xsd:enumeration value="Type2HeatSteam"/>
       </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="LaboratoryFumeHoodLength">
+      <xsd:annotation>
+         <xsd:documentation>Units: ft</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LaboratoryFumeHoodVerticalAutomaticSashControlFraction">
+      <xsd:annotation>
+         <xsd:documentation>Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LaboratoryFumeHoodVerticalSashExhaustFlow">
+      <xsd:annotation>
+         <xsd:documentation>Units: ft3 per min</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="LatentHeatRatePerOccupant">
       <xsd:annotation>
@@ -1591,6 +1634,12 @@ ExtFlr/IntFlr: 0.8  Units: none</xsd:documentation>
    <xsd:simpleType name="OA_SystemRequiredMin">
       <xsd:annotation>
          <xsd:documentation>Units: ft3 per min</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="OccupancyCount">
+      <xsd:annotation>
+         <xsd:documentation>This is the percentage of  BuildingTotalGrossFloorArea that is occupied and operational  Units: none</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
@@ -2360,7 +2409,7 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceDescription">
-      <xsd:restriction base="xsd:token"/>
+      <xsd:restriction base="dtyp:StringMin1Char"/>
    </xsd:simpleType>
    <xsd:simpleType name="SpaceFloorArea">
       <xsd:annotation>
@@ -3162,6 +3211,9 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          <xsd:enumeration value="WorkshopSortingPacking"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="VentilationSpaceFunctions">
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
    <xsd:simpleType name="VisibleAbsorptance">
       <xsd:annotation>
          <xsd:documentation>The fraction of incident visible radiation that is absorbed by the material. Visible radiation includes only a sub-range of solar radiation and excludes infrared and ultraviolet wavelengths.  Units: none.  Units: none</xsd:documentation>
@@ -3188,6 +3240,9 @@ NOTE: For roofs, differentiate between the initial Solar Reflectance value and t
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="WeatherFile">
+      <xsd:restriction base="xsd:token"/>
    </xsd:simpleType>
    <xsd:simpleType name="WeatherShieldingFactor">
       <xsd:annotation>
