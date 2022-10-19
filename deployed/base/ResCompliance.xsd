@@ -2912,7 +2912,6 @@ Document Data</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH29H">LMCIMCH29H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH32H">LMCIMCH32H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIMCH33H">LMCIMCH33H</dtyp:displayterm>
-            <dtyp:displayterm value="LMCIPLB01">LMCIPLB01</dtyp:displayterm>
             <dtyp:displayterm value="LMCIPLB01E">LMCIPLB01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCIPLB02E">LMCIPLB02E</dtyp:displayterm>
             <dtyp:displayterm value="LMCIPLB21H">LMCIPLB21H</dtyp:displayterm>
@@ -3184,7 +3183,6 @@ Document Data</dtyp:displayterm>
          <xsd:enumeration value="LMCIMCH29H"/>
          <xsd:enumeration value="LMCIMCH32H"/>
          <xsd:enumeration value="LMCIMCH33H"/>
-         <xsd:enumeration value="LMCIPLB01"/>
          <xsd:enumeration value="LMCIPLB01E"/>
          <xsd:enumeration value="LMCIPLB02E"/>
          <xsd:enumeration value="LMCIPLB21H"/>
@@ -7753,6 +7751,65 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="UserChangedSelectionInCA"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="ExceptionalConditionMessageCCPRFE">
+      <xsd:annotation>
+         <xsd:appinfo source="displaytermType">
+            <dtyp:displayterm>NRCC-PRF-E Exceptional Condition Message</dtyp:displayterm>
+         </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="AddedCoolEquipmentCheck">The proposed building includes spaces without cooling equipment, but cooling equipment has been added to the model, presumably to meet unmet load hour requirements.  Verify that the performance parameters of the added equipment are minimally compliant.</dtyp:displayterm>
+            <dtyp:displayterm value="ClerestoryControlCheck">The project includes windows which have been classified as clerestory windows. Please verify that clerestories are present, and that daylighting controls are present for these areas. Clerestory windows do not trigger mandatory daylighting control requirements, and may allow users to claim PAF credit for daylighting controls in areas illuminated by clerestories. .</dtyp:displayterm>
+            <dtyp:displayterm value="CoolEquipmentAddedForLoads">The user model includes space(s) without sufficient cooling equipment. Cooling equipment has been added to the model to meet cooling loads.</dtyp:displayterm>
+            <dtyp:displayterm value="FacadeDisplayPerimeter">Verify that the display perimeter for any facades where it is used matches the display perimeter as indicated on the building plans.</dtyp:displayterm>
+            <dtyp:displayterm value="FanPressureDropCredit">Review and verify the fan pressure drop credits taken for HVAC systems included in the project.</dtyp:displayterm>
+            <dtyp:displayterm value="HvacMinEfficiencyCheck">The proposed building includes HVAC components that do not meet the mandatory efficiency requirements.</dtyp:displayterm>
+            <dtyp:displayterm value="IlluminanceSetpointBelowRange">Verify that the spaces with design illuminance setpoint below the range specified in the ACM Appendix 5.4 have acceptable interior lighting levels.</dtyp:displayterm>
+            <dtyp:displayterm value="LightingCreditPAF">The proposed building claims credit for non-mandatory lighting control credits via Power Adjustment Factors (PAFs) as outlined in Standards Table 140.6-A.  Review NRCC-PRF-LTI DETAILS Table A to ensure that credit is not claimed for mandatory controls.</dtyp:displayterm>
+            <dtyp:displayterm value="LightingExceptionalMethod">The general lighting exceptional method is employed for one or more spaces.  Verify that the lighting allowances match the lighting installed on the plans and serve the areas within each space as identified in the compliance model.</dtyp:displayterm>
+            <dtyp:displayterm value="ModelingApproximations">Significant modeling approximations have been used to represent the building design.  Such approximations are common and an expected part of energy modeling.  However, such approximations should have thermodynamically similar results in the model and in the completed building.  Ensure that a narrative has been provided.  Review the narrative and ensure the modeling approximations are appropriate.  Some approximations may not be appropriate.  In such cases, the Exceptional Design Compliance procedure should be used.  An example would be modeling of thermal storage by modifying the efficiency of heating and cooling equipment.</dtyp:displayterm>
+            <dtyp:displayterm value="NoCoolSystemSimulated">The user model includes space(s) that are designed to be served by mechanical cooling systems, but the cooling systems were not included in the simulation model.  A cooling system has been modeled for both the proposed and standard cases.</dtyp:displayterm>
+            <dtyp:displayterm value="NoOperableOpenings">Building has been modelled with no operable openings</dtyp:displayterm>
+            <dtyp:displayterm value="NoServiceWaterHeating">The building does not include service water heating.  Verify that service water heating is not required and is not included in the design.</dtyp:displayterm>
+            <dtyp:displayterm value="ParkingGarageExhaustCheck">The project includes mechanical ventilation systems for enclosed parking garages having total design exhaust rate greater than or equal to 10,000 cfm.  Please verify the design meets the Mandatory Requirements for Enclosed Parking Garages as per Section 120.6(c).</dtyp:displayterm>
+            <dtyp:displayterm value="PartialComplianceScope">This project includes partial performance compliance scope options.  The building must show compliance with all other applicable compliance scope options (performance or prescriptively) before occupying.</dtyp:displayterm>
+            <dtyp:displayterm value="PrescriptiveDayLightCtrl">The project uses the Simplified Geometry Performance Modeling Approach which is not capable of modeling daylighting controls and assumes the prescriptive Secondary Daylit Control requirements are met.  PRESCRIPTIVE COMPLIANCE documentation (form NRCC-LTI-02-E) for the requirements of section 140.6(d) Automatic Daylighting Controls in Secondary Daylit Zones is required.</dtyp:displayterm>
+            <dtyp:displayterm value="RatedCapDifferFromPlans">The compliance model includes HVAC equipment with capacities that differ from the building plans, presumably to meet unmet load hour requirements.  Verify that the equipment in the design provides adequate cooling and heating capacity for the spaces served.</dtyp:displayterm>
+            <dtyp:displayterm value="SolarReflectanceCRRC">The aged solar reflectance and aged thermal emittance must be listed in the Cool Roof Rating Council database of certified products.  For projects where initial reflectance is used, the initial reflectance must be listed, and the aged reflectance is calculated by the software program and used in the compliance model.</dtyp:displayterm>
+            <dtyp:displayterm value="SolarThermalFlexCredit">Solar thermal flexibility credit taken - kWdc min. PV system required</dtyp:displayterm>
+            <dtyp:displayterm value="SolarThermalSystemInstalled">This analysis includes the performance of a solar thermal system for use with prescriptive compliance of a residential central water heating system.  Verify the project has a solar thermal system installed with a solar fraction (SF) of at least 0.00.</dtyp:displayterm>
+            <dtyp:displayterm value="SpacesWithNoLighting">Verify that the space(s) defined with no lighting installed are either unconditioned spaces, or that the project has partial lighting compliance.</dtyp:displayterm>
+            <dtyp:displayterm value="UnknownHvacSystem">The proposed building includes space(s) that are modeled with unknown HVAC system(s).  Verify that the spaces modeled with unknown HVAC system(s) are either part of core and shell analysis which will be permitted for mechanical compliance in the future, or the spaces have an existing HVAC system not modeled for compliance, or the compliance scope does not include mechanical.</dtyp:displayterm>
+            <dtyp:displayterm value="UsingPropane">The proposed building is using Propane despite Natural Gas being available on site.</dtyp:displayterm>
+            <dtyp:displayterm value="ZoneOpeningsInterlock">The project has thermal zones with operable openings modeled without mechanical compliance selected.  Compliance with Section 140.4(n) Mechanical System Shutoff should be considered.</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="AddedCoolEquipmentCheck"/>
+         <xsd:enumeration value="ClerestoryControlCheck"/>
+         <xsd:enumeration value="CoolEquipmentAddedForLoads"/>
+         <xsd:enumeration value="FacadeDisplayPerimeter"/>
+         <xsd:enumeration value="FanPressureDropCredit"/>
+         <xsd:enumeration value="HvacMinEfficiencyCheck"/>
+         <xsd:enumeration value="IlluminanceSetpointBelowRange"/>
+         <xsd:enumeration value="LightingCreditPAF"/>
+         <xsd:enumeration value="LightingExceptionalMethod"/>
+         <xsd:enumeration value="ModelingApproximations"/>
+         <xsd:enumeration value="NoCoolSystemSimulated"/>
+         <xsd:enumeration value="NoOperableOpenings"/>
+         <xsd:enumeration value="NoServiceWaterHeating"/>
+         <xsd:enumeration value="ParkingGarageExhaustCheck"/>
+         <xsd:enumeration value="PartialComplianceScope"/>
+         <xsd:enumeration value="PrescriptiveDayLightCtrl"/>
+         <xsd:enumeration value="RatedCapDifferFromPlans"/>
+         <xsd:enumeration value="SolarReflectanceCRRC"/>
+         <xsd:enumeration value="SolarThermalFlexCredit"/>
+         <xsd:enumeration value="SolarThermalSystemInstalled"/>
+         <xsd:enumeration value="SpacesWithNoLighting"/>
+         <xsd:enumeration value="UnknownHvacSystem"/>
+         <xsd:enumeration value="UsingPropane"/>
+         <xsd:enumeration value="ZoneOpeningsInterlock"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ExceptionalConditionMessageCCSABE">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -7898,8 +7955,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="ChillerNoMatch">Control requirements on the Chililer Efficiency and Controls subtable do not match what was permitted on the Certificate of Compliance.  Please verify installation meets controls requirements.</dtyp:displayterm>
             <dtyp:displayterm value="ChlrNotInScope">A Chiller was selected as Not in Scope in the Chiller Table.  Please ensure that this Chiller  was claimed as in scope in this table on another another Certificate of Installation  CI-MCH Mechanical Systems form</dtyp:displayterm>
             <dtyp:displayterm value="CtrlNotInScope">A Control was selected as Not in Scope in the System Controls Table.  Please ensure that this Control was claimed as in scope in this table on another another Certificate of Installation  CI-MCH Mechanical Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="DfhpNotInScope">A Heat Pump was selected as Not in Scope in the Heat Pump Equipment Schedule Table.  Please ensure that this Heat Pump  was claimed as in scope in this table on another another Certificate of Installation  CI-MCH Mechanical Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="DoasNotInScope">A DX DOAS system was selected as Not in Scope in the DX DOAS Schedule Table.  Please ensure that this DX DOAS  system was claimed as in scope in this table on another another Certificate of Installation  CI-MCH Mechanical Systems form</dtyp:displayterm>
             <dtyp:displayterm value="DwellingNoKitchenBath">The permit applicant has indicated their multifamily dwelling units do not contain a kitchen or bathroom.  See Table J Multifamily Dwelling Unit Ventilation for details.</dtyp:displayterm>
             <dtyp:displayterm value="EHeatNotInScope">An Electric Resistance Heating equipment was selected as Not in Scope in the Electric Resistance Heating Table.  Please ensure that this equipment  was claimed as in scope in this table on another another Certificate of Installation  CI-MCH Mechanical Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="ExhaustNotInScope">A Exhaust Fan System was selected as Not in Scope in the Fan Exhaust Air Heat Recovery Table.  Please ensure that this Exhaust Fan System  was claimed as in scope in this table on another another Certificate of Installation  CI-MCH Mechanical Systems form</dtyp:displayterm>
+            <dtyp:displayterm value="FanDoasNotInScope">A DOAS system was selected as Not in Scope in the Dedicated Outdoor Air System (DOAS) Table.  Please ensure that this DOAS  system was claimed as in scope in this table on another another Certificate of Installation  CI-MCH Mechanical Systems form</dtyp:displayterm>
             <dtyp:displayterm value="FanEconNoMatch">Fan economizer requirements on the Fans and Air Economizer  subtable do not match what was permitted on the Certificate of Compliance.  Please verify installation meets economizer requirements.</dtyp:displayterm>
             <dtyp:displayterm value="FanNotInScope">A Fan was selected as Not in Scope in the Fan Table.  Please ensure that this Fan  was claimed as in scope in this table on another another Certificate of Installation  CI-MCH Mechanical Systems form</dtyp:displayterm>
             <dtyp:displayterm value="HeatRejNoMatch">Control requirements on the Heat Rejection subtable do not match what was permitted on the Certificate of Compliance.  Please verify installation meets controls requirements.</dtyp:displayterm>
@@ -7921,8 +7982,12 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="ChillerNoMatch"/>
          <xsd:enumeration value="ChlrNotInScope"/>
          <xsd:enumeration value="CtrlNotInScope"/>
+         <xsd:enumeration value="DfhpNotInScope"/>
+         <xsd:enumeration value="DoasNotInScope"/>
          <xsd:enumeration value="DwellingNoKitchenBath"/>
          <xsd:enumeration value="EHeatNotInScope"/>
+         <xsd:enumeration value="ExhaustNotInScope"/>
+         <xsd:enumeration value="FanDoasNotInScope"/>
          <xsd:enumeration value="FanEconNoMatch"/>
          <xsd:enumeration value="FanNotInScope"/>
          <xsd:enumeration value="HeatRejNoMatch"/>
@@ -8015,65 +8080,6 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="NoExceptionNote"/>
          <xsd:enumeration value="SolarZoneNotInScope"/>
-      </xsd:restriction>
-   </xsd:simpleType>
-   <xsd:simpleType name="ExceptionalConditionMessageNRCCPRFE">
-      <xsd:annotation>
-         <xsd:appinfo source="displaytermType">
-            <dtyp:displayterm>NRCC-PRF-E Exceptional Condition Message</dtyp:displayterm>
-         </xsd:appinfo>
-         <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="AddedCoolEquipmentCheck">The proposed building includes spaces without cooling equipment, but cooling equipment has been added to the model, presumably to meet unmet load hour requirements.  Verify that the performance parameters of the added equipment are minimally compliant.</dtyp:displayterm>
-            <dtyp:displayterm value="ClerestoryControlCheck">The project includes windows which have been classified as clerestory windows. Please verify that clerestories are present, and that daylighting controls are present for these areas. Clerestory windows do not trigger mandatory daylighting control requirements, and may allow users to claim PAF credit for daylighting controls in areas illuminated by clerestories. .</dtyp:displayterm>
-            <dtyp:displayterm value="CoolEquipmentAddedForLoads">The user model includes space(s) without sufficient cooling equipment. Cooling equipment has been added to the model to meet cooling loads.</dtyp:displayterm>
-            <dtyp:displayterm value="FacadeDisplayPerimeter">Verify that the display perimeter for any facades where it is used matches the display perimeter as indicated on the building plans.</dtyp:displayterm>
-            <dtyp:displayterm value="FanPressureDropCredit">Review and verify the fan pressure drop credits taken for HVAC systems included in the project.</dtyp:displayterm>
-            <dtyp:displayterm value="HvacMinEfficiencyCheck">The proposed building includes HVAC components that do not meet the mandatory efficiency requirements.</dtyp:displayterm>
-            <dtyp:displayterm value="IlluminanceSetpointBelowRange">Verify that the spaces with design illuminance setpoint below the range specified in the ACM Appendix 5.4 have acceptable interior lighting levels.</dtyp:displayterm>
-            <dtyp:displayterm value="LightingCreditPAF">The proposed building claims credit for non-mandatory lighting control credits via Power Adjustment Factors (PAFs) as outlined in Standards Table 140.6-A.  Review NRCC-PRF-LTI DETAILS Table A to ensure that credit is not claimed for mandatory controls.</dtyp:displayterm>
-            <dtyp:displayterm value="LightingExceptionalMethod">The general lighting exceptional method is employed for one or more spaces.  Verify that the lighting allowances match the lighting installed on the plans and serve the areas within each space as identified in the compliance model.</dtyp:displayterm>
-            <dtyp:displayterm value="ModelingApproximations">Significant modeling approximations have been used to represent the building design.  Such approximations are common and an expected part of energy modeling.  However, such approximations should have thermodynamically similar results in the model and in the completed building.  Ensure that a narrative has been provided.  Review the narrative and ensure the modeling approximations are appropriate.  Some approximations may not be appropriate.  In such cases, the Exceptional Design Compliance procedure should be used.  An example would be modeling of thermal storage by modifying the efficiency of heating and cooling equipment.</dtyp:displayterm>
-            <dtyp:displayterm value="NoCoolSystemSimulated">The user model includes space(s) that are designed to be served by mechanical cooling systems, but the cooling systems were not included in the simulation model.  A cooling system has been modeled for both the proposed and standard cases.</dtyp:displayterm>
-            <dtyp:displayterm value="NoOperableOpenings">Building has been modelled with no operable openings</dtyp:displayterm>
-            <dtyp:displayterm value="NoServiceWaterHeating">The building does not include service water heating.  Verify that service water heating is not required and is not included in the design.</dtyp:displayterm>
-            <dtyp:displayterm value="ParkingGarageExhaustCheck">The project includes mechanical ventilation systems for enclosed parking garages having total design exhaust rate greater than or equal to 10,000 cfm.  Please verify the design meets the Mandatory Requirements for Enclosed Parking Garages as per Section 120.6(c).</dtyp:displayterm>
-            <dtyp:displayterm value="PartialComplianceScope">This project includes partial performance compliance scope options.  The building must show compliance with all other applicable compliance scope options (performance or prescriptively) before occupying.</dtyp:displayterm>
-            <dtyp:displayterm value="PrescriptiveDayLightCtrl">The project uses the Simplified Geometry Performance Modeling Approach which is not capable of modeling daylighting controls and assumes the prescriptive Secondary Daylit Control requirements are met.  PRESCRIPTIVE COMPLIANCE documentation (form NRCC-LTI-02-E) for the requirements of section 140.6(d) Automatic Daylighting Controls in Secondary Daylit Zones is required.</dtyp:displayterm>
-            <dtyp:displayterm value="RatedCapDifferFromPlans">The compliance model includes HVAC equipment with capacities that differ from the building plans, presumably to meet unmet load hour requirements.  Verify that the equipment in the design provides adequate cooling and heating capacity for the spaces served.</dtyp:displayterm>
-            <dtyp:displayterm value="SolarReflectanceCRRC">The aged solar reflectance and aged thermal emittance must be listed in the Cool Roof Rating Council database of certified products.  For projects where initial reflectance is used, the initial reflectance must be listed, and the aged reflectance is calculated by the software program and used in the compliance model.</dtyp:displayterm>
-            <dtyp:displayterm value="SolarThermalFlexCredit">Solar thermal flexibility credit taken - kWdc min. PV system required</dtyp:displayterm>
-            <dtyp:displayterm value="SolarThermalSystemInstalled">This analysis includes the performance of a solar thermal system for use with prescriptive compliance of a residential central water heating system.  Verify the project has a solar thermal system installed with a solar fraction (SF) of at least 0.00.</dtyp:displayterm>
-            <dtyp:displayterm value="SpacesWithNoLighting">Verify that the space(s) defined with no lighting installed are either unconditioned spaces, or that the project has partial lighting compliance.</dtyp:displayterm>
-            <dtyp:displayterm value="UnknownHvacSystem">The proposed building includes space(s) that are modeled with unknown HVAC system(s).  Verify that the spaces modeled with unknown HVAC system(s) are either part of core and shell analysis which will be permitted for mechanical compliance in the future, or the spaces have an existing HVAC system not modeled for compliance, or the compliance scope does not include mechanical.</dtyp:displayterm>
-            <dtyp:displayterm value="UsingPropane">The proposed building is using Propane despite Natural Gas being available on site.</dtyp:displayterm>
-            <dtyp:displayterm value="ZoneOpeningsInterlock">The project has thermal zones with operable openings modeled without mechanical compliance selected.  Compliance with Section 140.4(n) Mechanical System Shutoff should be considered.</dtyp:displayterm>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstant">
-         <xsd:enumeration value="AddedCoolEquipmentCheck"/>
-         <xsd:enumeration value="ClerestoryControlCheck"/>
-         <xsd:enumeration value="CoolEquipmentAddedForLoads"/>
-         <xsd:enumeration value="FacadeDisplayPerimeter"/>
-         <xsd:enumeration value="FanPressureDropCredit"/>
-         <xsd:enumeration value="HvacMinEfficiencyCheck"/>
-         <xsd:enumeration value="IlluminanceSetpointBelowRange"/>
-         <xsd:enumeration value="LightingCreditPAF"/>
-         <xsd:enumeration value="LightingExceptionalMethod"/>
-         <xsd:enumeration value="ModelingApproximations"/>
-         <xsd:enumeration value="NoCoolSystemSimulated"/>
-         <xsd:enumeration value="NoOperableOpenings"/>
-         <xsd:enumeration value="NoServiceWaterHeating"/>
-         <xsd:enumeration value="ParkingGarageExhaustCheck"/>
-         <xsd:enumeration value="PartialComplianceScope"/>
-         <xsd:enumeration value="PrescriptiveDayLightCtrl"/>
-         <xsd:enumeration value="RatedCapDifferFromPlans"/>
-         <xsd:enumeration value="SolarReflectanceCRRC"/>
-         <xsd:enumeration value="SolarThermalFlexCredit"/>
-         <xsd:enumeration value="SolarThermalSystemInstalled"/>
-         <xsd:enumeration value="SpacesWithNoLighting"/>
-         <xsd:enumeration value="UnknownHvacSystem"/>
-         <xsd:enumeration value="UsingPropane"/>
-         <xsd:enumeration value="ZoneOpeningsInterlock"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ExceptionalConditionNote">
@@ -8370,19 +8376,21 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="ControlledHorticultureNA">NA: Controlled Environment Horticulture</dtyp:displayterm>
             <dtyp:displayterm value="HasSpecialOutsideAirFiltration">NA: Special OA filtration</dtyp:displayterm>
             <dtyp:displayterm value="HasWatersideEconomizer">Waterside Economizer</dtyp:displayterm>
+            <dtyp:displayterm value="HighRiseResHotelMotel">NA: Multifamily/hotel/motel</dtyp:displayterm>
             <dtyp:displayterm value="LowRiseResidentialNA">NA: Multifamily</dtyp:displayterm>
             <dtyp:displayterm value="LT54kBtuPerHrAlteredNA">NA: Altered other than packaged AC or HP 
                <d:lt/>54 kBtu/h</dtyp:displayterm>
             <dtyp:displayterm value="LTE33kBtuPerHrCooling">NA: 
                <d:lte/>33 kBtu/h cooling</dtyp:displayterm>
             <dtyp:displayterm value="MeetsEfficiencyTable140_4A">NA: Efficiency per Table 140.4-D</dtyp:displayterm>
-            <dtyp:displayterm value="ServingComputerRoom">See NRCC-PRC for details</dtyp:displayterm>
+            <dtyp:displayterm value="ServingComputerRoom">See CC-PRC for details</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="ControlledHorticultureNA"/>
          <xsd:enumeration value="HasSpecialOutsideAirFiltration"/>
          <xsd:enumeration value="HasWatersideEconomizer"/>
+         <xsd:enumeration value="HighRiseResHotelMotel"/>
          <xsd:enumeration value="LowRiseResidentialNA"/>
          <xsd:enumeration value="LT54kBtuPerHrAlteredNA"/>
          <xsd:enumeration value="LTE33kBtuPerHrCooling"/>
@@ -10556,6 +10564,24 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="IsProjectInstalledPhotovoltaicSystem">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="IsProjectInstalledSolarWaterHeating">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="IsProjectSmartTstatPlusEE_Measure">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -11548,6 +11574,20 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:documentation>Units: ft2</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LocalExhaustType">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="BathroomIAQ">Bathroom IAQ</dtyp:displayterm>
+            <dtyp:displayterm value="BathroomVentIAQ">Bathroom IAQ &amp;amp; Vent.</dtyp:displayterm>
+            <dtyp:displayterm value="KitchenRangeHood">Kitchen Range Hood</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="BathroomIAQ"/>
+         <xsd:enumeration value="BathroomVentIAQ"/>
+         <xsd:enumeration value="KitchenRangeHood"/>
+      </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="LocalJurisdiction">
       <xsd:annotation>
@@ -13777,6 +13817,15 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasBatteryStorage">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasBoilers">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -13900,11 +13949,29 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasDrySystemEquipment">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasDuctwork">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>Ductwork</dtyp:displayterm>
          </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasEVCharging">
+      <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -13933,6 +14000,24 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasElevatorLighting">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasElevatorVentilation">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasEnclosedParking">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -13940,6 +14025,18 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasEnergyStar">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasEnergyStarAndFanEC">
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="ProjectHasEquipment">
@@ -13966,7 +14063,61 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasFenestrationSkylight">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasFenestrationVertical">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasFloorAssembly">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasFloorInsulation">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasGenLight">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasGreywater">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasHeatRejectionEquipment">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -13984,7 +14135,43 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasHomeAutomation">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasInsulationAboveDeck">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasInsulationBelowDeck">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasInterlockControl">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasKitchenHood">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -14020,6 +14207,15 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasNewSolidDoor">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasPoolSpa">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -14041,7 +14237,25 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasRainwater">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasReceptacleControl">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasRoofSurfacing">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -14077,11 +14291,29 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasSystemControls">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="ProjectHasSystemPiping">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
             <dtyp:displayterm>System Piping</dtyp:displayterm>
          </xsd:appinfo>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasTerminalBoxControls">
+      <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
             <dtyp:displayterm value="false">No</dtyp:displayterm>
@@ -14138,6 +14370,24 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="ProjectHasVoltDrop">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasWallAssembly">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="ProjectHasWallInsulation">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -14302,18 +14552,54 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          </xsd:appinfo>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AdditionComplete">Complete Addition</dtyp:displayterm>
+            <dtyp:displayterm value="AdditionEnvelope">Envelope Addition</dtyp:displayterm>
+            <dtyp:displayterm value="AdditionEnvelopeAndLighting">Envelope and Lighting Addition</dtyp:displayterm>
+            <dtyp:displayterm value="AdditionEnvelopeAndLightingAndPartialMechanical"/>
+            <dtyp:displayterm value="AdditionEnvelopeAndMechanical">Envelope and Mechanical  Addition</dtyp:displayterm>
+            <dtyp:displayterm value="AdditionEnvelopeAndPartialLighting">Envelope and Partial Lighting Addition</dtyp:displayterm>
+            <dtyp:displayterm value="AdditionEnvelopeAndPartialLightingAndPartialMechanical"/>
+            <dtyp:displayterm value="AdditionMechanical">Mechanical  Addition</dtyp:displayterm>
+            <dtyp:displayterm value="AdditionMechanicalAndLighting">Mechanical and Lighting Addition</dtyp:displayterm>
+            <dtyp:displayterm value="AdditionMechanicalAndPartialLighting">Mechanical and Partial Lighting Addition</dtyp:displayterm>
             <dtyp:displayterm value="ExistingAddition">Existing addition</dtyp:displayterm>
             <dtyp:displayterm value="ExistingAdditionAndAlteration">Existing addition and alteration</dtyp:displayterm>
             <dtyp:displayterm value="ExistingAlteration">Existing alteration</dtyp:displayterm>
             <dtyp:displayterm value="NewComplete">New complete scope</dtyp:displayterm>
+            <dtyp:displayterm value="NewEnvelope">New envelope</dtyp:displayterm>
+            <dtyp:displayterm value="NewEnvelopeAndLighting">New envelope and lighting</dtyp:displayterm>
+            <dtyp:displayterm value="NewEnvelopeAndLightingAndPartialMechanical">New envelope and lighting and partial mechanical</dtyp:displayterm>
+            <dtyp:displayterm value="NewEnvelopeAndMechanical">New envelope and mechanical</dtyp:displayterm>
+            <dtyp:displayterm value="NewEnvelopeAndPartialLighting">New envelope and partial lighting</dtyp:displayterm>
+            <dtyp:displayterm value="NewEnvelopeAndPartialLightingAndPartialMechanical">New envelope and partial lighting and partial mechanical</dtyp:displayterm>
+            <dtyp:displayterm value="NewMechanical">New mechanical</dtyp:displayterm>
+            <dtyp:displayterm value="NewMechanicalAndLighting">New mechanical and lighting</dtyp:displayterm>
+            <dtyp:displayterm value="NewMechanicalAndPartialLighting">New mechanical and  partial lighting</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="AdditionComplete"/>
+         <xsd:enumeration value="AdditionEnvelope"/>
+         <xsd:enumeration value="AdditionEnvelopeAndLighting"/>
+         <xsd:enumeration value="AdditionEnvelopeAndLightingAndPartialMechanical"/>
+         <xsd:enumeration value="AdditionEnvelopeAndMechanical"/>
+         <xsd:enumeration value="AdditionEnvelopeAndPartialLighting"/>
+         <xsd:enumeration value="AdditionEnvelopeAndPartialLightingAndPartialMechanical"/>
+         <xsd:enumeration value="AdditionMechanical"/>
+         <xsd:enumeration value="AdditionMechanicalAndLighting"/>
+         <xsd:enumeration value="AdditionMechanicalAndPartialLighting"/>
          <xsd:enumeration value="ExistingAddition"/>
          <xsd:enumeration value="ExistingAdditionAndAlteration"/>
          <xsd:enumeration value="ExistingAlteration"/>
          <xsd:enumeration value="NewComplete"/>
+         <xsd:enumeration value="NewEnvelope"/>
+         <xsd:enumeration value="NewEnvelopeAndLighting"/>
+         <xsd:enumeration value="NewEnvelopeAndLightingAndPartialMechanical"/>
+         <xsd:enumeration value="NewEnvelopeAndMechanical"/>
+         <xsd:enumeration value="NewEnvelopeAndPartialLighting"/>
+         <xsd:enumeration value="NewEnvelopeAndPartialLightingAndPartialMechanical"/>
+         <xsd:enumeration value="NewMechanical"/>
+         <xsd:enumeration value="NewMechanicalAndLighting"/>
+         <xsd:enumeration value="NewMechanicalAndPartialLighting"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ProjectScopeNew">
@@ -14832,7 +15118,268 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch02A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch03A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch04A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch04H">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch05A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch06A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch07A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch08A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch09A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch10A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch11A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch12A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch13A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch14A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch15A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch16A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch17A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch18A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch19A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch20">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch20H">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch21">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch21H">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch22A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAMch23A">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAPrc02F">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAPrc03F">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCAPrc12F">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireLMCIElc01E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCIElcE">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -14886,7 +15433,70 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCIEnvE">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireLMCILti01E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCILti02E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCILti03E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCILti04E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCILti05E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCILti06E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCILtiE">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -15030,7 +15640,25 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCIMchE">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireLMCIPlb01E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCIPlbE">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -15048,7 +15676,25 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCIPrcE">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireLMCISab01E">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCISabE">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -15130,6 +15776,24 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
    <xsd:simpleType name="RequireLMCVMch32H">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVPlb21H">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVPlb22H">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -16518,6 +17182,10 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
          <xsd:documentation>This is a list of special features used in a residential building that are non standard</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="AdvancedWallFraming">Advanced wall framing included (see opaque surface constructions)</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingClimateZones678or15">Electric resistance space heating system replacement in CZs 6, 7, 8 or 15</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingClimateZones7or15">Electric resistance space heating system replacement in CZs 7 or 15</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingNoDuctedCooling">Ducted electric resistance space heating system replacement with no ducts replaced or altered</dtyp:displayterm>
+            <dtyp:displayterm value="AlteredElecResistanceSpaceHeatingNonDucted">Non-ducted electric resistance space heating system replacement</dtyp:displayterm>
             <dtyp:displayterm value="AtticReliefVentFreeArea">Attic Relief Vent Free Area</dtyp:displayterm>
             <dtyp:displayterm value="BalancedIAQVentilation">Indoor air quality, balanced fan</dtyp:displayterm>
             <dtyp:displayterm value="BatterySystem">Battery System</dtyp:displayterm>
@@ -16591,6 +17259,10 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="AdvancedWallFraming"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingClimateZones678or15"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingClimateZones7or15"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingNoDuctedCooling"/>
+         <xsd:enumeration value="AlteredElecResistanceSpaceHeatingNonDucted"/>
          <xsd:enumeration value="AtticReliefVentFreeArea"/>
          <xsd:enumeration value="BalancedIAQVentilation"/>
          <xsd:enumeration value="BatterySystem"/>

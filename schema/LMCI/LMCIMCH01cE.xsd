@@ -788,7 +788,7 @@ This Section is applicable only if  one or more systems in section C has  C05_Re
                                     <xsd:element name="E03_EfficiencyType" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Cooling Efficiency Type</xsd:documentation>
-                                          <xsd:documentation source="CalculationsAndRules">As default result = B06_EfficiencyType.  Allow user to override the default and pick from list: EER, EER2, SEER, SEER2, EERSEER, EER2SEER2, CEER;  Flag non-default values and report in project status notes field; a revised parent CC may be required.</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">As default result = B06_EfficiencyType.  Allow user to override the default and pick from list: EER, EER2,  EERSEER, EER2SEER2, CEER;  Flag non-default values and report in project status notes field; a revised parent CC may be required.</xsd:documentation>
                                        </xsd:annotation>
                                        <xsd:simpleType>
                                           <xsd:restriction base="hvac:EfficiencyType">
@@ -797,8 +797,6 @@ This Section is applicable only if  one or more systems in section C has  C05_Re
                                              <xsd:enumeration value="EER2"/>
                                              <xsd:enumeration value="EER2SEER2"/>
                                              <xsd:enumeration value="EERSEER"/>
-                                             <xsd:enumeration value="SEER"/>
-                                             <xsd:enumeration value="SEER2"/>
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
@@ -829,6 +827,12 @@ Else If B07_NotApplicableMessage IsPresent And  If E03_EfficiencyType == SEER2  
 Else result does not comply
 End If
 Flag non-compliant values and do not let registration proceed if not in compliance.</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="E04_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Cooling Efficiency Value SEER/SEER2</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If E03_EfficiencyType == CEER Or EER Or EER2  result = NA</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -1286,7 +1290,7 @@ End If</xsd:documentation>
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">System Cooling Efficiency Type</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">If B06_EfficiencyType IsPresent As 
-default result = B06_EfficiencyType and Allow user to override default and select from list: EER, EER2, SEER, SEER2, EERSEER, EER2SEER2, CEER;  Flag non-default values and report in project status notes field; a revised parent CC may be required.
+default result = B06_EfficiencyType and Allow user to override default and select from list: EER, EER2, EERSEER, EER2SEER2, CEER;  Flag non-default values and report in project status notes field; a revised parent CC may be required.
 Else user selects from list:  EER, EER2, SEER, SEER2, EERSEER, EER2SEER2, CEER</xsd:documentation>
                                        </xsd:annotation>
                                        <xsd:simpleType>
@@ -1296,8 +1300,6 @@ Else user selects from list:  EER, EER2, SEER, SEER2, EERSEER, EER2SEER2, CEER</
                                              <xsd:enumeration value="EER2"/>
                                              <xsd:enumeration value="EER2SEER2"/>
                                              <xsd:enumeration value="EERSEER"/>
-                                             <xsd:enumeration value="SEER"/>
-                                             <xsd:enumeration value="SEER2"/>
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
@@ -1338,6 +1340,12 @@ result complies
 Else result does not comply
 End If
 End If</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="H08_NotApplicableMessage" type="comp:NotApplicableMessage" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">System Rated Cooling Efficiency Value SEER/SEER2</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If H07_EfficiencyType == CEER Or EER Or EER2  result = NA</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>

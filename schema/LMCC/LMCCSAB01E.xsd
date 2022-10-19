@@ -37,8 +37,8 @@
                      <xsd:element name="Header" type="comp:HeaderHERSCC" />
                      <xsd:element ref="lMCCSAB01E" />
                      <xsd:element name="DocAuthor" type="comp:DocumentAuthor" />
-                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R" />
-                     <xsd:element name="Footer" type="comp:FooterLMCC" />
+                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R" maxOccurs="unbounded" />
+                     <xsd:element name="Footer" type="comp:Footer" />
                   </xsd:sequence>
                </xsd:complexType>
             </xsd:element>
@@ -166,17 +166,20 @@ End If</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If this subsection is required,  one and only one item can be checked with a result == true and it is the only item that is displayed in the final report.
  
 This subsection is required  as follows:
-If A04_WholeBuildngOccupancy ==  MultiFamilyMixedUseLT4
-And A05_RoofConstRangeSolar == AddRoofGT2000ft2 Or NewRoofLTE533ft2, NewRoofGT533ft2, Or EmergencyRebuild
+If A04_WholeBuildngOccupancy == MedicalClinicBuilding
+BSolarReady is NOT REQUIRED
  
-Or
+Else If Bpv Is not required and NotPresent
+BSolarReady is REQUIRED
+Else If Bpv Is required and IsPresent And 
 If Bpv01c_RequiredLT1_8kW == true
 Or
 Bpv01d_NoContiguousAccess == true
 Or
 Bpv01e_SnowloadException == true
 Or
-Bpv0g_PerfTradeOffException == true</xsd:documentation>
+Bpv0g_PerfTradeOffException == true
+ BSolarReady is REQUIRED</xsd:documentation>
                      </xsd:annotation>
                      <xsd:complexType>
                         <xsd:sequence>

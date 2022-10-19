@@ -37,6 +37,46 @@
       <xsd:restriction base="xsd:string">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="AssemblyType">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="ConcretePanel">Concrete Sandwich Panel</dtyp:displayterm>
+            <dtyp:displayterm value="Framed">Framed</dtyp:displayterm>
+            <dtyp:displayterm value="HeatedSlab">Heated Slab-on-grade</dtyp:displayterm>
+            <dtyp:displayterm value="ICF">ICF</dtyp:displayterm>
+            <dtyp:displayterm value="Log">Log</dtyp:displayterm>
+            <dtyp:displayterm value="Mass">Mass</dtyp:displayterm>
+            <dtyp:displayterm value="MetalBuilding">Metal Building</dtyp:displayterm>
+            <dtyp:displayterm value="MetalFramed">Metal Framed</dtyp:displayterm>
+            <dtyp:displayterm value="MetalPanel">Metal Panel</dtyp:displayterm>
+            <dtyp:displayterm value="RaisedMass">Raised Mass</dtyp:displayterm>
+            <dtyp:displayterm value="SIPS">SIPS</dtyp:displayterm>
+            <dtyp:displayterm value="SlabOnGradeLRMF">LRMF Slab-on-grade</dtyp:displayterm>
+            <dtyp:displayterm value="Span">Span</dtyp:displayterm>
+            <dtyp:displayterm value="SpandrelCurtain">Spandrel/ Curtain Wall</dtyp:displayterm>
+            <dtyp:displayterm value="Strawbale">Strawbale</dtyp:displayterm>
+            <dtyp:displayterm value="WoodFramed">Wood Framed</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:EnumerationConstant">
+         <xsd:enumeration value="ConcretePanel"/>
+         <xsd:enumeration value="Framed"/>
+         <xsd:enumeration value="HeatedSlab"/>
+         <xsd:enumeration value="ICF"/>
+         <xsd:enumeration value="Log"/>
+         <xsd:enumeration value="Mass"/>
+         <xsd:enumeration value="MetalBuilding"/>
+         <xsd:enumeration value="MetalFramed"/>
+         <xsd:enumeration value="MetalPanel"/>
+         <xsd:enumeration value="RaisedMass"/>
+         <xsd:enumeration value="SIPS"/>
+         <xsd:enumeration value="SlabOnGradeLRMF"/>
+         <xsd:enumeration value="Span"/>
+         <xsd:enumeration value="SpandrelCurtain"/>
+         <xsd:enumeration value="Strawbale"/>
+         <xsd:enumeration value="WoodFramed"/>
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="AttachedADU">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -2154,7 +2194,10 @@
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ContinuousInsulationOther">
-      <xsd:restriction base="xsd:token">
+      <xsd:annotation>
+         <xsd:documentation>  Units: none</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:Decimal">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ContinuousInsulationString">
@@ -4040,6 +4083,13 @@ Not Shared</dtyp:displayterm>
          <xsd:documentation>The net area for  fenestration glazing being added for west facing fenestration with same type and frame.  Units: ft2</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="dtyp:Decimal">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="NFRC_Number">
+      <xsd:annotation>
+         <xsd:documentation>The CRRC product identification number for the roofing product</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:string">
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="NonFramedAssembly">

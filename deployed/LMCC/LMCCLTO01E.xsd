@@ -24,8 +24,8 @@
                      <xsd:element name="Header" type="comp:HeaderHERSCC"/>
                      <xsd:element ref="lMCCLTO01E"/>
                      <xsd:element name="DocAuthor" type="comp:DocumentAuthor"/>
-                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R"/>
-                     <xsd:element name="Footer" type="comp:FooterLMCC"/>
+                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R" maxOccurs="unbounded"/>
+                     <xsd:element name="Footer" type="comp:Footer"/>
                   </xsd:sequence>
                </xsd:complexType>
             </xsd:element>
@@ -1142,7 +1142,9 @@ the user must enter an explanation on how wattage is determined for each luminai
          </xsd:element>
          <xsd:element name="Section_H" minOccurs="0">
             <xsd:annotation>
-               <xsd:documentation source="FieldText">OUTDOOR LIGHTING CONTROLS</xsd:documentation>
+               <xsd:documentation source="FieldText">
+                  <d:b>OUTDOOR LIGHTING CONTROLS</d:b>
+               </xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">This section is required if B01a_LightingProjectScopeNR == NewLightingSystem Or If B01b_LightingProjectScopeNR == AlteredLightingSystem AND B02_DoesAlterationIncreaseLightingLoad == true; Or If B01b_LightingProjectScopeNR == AlteredLightingSystem AND B02_DoesAlterationIncreaseLightingLoad == false And B03_LuminaireAlteredPercentRange == (GTE10PercentLT50Percent OR GTE50Percent) AND B04_LuminaireAddAlteredCount GTE 5</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, do not display anything for this section</xsd:documentation>
             </xsd:annotation>

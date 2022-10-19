@@ -782,6 +782,12 @@
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="DwellUnitTotalVolume">
+      <xsd:annotation>
+         <xsd:documentation>Units: ft3</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative"/>
+   </xsd:simpleType>
    <xsd:simpleType name="DwellingUnitClothesWasher">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">

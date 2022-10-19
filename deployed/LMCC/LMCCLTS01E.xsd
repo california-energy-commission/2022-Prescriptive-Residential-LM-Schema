@@ -24,8 +24,8 @@
                      <xsd:element name="Header" type="comp:HeaderHERSCC"/>
                      <xsd:element ref="lMCCLTS01E"/>
                      <xsd:element name="DocAuthor" type="comp:DocumentAuthor"/>
-                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R"/>
-                     <xsd:element name="Footer" type="comp:FooterLMCC"/>
+                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF1R" maxOccurs="unbounded"/>
+                     <xsd:element name="Footer" type="comp:Footer"/>
                   </xsd:sequence>
                </xsd:complexType>
             </xsd:element>

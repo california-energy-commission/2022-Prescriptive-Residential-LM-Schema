@@ -926,6 +926,13 @@
          <xsd:enumeration value="TwoBedroom"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="DwellUnitTotalVolume">
+      <xsd:annotation>
+         <xsd:documentation>  Units: ft3</xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="dtyp:DecimalNonnegative">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="ElectricalLoadType">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
