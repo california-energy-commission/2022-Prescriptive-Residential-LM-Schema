@@ -5768,11 +5768,11 @@ Switch (FframedMF12_FramingSize)
 case 2x4:  list R0 (display term None), R11, R13, R15, R19Batt, R19SprayRigid; 
  
 case 2x6: list R0 (display term None), R11, R13, R15, R19,  
-  If FframedMF11_ConstructionAssemblyName ==  WoodFramedRoof also list   R21;  
+  If FframedMF10_ConstructionAssemblyName ==  WoodFramedRoof also list   R21;  
   End If
 case 2x8: list R0 (display term None), R19, R21; 
 case 2x10:  list R0 (display term None),  R25, R30;
-  If FframedMF11_ConstructionAssemblyName ==  WoodFramedRoof also list  R22,
+  If FframedMF10_ConstructionAssemblyName ==  WoodFramedRoof also list  R22,
   End If 
 case 2x12: list R0 (display term None), R30, R38; 
 case 2x14:  list R0 (display term None), R38;
@@ -5818,7 +5818,7 @@ Else If FframedMF09_UfactorSpecSource == JA4Other Or ApprovedSoftware user enter
 Else If FframedMF09_UfactorSpecSource == JA4Tables user selects from list customized as follows:
  
 If FframedMF05_RoofType == NonAtticOptionD Or RafterRoof And 
-FframedMF11_ConstructionAssemblyName ==  WoodFramedRoof list: None, R-2, R-4, R-6, R-7, R-8, R-10, R-14, R-17, R-20, and R-23
+FframedMF10_ConstructionAssemblyName ==  WoodFramedRoof list: None, R-2, R-4, R-6, R-7, R-8, R-10, R-14, R-17, R-20, and R-23
  
 Else list: None, R-2, R-4, R-6, R-7, R-8, R-10 and R-14
 End If
