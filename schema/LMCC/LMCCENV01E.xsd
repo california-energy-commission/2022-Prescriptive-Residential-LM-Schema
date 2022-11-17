@@ -8581,14 +8581,25 @@ Else If Hframed07_PartitionFramingMaterial == Metal
 result = 0.057
 End If
 End If
+
+case ResidentialMF:
+If Hframed06a_StructureFireRating == GT1hr
+If A03_ClimateZoneNumber == InRange(1,5) Or 8 Or 9 Or 10 Or 12 Or 13 result = 0.059
+Else If A03_ClimateZoneNumber == 11 Or 14 Or 15 Or 16 result = 0.051
+Else If A03_ClimateZoneNumber == 6 Or 7 result = 0.065
+End If
+Else If Hframed06a_StructureFireRating == LTE1hr
+If A03_ClimateZoneNumber == InRange(1,5) Or InRange(8,16) result = 0.051
+Else If A03_ClimateZoneNumber == 6 Or 7 result = 0.065
+End If
+End If
  
 End Switch
  
-Else If  Hframed04a_TopLevelOccupancy == ResidentialMF:
-If Hframed06a_StructureFireRating == GT1hr
-If A03_ClimateZoneNumber == InRange(1,5) Or 8 Or 9 Or 10 Or 12 Or 13   result = 0.059
-Else If A03_ClimateZoneNumber == 11 Or 14 Or 15 Or 16   result = 0.051
-Else If A03_ClimateZoneNumber == 6 Or 7   result = 0.065
+Else if Hframed06a_StructureFireRating == GT1hr
+If A03_ClimateZoneNumber == InRange(1,5) Or 8 Or 9 Or 10 Or 12 Or 13 result = 0.059
+Else If A03_ClimateZoneNumber == 11 Or 14 Or 15 Or 16 result = 0.051
+Else If A03_ClimateZoneNumber == 6 Or 7 result = 0.065
 End If
 Else If Hframed06a_StructureFireRating == LTE1hr
 If A03_ClimateZoneNumber == InRange(1,5) Or InRange(8,16)  result = 0.051
