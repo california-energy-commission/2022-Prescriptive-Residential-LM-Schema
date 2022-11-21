@@ -2202,6 +2202,7 @@ End If</xsd:documentation>
                         <xsd:documentation source="FieldText">
                            <d:b>Pools &amp;amp; Spa </d:b>
                         </xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This table is required If B06e_ProjectHasPoolSpa == true</xsd:documentation>
                      </xsd:annotation>
                      <xsd:complexType>
                         <xsd:sequence>
@@ -2234,6 +2235,9 @@ End If</xsd:documentation>
                                              <xsd:element name="PoolScopeNA_NotApplicableMessage">
                                                 <xsd:annotation>
                                                    <xsd:documentation source="FieldText"/>
+                                                   <xsd:documentation source="CalculationsAndRules">If Pool01_InMyScope == false
+result = BlankGrayedOut for Pool04cc_PoolSpaRequirements-Pool07cc_PoolSpaRequirements and Pool02-Pool07_PoolSpaRequirements As-built fields are blank and grayed out 
+End If</xsd:documentation>
                                                 </xsd:annotation>
                                                 <xsd:simpleType>
                                                    <xsd:restriction base="comp:NotApplicableMessage">
@@ -2252,16 +2256,28 @@ End If</xsd:documentation>
                                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
                                                          </xsd:annotation>
                                                       </xsd:element>
-                                                      <xsd:element name="Pool02cc" minOccurs="0">
+                                                      <xsd:element name="Pool02" minOccurs="0">
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
-                                                            <xsd:documentation source="AdditionalRequirements">Equipment subject to State/federal appliance efficiency standards is in the CEC's directory of certified equipment</xsd:documentation>
+                                                            <xsd:documentation source="CalculationsAndRules">If NRCC-PRC parent
+If Pool03_PoolSpaRequirements IsPresent
+result = Pool03_PoolSpaRequirements
+End If</xsd:documentation>
+                                                            <xsd:appinfo source="CIsrc">
+                                                               <dtyp:srcSchema form="NRCCPRC01E" usage="copy">Pool03_PoolSpaRequirements</dtyp:srcSchema>
+                                                            </xsd:appinfo>
                                                          </xsd:annotation>
                                                       </xsd:element>
-                                                      <xsd:element name="Pool03cc" minOccurs="0">
+                                                      <xsd:element name="Pool03" minOccurs="0">
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText">On/Off Control</xsd:documentation>
-                                                            <xsd:documentation source="AdditionalRequirements">Includes on-off switch mounted on outside of heater allowing shutting off heater without adjusting thermostat</xsd:documentation>
+                                                            <xsd:documentation source="CalculationsAndRules">If NRCC-PRC parent
+If Pool04_PoolSpaRequirements IsPresent
+result = Pool04_PoolSpaRequirements
+End If</xsd:documentation>
+                                                            <xsd:appinfo source="CIsrc">
+                                                               <dtyp:srcSchema form="NRCCPRC01E" usage="copy">Pool04_PoolSpaRequirements</dtyp:srcSchema>
+                                                            </xsd:appinfo>
                                                          </xsd:annotation>
                                                       </xsd:element>
                                                       <xsd:element name="Pool04cc_PoolSpaRequirements">
@@ -2419,6 +2435,23 @@ End If</xsd:documentation>
                                     <xsd:element name="Pool08_ComplianceResultCI" type="comp:ComplianceResultCI">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Pool/Spa Compliance</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">If any user input field is blank
+result = TableIncomplete
+Else If Pool01_InMyScope == false 
+result = NotInScope
+  
+Else If
+Pool04cc_PoolSpaRequirements == Pool04_PoolSpaRequirements
+And
+Pool05cc_PoolSpaRequirements == Pool05_PoolSpaRequirements
+And
+Pool06cc_PoolSpaRequirements == Pool06_PoolSpaRequirements
+And
+Pool07cc_PoolSpaRequirements == Pool07_PoolSpaRequirements
+result = ExactMatch
+Else
+result = EqualBetter
+End If</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                  </xsd:sequence>
@@ -2432,6 +2465,7 @@ End If</xsd:documentation>
                         <xsd:documentation source="FieldText">
                            <d:b>Additional Requirements for Pool/Spa Serving One Tenant  </d:b>
                         </xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This table is required If B06e_ProjectHasPoolSpa == true</xsd:documentation>
                      </xsd:annotation>
                      <xsd:complexType>
                         <xsd:sequence>
