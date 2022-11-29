@@ -3514,7 +3514,7 @@
             <dtyp:displayterm value="PROJECT REPORT">PROJECT REPORT</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:EnumerationConstantPhrase">
+      <xsd:restriction base="dtyp:EnumerationConstantPermissive">
          <xsd:enumeration value="CERTIFICATE OF COMPLIANCE"/>
          <xsd:enumeration value="CERTIFICATE OF COMPLIANCE -  LOWRISE MULTIFAMILY MIXED USE PERFORMANCE COMPLIANCE METHOD"/>
          <xsd:enumeration value="CERTIFICATE OF COMPLIANCE -  RESIDENTIAL PERFORMANCE COMPLIANCE METHOD"/>
