@@ -142,7 +142,6 @@ End If</xsd:documentation>
                            <xsd:enumeration value="FinancialInstitutionBuilding"/>
                            <xsd:enumeration value="GroceryStoreBuilding"/>
                            <xsd:enumeration value="GymnasiumBuilding"/>
-                           <xsd:enumeration value="HighRiseResidential"/>
                            <xsd:enumeration value="HospitalBuilding"/>
                            <xsd:enumeration value="HotelMotel"/>
                            <xsd:enumeration value="LibraryBuilding"/>

@@ -17305,11 +17305,6 @@ GlazedDoorMF
 Or
 If Kvertperf06_FenestrationModification == ReplaceLTE150ft2 Or AddLTE50ft2  
 Or
- If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones and  Kvertperf06_FenestrationModification == AllNew Or AddGT50ft2  Or ReplaceGT150ft2 
-Or
-If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones And  
-Kvertperf05_FenestrationProductType == GlazedDoor  
-Or
 If Kvertperf06_TopLevelOccupancy == LowriseResidential And Kvertperf06_FenestrationModification == AllNew
 Or
 If Kvertperf06_FenestrationModification ==  ReplaceGT150ft2 And Kvertperf_ComplianceMethodSHGC_VT == Table170_2A 
