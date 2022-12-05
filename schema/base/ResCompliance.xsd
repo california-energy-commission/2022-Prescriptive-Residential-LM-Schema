@@ -3904,10 +3904,16 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="NA">NA</dtyp:displayterm>
+            <dtyp:displayterm value="Performance">Performance</dtyp:displayterm>
+            <dtyp:displayterm value="PerformanceAndPrescriptive">Performance and Prescriptive Combined</dtyp:displayterm>
+            <dtyp:displayterm value="Prescriptive">Prescriptive</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
          <xsd:enumeration value="NA"/>
+         <xsd:enumeration value="Performance"/>
+         <xsd:enumeration value="PerformanceAndPrescriptive"/>
+         <xsd:enumeration value="Prescriptive"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="ComplianceResultCI">
