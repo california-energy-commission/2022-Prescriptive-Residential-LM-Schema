@@ -191,12 +191,11 @@
                                        <xsd:element name="B09_EfficiencyType" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Heating Efficiency Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If Performance reference values from LMCC-PRF for efficiency type  Allowed values are: AFUE, EnergyFactor, ThermalEfficiency, Uniform Energy Factor; Else result = N/A stored in NotApplicableMessage</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Performance reference values from LMCC-PRF for efficiency type  Allowed values are: AFUE, ThermalEfficiency, Uniform Energy Factor; Else result = N/A stored in NotApplicableMessage</xsd:documentation>
                                           </xsd:annotation>
                                           <xsd:simpleType>
                                              <xsd:restriction base="hvac:EfficiencyType">
                                                 <xsd:enumeration value="AFUE"/>
-                                                <xsd:enumeration value="EnergyFactor"/>
                                                 <xsd:enumeration value="ThermalEfficiency"/>
                                                 <xsd:enumeration value="UniformEnergyFactor"/>
                                              </xsd:restriction>
@@ -311,9 +310,7 @@
                                        <xsd:element name="Hpd02_HeatPumpWaterHeaterBrand" type="hvac:HeatPumpWaterHeaterBrand" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Modeled Equipment Make and Model</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If  prescriptive LMCC
-default value = Sanden stored in HeatPumpWaterHeaterBrand
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">Reference values from LMCC-PRF-01</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Hpd02_HeatPumpWaterHeaterModel" type="hvac:HeatPumpWaterHeaterModel" >
@@ -689,9 +686,7 @@ If prescriptive, this field is not required; Else If performance reference value
                                        <xsd:element name="Hpi02_HeatPumpWaterHeaterBrand" type="hvac:HeatPumpWaterHeaterBrand" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Modeled Equipment Make and Model</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If Prescriptive LMCC
-result = Sanden stored in HeatPumpWaterHeaterBrand
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If performance, user input is equal to B2-02 as default, and allow user to override with an equivalent system based on the simulated equipment in B2-12</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="Hpi02_HeatPumpWaterHeaterModel" type="hvac:HeatPumpWaterHeaterModel" >

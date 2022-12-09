@@ -599,7 +599,7 @@ Else If parent CC requires CFI IAQ Ventilation system, result = 1, Else result =
                <xsd:documentation source="FieldText">Installed Heating Equipment Information (not heat pumps)</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">In this section parent CC refers to the parent LMCC Certificate of Compliance (CC)
  
-This Section is applicable only if at least one row in C04_ResidentialHeatingSystemType != one of these Heat Pump types: CentralLargePackagedHP, CentralPackagedHP, CentralSplitHP,  DuctlessSplitHP (display term Ductless mini-split HP),  DuctedMultiSplitHP, DuctlessMultiSplitHP, DuctedDuctlessMultiSplitHP, DuctlessVRF_HP, SmallDuctHighVelocityHP, HydronicHP, HydronicHP_ForcedAir, RoomHP, DuctedMiniSplitHP, AirToWaterHeatPump, GroundSourceHeatPump, VCHP_IndoorUnitDucted, VCHP_IndoorUnitDuctless or VCHP_IndoorUnitDuctedAndDuctless . For each SC that satisfies this condition, do one of the following:  If SC system in C02 has C11_NotApplicableMessage value, require one row of data; Else If  SC System has C11_IndoorUnitsCount GTE 1 And C04 == CentralGasFurnace require one row of data for each of the quantity of indoor units specified in C11 for that system.</xsd:documentation>
+ This Section is applicable only if at least one row in C04_ResidentialHeatingSystemType != one of these Heat Pump types: CentralLargePackagedHP, CentralPackagedHP, CentralSplitHP,  DuctlessSplitHP (display term Ductless mini-split HP),  DuctedMultiSplitHP, DuctlessMultiSplitHP, DuctedDuctlessMultiSplitHP, DuctlessVRF_HP, SmallDuctHighVelocityHP, HydronicHP, HydronicHP_ForcedAir, RoomHP, DuctedMiniSplitHP, AirToWaterHeatPump, GroundSourceHeatPump, VCHP_IndoorUnitDucted, VCHP_IndoorUnitDuctless VCHP_IndoorUnitDuctedAndDuctless, SPVHP or PTHP . For each SC that satisfies this condition, do one of the following:  If SC system in C02 has C11_NotApplicableMessage value, require one row of data; Else If  SC System has C11_IndoorUnitsCount GTE 1 And C04 == CentralGasFurnace require one row of data for each of the quantity of indoor units specified in C11 for that system.</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, display only the section FieldText and the statement 'This section does not apply to this project.'</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -759,7 +759,7 @@ End If</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">In this section parent CC refers to the parent LMCC Certificate of Compliance (CC)
  
 This Section is applicable only if  one or more systems in section C has  C05_ResidentialCoolingSystemType
-  != NoCooling And  != CentralLargePackagedHP, CentralPackagedHP, CentralSplitHP,  DuctlessSplitHP (display term Ductless mini-split HP), DuctedMiniSplitHP, AirToWaterHeatPump, GroundSourceHeatPump, DuctedMultiSplitHP, DuctlessMultiSplitHP,  DuctedDuctlessMultiSplitHP, DuctlessVRF_HP, SmallDuctHighVelocityHP, HydronicHP, HydronicHP_ForcedAir, RoomHP, VCHP_IndoorUnitDucted, VCHP_IndoorUnitDuctless or VCHP_IndoorUnitDuctedAndDuctless;    Require one row of data in this table for each of the SC Systems listed in Section C where C05_ResidentialCoolingSystemType satisfies both of these conditions</xsd:documentation>
+!= NoCooling And  != CentralLargePackagedHP, CentralPackagedHP, CentralSplitHP,  DuctlessSplitHP (display term Ductless mini-split HP), DuctedMiniSplitHP, AirToWaterHeatPump, GroundSourceHeatPump, DuctedMultiSplitHP, DuctlessMultiSplitHP,  DuctedDuctlessMultiSplitHP, DuctlessVRF_HP, SmallDuctHighVelocityHP, HydronicHP, HydronicHP_ForcedAir, RoomHP, VCHP_IndoorUnitDucted, VCHP_IndoorUnitDuctless, VCHP_IndoorUnitDuctedAndDuctless, SPVHP or PTHP;    Require one row of data in this table for each of the SC Systems listed in Section C where C05_ResidentialCoolingSystemType satisfies both of these conditions</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, display only the section FieldText and the statement 'This section does not apply to this project.'</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -823,7 +823,8 @@ If B07_EfficiencyMinimumValueSEER2 IsPresent Then
 If result  GTE B07_EfficiencyMinimumValueSEER2, result complies
 Else result does not comply
 End If
-Else If B07_NotApplicableMessage IsPresent And  If E03_EfficiencyType == SEER2  or EER2SEER2  result must be GTE 13.4 to comply;  
+Else If B07_NotApplicableMessage IsPresent And  If E03_EfficiencyType == EER/SEER result must be GTE 13.4 to comply;  
+Elseif E03 = CEER, then value = NA;
 Else result does not comply
 End If
 Flag non-compliant values and do not let registration proceed if not in compliance.</xsd:documentation>
@@ -1082,7 +1083,7 @@ End If</xsd:documentation>
          <xsd:element name="Section_G" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">Installed Heat Pump System - Split System Condensing Unit or Package Unit Equipment Information</xsd:documentation>
-               <xsd:documentation source="CalculationsAndRules">This Section is applicable only if at least one  system in section C has C04_ResidentialHeatingSystemType Or C05_ResidentialCoolingSystemType == CentralLargePackagedHP, CentralPackagedHP, CentralSplitHP,  DuctlessSplitHP (display term Ductless mini-split HP), DuctedMiniSplitHP, AirToWaterHeatPump, GroundSourceHeatPump,  DuctedMultiSplitHP, DuctlessMultiSplitHP, DuctedDuctlessMultiSplitHP, DuctlessVRF_HP, SmallDuctHighVelocityHP, HydronicHP, HydronicHP_ForcedAir, RoomHP, VCHP_IndoorUnitDucted, VCHP_IndoorUnitDuctless or VCHP_IndoorUnitDuctedAndDuctless.    Require one row of data in this table for each of the SC Systems listed in Section C that has a system in this list.</xsd:documentation>
+               <xsd:documentation source="CalculationsAndRules">This Section is applicable only if at least one  system in section C has C04_ResidentialHeatingSystemType Or C05_ResidentialCoolingSystemType == CentralLargePackagedHP, CentralPackagedHP, CentralSplitHP,  DuctlessSplitHP (display term Ductless mini-split HP), DuctedMiniSplitHP, AirToWaterHeatPump, GroundSourceHeatPump,  DuctedMultiSplitHP, DuctlessMultiSplitHP, DuctedDuctlessMultiSplitHP, DuctlessVRF_HP, SmallDuctHighVelocityHP, HydronicHP, HydronicHP_ForcedAir, RoomHP, VCHP_IndoorUnitDucted, VCHP_IndoorUnitDuctless, VCHP_IndoorUnitDuctedAndDuctless, SPVHP or PTHP.    Require one row of data in this table for each of the SC Systems listed in Section C that has a system in this list.</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, display only the section FieldText and the statement 'This section does not apply to this project.'</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -1169,7 +1170,7 @@ End If</xsd:documentation>
                <xsd:documentation source="FieldText">Installed Heat Pump System - Efficiency and Performance Compliance Information</xsd:documentation>
                <xsd:documentation source="CalculationsAndRules">In this section parent CC refers to the parent LMCC Certificate of Compliance (CC)
  
-This Section is applicable only if at least one system in section C has C04_ResidentialHeatingSystemType  Or C05_ResidentialCoolingSystemType == CentralLargePackagedHP, CentralPackagedHP, CentralSplitHP,  DuctlessSplitHP (display term Ductless mini-split HP), DuctedMiniSplitHP, AirToWaterHeatPump, GroundSourceHeatPump,  DuctedMultiSplitHP, DuctlessMultiSplitHP, DuctedDuctlessMultiSplitHP, DuctlessVRF_HP, SmallDuctHighVelocityHP, HydronicHP, HydronicHP_ForcedAir, RoomHP, VCHP_IndoorUnitDucted, VCHP_IndoorUnitDuctless or VCHP_IndoorUnitDuctedAndDuctless.    Require one row of data in this table for each of the SC Systems for which the system type  is in this list.</xsd:documentation>
+ This Section is applicable only if at least one system in section C has C04_ResidentialHeatingSystemType  Or C05_ResidentialCoolingSystemType == CentralLargePackagedHP, CentralPackagedHP, CentralSplitHP,  DuctlessSplitHP (display term Ductless mini-split HP), DuctedMiniSplitHP, AirToWaterHeatPump, GroundSourceHeatPump,  DuctedMultiSplitHP, DuctlessMultiSplitHP, DuctedDuctlessMultiSplitHP, DuctlessVRF_HP, SmallDuctHighVelocityHP, HydronicHP, HydronicHP_ForcedAir, RoomHP, VCHP_IndoorUnitDucted, VCHP_IndoorUnitDuctless, VCHP_IndoorUnitDuctedAndDuctless, SPVHP or PTHP.    Require one row of data in this table for each of the SC Systems for which the system type  is in this list.</xsd:documentation>
                <xsd:documentation source="MinOccurs">If this section doesn't apply, display only the section FieldText and the statement 'This section does not apply to this project.'</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
@@ -1307,39 +1308,31 @@ Else user selects from list:  EER, EER2, SEER, SEER2, EERSEER, EER2SEER2, CEER</
                                        <xsd:element name="H08_EfficiencyInstalledValueSEER" type="hvac:EfficiencyInstalledValueSEER" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">System Rated Cooling Efficiency Value SEER/SEER2</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">User input SEER numeric value xx.x within InclusiveRange(0.0, 100.0).   Check result: 
- If B07_NotApplicableMessage IsPresent  
-If E03_EfficiencyType == SEER or EERSEER Then 
-If result GTE 14 result complies
-Else result does not comply
-End If
-End If
-Else If B07_EfficiencyMinimumValueSEER IsPresent
-If result  GTE B07_EfficiencyMinimumValueSEER, 
-result complies
-Else result does not comply
-End If
-End If
- 
-Flag non-compliant values and do not let registration proceed if not in compliance.</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">User input SEER numeric value xx.x within InclusiveRange(0.0, 100.0).
+                                                check value:
+                                                if B07 != N/A,
+                                                then value must be GTE value in B07, to comply;
+                                                elseif value in B07 == N/A and E03 == SEER,
+                                                then value must be GTE 14 to comply;
+                                                elseif vale in B07 == N/A and E03 == SEER2/SEER2, then value must be GTE 13.4;
+                                                
+                                                Flag non-compliant values and do not allow registration to proceed if not in compliance
+                                             </xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="H08_EfficiencySEER2" type="hvac:EfficiencySEER2" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">System Rated Cooling Efficiency Value SEER/SEER2</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">User input SEER2 numeric xx.x within InclusiveRange(0.0, 100.0).   Check result: 
- If B07_NotApplicableMessage IsPresent   
-If E03_EfficiencyType == SEER2 or EER2SEER2 Then 
-If result GTE 13.4 result complies
-Else result does not comply
-End If
-End If
-Else If B07_EfficiencyMinimumValueSEER2 IsPresent 
-If result  GTE B07_EfficiencyMinimumValueSEER2, 
-result complies
-Else result does not comply
-End If
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">User input SEER numeric value xx.x within InclusiveRange(0.0, 100.0).
+                                                check value:
+                                                if B07 != N/A,
+                                                then value must be GTE value in B07, to comply;
+                                                elseif value in B07 == N/A and E03 == SEER,
+                                                then value must be GTE 14 to comply;
+                                                elseif vale in B07 == N/A and E03 == SEER2/SEER2, then value must be GTE 13.4;
+                                                
+                                                Flag non-compliant values and do not allow registration to proceed if not in compliance                                         
+                                             </xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="H08_NotApplicableMessage" type="comp:NotApplicableMessage" >
@@ -1353,43 +1346,45 @@ End If</xsd:documentation>
                                        <xsd:element name="H08b_EfficiencyInstalledValueEER" type="hvac:EfficiencyInstalledValueEER" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">System Rated Cooling Efficiency Value EER/EER2/CEER</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">User input EER numeric xx.x within InclusiveRange(0.0, 100.0).   Check result: 
- If B07_NotApplicableMessage IsPresent   
-If E03_EfficiencyType == EER  or EERSEER Then 
-If result GTE 11.7 result complies
-Else result does not comply
-End If
-End If
-Else If B07_EfficiencyMinimumValueEER IsPresent 
-If result  GTE B07_EfficiencyMinimumValueEER, 
-result complies
-Else result does not comply
-End If
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">user input, numeric value, xx.x;
+                                                check value:
+                                                if B07b != N/A,
+                                                then value must be GTE value in B07b, to comply;
+                                                elseif value in B07b==N/A and E03===SEER,
+                                                then value must be GTE 11.7 to comply;
+                                                elseif value in B07b==N/A and E03==SEER2/SEER2, then value must be GTE 11.2.
+                                                Elseif H07 == CEER, then value == NA
+                                                flag non-compliant values and do not allow registration to proceed if not in compliance;
+                                             </xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="H08b_EfficiencyEER2" type="hvac:EfficiencyEER2" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">System Rated Cooling Efficiency Value EER/EER2/CEER</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">User input EER2 numeric xx.x within InclusiveRange(0.0, 100.0).   Check result: 
- If B07_NotApplicableMessage IsPresent   
-If E03_EfficiencyType == EER2 or EER2SEER2 Then 
-If result GTE 11.2 result complies
-Else result does not comply
-End If
-End If
-Else If B07_EfficiencyMinimumValueEER2 IsPresent 
-If result  GTE B07_EfficiencyMinimumValueEER2, 
-result complies
-Else result does not comply
-End If
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">user input, numeric value, xx.x;
+                                                check value:
+                                                if B07b != N/A,
+                                                then value must be GTE value in B07b, to comply;
+                                                elseif value in B07b==N/A and E03===SEER,
+                                                then value must be GTE 11.7 to comply;
+                                                elseif value in B07b==N/A and E03==SEER2/SEER2, then value must be GTE 11.2.
+                                                Elseif H07 == CEER, then value == NA
+                                                flag non-compliant values and do not allow registration to proceed if not in compliance;
+                                             </xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="H08b_EfficiencyInstalledValueCEER" type="hvac:EfficiencyInstalledValueCEER" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">System Rated Cooling Efficiency Value EER/EER2/CEER</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">User input CEER numeric xx.x within InclusiveRange(0.0, 100.0).   Check result: If result  GTE B07_EfficiencyMinimumValueCEER, result complies;  Flag non-compliant values and do not allow registration to proceed if not in compliance.</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">user input, numeric value, xx.x;
+                                                check value:
+                                                if B07b != N/A,
+                                                then value must be GTE value in B07b, to comply;
+                                                elseif value in B07b==N/A and E03===SEER,
+                                                then value must be GTE 11.7 to comply;
+                                                elseif value in B07b==N/A and E03==SEER2/SEER2, then value must be GTE 11.2.
+                                                Elseif H07 == CEER, then value == NA
+                                                flag non-compliant values and do not allow registration to proceed if not in compliance;</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>

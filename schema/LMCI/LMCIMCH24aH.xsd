@@ -78,8 +78,8 @@
                   <xsd:element name="A02_CompartmentilizationLeakageVerificationRequiredHERS" type="comp:CompartmentilizationLeakageVerificationRequiredHERS" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Is HERS verification of dwelling compartmentalization leakage [d:lte/] 0.3 CFM[d:sub]50[/d:sub]/ft[d:sup]2[/d:sup] of enclosure area required by MCH-27?</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">Calculated field: If project MCH27 requires HERS verification of compartmentalization leakage, result = true display term Required Else result = false display term N/A</xsd:documentation>
-                     </xsd:annotation>
+                        <xsd:documentation source="CalculationsAndRules">Default value always == true; DO NOT ALLOW N/A</xsd:documentation>
+                     </xsd:annotation>                    
                   </xsd:element>
                   <xsd:choice maxOccurs="1">
                      <xsd:element name="A03_EnclosureLeakageTargetCFM50" type="comp:EnclosureLeakageTargetCFM50" >

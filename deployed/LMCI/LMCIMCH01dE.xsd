@@ -2124,7 +2124,7 @@ G.   enter one row of data for each indoor unit in the quantity specified by D13
                                     <xsd:element name="L05_DuctRValueLimit" type="hvac:DuctRValueLimit">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Required New Duct R-Value (Unconditioned Space)</xsd:documentation>
-                                          <xsd:documentation source="CalculationsAndRules">Calculated field: If C10_DuctRValue is R value GT R6 And  If A02_ClimateZone InclusiveRange (1, 10) Or A02_ClimateZone == 12 Or 13 Or If  C10_DuctRValue  is R value GT R8 If A02_ClimateZone == 11, 14, 15 Or 16 result = C10_DuctRValue; Else If A02_ClimateZone is in InclusiveRange (1, 10) Or A02_ClimateZone == 12 Or 13 result = R6; Else If A02_ClimateZone == 11, 14, 15 Or 16 result = R8</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">Calculated field: If C10_DuctRValue is R value GT R6 And If A02_ClimateZone == 1 - 10,12 Or 13, Or If  C10_DuctRValue is R value GT R8 And If A02_ClimateZone == 11, 14, 15 Or 16, result = C10_DuctRValue; Else If A02_ClimateZone == 3,5,6 OR 7, result = R6; Else If A02_ClimateZone == 1,2,4 OR 8-16, result = R8;</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="L06_SupplyDuctLocation" type="hvac:SupplyDuctLocation">
@@ -2272,7 +2272,7 @@ result = true; display term Yes;
 Else user selects from list: Yes (Boolean true value), No (Boolean false value). 
 End if
  
- Compliance check: If result == false then report in project status notes field that exemption from mandatory HERS verification of system airflow has been claimed.  Enforcement agency confirmation is recommended.   Also report in project status notes field that better than minimum SEER or EER cannot not be claimed for performance compliance credit if the system cannot comply with the required HERS verification; a revised parent CC-PRF may be required.</xsd:documentation>
+ Compliance check: If result == false then report in project status notes field that exemption from mandatory HERS verification of system airflow has been claimed.  Enforcement agency confirmation is recommended.   Also report in project status notes field that better than minimum EER or SEER cannot not be claimed for performance compliance credit if the system cannot comply with the required HERS verification; a revised parent CC-PRF may be required.</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:element name="L14_CanFanEfficacyProtocolsTestSystem" type="comp:CanFanEfficacyProtocolsTestSystem">
@@ -2289,7 +2289,7 @@ result = CanTest display term Yes ;
 Else  user selects from list: CanTest display term Yes, CanNotTest display term No. 
 End If 
  
-Compliance check: If result == CanNotTest  then report in project status notes field that exemption from mandatory HERS verification of system fan efficacy has been claimed.  Enforcement agency confirmation is recommended.   Also report in project status notes field that better than minimum SEER or EER cannot not be claimed for performance compliance credit if the system cannot comply with the required HERS verification; a revised parent CC-PRF may be required.</xsd:documentation>
+Compliance check: If result == CanNotTest  then report in project status notes field that exemption from mandatory HERS verification of system fan efficacy has been claimed.  Enforcement agency confirmation is recommended.   Also report in project status notes field that better than minimum EER or SEER cannot not be claimed for performance compliance credit if the system cannot comply with the required HERS verification; a revised parent CC-PRF may be required.</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
                                     <xsd:choice maxOccurs="1">

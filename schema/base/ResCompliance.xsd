@@ -13172,6 +13172,10 @@
             <dtyp:displayterm value="FramingNA">NA</dtyp:displayterm>
             <dtyp:displayterm value="N/A">n/a</dtyp:displayterm>
             <dtyp:displayterm value="n/a">n/a</dtyp:displayterm>
+            <dtyp:displayterm value="N/A-C">N/A - See Table C</dtyp:displayterm>
+            <dtyp:displayterm value="N/A-C2">N/A - See Table C2</dtyp:displayterm>
+            <dtyp:displayterm value="N/A-D">N/A - See Table D</dtyp:displayterm>
+            <dtyp:displayterm value="N/A-D2">N/A - See Table D2</dtyp:displayterm>
             <dtyp:displayterm value="N/A - no ducts replaced">N/A - no ducts replaced</dtyp:displayterm>
             <dtyp:displayterm value="N/A - not a central DHW system">N/A - not a central DHW system</dtyp:displayterm>
             <dtyp:displayterm value="N/A.   External calculations are required.">N/A.   External calculations are required.</dtyp:displayterm>
@@ -13187,6 +13191,10 @@
          <xsd:enumeration value="FramingNA"/>
          <xsd:enumeration value="N/A"/>
          <xsd:enumeration value="n/a"/>
+         <xsd:enumeration value="N/A-C"/>
+         <xsd:enumeration value="N/A-C2"/>
+         <xsd:enumeration value="N/A-D"/>
+         <xsd:enumeration value="N/A-D2"/>
          <xsd:enumeration value="N/A - no ducts replaced"/>
          <xsd:enumeration value="N/A - not a central DHW system"/>
          <xsd:enumeration value="N/A.   External calculations are required."/>

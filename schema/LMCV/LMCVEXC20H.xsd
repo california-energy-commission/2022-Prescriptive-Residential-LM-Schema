@@ -1002,13 +1002,13 @@ In this section parent CC refers to the parent LMCC Certificate of Compliance (C
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="J03_EfficiencyExistingValueEER" type="hvac:EfficiencyExistingValueEER" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">EER</xsd:documentation>
+                                             <xsd:documentation source="FieldText">EER/EER2</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Data is loaded from registered parent CC</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="J03_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">EER</xsd:documentation>
+                                             <xsd:documentation source="FieldText">EER/EER2</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Data is loaded from registered parent CC</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
@@ -1016,13 +1016,13 @@ In this section parent CC refers to the parent LMCC Certificate of Compliance (C
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="J04_EfficiencyExistingValueSEER" type="hvac:EfficiencyExistingValueSEER" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">SEER</xsd:documentation>
+                                             <xsd:documentation source="FieldText">SEER/SEER2</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Data is loaded from registered parent CC</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="J04_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
-                                             <xsd:documentation source="FieldText">SEER</xsd:documentation>
+                                             <xsd:documentation source="FieldText">SEER/SEER2</xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Data is loaded from registered parent CC</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>

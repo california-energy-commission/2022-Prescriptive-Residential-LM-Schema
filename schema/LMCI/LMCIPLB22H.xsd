@@ -132,33 +132,21 @@
                                        <xsd:element name="A07_WaterHeaterRatedInputUnits" type="hvac:WaterHeaterRatedInputUnits" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Rated Input Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If parent CC is prescriptive 
-result = N/A stored in _NotApplicableMessage; 
-Else If performance parent CC 
-If A06_WaterHeaterFuelSource == NaturalGas Or PropaneGas 
-result = BtuHr 
-Else If A06_WaterHeaterFuelSource == Electricity 
-result = kW; 
-Else If A06_WaterHeaterFuelSource == WaterHeatingHP 
-result = N/A stored in _NotApplicableMessage; 
-End If
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">Reference value from LMCC;
+                                                If prescriptive, then value = NA;
+                                                Elseif parent LMCC == LMCC-PRF; then allowed values: if Fuel Type (A06) = Natural Gas, Propane then value = Btu/Hr;
+                                                If Fuel Type == Electric Resistance, then value= kW;
+                                                If Fuel Type == Heat Pump, then value = NA;</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="A07_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Rated Input Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If parent CC is prescriptive 
-result = N/A stored in _NotApplicableMessage; 
-Else If performance parent CC 
-If A06_WaterHeaterFuelSource == NaturalGas Or PropaneGas 
-result = BtuHr 
-Else If A06_WaterHeaterFuelSource == Electricity 
-result = kW; 
-Else If A06_WaterHeaterFuelSource == WaterHeatingHP 
-result = N/A stored in _NotApplicableMessage; 
-End If
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">Reference value from LMCC;
+                                                If prescriptive, then value = NA;
+                                                Elseif parent LMCC == LMCC-PRF; then allowed values: if Fuel Type (A06) = Natural Gas, Propane then value = Btu/Hr;
+                                                If Fuel Type == Electric Resistance, then value= kW;
+                                                If Fuel Type == Heat Pump, then value = NA;</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -988,28 +976,23 @@ Require one row of data for each water heater identified in Section A TableDesig
                                           <xsd:documentation source="CalculationsAndRules">Reference value from A02_WaterHeatingSystemName Or A2  Hpd02_WaterHeatingSystemName</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:choice maxOccurs="1">
-                                       <xsd:element name="C02_EfficiencyType" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Heating Efficiency Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If  prescriptive parent CC result = N/A stored in NotApplicableMessage; Else reference value from performance parent CC;  Allowed values:  UniformEnergyFactor, AFUE, ThermalEfficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                          <xsd:simpleType>
-                                             <xsd:restriction base="hvac:EfficiencyType">
-                                                <xsd:enumeration value="AFUE"/>
-                                                <xsd:enumeration value="EnergyFactor"/>
-                                                <xsd:enumeration value="ThermalEfficiency"/>
-                                                <xsd:enumeration value="UniformEnergyFactor"/>
-                                             </xsd:restriction>
-                                          </xsd:simpleType>
-                                       </xsd:element>
-                                       <xsd:element name="C02_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Heating Efficiency Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If  prescriptive parent CC result = N/A stored in NotApplicableMessage; Else reference value from performance parent CC;  Allowed values:  UniformEnergyFactor, AFUE, ThermalEfficiency</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
+                                    <xsd:element name="C02_EfficiencyType" >
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Heating Efficiency Type</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">reference values from LMCC. If information is not available on LMCC, then allow user input. allowed values are:
+                                             *Uniform Energy Factor
+                                             *AFUE
+                                             *Thermal Efficiency
+                                          </xsd:documentation>
+                                       </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="hvac:EfficiencyType">
+                                             <xsd:enumeration value="AFUE"/>
+                                             <xsd:enumeration value="ThermalEfficiency"/>
+                                             <xsd:enumeration value="UniformEnergyFactor"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
+                                    </xsd:element>                                                                            
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="C03_UniformEnergyFactor" type="hvac:UniformEnergyFactor" >
                                           <xsd:annotation>

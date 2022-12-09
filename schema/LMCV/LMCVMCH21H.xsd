@@ -101,7 +101,7 @@
                   <xsd:element name="A06_DuctSystemConditionedNoInsulationReq" type="comp:DuctSystemConditionedNoInsulationReq" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Status - Duct System Located  Entirely in Directly Conditioned Space, No Insulation Requirement</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">Calculated field: If MCH-01 DuctMinimumRValueExceptions includes RValueLT6EntirelyInConditioned then result = true display term: True. and section D below should be displayed;   Else result = false  display term: Not applicable</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">Calculated field: If LMCI-MCH-01 DuctMinimumRValueExceptions includes RValueLT6EntirelyInConditioned then result = true display term: True. and section D below should be displayed;   Else result = false  display term: Not applicable</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="A07_DuctsInConditionedSpaceRValueException" type="comp:DuctsInConditionedSpaceRValueException" >

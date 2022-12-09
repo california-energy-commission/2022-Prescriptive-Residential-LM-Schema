@@ -133,13 +133,20 @@ This  section is required if the parent CC has any non-HPWH non-HERS systems, Re
                                        <xsd:element name="A07_WaterHeaterRatedInputUnits" type="hvac:WaterHeaterRatedInputUnits" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Rated Input Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If parent CC == ADD, ALT or NCB  result = N/A stored in _NotApplicableMessage; Else  reference value from parent CC.  Allowed values: If A05_WaterHeaterFuelSource == NaturalGas Or PropaneGas result = BtuHr Else If A06_WaterHeaterFuelSource == Electricity result = kW; Else If A06_WaterHeaterFuelSource == WaterHeatingHP result = N/A stored in _NotApplicableMessage;</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">reference value from LMCC;
+                                                If prescriptive, then value = NA;
+                                                Elseif parent LMCC = LMCC-PRF; then allowed values: if Fuel Type (A06) = Natural Gas, Propane then value= Btu/Hr;
+                                                If Fuel Type = Electric Resistance, then value  = kW;
+                                                If Fuel Type = Heat Pump, then value  = NA;</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="A07_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Rated Input Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If parent CC == ADD, ALT or NCB  result = N/A stored in _NotApplicableMessage; Else  reference value from parent CC.  Allowed values: If A05_WaterHeaterFuelSource == NaturalGas Or PropaneGas result = BtuHr Else If A06_WaterHeaterFuelSource == Electricity result = kW; Else If A06_WaterHeaterFuelSource == WaterHeatingHP result = N/A stored in _NotApplicableMessage;</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If prescriptive, then value = NA;
+                                                Elseif parent LMCC = LMCC-PRF; then allowed values: if Fuel Type (A06) = Natural Gas, Propane then value= Btu/Hr;
+                                                If Fuel Type = Electric Resistance, then value  = kW;
+                                                If Fuel Type = Heat Pump, then value  = NA;</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -167,32 +174,37 @@ This  section is required if the parent CC has any non-HPWH non-HERS systems, Re
                                        <xsd:element name="A09_ResidentialDHWDwellingUnitDistributionType" type="hvac:ResidentialDHWDwellingUnitDistributionType" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Dwelling Unit DHW System Distribution Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">Reference values from parent CC as follows: If parent CC == performance values are: 
-StandardDistribution display term: Standard Distribution System; 
-PointOfUse display term: Point Of Use, 
-StandardDistributionCentralParallelPiping display term: Parallel Piping; 
- RecirculationNonDemand display term:  Recirculation System Non-Demand Control; 
-DemandRecirculationManualControl display term: Demand Recirculation Manual Control; 
- DemandRecirculationSensorControls display term: Demand Recirculation Sensor Control;  
- 
-Else If parent CC == prescriptive Then
-If parent CC is ALT
-result = NotApplicable stored in NotApplicableMessage
- 
-Else allowed values are: 
-StandardDistribution display term: Standard Distribution System; 
-DemandRecirculationManualControl display term: Demand Recirculation Manual Control, 
-DemandRecirculation display term Demand Recirculation;
-End if
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">Reference values from LMCC 
+                                                If performance then allowed values are
+                                                *Standard Distribution System
+                                                * Point of Use
+                                                * Parallel Piping *Recirculation System Non-Demand Control
+                                                * Demand Recirculation Manual Control 
+                                                * Demand Recirculation Sensor Control; 
+                                                
+                                                Else if prescriptive Allowed values are 
+                                                *Standard Distribution System
+                                                *Demand Recirculation
+                                                * Demand Recirculation Manual Control;
+                                                Else if prescriptive, then value = NA;</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="A09_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Dwelling Unit DHW System Distribution Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If parent CC is prescriptive ALT
-result = NotApplicable stored in NotApplicableMessage
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">Reference values from LMCC 
+                                                If performance then allowed values are
+                                                *Standard Distribution System
+                                                * Point of Use
+                                                * Parallel Piping *Recirculation System Non-Demand Control
+                                                * Demand Recirculation Manual Control 
+                                                * Demand Recirculation Sensor Control; 
+                                                
+                                                Else if prescriptive Allowed values are 
+                                                *Standard Distribution System
+                                                *Demand Recirculation
+                                                * Demand Recirculation Manual Control;
+                                                Else if prescriptive, then value = NA;</xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -200,21 +212,19 @@ End If</xsd:documentation>
                                        <xsd:element name="A10_CompactDistributionType" type="hvac:CompactDistributionType" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Compact Distrib.</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">Reference values from parent CC as folows:
-If parent CC is prescriptive ALT
-result = NotApplicable stored in NotApplicableMessage
-Else allowed values are 
-BasicType display term Basic, 
-NotCompact display term None
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">reference values from LMCC.  If information is not available on the LMCC, then allow user input. Allowed values are 
+                                                *Basic
+                                                *None;
+                                             </xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="A10_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Compact Distrib.</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If parent CC is prescriptive ALT
-result = NotApplicable stored in NotApplicableMessage
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">reference values from LMCC.  If information is not available on the LMCC, then allow user input. Allowed values are 
+                                                *Basic
+                                                *None;
+                                             </xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -299,32 +309,37 @@ This  section is required if the parent CC  has any HPWH systems, Require one ro
                                        <xsd:element name="A2hp07_ResidentialDHWDwellingUnitDistributionType" type="hvac:ResidentialDHWDwellingUnitDistributionType" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Dwelling Unit DHW System Distribution Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">Reference parent CC as follows: 
-If  performance parent CC, values are: 
-StandardDistribution display term: Standard Distribution System; 
-PointOfUse display term: Point Of Use,
-StandardDistributionCentralParallelPiping display term: Parallel Piping;
-RecirculationNonDemand display term:  Recirculation System Non-Demand Control; 
-DemandRecirculationManualControl display term: Demand Recirculation Manual Control;  
-DemandRecirculationSensorControls display term: Demand Recirculation Sensor Control;  
- 
-Else If prescriptive parent CC then
-If parent CC is prescriptive ALT
-result = NotApplicable stored in NotApplicableMessage
-Else allowed values are: 
-StandardDistribution display term: Standard Distribution System; 
-DemandRecirculationManualControl display term: Demand Recirculation Manual Control; 
-DemandRecirculation display term Demand Recirculation;
-End If
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">reference values from LMCC.  
+                                                If performance Allowed values are
+                                                *Standard Distribution System
+                                                * Point of Use
+                                                * Parallel Piping 
+                                                *Recirculation System Non-Demand Control
+                                                * Demand Recirculation Manual Control 
+                                                * Demand Recirculation Sensor Control; 
+                                                Else if prescriptive Allowed values are 
+                                                *Standard Distribution System
+                                                *Demand Recirculation
+                                                * Demand Recirculation Manual Control; Else if prescriptive, then value = NA;
+                                             </xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                        <xsd:element name="A2hp07_NotApplicableMessage" type="comp:NotApplicableMessage" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Dwelling Unit DHW System Distribution Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If parent CC is prescriptive ALT
-result = NotApplicable stored in NotApplicableMessage
-End If</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">reference values from LMCC.  
+                                                If performance Allowed values are
+                                                *Standard Distribution System
+                                                * Point of Use
+                                                * Parallel Piping 
+                                                *Recirculation System Non-Demand Control
+                                                * Demand Recirculation Manual Control 
+                                                * Demand Recirculation Sensor Control; 
+                                                Else if prescriptive Allowed values are 
+                                                *Standard Distribution System
+                                                *Demand Recirculation
+                                                * Demand Recirculation Manual Control; Else if prescriptive, then value = NA;
+                                             </xsd:documentation>
                                           </xsd:annotation>
                                        </xsd:element>
                                     </xsd:choice>
@@ -1014,28 +1029,23 @@ Require one row of data for each water heater identified in Section A TableDesig
                                           <xsd:documentation source="CalculationsAndRules">Reference value from A02_WaterHeatingSystemName Or A2hp02_WaterHeatingSystemName</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
-                                    <xsd:choice maxOccurs="1">
                                        <xsd:element name="C02_EfficiencyType" >
                                           <xsd:annotation>
                                              <xsd:documentation source="FieldText">Heating Efficiency Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If parent == prescriptive parent CC result = N/A stored in NotApplicableMessage; Else reference value from performance parent CC ;  Allowed values:  UniformEnergyFactor, AFUE, ThermalEfficiency</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">reference values from LMCC. If information is not available on LMCC, then allow user input. allowed values are:
+                                                *Uniform Energy Factor
+                                                *AFUE 
+                                                *Thermal Efficiency
+                                             </xsd:documentation>
                                           </xsd:annotation>
                                           <xsd:simpleType>
                                              <xsd:restriction base="hvac:EfficiencyType">
                                                 <xsd:enumeration value="AFUE"/>
-                                                <xsd:enumeration value="EnergyFactor"/>
                                                 <xsd:enumeration value="ThermalEfficiency"/>
                                                 <xsd:enumeration value="UniformEnergyFactor"/>
                                              </xsd:restriction>
                                           </xsd:simpleType>
-                                       </xsd:element>
-                                       <xsd:element name="C02_NotApplicableMessage" type="comp:NotApplicableMessage" >
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">Heating Efficiency Type</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">If parent == prescriptive parent CC result = N/A stored in NotApplicableMessage;</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
-                                    </xsd:choice>
+                                       </xsd:element>                                      
                                     <xsd:choice maxOccurs="1">
                                        <xsd:element name="C03_UniformEnergyFactor" type="hvac:UniformEnergyFactor" >
                                           <xsd:annotation>
