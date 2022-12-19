@@ -17896,10 +17896,10 @@ End If</xsd:documentation>
 Or 
 If Kvertperf06_FenestrationModification == ReplaceLTE150ft2 Or AddLTE50ft2  
 Or 
-If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones and  Kvertperf06_FenestrationModification == AllNew Or AddGT50ft2   Or ReplaceGT150ft2 
+If  Kvertperf06_FenestrationModification == AllNew Or AddGT50ft2   Or ReplaceGT150ft2 
  
 Or 
-If Kvertperf05_FenestrationProductType == GlazedDoor And  If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones 
+If Kvertperf05_FenestrationProductType == GlazedDoor
 Or
 If Kvertperf06_TopLevelOccupancy == LowriseResidential And Kvertperf06_FenestrationModification == AllNew
 Or
@@ -18057,10 +18057,9 @@ If Kvertperf05_FenestrationProductType == ChromogenicFen Or DemisingWallFen Or G
 Or 
 If Kvertperf06_FenestrationModification == ReplaceLTE150ft2 Or AddLTE50ft2  Or
  
-Or If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones and  Kvertperf06_FenestrationModification == AllNew Or AddGT50ft2  Or
+Or If Kvertperf06_FenestrationModification == AllNew Or AddGT50ft2  Or
  
-If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones And  
-Kvertperf05_FenestrationProductType == GlazedDoor  
+If Kvertperf05_FenestrationProductType == GlazedDoor  
 Or
 If Kvertperf06_TopLevelOccupancy == LowriseResidential And Kvertperf06_FenestrationModification == AllNew
 Or
@@ -18154,10 +18153,9 @@ If Kvertperf05_FenestrationProductType == ChromogenicFen Or DemisingWallFen Or G
  
 If Kvertperf06_FenestrationModification == ReplaceLTE150ft2 Or AddLTE50ft2  Or
  
-Or If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones and  Kvertperf06_FenestrationModification == AllNew Or AddGT50ft2  Or
+Or If Kvertperf06_FenestrationModification == AllNew Or AddGT50ft2  Or
  
-If Kvertperf06_TopLevelOccupancy == RelocableSchoolBuildingAllZones And  
-Kvertperf05_FenestrationProductType == GlazedDoor 
+If Kvertperf05_FenestrationProductType == GlazedDoor 
 Or If Kvertperf06_TopLevelOccupancy == LowriseResidential And Kvertperf06_FenestrationModification == AllNew
 Or
 If Kvertperf06_FenestrationModification ==  ReplaceGT150ft2 And Kvertperf_ComplianceMethodSHGC_VT == Table170_2A 
@@ -20208,19 +20206,50 @@ End If</xsd:documentation>
                                                                <d:t24refnolink/>170.2(b)</xsd:documentation>
                                                          </xsd:annotation>
                                                       </xsd:element>
-                                                      <xsd:element name="L11a_AreaWeightAvgVT" type="comp:AreaWeightAvgVT">
-                                                         <xsd:annotation>
-                                                            <xsd:documentation source="FieldText">Skylight Weighted Average VT<d:sup>2</d:sup>
-                                                            </xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">User input</xsd:documentation>
-                                                         </xsd:annotation>
-                                                      </xsd:element>
-                                                      <xsd:element name="L11b_SkylightVT_SkylitDaylitRatio" type="com:SkylightVT_SkylitDaylitRatio">
-                                                         <xsd:annotation>
-                                                            <xsd:documentation source="FieldText">Skylight Area x VT to Skylit Daylit Zone Area Ratio<d:sup>4</d:sup> (%)</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">Calculated field: result = (L09_TotalSkyLightArea x L11a_AreaWeightAvgVT)  / L05_SkylitDaylitArea;  display term = (result x 100) %</xsd:documentation>
-                                                         </xsd:annotation>
-                                                      </xsd:element>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="L11a_AreaWeightAvgVT" type="comp:AreaWeightAvgVT">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Skylight Weighted Average VT<d:sup>2</d:sup>
+                                                               </xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">User input</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="L11a_NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Skylight Weighted Average VT<d:sup>2</d:sup>
+                                                               </xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">L10_Skylight_SkylitDaylitRatio LT 3
+   BlankGrayedOut stored in L11a_NotApplicableMessage
+   End If</xsd:documentation>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="comp:NotApplicableMessage">
+                                                                  <xsd:enumeration value="BlankGrayedOut"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="L11b_SkylightVT_SkylitDaylitRatio" type="com:SkylightVT_SkylitDaylitRatio">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Skylight Area x VT to Skylit Daylit Zone Area Ratio<d:sup>4</d:sup> (%)</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">Calculated field: result = (L09_TotalSkyLightArea x L11a_AreaWeightAvgVT)  / L05_SkylitDaylitArea;  display term = (result x 100) %</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="L11b_NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Skylight Area x VT to Skylit Daylit Zone Area Ratio<d:sup>4</d:sup> (%)</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">L10_Skylight_SkylitDaylitRatio LT 3
+   BlankGrayedOut stored in L11b_NotApplicableMessage
+   End If</xsd:documentation>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="comp:NotApplicableMessage">
+                                                                  <xsd:enumeration value="BlankGrayedOut"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                         </xsd:element>
+                                                      </xsd:choice>
                                                    </xsd:sequence>
                                                 </xsd:complexType>
                                              </xsd:element>
