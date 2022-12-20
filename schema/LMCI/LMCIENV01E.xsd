@@ -6071,11 +6071,9 @@ End If</xsd:documentation>
                                                          <xsd:element name="Doors04_UfactorJA451" type="comp:UfactorJA451" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">U-factor</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Doors04cc_UfactorJA451 IsPresent
-If Doors01_InstalledSameAsCC == true
-result = Doors04cc_UfactorJA451
-Else
-User input
+                                                               <xsd:documentation source="CalculationsAndRules">If CC-ENV parent
+If J07_UfactorJA451 IsPresent
+result = J07_UfactorJA451
 End If
 End If</xsd:documentation>
                                                             </xsd:annotation>
@@ -6095,8 +6093,10 @@ End If</xsd:documentation>
                                                          <xsd:element name="Doors04_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">U-factor</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Doors04cc_NotApplicableMessage IsPresent
+                                                               <xsd:documentation source="CalculationsAndRules">If CC-ENV parent
+If J07_UfactorJA451 NotPresent
 result = NotApplicableMessage
+End If
 End If</xsd:documentation>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>

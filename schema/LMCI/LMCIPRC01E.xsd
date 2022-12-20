@@ -1584,6 +1584,7 @@ result = ExactMatch
  
 Else If
 Elev04cc_FanPowerPerFlow IsPresent And Elev04_FanPowerPerFlow IsPresent  And Elev04_FanPowerPerFlow LTE  Elev04cc_FanPowerPerFlow
+Or If Elev04_FanPowerPerFlow LTE 0.33 
 result = EqualBetter
 End If</xsd:documentation>
                                        </xsd:annotation>
