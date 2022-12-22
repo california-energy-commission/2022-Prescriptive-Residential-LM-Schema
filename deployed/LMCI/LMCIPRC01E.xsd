@@ -267,7 +267,7 @@ End If</xsd:documentation>
                         </xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="D01_ExceptionalConditionMessageCIPRCE" type="comp:ExceptionalConditionMessageCIPRCE" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element name="D01_ExceptionalConditionMessageCIPRCE" minOccurs="0" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Exceptional Messages</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Auto-filled with any system generated messages that explain exceptional conditions encountered in the the completed compliance document
@@ -275,6 +275,16 @@ If ExceptionalConditionMessageNRCIPRCE == ""
 result = NoExceptionNote
 End If</xsd:documentation>
                      </xsd:annotation>
+                     <xsd:simpleType>
+                        <xsd:restriction base="comp:ExceptionalConditionMessageCIPRCE">
+                           <xsd:enumeration value="ElevLtiNotInScope"/>
+                           <xsd:enumeration value="ElevLtiNotInScope"/>
+                           <xsd:enumeration value="HoodsNotInScope"/>
+                           <xsd:enumeration value="NoExceptionNote"/>
+                           <xsd:enumeration value="ParkNotInScope"/>
+                           <xsd:enumeration value="UserChangedCASelection"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>

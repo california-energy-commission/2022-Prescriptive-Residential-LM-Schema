@@ -2539,7 +2539,7 @@ Nothing is displayed for this LMCA
 End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
-                           <dtyp:srcSchema form="CCLTI01E"  usage="copy">Lmca03_RequireNRCALti04A</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCLTI01E"  usage="copy">Lmca03_RequireLMCALti04A</dtyp:srcSchema>
                            <dtyp:srcSchema form="CCPRF01E"  usage="copy">LmcaLti02Row3_RequireNRCALti04A</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
@@ -2592,7 +2592,7 @@ Nothing is displayed for this LMCA
 End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
-                           <dtyp:srcSchema form="CCLTI01E"  usage="copy">Lmca04_RequireNRCALti05A</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCLTI01E"  usage="copy">Lmca04_RequireLMCALti05A</dtyp:srcSchema>
                            <dtyp:srcSchema form="CCPRF01E"  usage="copy">LmcaLti02Row4_RequireNRCALti05A</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
