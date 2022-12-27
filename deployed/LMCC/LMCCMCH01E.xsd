@@ -1643,7 +1643,7 @@ End If</xsd:documentation>
                         <xsd:documentation source="FieldText">
                            <d:b>Dry System Equipment Efficiency (other than Package Terminal Air Conditioners (PTAC) and Package Terminal Heat Pumps (PTHP), DX-DOAS and Dual Fuel Heat Pumps) </d:b>
                         </xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">This table is required if there is at least one row where F02_HvacSystemType != PTAC_PTHP Or DOAS Or HeatPumpDualFuel</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This table is required for every row such that F02_HvacSystemType != PTAC_PTHP Or DOAS Or HeatPumpDualFuel</xsd:documentation>
                      </xsd:annotation>
                      <xsd:complexType>
                         <xsd:sequence>
@@ -5950,13 +5950,13 @@ End If</xsd:documentation>
                                              </xsd:restriction>
                                           </xsd:simpleType>
                                        </xsd:element>
-                                       <xsd:element name="H00i_ServingFloors" type="hvac:ServingFloors">
-                                          <xsd:annotation>
-                                             <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                             <xsd:documentation source="CalculationsAndRules">User selects from Yes or No</xsd:documentation>
-                                          </xsd:annotation>
-                                       </xsd:element>
                                     </xsd:choice>
+                                    <xsd:element name="H00i_ServingFloors" type="hvac:ServingFloors">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">User selects from Yes or No</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
                                     <xsd:element name="H01to11Choice">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText"/>
@@ -11287,7 +11287,7 @@ load value in L10a_DuctSystems
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Lmrcv01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
+                  <xsd:element name="Lmcv01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If Lmcv01_RequireLMCVMch04H == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv01_SystemFieldVerified</xsd:documentation>
