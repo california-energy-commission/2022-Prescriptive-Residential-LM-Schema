@@ -3018,6 +3018,7 @@
             <dtyp:displayterm value="LMCIPLB02E">LMCIPLB02E</dtyp:displayterm>
             <dtyp:displayterm value="LMCIPLB21H">LMCIPLB21H</dtyp:displayterm>
             <dtyp:displayterm value="LMCIPLB22H">LMCIPLB22H</dtyp:displayterm>
+            <dtyp:displayterm value="LMCIPLBE">LMCIPLBE</dtyp:displayterm>
             <dtyp:displayterm value="LMCIPRC01E">LMCIPRC01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCISAB01E">LMCISAB01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCVENV20aH">LMCVENV20aH</dtyp:displayterm>
@@ -3289,6 +3290,7 @@
          <xsd:enumeration value="LMCIPLB02E"/>
          <xsd:enumeration value="LMCIPLB21H"/>
          <xsd:enumeration value="LMCIPLB22H"/>
+         <xsd:enumeration value="LMCIPLBE"/>
          <xsd:enumeration value="LMCIPRC01E"/>
          <xsd:enumeration value="LMCISAB01E"/>
          <xsd:enumeration value="LMCVENV20aH"/>
