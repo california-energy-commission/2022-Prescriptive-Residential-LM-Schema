@@ -19012,6 +19012,10 @@ End If</xsd:documentation>
                                                    <xsd:annotation>
                                                       <xsd:documentation source="FieldText">Compliance Method for Multifamily Alterations</xsd:documentation>
                                                       <xsd:documentation source="CalculationsAndRules">If  Kskyperf06_TopLevelOccupancy != LowRiseResidential
+Or
+If Kskyperf06_FenestrationModification == AddGT50ft2 
+Or 
+Kskyperf06_FenestrationModification == AddLTE50ft2
 result = BlankGrayedOut
 Else If Kskyperf06_FenestrationModification == AllNew Or NewSky16MF
 result = BlankGrayedOut

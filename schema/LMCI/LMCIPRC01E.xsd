@@ -274,7 +274,6 @@ End If</xsd:documentation>
                      <xsd:simpleType>
                         <xsd:restriction base="comp:ExceptionalConditionMessageCIPRCE">
                            <xsd:enumeration value="ElevLtiNotInScope"/>
-                           <xsd:enumeration value="ElevLtiNotInScope"/>
                            <xsd:enumeration value="HoodsNotInScope"/>
                            <xsd:enumeration value="NoExceptionNote"/>
                            <xsd:enumeration value="ParkNotInScope"/>
@@ -581,6 +580,10 @@ ParkCtrl09_GarageTotalVentRate == ParkCtrl09cc_GarageTotalVentRate
 result = ExactMatch
  
 Else If
+ParkCtrl01_VehiclesGT20PctNonGas == True 
+Or 
+ParkCtrl02_NewExhaustLT10000cfm == True
+Or
 Park03_FanFlowCapacity IsPresent And Park03_FanFlowCapacity GTE  (Park02_ParkingGarageArea x 0.15)
 Or
 ParkCtrl03_FanControlContaminantLevels IsPresent And ParkCtrl03_FanControlContaminantLevels != ParkCtrl03cc_FanControlContaminantLevels
@@ -1375,6 +1378,8 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If Elev01_InstalledSameAsCC == true Then
 If Elev02cc_NotApplicableMessage IsPresent
 result = Elev02cc_NotApplicableMessage
+Else if Elevator cab is conditioned
+result = BlankGrayedOut
 End If</xsd:documentation>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -1436,6 +1441,8 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If Elev01_InstalledSameAsCC == true Then 
 If Elev03cc_NotApplicableMessage IsPresent
 result = Elev03cc_NotApplicableMessage
+Else if Elevator cab is conditioned
+result = BlankGrayedOut
 End If</xsd:documentation>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -1497,6 +1504,8 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If Elev01_InstalledSameAsCC == true Then 
 If Elev04cc_NotApplicableMessage IsPresent
 result = Elev04cc_NotApplicableMessage
+Else if Elevator cab is conditioned
+result = BlankGrayedOut
 End If</xsd:documentation>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -1558,6 +1567,8 @@ End I</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If Elev01_InstalledSameAsCC == true Then 
 If Elev05cc_NotApplicableMessage IsPresent
 result = Elev05cc_NotApplicableMessage
+Else if Elevator cab is conditioned
+result = BlankGrayedOut
 End If</xsd:documentation>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
