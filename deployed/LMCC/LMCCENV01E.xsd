@@ -17808,8 +17808,9 @@ Or
 If Kvertperf06_FenestrationModification ==  ReplaceGT150ft2 And Kvertperf_ComplianceMethodSHGC_VT == Table170_2A 
 Or
 If Kvertperf08_ComplianceMethodSHGC_VT == NA_SkylitOverlap
- 
- result = BlankGrayedOutresult = BlankGrayedOut
+Or
+If Kvertperf05_FenestrationProductType == GlazedDoor
+result = BlankGrayedOut
 End If</xsd:documentation>
                                                    </xsd:annotation>
                                                    <xsd:simpleType>
