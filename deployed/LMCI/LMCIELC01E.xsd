@@ -1186,6 +1186,22 @@ End If</xsd:documentation>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Controls02cc_NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Location/ Type of Controlled Receptacles<d:sup>1</d:sup>
+                                                               </xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If I02_NotApplicableMessage IsPresent
+result = BlankGrayedOut</xsd:documentation>
+                                                               <xsd:appinfo source="CIsrc">
+                                                                  <dtyp:srcSchema form="CCELC01E" usage="reference">I02_NotApplicableMessage</dtyp:srcSchema>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="comp:NotApplicableMessage">
+                                                                  <xsd:enumeration value="BlankGrayedOut"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                         </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
                                                          <xsd:element name="Controls02_ControlledReceptacleComplianceType" type="comp:ControlledReceptacleComplianceType" minOccurs="0" maxOccurs="unbounded">
@@ -1214,6 +1230,19 @@ End If</xsd:documentation>
    End If</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Controls02_NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Location/ Type of Controlled Receptacles<d:sup>1</d:sup>
+                                                               </xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If Controls02cc_NotApplicableMessage IsPresent
+result = BlankGrayedOut</xsd:documentation>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="comp:NotApplicableMessage">
+                                                                  <xsd:enumeration value="BlankGrayedOut"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                         </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
                                                          <xsd:element name="Controls03cc_ControlledReceptacleShutOffControl" type="comp:ControlledReceptacleShutOffControl" minOccurs="0" maxOccurs="unbounded">
@@ -1241,6 +1270,21 @@ End If</xsd:documentation>
                                                                   <dtyp:srcSchema form="CCELC01E" usage="copy">I03_ControlledReceptacleNA</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Controls03cc_NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Shut-Off Controls</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If I03_NotApplicableMessage IsPresent
+result = BlankGrayedOut</xsd:documentation>
+                                                               <xsd:appinfo source="CIsrc">
+                                                                  <dtyp:srcSchema form="CCELC01E" usage="reference">I03_NotApplicableMessage</dtyp:srcSchema>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="comp:NotApplicableMessage">
+                                                                  <xsd:enumeration value="BlankGrayedOut"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
@@ -1275,42 +1319,102 @@ End If</xsd:documentation>
    ControlledReceptacleNA and user may select  one or more that apply in this space or may not select any.</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Controls03_NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Shut-Off Controls</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If Controls03cc_NotApplicableMessage IsPresent
+result = BlankGrayedOut</xsd:documentation>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="comp:NotApplicableMessage">
+                                                                  <xsd:enumeration value="BlankGrayedOut"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                         </xsd:element>
                                                       </xsd:choice>
-                                                      <xsd:element name="Controls04acc_ControlledReceptacleDemandResponse" type="comp:ControlledReceptacleDemandResponse">
-                                                         <xsd:annotation>
-                                                            <xsd:documentation source="FieldText">Demand Response Controls</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If CC-ELC parent 
-result = I04a_ControlledReceptacleDemandResponse
-End If</xsd:documentation>
-                                                            <xsd:appinfo source="CIsrc">
-                                                               <dtyp:srcSchema form="CCELC01E" usage="copy">I04a_ControlledReceptacleDemandResponse</dtyp:srcSchema>
-                                                            </xsd:appinfo>
-                                                         </xsd:annotation>
-                                                      </xsd:element>
-                                                      <xsd:element name="Controls04a_ControlledReceptacleDemandResponse" type="comp:ControlledReceptacleDemandResponse">
-                                                         <xsd:annotation>
-                                                            <xsd:documentation source="FieldText">Demand Response Controls</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If Controls01_InstalledSameAsCC == true
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Controls04acc_ControlledReceptacleDemandResponse" type="comp:ControlledReceptacleDemandResponse">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Demand Response Controls</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If CC-ELC parent 
+   result = I04a_ControlledReceptacleDemandResponse
+   End If</xsd:documentation>
+                                                               <xsd:appinfo source="CIsrc">
+                                                                  <dtyp:srcSchema form="CCELC01E" usage="copy">I04a_ControlledReceptacleDemandResponse</dtyp:srcSchema>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Controls04acc_NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Demand Response Controls</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If I04a_NotApplicableMessage IsPresent
+result = BlankGrayedOut</xsd:documentation>
+                                                               <xsd:appinfo source="CIsrc">
+                                                                  <dtyp:srcSchema form="CCELC01E" usage="reference">I04a_NotApplicableMessage</dtyp:srcSchema>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="comp:NotApplicableMessage">
+                                                                  <xsd:enumeration value="BlankGrayedOut"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Controls04a_ControlledReceptacleDemandResponse" type="comp:ControlledReceptacleDemandResponse">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Demand Response Controls</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If Controls01_InstalledSameAsCC == true and Controls04acc_ControlledReceptacleDemandResponse IsPresent
 result = Controls04acc_ControlledReceptacleDemandResponse
 Else If Controls01_InstalledSameAsCC == false
 User can select from dropdown list of ControlledReceptacleDemandResponse 
 End If</xsd:documentation>
-                                                         </xsd:annotation>
-                                                      </xsd:element>
-                                                      <xsd:element name="Controls04cc_AreControlledReceptaclesPermanentlyMarked" type="comp:AreControlledReceptaclesPermanentlyMarked">
-                                                         <xsd:annotation>
-                                                            <xsd:documentation source="FieldText">Permanent Durable Marking Is Used</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If CC-ELC parent 
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Controls04a_NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Demand Response Controls</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If Controls04acc_NotApplicableMessage IsPresent
+result = BlankGrayedOut</xsd:documentation>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="comp:NotApplicableMessage">
+                                                                  <xsd:enumeration value="BlankGrayedOut"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                         </xsd:element>
+                                                      </xsd:choice>
+                                                      <xsd:choice maxOccurs="1">
+                                                         <xsd:element name="Controls04cc_AreControlledReceptaclesPermanentlyMarked" type="comp:AreControlledReceptaclesPermanentlyMarked">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Permanent Durable Marking Is Used</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If CC-ELC parent  and I04_AreControlledReceptaclesPermanentlyMarked IsPresent
 result = I04_AreControlledReceptaclesPermanentlyMarked
 End If</xsd:documentation>
-                                                            <xsd:appinfo source="displayterm">
-                                                               <dtyp:displayterm value="true">Included in Design</dtyp:displayterm>
-                                                            </xsd:appinfo>
-                                                            <xsd:appinfo source="CIsrc">
-                                                               <dtyp:srcSchema form="CCELC01E" usage="copy">I04_AreControlledReceptaclesPermanentlyMarked</dtyp:srcSchema>
-                                                            </xsd:appinfo>
-                                                         </xsd:annotation>
-                                                      </xsd:element>
+                                                               <xsd:appinfo source="displayterm">
+                                                                  <dtyp:displayterm value="true">Included in Design</dtyp:displayterm>
+                                                               </xsd:appinfo>
+                                                               <xsd:appinfo source="CIsrc">
+                                                                  <dtyp:srcSchema form="CCELC01E" usage="copy">I04_AreControlledReceptaclesPermanentlyMarked</dtyp:srcSchema>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Controls04cc_NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Permanent Durable Marking Is Used</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If I04_NotApplicableMessage IsPresent
+result = BlankGrayedOut</xsd:documentation>
+                                                               <xsd:appinfo source="CIsrc">
+                                                                  <dtyp:srcSchema form="CCELC01E" usage="reference">I04_NotApplicableMessage</dtyp:srcSchema>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="comp:NotApplicableMessage">
+                                                                  <xsd:enumeration value="BlankGrayedOut"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                         </xsd:element>
+                                                      </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
                                                          <xsd:element name="Controls04_AreControlledReceptaclesPermanentlyMarked" type="comp:AreControlledReceptaclesPermanentlyMarked">
                                                             <xsd:annotation>
@@ -1345,6 +1449,18 @@ End If</xsd:documentation>
    End If</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Controls04_NotApplicableMessage">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Permanent Durable Marking Is Used</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If Controls04cc_NotApplicableMessage IsPresent
+result = BlankGrayedOut</xsd:documentation>
+                                                            </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:restriction base="comp:NotApplicableMessage">
+                                                                  <xsd:enumeration value="BlankGrayedOut"/>
+                                                               </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                         </xsd:element>
                                                       </xsd:choice>
                                                    </xsd:sequence>
                                                 </xsd:complexType>
@@ -1367,6 +1483,8 @@ And
 Controls04cc_AreControlledReceptaclesPermanentlyMarked == Controls04_AreControlledReceptaclesPermanentlyMarked
 And 
 Controls04acc_ControlledReceptacleDemandResponse == Controls04a_ControlledReceptacleDemandResponse
+Or
+Controls04cc_NotApplicableMessage == Controls04_NotApplicableMessage
 result = ExactMatch
 Else 
 result = EqualBetter
