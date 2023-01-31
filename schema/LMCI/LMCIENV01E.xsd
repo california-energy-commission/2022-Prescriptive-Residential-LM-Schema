@@ -2781,7 +2781,7 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-ENV parent
 If Walls02cc_AssemblyType == SIPS And HSIPS06_NotApplicableMessage IsPresent 
 Or 
-If Walls02cc_AssemblyType == MetalPanel or Strawbale or SpandrelCurtain or Framed or Log or ConcretePanel
+If Walls02cc_AssemblyType == MetalBuilding or Strawbale or SpandrelCurtain or Framed or Log or ConcretePanel
 result = BlankGrayedOut
 End If
 Else If CC-PRF parent 
