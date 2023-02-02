@@ -680,7 +680,9 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Cavity Insulation R-Value</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-ENV parent
 If Roof02cc_AssemblyType == Framed And Fframed11_NotApplicableMessage IsPresent 
-Or 
+Or
+If Roof02cc_AssemblyType == Framed and Roof03cc_CavityInsulationOther NotPresent and RoofFramed03cc_CavityInsulationNR NotPresent
+Or
 Roof02cc_AssemblyType == MetalBuilding And Fmetalb10_NotApplicableMessage IsPresent
 Or
 Roof02cc_AssemblyType == SIPS And FSIPS11_NotApplicableMessage IsPresent
@@ -1026,6 +1028,8 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-ENV parent
 If Roof02cc_AssemblyType == Framed And Fframed12_NotApplicableMessage IsPresent 
 Or 
+If Roof02cc_AssemblyType == Framed and Roof04cc_ContinuousInsulationOther NotPresent and RoofFramed04cc_ContinuousInsulationNR NotPresent
+Or
 Roof02cc_AssemblyType == MetalBuilding And Fmetalb11_NotApplicableMessage IsPresent
 Or
 Roof02cc_AssemblyType == SIPS And FSIPS12_NotApplicableMessage IsPresent
@@ -2386,8 +2390,9 @@ Else If Walls01_InstalledSameAsCC == false user selects from dropdown list that 
                                                                            <xsd:annotation>
                                                                               <xsd:documentation source="FieldText"></xsd:documentation>
                                                                               <xsd:documentation source="CalculationsAndRules">If Walls01_InstalledSameAsCC == true
-result = WallsFramed03cc_PartitionFramingMaterial
-Else 
+And WallsFramed03cc_PartitionFramingMaterial isPresent
+result = WallsFramed03_PartitionFramingMaterial
+Else
 User selects from list
 End If</xsd:documentation>
                                                                               <xsd:appinfo source="displayterm">
@@ -2409,8 +2414,9 @@ End If</xsd:documentation>
                                                                            <xsd:annotation>
                                                                               <xsd:documentation source="FieldText"></xsd:documentation>
                                                                               <xsd:documentation source="CalculationsAndRules">If Walls01_InstalledSameAsCC == true
-result = WallsFramed03cc_FramingSpacing
-Else 
+And WallsFramed03cc_FramingSpacing isPresent
+result = WallsFramed03_FramingSpacing
+Else
 User selects from list
 End If</xsd:documentation>
                                                                               <xsd:appinfo source="displayterm">
@@ -2430,8 +2436,9 @@ End If</xsd:documentation>
                                                                            <xsd:annotation>
                                                                               <xsd:documentation source="FieldText"></xsd:documentation>
                                                                               <xsd:documentation source="CalculationsAndRules">If Walls01_InstalledSameAsCC == true
-result = WallsFramed03cc_FramingSize
-Else 
+And WallsFramed03cc_FramingSize isPresent
+result = WallsFramed03_FramingSize
+Else
 User selects from list
 End If</xsd:documentation>
                                                                            </xsd:annotation>
@@ -2464,8 +2471,9 @@ End If</xsd:documentation>
                                                                            <xsd:annotation>
                                                                               <xsd:documentation source="FieldText"></xsd:documentation>
                                                                               <xsd:documentation source="CalculationsAndRules">If Walls01_InstalledSameAsCC == true
-result = WallsConcrete03cc_PartitionFramingMaterial
-Else 
+And WallsConcrete03cc_PartitionFramingMaterial isPresent
+result = WallsConcrete03_PartitionFramingMaterial
+Else
 User selects from list
 End If</xsd:documentation>
                                                                               <xsd:appinfo source="displayterm">
@@ -2494,20 +2502,20 @@ User selects from list
 End If</xsd:documentation>
                                                                            </xsd:annotation>
                                                                         </xsd:element>
-                                                                        <xsd:element name="WallsConcrete03_FramingMaterialOther" type="env:FramingMaterialOther" minOccurs="0" >
-                                                                           <xsd:annotation>
-                                                                              <xsd:documentation source="FieldText"></xsd:documentation>
-                                                                              <xsd:documentation source="CalculationsAndRules">If Walls01_InstalledSameAsCC == true 
+                                                                     </xsd:sequence>
+                                                                  </xsd:complexType>
+                                                               </xsd:element>
+                                                               <xsd:element name="WallsConcrete03_FramingMaterialOther" type="env:FramingMaterialOther" minOccurs="0" >
+                                                                  <xsd:annotation>
+                                                                     <xsd:documentation source="FieldText"></xsd:documentation>
+                                                                     <xsd:documentation source="CalculationsAndRules">If Walls01_InstalledSameAsCC == true 
 And WallsConcrete03cc_FramingMaterialOther isPresent
 result = WallsConcrete03_FramingMaterialOther
 Else 
 User selects from list
 End If</xsd:documentation>
-                                                                           </xsd:annotation>
-                                                                        </xsd:element>
-                                                                     </xsd:sequence>
-                                                                  </xsd:complexType>
-                                                               </xsd:element>
+                                                                  </xsd:annotation>
+                                                               </xsd:element> 
                                                                <xsd:element name="WallsPerf03_PartitionFramingMaterial" type="env:PartitionFramingMaterial" >
                                                                   <xsd:annotation>
                                                                      <xsd:documentation source="FieldText">Wall Material</xsd:documentation>
@@ -2781,7 +2789,7 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-ENV parent
 If Walls02cc_AssemblyType == SIPS And HSIPS06_NotApplicableMessage IsPresent 
 Or 
-If Walls02cc_AssemblyType == MetalPanel or Strawbale or SpandrelCurtain or Framed or Log or ConcretePanel
+If Walls02cc_AssemblyType == MetalBuilding or Strawbale or SpandrelCurtain or Framed or Log or ConcretePanel
 result = BlankGrayedOut
 End If
 Else If CC-PRF parent 
@@ -4388,6 +4396,7 @@ End If</xsd:documentation>
                                                                   <xsd:enumeration value="HeatedSlab"/>
                                                                   <xsd:enumeration value="Mass"/>
                                                                   <xsd:enumeration value="SIPS"/>
+                                                                  <xsd:enumeration value="SlabOnGradeLRMF"/>
                                                                </xsd:restriction>
                                                             </xsd:simpleType>
                                                          </xsd:element>
@@ -6084,7 +6093,6 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">U-factor</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-ENV parent
-If Doors03_DoorConstructionType == RatedNFRC
 If J07_UfactorJA451 IsPresent
 result = J07_UfactorJA451
 End If
@@ -6114,6 +6122,7 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">U-factor</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If Doors03_DoorConstructionType != RatedNFRC
+If J07_UfactorJA451 NotPresent
 result = NotApplicableMessage
 End If</xsd:documentation>
                                                             </xsd:annotation>
@@ -7329,6 +7338,7 @@ End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
                            <dtyp:srcSchema form="LMCCENV01E"  usage="copy">Lmca01_SystemFieldVerified</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Nrca01_SystemFieldVerified</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
@@ -7347,6 +7357,7 @@ result = Lmca01_SystemsToFieldVerify
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
                            <dtyp:srcSchema form="LMCCENV01E"  usage="copy">Lmca01_SystemsToFieldVerify</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Nrca01_SystemsToFieldVerify</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
@@ -7356,20 +7367,14 @@ End If</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">LMCA-ENV-03-F. - Must be submitted for Daylighting Power Adjustment Factor (PAF) for indoor lighting.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If B03a_ProjectHasFenestrationVertical  == false And B03b_ProjectHasFenestrationSkylight == false
 And 
-If LMCC-LTI parent And Lmca05_RequireLMCAEnv03F == false Or  LMCC-PRF parent And Lmca02_RequireLMCAEnv03F == false 
- 
+If LMCC-LTI parent Or  LMCC-PRF parent And Lmca02_RequireLMCAEnv03F == false 
 result = false and nothing is displayed for this LMCA 
  
-Else If B03a_ProjectHasFenestrationVertical  == true Or B03b_ProjectHasFenestrationSkylight == true
-If LMCC-LTI parent And Lmca05_RequireNRCAEnv03F == true 
-result = true And static text in AdditionalRequirements is displayed and related SystemFieldVerified  or SystemsToFieldVerify are displayed
- 
-Else If LMCC-PRF parent And Lmca02_RequireLMCAEnv03F == true And static text in AdditionalRequirements is displayed and related SystemFieldVerified  or SystemsToFieldVerify are displayed
+Else If LMCC-PRF parent And Nrca02_RequireLMCAEnv03F == true And static text in AdditionalRequirements is displayed and related SystemFieldVerified  or SystemsToFieldVerify are displayed
 End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
-                           <dtyp:srcSchema form="CCLTI01E"  usage="copy">Lmca05_RequireLMCAEnv03F</dtyp:srcSchema>
-                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Lmca02_RequireNRCAEnv03F</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Nrca02_RequireNRCAEnv03F</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
@@ -7380,14 +7385,12 @@ End If</xsd:documentation>
 this field is not required and nothing is displayed
  
 Else If G02_RequireLMCAEnv03F == true 
-If LMCC-LTI parent
-result = LMCC-LTI  Lmca05_SystemFieldVerified and it is displayed
-Else If LMCC-PRF parent
-result =Lmrca02_SystemFieldVerified
+If LMCC-PRF parent
+result =Nrca02_SystemFieldVerified
 End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
-                           <dtyp:srcSchema form="CCLTI01E"  usage="copy">Lmca05_SystemFieldVerified</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Nrca05_SystemFieldVerified</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
@@ -7398,14 +7401,13 @@ End If</xsd:documentation>
 this field is not required and nothing is displayed
  
 Else If G01_RequireLMCAEnv03F == true 
-If LMCC-LTI parent
-result = LMCC-LTI  Lmca05_SystemsToFieldVerify and it is displayed
-Else If LMCC-PRF parent
+If LMCC-PRF parent
 result = Lmca02_SystemsToFieldVerify and it is displayed
 End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
-                           <dtyp:srcSchema form="CCLTI01E"  usage="copy">Lmca05_SystemsToFieldVerify</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Nrca05_SystemsToFieldVerify</dtyp:srcSchema>
+
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>

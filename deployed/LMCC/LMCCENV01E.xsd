@@ -18888,7 +18888,10 @@ End If</xsd:documentation>
                                                                <xsd:element name="Kskyperf06_FenestrationModification">
                                                                   <xsd:annotation>
                                                                      <xsd:documentation source="FieldText"/>
-                                                                     <xsd:documentation source="CalculationsAndRules">User selects status value with the appropriate occupancy type from list:  AllNew display term New, AddGT50ft2 display term  Alt. (Add/Replacement 
+                                                                     <xsd:documentation source="CalculationsAndRules">If Kskyperf06_TopLevelOccupancy == LowRiseResidential
+list restricted to AllNew, ReplaceSkyMF and NewSky16MF
+Else User selects status value with the appropriate occupancy type from list: 
+AllNew display term New, AddGT50ft2 display term  Alt. (Add/Replacement 
                                                                         <d:gt/> 50ft<d:sup>2</d:sup>), AddLTE50ft2 display term  Alt. (Add/Replacement  
                                                                         <d:lte/> 50ft<d:sup>2</d:sup>), NewSky16MF display term 
                                                                         <d:lte/> 16 ft<d:sup>2</d:sup> new skylight per dwelling unit, ReplaceSkyMF display term Alt. (Replacement) and AddSky16PlusMF display term Alt. (Adding 
@@ -20219,16 +20222,18 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Skylight Weighted Average VT<d:sup>2</d:sup>
                                                                </xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">User input</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If L10_Skylight_SkylitDaylitRatio LT 3
+User input
+End If</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
                                                          <xsd:element name="L11a_NotApplicableMessage">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Skylight Weighted Average VT<d:sup>2</d:sup>
                                                                </xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">L10_Skylight_SkylitDaylitRatio LT 3
-   BlankGrayedOut stored in L11a_NotApplicableMessage
-   End If</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If L10_Skylight_SkylitDaylitRatio GTE 3
+BlankGrayedOut stored in L11a_NotApplicableMessage
+End If</xsd:documentation>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
                                                                <xsd:restriction base="comp:NotApplicableMessage">
@@ -20241,15 +20246,17 @@ End If</xsd:documentation>
                                                          <xsd:element name="L11b_SkylightVT_SkylitDaylitRatio" type="com:SkylightVT_SkylitDaylitRatio">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Skylight Area x VT to Skylit Daylit Zone Area Ratio<d:sup>4</d:sup> (%)</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">Calculated field: result = (L09_TotalSkyLightArea x L11a_AreaWeightAvgVT)  / L05_SkylitDaylitArea;  display term = (result x 100) %</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If L10_Skylight_SkylitDaylitRatio LT 3 
+Calculated field: result = (L09_TotalSkyLightArea x L11a_AreaWeightAvgVT)  / L05_SkylitDaylitArea;  display term = (result x 100) %
+End If</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
                                                          <xsd:element name="L11b_NotApplicableMessage">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Skylight Area x VT to Skylit Daylit Zone Area Ratio<d:sup>4</d:sup> (%)</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">L10_Skylight_SkylitDaylitRatio LT 3
-   BlankGrayedOut stored in L11b_NotApplicableMessage
-   End If</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If L10_Skylight_SkylitDaylitRatio GTE 3
+BlankGrayedOut stored in L11b_NotApplicableMessage
+End If</xsd:documentation>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
                                                                <xsd:restriction base="comp:NotApplicableMessage">
