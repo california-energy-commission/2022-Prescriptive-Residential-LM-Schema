@@ -37,7 +37,7 @@
                      <xsd:element name="Header" type="comp:HeaderHERS" />
                      <xsd:element ref="lMCIENV01E" />
                      <xsd:element name="DocAuthor" type="comp:DocumentAuthor" />
-                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF2R_H" />
+                     <xsd:element name="RespPerson" type="comp:ResponsiblePersonCF2R_H" maxOccurs="unbounded"/>
                      <xsd:element name="Footer" type="comp:Footer" />
                   </xsd:sequence>
                </xsd:complexType>
@@ -6121,9 +6121,10 @@ End If</xsd:documentation>
                                                          <xsd:element name="Doors04cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">U-factor</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Doors03_DoorConstructionType != RatedNFRC
+                                                               <xsd:documentation source="CalculationsAndRules">If CC-ENV parent
 If J07_UfactorJA451 NotPresent
 result = NotApplicableMessage
+End If
 End If</xsd:documentation>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -7338,7 +7339,7 @@ End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
                            <dtyp:srcSchema form="LMCCENV01E"  usage="copy">Lmca01_SystemFieldVerified</dtyp:srcSchema>
-                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Nrca01_SystemFieldVerified</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Lmca01_SystemFieldVerified</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
@@ -7357,7 +7358,7 @@ result = Lmca01_SystemsToFieldVerify
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
                            <dtyp:srcSchema form="LMCCENV01E"  usage="copy">Lmca01_SystemsToFieldVerify</dtyp:srcSchema>
-                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Nrca01_SystemsToFieldVerify</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Lmca01_SystemsToFieldVerify</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
@@ -7367,14 +7368,14 @@ End If</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">LMCA-ENV-03-F. - Must be submitted for Daylighting Power Adjustment Factor (PAF) for indoor lighting.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If B03a_ProjectHasFenestrationVertical  == false And B03b_ProjectHasFenestrationSkylight == false
 And 
-If LMCC-LTI parent Or  LMCC-PRF parent And Lmca02_RequireLMCAEnv03F == false 
+LMCC-PRF parent And Lmca02_RequireLMCAEnv03F == false 
 result = false and nothing is displayed for this LMCA 
  
-Else If LMCC-PRF parent And Nrca02_RequireLMCAEnv03F == true And static text in AdditionalRequirements is displayed and related SystemFieldVerified  or SystemsToFieldVerify are displayed
+Else If LMCC-PRF parent And Lmca02_RequireLMCAEnv03F == true And static text in AdditionalRequirements is displayed and related SystemFieldVerified  or SystemsToFieldVerify are displayed
 End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
-                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Nrca02_RequireNRCAEnv03F</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Lmca02_RequireLMCAEnv03F</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
@@ -7386,11 +7387,11 @@ this field is not required and nothing is displayed
  
 Else If G02_RequireLMCAEnv03F == true 
 If LMCC-PRF parent
-result =Nrca02_SystemFieldVerified
+result =Lmca02_SystemFieldVerified
 End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
-                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Nrca05_SystemFieldVerified</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Lmca05_SystemFieldVerified</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
@@ -7406,7 +7407,7 @@ result = Lmca02_SystemsToFieldVerify and it is displayed
 End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
-                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Nrca05_SystemsToFieldVerify</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E"  usage="copy">Lmca05_SystemsToFieldVerify</dtyp:srcSchema>
 
                         </xsd:appinfo>
                      </xsd:annotation>

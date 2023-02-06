@@ -18889,7 +18889,7 @@ End If</xsd:documentation>
                                                                   <xsd:annotation>
                                                                      <xsd:documentation source="FieldText"/>
                                                                      <xsd:documentation source="CalculationsAndRules">If Kskyperf06_TopLevelOccupancy == LowRiseResidential
-list restricted to AllNew, ReplaceSkyMF and NewSky16MF
+list restricted to AllNew, ReplaceSkyMF, NewSky16MF and NewSky16MF
 Else User selects status value with the appropriate occupancy type from list: 
 AllNew display term New, AddGT50ft2 display term  Alt. (Add/Replacement 
                                                                         <d:gt/> 50ft<d:sup>2</d:sup>), AddLTE50ft2 display term  Alt. (Add/Replacement  
