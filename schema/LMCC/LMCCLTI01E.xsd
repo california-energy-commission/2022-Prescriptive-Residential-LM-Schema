@@ -6487,7 +6487,7 @@ End If</xsd:documentation>
                   <xsd:element name="Lmca01_RequireLMCALti02A" type="comp:RequireLMCALti02A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-02-A - Must be submitted for occupancy sensors and automatic time switch controls.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-02-A - Must be submitted for occupancy sensors and automatic time switch controls.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = false represented as a selected No radio button.  
  
 If H02_ShutOffControlsBuilding ==WholeBuildingAutoTimeSwitch 
@@ -6530,7 +6530,7 @@ End If</xsd:documentation>
                   <xsd:element name="Lmca02_RequireLMCALti03A" type="comp:RequireLMCALti03A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-03-A - Must be submitted for automatic daylight controls.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-03-A - Must be submitted for automatic daylight controls.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = false represented as a selected No radio button. 
  
 If all values for H09_PrimarySkylitDaylightControlsIncluded Or H10_SecondaryDaylightControlsIncluded == Included result = true represented as a selected Yes radio button; Else result = false   If user changes this value an explanation is required in Section E Additional Remarks.</xsd:documentation>
@@ -6560,7 +6560,7 @@ End If</xsd:documentation>
                   <xsd:element name="Lmca03_RequireLMCALti04A" type="comp:RequireLMCALti04A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-04-A - Must be submitted for demand responsive lighting controls.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-04-A - Must be submitted for demand responsive lighting controls.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = false represented as a selected No radio button.. 
  
 If H01_MandatoryLightingDemandResponseNR  == RequiredGTE4000W  Or H11_InterlockedLightingSystems == true 
@@ -6591,7 +6591,7 @@ End If</xsd:documentation>
                   <xsd:element name="Lmca04_RequireLMCALti05A" type="comp:RequireLMCALti05A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-LTI-05-A. - Must be submitted for institutional tuning power adjustment factor (PAF)</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-LTI-05-A. - Must be submitted for institutional tuning power adjustment factor (PAF)</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = false represented as a selected No radio button.. 
  
 If Pc02e_ApplyInstitutionalTuningNonDaylit Or Pc02f_ApplyInstitutionalTuningDaylit == true   Or Pu02e_ApplyInstitutionalTuningNonDaylit Or Pu02f_ApplyInstitutionalTuningDaylit == true  
@@ -6626,7 +6626,7 @@ End If</xsd:documentation>
                   <xsd:element name="Lmca05_RequireLMCAEnv03F" type="comp:RequireLMCAEnv03F" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-ENV-03-F. - Must be submitted for daylighting design power adjustment factors (PAF)</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-ENV-03-F. - Must be submitted for daylighting design power adjustment factors (PAF)</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated Boolean value based on user input in previous sections of this form. By default result = false represented as a selected No radio button. . 
  
 If Pc02h_ApplyClerestoryFenestrationPAF, Pc02i_ApplyHorizontalSlatsPAF Or Pc02j_ApplyLightShelvesPAF == true Or If Pu02h_ApplyClerestoryFenestrationPAF, Pu02i_ApplyHorizontalSlatsPAF Or Pu02j_ApplyLightShelvesPAF == true 
