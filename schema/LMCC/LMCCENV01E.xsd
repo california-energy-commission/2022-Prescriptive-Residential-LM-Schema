@@ -19823,7 +19823,7 @@ End If
                   <xsd:element name="Lmca01_RequireLMCAEnv02F" type="comp:RequireLMCAEnv02F" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">NRCA-ENV-02-F must be submitted for all new, added or altered fenestration.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-ENV-02-F must be submitted for all new, added or altered site built fenestration.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated field: Boolean values with default result = false. 
  
 If B02NewFen_ComponentApplies, B02AddFen_ComponentApplies Or B02AltFen_ComponentApplies == true  result = true; 
