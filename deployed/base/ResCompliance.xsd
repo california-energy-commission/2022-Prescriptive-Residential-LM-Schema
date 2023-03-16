@@ -8161,7 +8161,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       <xsd:annotation>
          <xsd:documentation>Units: W per ft3 per min</xsd:documentation>
       </xsd:annotation>
-      <xsd:restriction base="dtyp:Decimal4PlacesNonnegative"/>
+      <xsd:restriction base="dtyp:Decimal4Places"/>
    </xsd:simpleType>
    <xsd:simpleType name="FanCoilUnitManufacturer">
       <xsd:restriction base="dtyp:String50Char"/>
