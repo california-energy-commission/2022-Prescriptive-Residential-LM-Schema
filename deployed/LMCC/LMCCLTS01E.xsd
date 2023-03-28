@@ -734,6 +734,7 @@ End If</xsd:documentation>
                                                 <xsd:enumeration value="OutdoorUse24x7NA"/>
                                                 <xsd:enumeration value="PowerReduced65"/>
                                                 <xsd:enumeration value="TunnelsNA"/>
+                                                <xsd:enumeration value="OneHourNA"/>
                                              </xsd:restriction>
                                           </xsd:simpleType>
                                        </xsd:element>
@@ -1022,6 +1023,7 @@ End If</xsd:documentation>
                                                 <xsd:enumeration value="OutdoorUse24x7NA"/>
                                                 <xsd:enumeration value="PowerReduced65"/>
                                                 <xsd:enumeration value="TunnelsNA"/>
+                                                <xsd:enumeration value="OneHourNA"/>
                                              </xsd:restriction>
                                           </xsd:simpleType>
                                        </xsd:element>
@@ -1255,6 +1257,7 @@ End If</xsd:documentation>
                                                 <xsd:enumeration value="OutdoorUse24x7NA"/>
                                                 <xsd:enumeration value="PowerReduced65"/>
                                                 <xsd:enumeration value="TunnelsNA"/>
+                                                <xsd:enumeration value="OneHourNA"/>
                                              </xsd:restriction>
                                           </xsd:simpleType>
                                        </xsd:element>
