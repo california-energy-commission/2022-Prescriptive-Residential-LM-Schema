@@ -1983,6 +1983,7 @@
             <dtyp:displayterm value="EfficiencyException2">2. Heat recovery w/design capacity [d:gt/] 40% of the design chiller cooling capacity</dtyp:displayterm>
             <dtyp:displayterm value="EfficiencyException3">3. Charging energy storage systems w/ charging temperature  [d:lt/] 40[d:deg/]F</dtyp:displayterm>
             <dtyp:displayterm value="EfficiencyException4">4. 4th (or more) chiller in this building</dtyp:displayterm>
+            <dtyp:displayterm value="EfficiencyException5">Water-Cooled Centrifugal Chilling Package per Exception 1 to [d:t24refnolink/]110.2(a)</dtyp:displayterm>
             <dtyp:displayterm value="NoExceptionTaken">No Exception Taken</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -1991,6 +1992,7 @@
          <xsd:enumeration value="EfficiencyException2"/>
          <xsd:enumeration value="EfficiencyException3"/>
          <xsd:enumeration value="EfficiencyException4"/>
+         <xsd:enumeration value="EfficiencyException5"/>
          <xsd:enumeration value="NoExceptionTaken"/>
       </xsd:restriction>
    </xsd:simpleType>
@@ -7054,7 +7056,7 @@
    <xsd:simpleType name="EnergyHeatRecoveryVent">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
-            <dtyp:displayterm value="CentralFanIntegratedNA">NA: CFI</dtyp:displayterm>
+            <dtyp:displayterm value="ContinuousOperationFan">NA: Continuously operating supply/exhaust</dtyp:displayterm>
             <dtyp:displayterm value="CZ3to10NA">NA: CZ 3-10</dtyp:displayterm>
             <dtyp:displayterm value="ProvidesERV">ERV Provided</dtyp:displayterm>
             <dtyp:displayterm value="ProvidesHRV">HRV Provided</dtyp:displayterm>
