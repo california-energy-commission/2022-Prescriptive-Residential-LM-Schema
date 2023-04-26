@@ -5159,7 +5159,7 @@ End If</xsd:documentation>
                                                       <xsd:element name="Fd06a_NotApplicableMessage">
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If Fe02_HeatRejectionType == WatersideEconomizer 
+                                                            <xsd:documentation source="CalculationsAndRules">If Fd05_ChillerExceptionPathB == EfficiencyException5 
 result = BlankGrayedOut Stored in the NotApplicableMessage
 End If</xsd:documentation>
                                                          </xsd:annotation>
@@ -5172,7 +5172,7 @@ End If</xsd:documentation>
                                                       <xsd:element name="Fd06b_NotApplicableMessage">
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If Fe02_HeatRejectionType == WatersideEconomizer 
+                                                            <xsd:documentation source="CalculationsAndRules">If Fd05_ChillerExceptionPathB == EfficiencyException5 
 result = BlankGrayedOut Stored in the NotApplicableMessage
 End If</xsd:documentation>
                                                          </xsd:annotation>
@@ -5187,7 +5187,7 @@ End If</xsd:documentation>
                                                             <xsd:documentation source="FieldText">Efficiencies Required per 
                                                                <d:t24refnolink/>110.2<d:sup>2</d:sup>
                                                             </xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If Fe02_HeatRejectionType == WatersideEconomizer 
+                                                            <xsd:documentation source="CalculationsAndRules">If Fd05_ChillerExceptionPathB == EfficiencyException5 
 result = BlankGrayedOut Stored in the NotApplicableMessage
 End If</xsd:documentation>
                                                          </xsd:annotation>
@@ -5202,7 +5202,7 @@ End If</xsd:documentation>
                                                             <xsd:documentation source="FieldText">Efficiencies Required per 
                                                                <d:t24refnolink/>110.2<d:sup>2</d:sup>
                                                             </xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If Fe02_HeatRejectionType == WatersideEconomizer 
+                                                            <xsd:documentation source="CalculationsAndRules">If Fd05_ChillerExceptionPathB == EfficiencyException5 
 result = BlankGrayedOut Stored in the NotApplicableMessage
 End If</xsd:documentation>
                                                          </xsd:annotation>
@@ -5215,7 +5215,7 @@ End If</xsd:documentation>
                                                       <xsd:element name="Fd08a_NotApplicableMessage">
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If Fe02_HeatRejectionType == WatersideEconomizer 
+                                                            <xsd:documentation source="CalculationsAndRules">If Fd05_ChillerExceptionPathB == EfficiencyException5 
 result = BlankGrayedOut Stored in the NotApplicableMessage
 End If</xsd:documentation>
                                                          </xsd:annotation>
@@ -5228,7 +5228,7 @@ End If</xsd:documentation>
                                                       <xsd:element name="Fd08b_NotApplicableMessage">
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If Fe02_HeatRejectionType == WatersideEconomizer 
+                                                            <xsd:documentation source="CalculationsAndRules">If Fd05_ChillerExceptionPathB == EfficiencyException5 
 result = BlankGrayedOut Stored in the NotApplicableMessage
 End If</xsd:documentation>
                                                          </xsd:annotation>
