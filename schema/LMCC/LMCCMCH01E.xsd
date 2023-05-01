@@ -1115,7 +1115,7 @@ End If</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">If Fscs04_NotApplicableMessage Or Fscs05_NotApplicableMessage Or Fscs06_NotApplicableMessage IsPresent
 Or If Fscs06_HeatRecovery == true
 User selects for full list of equipment categories
-Else If Fscs03_SystemZoning == SingleDwellingUnit Or MultiDwellingUnits
+Else If Fscs03_SystemZoning == SingleDwellingUnit
 If A02_ClimateZoneNumber == InRange(1,15)
 List UnitaryHeatPumps, UnitaryHeatPumpsNoElectR, UnitaryCondensersAC, UnitaryCondensersAC_NoElectR, PTAC_PTHP, SPV_ACHP, VariableRefrigerantFlow, CeilingCRAC, ComputerRoomAC, HeatPumpAC, RoomAC_HP, DedicatedOAS
 Else If A02_ClimateZoneNumber ==  16
