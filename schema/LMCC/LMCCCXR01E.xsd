@@ -936,7 +936,7 @@ End If</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_F" minOccurs="1">
+         <xsd:element name="Section_F" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">DESIGN REVIEW KICKOFF MEETING</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required  when A02StopMessage And A0203StopMessage are false</xsd:documentation>
@@ -2117,7 +2117,7 @@ End If</xsd:documentation>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element name="Section_I" minOccurs="1">
+         <xsd:element name="Section_I" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">CONSTRUCTION DOCUMENT DESIGN REVIEW CHECKLIST</xsd:documentation>
                <xsd:documentation source="MinOccurs">This section is required  when A02StopMessage And A0203StopMessage are false</xsd:documentation>
