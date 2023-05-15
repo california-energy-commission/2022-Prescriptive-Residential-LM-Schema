@@ -1362,7 +1362,7 @@ the static text in AdditionalRequirements is the only thing displayed after the 
                   <xsd:element name="G01_RequireLMCALto02A" type="comp:RequireLMCALto02A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-LTO-02-A :  Outdoor Lighing Control- Must be submitted for all new, added or altered shut-off lighting controls</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-LTO-02-A :  Outdoor Lighing Control- Must be submitted for all new, added or altered shut-off lighting controls</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If LMCC-LTO parent
 result = Lmca01_RequireLMCALto02A
 If result == true 

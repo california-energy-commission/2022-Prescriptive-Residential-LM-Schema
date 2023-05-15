@@ -3815,11 +3815,13 @@ End If</xsd:documentation>
                                                          <xsd:element name="Chlr06cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Rated Efficiency #1</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And And Fd_NotApplicableMessage IsPresent
+                                                               <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And And Fd06a_NotApplicableMessage IsPresent
+Or If CC-PRF parent and HvacWet08_EfficiencyNA IsPresent
 result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="reference">HvacWet09_NotApplicableMessage</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fd06a_NotApplicableMessage</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="reference">HvacWet08_EfficiencyNA</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -3869,7 +3871,7 @@ End If</xsd:documentation>
                                                          <xsd:element name="Chlr06_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Rated Efficiency #1</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And And Fd_NotApplicableMessage IsPresent
+                                                               <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And And Chlr06cc_NotApplicableMessage IsPresent
 result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
@@ -3909,10 +3911,11 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Efficiency Unit #1</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-PRF parent And And HvacWet09_NotApplicableMessage IsPresent
-Or CC-MCH parent and Fd_NotApplicableMessage IsPresent
+Or CC-MCH parent and Fd08a_NotApplicableMessage IsPresent
 result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
+                                                                  <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fd08a_NotApplicableMessage</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCPRF01E"  usage="reference">HvacWet09_NotApplicableMessage</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
@@ -3947,7 +3950,7 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Efficiency Unit #1</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If Chlr07cc_NotApplicableMessage IsPresent 
-Or CC-MCH parent and Fd_NotApplicableMessage IsPresent
+Or CC-MCH parent and Chlr07cc_NotApplicableMessage IsPresent
 result = Chlr07cc_NotApplicableMessage
 End If</xsd:documentation>
                                                             </xsd:annotation>
@@ -3996,7 +3999,7 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Rated Efficiency #2</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Fd06b_EfficiencyCOP_IPLV NotPresent And Fd06b_EfficiencyEER_IPLV NotPresent  And Fd06b_EfficiencyKWperTon_IPLV NotPresent
-Or Fd_NotApplicableMessage IsPresent
+Or Fd06b_NotApplicableMessage IsPresent
 result = BlankGrayedOut
  
 Else If CC-PRF parent
@@ -4006,6 +4009,7 @@ End If</xsd:documentation>
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">Fd06b_EfficiencyCOP_IPLV</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">Fd06b_EfficiencyEER_IPLV</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">Fd06b_EfficiencyKWperTon_IPLV</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCMCH01E"  usage="reference">Fd06b_NotApplicableMessage</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
@@ -4057,7 +4061,7 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Rated Efficiency #2</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If Chlr08cc_NotApplicableMessage IsPresent
-Or Fd_NotApplicableMessage IsPresent
+Or Chlr08cc_NotApplicableMessage IsPresent
 result = Chlr08cc_NotApplicableMessage
 End If</xsd:documentation>
                                                             </xsd:annotation>
@@ -4092,7 +4096,7 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Efficiency Unit #2</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent 
 If Fd08b_EfficiencyType NotPresent
-Or Fd_NotApplicableMessage IsPresent   
+Or Fd08b_NotApplicableMessage IsPresent   
 result = BlankGrayedOut
 End If
 Else If CC-PRF parent
@@ -4100,6 +4104,7 @@ result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">Fd08b_EfficiencyType</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCMCH01E"  usage="reference">Fd08b_NotApplicableMessage</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
@@ -4134,7 +4139,7 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Efficiency Unit #2</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If Chlr09cc_NotApplicableMessage IsPresent
-Or Fd_NotApplicableMessage IsPresent
+Or Chlr09cc_NotApplicableMessage IsPresent
 result = Chlr09cc_NotApplicableMessage 
 End If</xsd:documentation>
                                                             </xsd:annotation>
@@ -9595,7 +9600,7 @@ the static text in AdditionalRequirements the only thing displayed after the Sec
                   <xsd:element name="G01_RequireLMCAMch02A" type="comp:RequireLMCAMch02A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-02-A - Outdoor Air must be submitted for all newly installed HVAC units. Note: MCH-02-A can be performed in conjunction with MCH-07-A Supply Fan VFD Acceptance (if applicable) since testing activities overlap.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-02-A - Outdoor Air must be submitted for all newly installed HVAC units. Note: MCH-02-A can be performed in conjunction with MCH-07-A Supply Fan VFD Acceptance (if applicable) since testing activities overlap.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O01_RequireNRCAMch02A 
 If result == true 
@@ -9648,7 +9653,7 @@ End If</xsd:documentation>
                   <xsd:element name="G02_RequireLMCAMch03A" type="comp:RequireLMCAMch03A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-03-A - Must be submitted for Constant Volume Single Zone HVAC</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-03-A - Must be submitted for Constant Volume Single Zone HVAC</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O02_RequireNRCAMch03A 
 If result == true 
@@ -9701,7 +9706,7 @@ End If</xsd:documentation>
                   <xsd:element name="G03_RequireLMCAMch04A" type="comp:RequireLMCAMch04A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-04 - Must be submitted for Air Distribution Duct Leakage</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-04 - Must be submitted for Air Distribution Duct Leakage</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O03_RequireNRCAMch04A 
 If result == true 
@@ -9754,7 +9759,7 @@ End If</xsd:documentation>
                   <xsd:element name="G04_RequireLMCAMch05A" type="comp:RequireLMCAMch05A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-05-A - Must be submitted for Air Economizer Controls</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-05-A - Must be submitted for Air Economizer Controls</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O04_RequireNRCAMch05A 
 If result == true 
@@ -9807,7 +9812,7 @@ End If</xsd:documentation>
                   <xsd:element name="G05_RequireLMCAMch06A" type="comp:RequireLMCAMch06A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-06-A  Must be submitted for Demand Control Ventilation</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-06-A  Must be submitted for Demand Control Ventilation</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O05_RequireNRCAMch06A 
 If result == true 
@@ -9860,7 +9865,7 @@ End If</xsd:documentation>
                   <xsd:element name="G06_RequireLMCAMch07A" type="comp:RequireLMCAMch07A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-07-A Must be submitted for Supply Fan Variable Flow Controls</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-07-A Must be submitted for Supply Fan Variable Flow Controls</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O06_RequireNRCAMch07A 
 If result == true 
@@ -9913,7 +9918,7 @@ End If</xsd:documentation>
                   <xsd:element name="G07_RequireLMCAMch08A" type="comp:RequireLMCAMch08A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-08-A Must be submitted for Valve Leakage Test</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-08-A Must be submitted for Valve Leakage Test</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O07_RequireNRCAMch08A 
 If result == true 
@@ -9966,7 +9971,7 @@ End If</xsd:documentation>
                   <xsd:element name="G08_RequireLMCAMch09A" type="comp:RequireLMCAMch09A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-09-A Must be submitted for Supply Water Temperature Reset Controls</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-09-A Must be submitted for Supply Water Temperature Reset Controls</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O08_RequireNRCAMch09A 
 If result == true 
@@ -10019,7 +10024,7 @@ End If</xsd:documentation>
                   <xsd:element name="G09_RequireLMCAMch10A" type="comp:RequireLMCAMch10A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-10-A Must be submitted for Hydronic System Variable Flow Controls</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-10-A Must be submitted for Hydronic System Variable Flow Controls</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O09_RequireNRCAMch10A 
 If result == true 
@@ -10072,7 +10077,7 @@ End If</xsd:documentation>
                   <xsd:element name="G10_RequireLMCAMch11A" type="comp:RequireLMCAMch11A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-11-A Must be submitted for Automatic Demand Shed Controls</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-11-A Must be submitted for Automatic Demand Shed Controls</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O10_RequireNRCAMch11A 
 If result == true 
@@ -10125,7 +10130,7 @@ End If</xsd:documentation>
                   <xsd:element name="G11_RequireLMCAMch12A" type="comp:RequireLMCAMch12A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-12-A-FDD-F Must be submitted for Packaged Direct Expansion Units</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-12-A-FDD-F Must be submitted for Packaged Direct Expansion Units</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O11_RequireNRCAMch12A 
 If result == true 
@@ -10178,7 +10183,7 @@ End If</xsd:documentation>
                   <xsd:element name="G12_RequireLMCAMch13A" type="comp:RequireLMCAMch13A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-13-A FDD- Must be submitted for Air Handling Units and Zone Terminal Units Acceptance</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-13-A FDD- Must be submitted for Air Handling Units and Zone Terminal Units Acceptance</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O12_RequireNRCAMch13A 
 If result == true 
@@ -10231,7 +10236,7 @@ End If</xsd:documentation>
                   <xsd:element name="G13_RequireLMCAMch14A" type="comp:RequireLMCAMch14A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-14-A Must be submitted for Distributed Energy Storage DX AC Systems</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-14-A Must be submitted for Distributed Energy Storage DX AC Systems</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O13_RequireNRCAMch14A 
 If result == true 
@@ -10284,7 +10289,7 @@ End If</xsd:documentation>
                   <xsd:element name="G14_RequireLMCAMch15A" type="comp:RequireLMCAMch15A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-15-A Must be submitted for Thermal Energy Storage</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-15-A Must be submitted for Thermal Energy Storage</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O14_RequireNRCAMch15A 
 If result == true 
@@ -10337,7 +10342,7 @@ End If</xsd:documentation>
                   <xsd:element name="G15_RequireLMCAMch16A" type="comp:RequireLMCAMch16A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-16-A Must be submitted for Supply Air Temperature Reset Controls</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-16-A Must be submitted for Supply Air Temperature Reset Controls</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O15_RequireNRCAMch16A 
 If result == true 
@@ -10390,7 +10395,7 @@ End If</xsd:documentation>
                   <xsd:element name="G16_RequireLMCAMch17A" type="comp:RequireLMCAMch17A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-17-A Must be submitted for Condenser Water</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-17-A Must be submitted for Condenser Water</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O16_RequireNRCAMch17A 
 If result == true 
@@ -10443,7 +10448,7 @@ End If</xsd:documentation>
                   <xsd:element name="G17_RequireLMCAMch18A" type="comp:RequireLMCAMch18A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-18-A Must be submitted for Energy Management Control Systems</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-18-A Must be submitted for Energy Management Control Systems</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O17_RequireNRCAMch18A 
 If result == true 
@@ -10496,7 +10501,7 @@ End If</xsd:documentation>
                   <xsd:element name="G18_RequireLMCAMch19A" type="comp:RequireLMCAMch19A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-19-A Must be submitted for Occupancy Sensor Controls</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-19-A Must be submitted for Occupancy Sensor Controls</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O18_RequireNRCAMch19A 
 If result == true 
@@ -10549,7 +10554,7 @@ End If</xsd:documentation>
                   <xsd:element name="G19_RequireLMCAMch20H" type="comp:RequireLMCAMch20H" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-20 Must be submitted for Multifamily Ventilation</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-20 Must be submitted for Multifamily Ventilation</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O19_RequireNRCAMch20 
 If result == true 
@@ -10596,7 +10601,7 @@ End If</xsd:documentation>
                   <xsd:element name="G20_RequireLMCAMch21H" type="comp:RequireLMCAMch21H" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-21 Must be submitted for Multifamily Envelope</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-21 Must be submitted for Multifamily Envelope</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = O20_RequireNRCAMch21
 If result == true 
@@ -10643,7 +10648,7 @@ End If</xsd:documentation>
                   <xsd:element name="G20a_RequireLMCAMch22A" type="comp:RequireLMCAMch22A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-22-A Must be submitted for Multifamily Duct Leakage</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-22-A Must be submitted for Multifamily Duct Leakage</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = Nrca21_RequireNRCAMch22A 
 If result == true 
@@ -10691,7 +10696,7 @@ End If</xsd:documentation>
                   <xsd:element name="G20b_RequireLMCAMch23A" type="comp:RequireLMCAMch23A" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-MCH-23-A Must be submitted for Multifamily HRV/ERV Verification</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-MCH-23-A Must be submitted for Multifamily HRV/ERV Verification</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = Nrca22_RequireNRCAMch23A 
 If result == true 

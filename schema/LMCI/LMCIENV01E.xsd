@@ -7292,7 +7292,7 @@ the static text in AdditionalRequirements the only thing displayed after the Sec
                   <xsd:element name="G01_RequireLMCAEnv02F" type="comp:RequireLMCAEnv02F" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-ENV-02-F - Must be submitted for all new, added or altered fenestration.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-ENV-02-F - Must be submitted for all new, added or altered fenestration.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If B03a_ProjectHasFenestrationVertical  == false And B03b_ProjectHasFenestrationSkylight == false
 result = false and nothing is displayed for this LMCA 
 Else
@@ -7353,7 +7353,7 @@ End If</xsd:documentation>
                   <xsd:element name="G02_RequireLMCAEnv03F" type="comp:RequireLMCAEnv03F" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-ENV-03-F. - Must be submitted for Daylighting Power Adjustment Factor (PAF) for indoor lighting.</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-ENV-03-F. - Must be submitted for Daylighting Power Adjustment Factor (PAF) for indoor lighting.</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If B03a_ProjectHasFenestrationVertical  == false And B03b_ProjectHasFenestrationSkylight == false
 And 
 LMCC-PRF parent And Lmca02_RequireLMCAEnv03F == false 

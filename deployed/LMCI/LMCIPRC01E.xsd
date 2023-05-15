@@ -2588,7 +2588,7 @@ the static text in AdditionalRequirements the only thing displayed after the Sec
                   <xsd:element name="G02_RequireLMCAPrc02F" type="comp:RequireLMCAPrc02F">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-PRC-02-F Kitchen Exhaust</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-PRC-02-F Kitchen Exhaust</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
 result = Q02_RequireLMCAPrc02F 
 If result == true 
@@ -2619,7 +2619,7 @@ End If</xsd:documentation>
                   <xsd:element name="G03_RequireLMCAPrc03F" type="comp:RequireLMCAPrc03F">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-PRC-03-F Garage Exhaust</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-PRC-03-F Garage Exhaust</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = Q03_RequireNRCAPrc03F 
 If result == true 
@@ -2650,7 +2650,7 @@ End If</xsd:documentation>
                   <xsd:element name="G10_RequireLMCAPrc12F" type="comp:RequireLMCAPrc12F">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCA-PRC-12-F Elevator Lighting &amp;amp; Ventilation Controls</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">NRCA-PRC-12-F Elevator Lighting &amp;amp; Ventilation Controls</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
 result = Q10_RequireNRCAPrc12F 
 If result == true 
