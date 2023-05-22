@@ -5999,6 +5999,15 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="DoorClosuresNA"/>
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="DuctAlteredHVACSystem">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="DuctDesignType">
       <xsd:annotation>
          <xsd:appinfo source="displaytermType">
@@ -6256,6 +6265,15 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
    </xsd:simpleType>
+   <xsd:simpleType name="DuctSystemExistingToRemain">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
    <xsd:simpleType name="DuctSystemHasAsbestos">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
@@ -6474,6 +6492,15 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">True</dtyp:displayterm>
             <dtyp:displayterm value="false">Not applicable</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="DwellingUnitOutdoorLighting">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="xsd:boolean"/>
