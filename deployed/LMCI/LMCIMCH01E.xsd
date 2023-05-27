@@ -69,7 +69,7 @@ result = Info01_ProjectCity
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
                            <dtyp:srcSchema form="CCMCH01E" usage="copy">A01_ProjectCity</dtyp:srcSchema>
-                           <dtyp:srcSchema form="CCPRF01E" usage="copy">Info01_ProjectCity</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E" usage="copy">Info04_ProjectCity</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
@@ -82,7 +82,7 @@ Else If CC-MCH parent
 User input
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
-                           <dtyp:srcSchema form="CCPRF01E" usage="copy">Info02_ProjectZipcode</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCPRF01E" usage="copy">Info06_ProjectZipcode</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
                   </xsd:element>
@@ -10854,7 +10854,7 @@ End If</xsd:documentation>
                            <d:i> NOTE: Must be completed by installer and submitted for Air Distribution Duct Leakage</d:i>
                         </xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If NRCC-MCH parent
-result = Nrcv01_RequireNRCVMch04H  
+result = Lmcv01_RequireLMCVMch04H  
 If result == true 
 static text and related SystemFieldVerified  or SystemsToFieldVerify are displayed
 Else
@@ -10869,7 +10869,7 @@ Nothing is displayed for this NRCV
 End If
 End If</xsd:documentation>
                         <xsd:appinfo source="CIsrc">
-                           <dtyp:srcSchema form="CCMCH01E" usage="copy">Nrcv01_RequireNRCVMch04H</dtyp:srcSchema>
+                           <dtyp:srcSchema form="CCMCH01E" usage="copy">Lmcv01_RequireLMCVMch04H</dtyp:srcSchema>
                            <dtyp:srcSchema form="CCPRF01E" usage="copy">NrcvMch02_RequireNRCVMch04H</dtyp:srcSchema>
                         </xsd:appinfo>
                      </xsd:annotation>
