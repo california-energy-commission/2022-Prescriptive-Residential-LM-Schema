@@ -1142,6 +1142,251 @@ End If</xsd:documentation>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
+                  <xsd:element name="Rscs" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">THIS TABLE IS NOT REPORTED</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This section is required If Fscs03_SystemZoning == SingleDwellingUnit or MultiDwellingUnits
+Else do not display anything for this section</xsd:documentation>
+                     </xsd:annotation>
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
+                              <xsd:complexType>
+                                 <xsd:sequence>
+                                    <xsd:element name="Rscs01_SpaceConditioningSystemName" type="hvac:SpaceConditioningSystemName">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">System Name</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">Filled from Fscs01_SpaceConditioningSystemName</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="Rscs02_DwellingUnitType" type="com:ResidentialDwellingUnitDescriptor">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Dwelling Unit Type</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">User input</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="Rscs03_SCType" type="hvac:ResidentialSpaceConditioningSystemType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">SC Type</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">User selects from list</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:element name="Rscs04_HeatingType" type="hvac:ResidentialHeatingSystemType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Heating System Type</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">User selects from list</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Rscs05_HeatingEfficencyType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Heating Efficiency Type</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs04_HeatingType != NoHeating
+User selects from list
+
+Else use Rscs05_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:EfficiencyType">
+                                                <xsd:enumeration value="AFUE"/>
+                                                <xsd:enumeration value="COP"/>
+                                                <xsd:enumeration value="HSPF"/>
+                                                <xsd:enumeration value="HSPF2"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="Rscs05_NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Heating Efficiency Type</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs04_HeatingType == NoHeating
+BlankGrayedOut stored in Rscs05_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="comp:NotApplicableMessage">
+                                                <xsd:enumeration value="BlankGrayedOut"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Rscs06_HeatingEfficiency">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Proposed Heating Efficiency</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs04_HeatingType != NoHeating
+User input
+
+Else use Rscs06_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Rscs06_NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Proposed Heating Efficiency</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs04_HeatingType == NoHeating
+BlankGrayedOut stored in Rscs06_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="comp:NotApplicableMessage">
+                                                <xsd:enumeration value="BlankGrayedOut"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="Rscs07_CoolingSystemType" type="hvac:ResidentialCoolingSystemType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Cooling System Type</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">User selects from list</xsd:documentation>
+                                       </xsd:annotation>
+                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Rscs08_CoolingEfficiencyType">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Cooling Efficiency Type</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs07_CoolingSystemType != NoCooling
+User selects from list
+
+Else BlankGrayedOut stored in Rscs08_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:EfficiencyType">
+                                                <xsd:enumeration value="CEER"/>
+                                                <xsd:enumeration value="EER"/>
+                                                <xsd:enumeration value="EER2"/>
+                                                <xsd:enumeration value="EER2SEER2"/>
+                                                <xsd:enumeration value="EERSEER"/>
+                                                <xsd:enumeration value="SEER"/>
+                                                <xsd:enumeration value="SEER2"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="Rscs08_NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Cooling Efficiency Type</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs07_CoolingSystemType == NoCooling
+BlankGrayedOut stored in Rscs08_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="comp:NotApplicableMessage">
+                                                <xsd:enumeration value="BlankGrayedOut"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Rscs09_CoolingEfficiencySEER" type="hvac:EfficiencySEER2_EER2">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Proposed Cooling Efficiency SEER/SEER2</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs07_CoolingSystemType != NoCooling 
+And
+Rscs08_CoolingEfficiencyType == EER2SEER2 Or EERSEER Or SEER Or SEER2
+User input
+
+Else BlankGrayedOut stored in Rscs09_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Rscs09_NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Proposed Cooling Efficiency SEER/SEER2</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs07_CoolingSystemType == NoCooling 
+Or 
+Rscs08_CoolingEfficiencyType == CEER Or EER Or EER2
+BlankGrayedOut stored in Rscs09_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="comp:NotApplicableMessage">
+                                                <xsd:enumeration value="BlankGrayedOut"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Rscs10_CoolingEfficiencyEER" type="hvac:EfficiencySEER2_EER2_CEER">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Proposed Cooling Efficiency EER/EER2/CEER</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs07_CoolingSystemType != NoCooling 
+And
+Rscs08_CoolingEfficiencyType == CEER Or EER Or EER2 Or EER2SEER2 Or EERSEER
+User Input
+
+Else BlankGrayedOut stored in Rscs010_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Rscs10_NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Proposed Cooling Efficiency EER/EER2/CEER</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs07_CoolingSystemType == NoCooling 
+Or 
+Rscs08_CoolingEfficiencyType == SEER Or SEER2
+BlankGrayedOut stored in Rscs09_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="comp:NotApplicableMessage">
+                                                <xsd:enumeration value="BlankGrayedOut"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:element name="Rscs11_DistributionType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Distribution System Type</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">User selects from list</xsd:documentation>
+                                       </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="hvac:DuctSystemType">
+                                             <xsd:enumeration value="DuctedSystem"/>
+                                             <xsd:enumeration value="Ductless"/>
+                                             <xsd:enumeration value="Piping"/>
+                                             <xsd:enumeration value="Radiant"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="Rscs12_DuctLocation">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Duct Location</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">User selects from list</xsd:documentation>
+                                       </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="hvac:DuctLocation">
+                                             <xsd:enumeration value="ConditionedSpace"/>
+                                             <xsd:enumeration value="Ductless"/>
+                                             <xsd:enumeration value="DuctsInMultipleLocations"/>
+                                             <xsd:enumeration value="Outdoors"/>
+                                             <xsd:enumeration value="UnconditionedAttic"/>
+                                             <xsd:enumeration value="UnconditionedCrawlSpace"/>
+                                             <xsd:enumeration value="UnconditionedGarage"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="Rscs13_DuctRValue">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Duct R-Value</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">User selects from list</xsd:documentation>
+                                       </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="hvac:DuctRValueLimit">
+                                             <xsd:enumeration value="R6"/>
+                                             <xsd:enumeration value="R8"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="Rscs14_ThermostatType">
+                                       <xsd:annotation>
+                                          <xsd:documentation source="FieldText">Thermostat Type</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">User selects from list</xsd:documentation>
+                                       </xsd:annotation>
+                                       <xsd:simpleType>
+                                          <xsd:restriction base="hvac:ThermostatType">
+                                             <xsd:enumeration value="EnergyManagementSystem"/>
+                                             <xsd:enumeration value="OccupantControlledSmartThermostat"/>
+                                             <xsd:enumeration value="SetbackThermostat"/>
+                                          </xsd:restriction>
+                                       </xsd:simpleType>
+                                    </xsd:element>
+                                 </xsd:sequence>
+                              </xsd:complexType>
+                           </xsd:element>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
                   <xsd:element name="TableDrySizing" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">
