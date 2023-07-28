@@ -5705,7 +5705,7 @@ Else if Fd04_ChillerTonsRange == GTE300ToLT400 Or GTE400ToLT600 Or GTE600
 If Fd04a_ChillerWaterTemp == Low
 result = 8.900
 Else if Fd04a_ChillerWaterTemp == Medium
-result = 3.6.980
+result = 6.980
 Else if Fd04a_ChillerWaterTemp == High
 result = 5.000
 Else if Fd04a_ChillerWaterTemp == Boost
