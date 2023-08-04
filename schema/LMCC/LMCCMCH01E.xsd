@@ -11859,8 +11859,8 @@ D03_ExceptionalConditionMessageCCMCHE += UserChangedSelectionInCI</xsd:documenta
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">LMCI-MCH-20-H Duct Leakage Diagnostic Test</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If L10d_DuctLeakageMeetsRA3Req == true
-result = true  
+                        <xsd:documentation source="CalculationsAndRules">   If L10d1_DuctLeakageMeetsRA3Req or L10d2_DuctLeakageMeetsRA3Req= true 
+result = true
 Else
 result = false
 End If</xsd:documentation>
@@ -12734,29 +12734,32 @@ End If</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">[d:i] Selections have been made based on information provided in previous tables of this document.  If any selection needs to be changed, please explain why in Table E Additional Remarks.  These documents must be completed by a HERS Rater and provided to the building inspector during construction.  The final documents must be created by a HERS Provider's registry, but drafts can be found online at https://www.energy.ca.gov/title24/2019standards/2019_compliance_documents/Nonresidential_Documents/NRCV/  [/d:i]</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
-                  <xsd:element name="Lmcv01_RequireLMCVMch04H" type="comp:RequireLMCVMch04H" >
+                  <xsd:element name="Lmcv01_RequireLMCVMch20" type="comp:RequireLMCVMch20" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">LMCV-MCH-04-H Duct Leakage Test  [d:i] NOTE: Must be completed by a HERS Rater [/d:i]</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">Calculated field: Boolean value Default reulst = false. 
- If Lmca03_RequireLMCAMch04A == true, result = true
+                        <xsd:documentation source="AdditionalRequirements">LMCV-MCH-20-H Duct leakage testing  [d:i] NOTE: Must be completed by a HERS Rater [/d:i]</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">Calculated field: Boolean value Default result = false. 
+If L10d1_DuctLeakageMeetsRA3Req or L10d2_DuctLeakageMeetsRA3Req= true 
+result = true
+Else
+result = false
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Lmcv01_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Lmcv01_RequireLMCVMch04H == true; this field is loaded with systems/spaces that satisfy this condition:
+                        <xsd:documentation source="CalculationsAndRules">If Lmcv01_RequireLMCVMch20 == true; this field is loaded with systems/spaces that satisfy this condition:
  
-If L10b_DuctLeakageTestRequired == true 
-load value in L10a_DuctSystems
+If Lmcv01_RequireLMCVMch20 == true 
+load value in L10b_DuctSystems
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Lmcv01_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If Lmcv01_RequireLMCVMch04H == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv01_SystemFieldVerified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmcv01_RequireLMCVMch20 == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv01_SystemFieldVerified</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Lmcv01a_VerifedByInspector" type="comp:VerifedByInspector"  minOccurs="0">
@@ -12764,6 +12767,100 @@ End If</xsd:documentation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+                  <xsd:element name="Lmcv05_RequireLMCVMch21" type="comp:RequireLMCVMch21" >
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">LMCV-MCH-21-H Duct location verification  [d:i] NOTE: Must be completed by a HERS Rater [/d:i]</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">Default result = false</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv05_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmcv05_RequireLMCVMch21 == true; this field is loaded with systems/spaces that satisfy this condition:
+ 
+If Lmcv05_RequireLMCVMch21 == true 
+load value in L10b_DuctSystems
+End If</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv05_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">If Lmcv05_RequireLMCVMch21 == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv05_SystemFieldVerified</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Lmcv05a_VerifedByInspector" type="comp:VerifedByInspector"  minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
+               <xsd:element name="Lmcv06_RequireLMCVMch22" type="comp:RequireLMCVMch22" >
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                     <xsd:documentation source="AdditionalRequirements">LMCV-MCH-22-H Fan Efficacy  [d:i] NOTE: Must be completed by a HERS Rater [/d:i]</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">Calculated field: Boolean value Default result = false. 
+If H00e_SystemZoning == SingleDwellingUnit
+result = true  
+Else
+result = false
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv06_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv06_RequireLMCVMch22 == true; this field is loaded with systems/spaces that satisfy this condition:
+
+If Lmcv06_RequireLMCVMch22 == true 
+load value in H00a_FanSystemName
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv06_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv06_RequireLMCVMch22 == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv06_SystemFieldVerified</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv06a_VerifedByInspector" type="comp:VerifedByInspector"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv07_RequireLMCVMch23" type="comp:RequireLMCVMch23" >
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                     <xsd:documentation source="AdditionalRequirements">LMCV-MCH-23-H Airflow rate  [d:i] NOTE: Must be completed by a HERS Rater [/d:i]</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">Calculated field: Boolean value Default result = false. 
+If H00e_SystemZoning == SingleDwellingUnit
+result = true  
+Else
+result = false
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv07_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv07_RequireLMCVMch23 == true; this field is loaded with systems/spaces that satisfy this condition:
+
+If Lmcv07_RequireLMCVMch23 == true 
+load value in H00a_FanSystemName
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv07_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv07_RequireLMCVMch23 == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv07_SystemFieldVerified</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv07a_VerifedByInspector" type="comp:VerifedByInspector"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
                   <xsd:element name="Lmcv02_RequireLMCVMch24H" type="comp:RequireLMCVMch24H" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
@@ -12795,6 +12892,73 @@ End If</xsd:documentation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+               <xsd:element name="Lmcv08_RequireLMCVMch25" type="comp:RequireLMCVMch25" >
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                     <xsd:documentation source="AdditionalRequirements">LMCV-MCH-25-H Refrigerant charge verification  [d:i] NOTE: Must be completed by a HERS Rater [/d:i]</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">Calculated field: Boolean value Default result = false. 
+If H00e_SystemZoning == SingleDwellingUnit And
+A02_ClimateZoneNumber == 2 Or InRange(8,15)
+result = true  
+Else
+result = false
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv08_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv08_RequireLMCVMch25 == true; this field is loaded with systems/spaces that satisfy this condition:
+
+If Lmcv08_RequireLMCVMch25 == true 
+load value in load value in H00a_FanSystemName
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv08_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv08_RequireLMCVMch25 == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv08_SystemFieldVerified</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv08a_VerifedByInspector" type="comp:VerifedByInspector"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
+                  </xsd:annotation>   
+               </xsd:element>
+               <xsd:element name="Lmcv09_RequireLMCVMch26" type="comp:RequireLMCVMch26" >
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                     <xsd:documentation source="AdditionalRequirements">LMCV-MCH-26-H Rated space conditioning system equipment verification  [d:i] NOTE: Must be completed by a HERS Rater [/d:i]</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">Calculated field: Boolean value Default result = false. 
+If F02_HvacSystemType == UnitaryHeatPumps Or UnitaryHeatPumpsNoElectR Or HeatPumpDualFuel
+result = true
+Else
+result = false
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv09_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv09_RequireLMCVMch26 == true; this field is loaded with systems/spaces that satisfy this condition:
+
+If Lmcv09_RequireLMCVMch26 == true 
+load value in F02_HvacSystemType
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv09_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv09_RequireLMCVMch26 == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv09_SystemFieldVerified</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv09a_VerifedByInspector" type="comp:VerifedByInspector"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
+                  </xsd:annotation> 
+               </xsd:element>
                   <xsd:element name="Lmcv03_RequireLMCVMch27H" type="comp:RequireLMCVMch27H" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
@@ -12827,6 +12991,64 @@ End If</xsd:documentation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
+               <xsd:element name="Lmcv10_RequireLMCVMch28" type="comp:RequireLMCVMch28" >
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                     <xsd:documentation source="AdditionalRequirements">LMCV-MCH-28-H Return Duct Design and Air Filter Grille Device Sizing  [d:i] NOTE: Must be completed by a HERS Rater [/d:i]</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">Calculated field: Boolean value Default result = false. 
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv10_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv10_RequireLMCVMch28 == true; this field is loaded with systems/spaces that satisfy this condition:
+
+If Lmcv10_RequireLMCVMch28 == true 
+load value in L10b_DuctSystems
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv10_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv10_RequireLMCVMch28 == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv10_SystemFieldVerified</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv10a_VerifedByInspector" type="comp:VerifedByInspector"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv11_RequireLMCVMch29" type="comp:RequireLMCVMch29" >
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                     <xsd:documentation source="AdditionalRequirements">LMCV-MCH-29-H  Duct Surface Area Reduction; Buried Ducts Compliance Credit  [d:i] NOTE: Must be completed by a HERS Rater [/d:i]</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">Calculated field: Boolean value Default result = false. 
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv11_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv11_RequireLMCVMch29 == true; this field is loaded with systems/spaces that satisfy this condition:
+
+If Lmcv11_RequireLMCVMch29 == true 
+load value in L10b_DuctSystems
+End If</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv11_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                     <xsd:documentation source="CalculationsAndRules">If Lmcv11_RequireLMCVMch29 == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv11_SystemFieldVerified</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
+               <xsd:element name="Lmcv11a_VerifedByInspector" type="comp:VerifedByInspector"  minOccurs="0">
+                  <xsd:annotation>
+                     <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
+                  </xsd:annotation>
+               </xsd:element>
                   <xsd:element name="Lmcv04_RequireLMCVMch32H" type="comp:RequireLMCVMch32H" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
@@ -12857,6 +13079,34 @@ End If</xsd:documentation>
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
+                  </xsd:element>
+                     <xsd:element name="Lmcv12_RequireLMCVMch33" type="comp:RequireLMCVMch33" >
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Form/Title</xsd:documentation>
+                           <xsd:documentation source="AdditionalRequirements">LMCV-MCH-33 Variable Capacity Heat Pump Compliance Credit  [d:i] NOTE: Must be completed by a HERS Rater [/d:i]</xsd:documentation>
+                           <xsd:documentation source="CalculationsAndRules">Calculated field: Boolean value Default result = false.
+   End If</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="Lmcv12_SystemFieldVerified" type="comp:SystemFieldVerified"  minOccurs="0" maxOccurs="unbounded">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                           <xsd:documentation source="CalculationsAndRules">If Lmcv12_RequireLMCVMch33 == true; this field is loaded with all systems/spaces that satisfy this condition:
+If Lmcv12_RequireLMCVMch33 == true 
+load value in G01_PumpName
+   End If</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="Lmcv12_SystemsToFieldVerify" type="comp:SystemsToFieldVerify"  minOccurs="0">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
+                           <xsd:documentation source="CalculationsAndRules">If Lmcv12_RequireLMCVMch33 == true; this field is displayed and loaded with a string that concatenates systems/spaces from Lmcv12_SystemFieldVerified</xsd:documentation>
+                        </xsd:annotation>
+                     </xsd:element>
+                     <xsd:element name="Lmcv12a_VerifedByInspector" type="comp:VerifedByInspector"  minOccurs="0">
+                        <xsd:annotation>
+                           <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
+                        </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>

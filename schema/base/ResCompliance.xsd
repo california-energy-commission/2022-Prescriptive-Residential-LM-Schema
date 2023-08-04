@@ -16717,7 +16717,67 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVMch20">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVMch21">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVMch22">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVMch23">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireLMCVMch24H">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVMch25">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVMch26">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
@@ -16737,7 +16797,37 @@ the inside surface of gable ends or other exterior vertical surfaces in attics t
       <xsd:restriction base="xsd:boolean">
       </xsd:restriction>
    </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVMch28">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVMch29">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
    <xsd:simpleType name="RequireLMCVMch32H">
+      <xsd:annotation>
+         <xsd:appinfo source="displayterm">
+            <dtyp:displayterm value="true">Yes</dtyp:displayterm>
+            <dtyp:displayterm value="false">No</dtyp:displayterm>
+         </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:boolean">
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="RequireLMCVMch33">
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="true">Yes</dtyp:displayterm>
