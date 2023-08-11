@@ -2464,6 +2464,7 @@
             <dtyp:displayterm value="LMCC-LTO-01-E">LMCC-LTO-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-LTS-01-E">LMCC-LTS-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-MCH-01-E">LMCC-MCH-01-E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCC-MCH-02-E">LMCC-MCH-02-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-PLB-01-E">LMCC-PLB-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-PRC-01-E">LMCC-PRC-01-E</dtyp:displayterm>
             <dtyp:displayterm value="LMCC-PRF-01-E">LMCC-PRF-01-E</dtyp:displayterm>
@@ -2626,6 +2627,7 @@
          <xsd:enumeration value="LMCC-LTO-01-E"/>
          <xsd:enumeration value="LMCC-LTS-01-E"/>
          <xsd:enumeration value="LMCC-MCH-01-E"/>
+         <xsd:enumeration value="LMCC-MCH-02-E"/>
          <xsd:enumeration value="LMCC-PLB-01-E"/>
          <xsd:enumeration value="LMCC-PRC-01-E"/>
          <xsd:enumeration value="LMCC-PRF-01-E"/>
@@ -2967,6 +2969,7 @@
             <dtyp:displayterm value="LMCCLTO01E">LMCCLTO01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCCLTS01E">LMCCLTS01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCCMCH01E">LMCCMCH01E</dtyp:displayterm>
+            <dtyp:displayterm value="LMCCMCH01E">LMCCMCH02E</dtyp:displayterm>
             <dtyp:displayterm value="LMCCPLB01E">LMCCPLB01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCCPRC01E">LMCCPRC01E</dtyp:displayterm>
             <dtyp:displayterm value="LMCCPRF01E">LMCCPRF01E</dtyp:displayterm>
@@ -3239,6 +3242,7 @@
          <xsd:enumeration value="LMCCLTO01E"/>
          <xsd:enumeration value="LMCCLTS01E"/>
          <xsd:enumeration value="LMCCMCH01E"/>
+         <xsd:enumeration value="LMCCMCH02E"/>
          <xsd:enumeration value="LMCCPLB01E"/>
          <xsd:enumeration value="LMCCPRC01E"/>
          <xsd:enumeration value="LMCCPRF01E"/>
@@ -3352,6 +3356,7 @@
       <xsd:annotation>
          <xsd:appinfo source="displayterm">
             <dtyp:displayterm value="Alteration To An HVAC System">Alteration To An HVAC System</dtyp:displayterm>
+            <dtyp:displayterm value="Alterations to Space Conditioning Systems">Alterations to Space Conditioning Systems</dtyp:displayterm>
             <dtyp:displayterm value="Alterations to Space Conditioning Systems (formerly CF-1R-ALT-HVAC)">Alterations to Space Conditioning Systems (formerly CF-1R-ALT-HVAC)</dtyp:displayterm>
             <dtyp:displayterm value="Alternative Default Fenestration Procedure (NA6) Worksheet">Alternative Default Fenestration Procedure (NA6) Worksheet</dtyp:displayterm>
             <dtyp:displayterm value="Area Weighted Average Calculation Worksheet">Area Weighted Average Calculation Worksheet</dtyp:displayterm>
@@ -3431,6 +3436,7 @@
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstantPermissive">
          <xsd:enumeration value="Alteration To An HVAC System"/>
+         <xsd:enumeration value="Alterations to Space Conditioning Systems"/>
          <xsd:enumeration value="Alterations to Space Conditioning Systems (formerly CF-1R-ALT-HVAC)"/>
          <xsd:enumeration value="Alternative Default Fenestration Procedure (NA6) Worksheet"/>
          <xsd:enumeration value="Area Weighted Average Calculation Worksheet"/>
