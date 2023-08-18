@@ -16743,7 +16743,9 @@ End If</xsd:documentation>
          <xsd:element name="Section_J" minOccurs="0">
             <xsd:annotation>
                <xsd:documentation source="FieldText">EXTERIOR DOOR SCHEDULE</xsd:documentation>
-               <xsd:documentation source="CalculationsAndRules">This section is required If B02AddDoor_ComponentApplies  Or B02NewDoor_ComponentApplies == true 
+               <xsd:documentation source="CalculationsAndRules">This section is required If B02AddDoor_ComponentApplies  Or B02NewDoor_ComponentApplies == true Or B02AltDoor_ComponentApplies == true
+                  Or
+                  If B02AltDoor_ComponentApplies == true 
   
 Mandatory Measure Triggers:
 If this section is required 
@@ -17304,16 +17306,6 @@ End If</xsd:documentation>
                                                       <xsd:element name="Kvertperf06">
                                                          <xsd:annotation>
                                                             <xsd:documentation source="FieldText">Occupancy &amp;amp; Status</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If  Kvertperf05_FenestrationProductType != ChromogenicFen Or GlazedDoorMF 
-User selects from dropdown list generated from display terms for the two properties as follows: 
- 
-TopLevelOccupancy values Nonresidential and HotelMotel display terms are listed 4 times, once for each of these FenestrationModification values whose display terms are appended:
- AllNew, ReplaceGT150ft2, AddGT50ft2 and AddLTE50ft2;  
- 
-TopLevelOccupancy value AlteredOccupancy is listed once for FenestrationModification value  ReplaceLTE150ft2 whose display term is appended
- 
-TopLevelOccupancy value LowRiseResidential display term is listed 4 times, once for each of these  FenestrationModification values whose display terms are appended:
- AllNew, ReplaceGT150ft2, ReplaceLTE150ft2 , AddGT50ft2</xsd:documentation>
                                                          </xsd:annotation>
                                                          <xsd:complexType>
                                                             <xsd:sequence>
@@ -17328,14 +17320,12 @@ Else user selects from list:  Nonresidential display term Nonresidential/ Reloca
                                                                      <xsd:appinfo source="displayterm">
                                                                         <dtyp:displayterm value="HotelMotel">Hotel/ Motel:</dtyp:displayterm>
                                                                         <dtyp:displayterm value="Nonresidential">Nonresidential:</dtyp:displayterm>
-                                                                        <dtyp:displayterm value="AlteredOccupancy">Occupancy other than dwelling unit:</dtyp:displayterm>
                                                                         <dtyp:displayterm value="LowRiseResidential">Dwelling Units 
                                                                            <d:lte/>3 stories:</dtyp:displayterm>
                                                                      </xsd:appinfo>
                                                                   </xsd:annotation>
                                                                   <xsd:simpleType>
                                                                      <xsd:restriction base="com:TopLevelOccupancy">
-                                                                        <xsd:enumeration value="AlteredOccupancy"/>
                                                                         <xsd:enumeration value="HotelMotel"/>
                                                                         <xsd:enumeration value="LowRiseResidential"/>
                                                                         <xsd:enumeration value="Nonresidential"/>
@@ -17475,18 +17465,12 @@ End If</xsd:documentation>
                                                 <xsd:element name="Kvertperf08_NotApplicableMessage">
                                                    <xsd:annotation>
                                                       <xsd:documentation source="FieldText">VT Compliance Method</xsd:documentation>
-                                                      <xsd:documentation source="CalculationsAndRules">If Kvertperf05_FenestrationProductType == ChromogenicFen Or DemisingWallFen Or GlazedDoorMF 
-Or 
-If   Kvertperf06_FenestrationModification == AddGT50ft2 Or ReplaceLTE150ft2
-Or
-If Kvertperf06_TopLevelOccupancy == AlteredOccupancy Or  Kvertperf06_FenestrationModification == AddLTE150ft2  
-Or
-Kvertperf06_FenestrationModification ==  ReplaceGT150ft2 And Kvertperf_ComplianceMethodSHGC_VT == Table170_2A 
-Or
-If Kvertperf06_TopLevelOccupancy == LowRiseResidential And Kvertperf06_FenestrationModification == AllNew And A03_ClimateZoneNumber == 1, 3, 5, or 16
- 
-result = BlankGrayedOut
-End If</xsd:documentation>
+                                                      <xsd:documentation source="CalculationsAndRules">If Kvertperf05_FenestrationProductType = ChromogenicFen Or DemisingWallFen Or GlazedDoorMF
+                                                         Or Kvertperf06_TopLevelOccupancy = RelocableSchoolBuildingAllZones
+                                                         Or Kvertperf06_FenestrationModification = AddLTE50ft2 or ReplaceLTE150ft2
+                                                         Or Kvertperf07_ComplianceMethodSHGC_VT = Table170_2A
+                                                         result = BlankGrayedOut
+                                                         End If</xsd:documentation>
                                                    </xsd:annotation>
                                                    <xsd:simpleType>
                                                       <xsd:restriction base="comp:NotApplicableMessage">
@@ -17845,20 +17829,12 @@ End If</xsd:documentation>
                                                 <xsd:element name="Kvertperf11c_NotApplicableMessage">
                                                    <xsd:annotation>
                                                       <xsd:documentation source="FieldText">Required Product Performance</xsd:documentation>
-                                                      <xsd:documentation source="CalculationsAndRules">If Kvertperf05_FenestrationProductType == ChromogenicFen Or DemisingWallFen Or
-GlazedDoorMF
-Or
-If Kvertperf06_FenestrationModification == AddLTE50ft2
-Or
-If Kvertperf06_TopLevelOccupancy == AlteredOccupancy and Kvertperf06_FenestrationModification == ReplaceLTE150ft2
-Or
-If Kvertperf06_TopLevelOccupancy == LowRiseResidential and Kvertperf06_FenestrationModification == ReplaceLTE150ft2
-Or
-If Kvertperf08_ComplianceMethodSHGC_VT == NA_SkylitOverlap
-Or
-If Kvertperf08_ComplianceMethodSHGC_VT == Table170_2A or Table180_2B and Kvertperf05_FenestrationProductType != CurtainWall, StoreFront, FixedWindowMF, or OperableWindowMF
-result = BlankGrayedOut
-End If</xsd:documentation>
+                                                      <xsd:documentation source="CalculationsAndRules">If Kvertperf05_FenestrationProductType = ChromogenicFen Or DemisingWallFen Or GlazedDoorMF
+                                                         Or Kvertperf06_TopLevelOccupancy = RelocableSchoolBuildingAllZones
+                                                         Or Kvertperf06_FenestrationModification = AddLTE50ft2 or ReplaceLTE150ft2
+                                                         Or Kvertperf07_ComplianceMethodSHGC_VT = Table170_2A
+                                                         result = BlankGrayedOut
+                                                         End If</xsd:documentation>
                                                    </xsd:annotation>
                                                    <xsd:simpleType>
                                                       <xsd:restriction base="comp:NotApplicableMessage">
@@ -17942,22 +17918,12 @@ End If</xsd:documentation>
                                                 <xsd:element name="Kvertperf12c_NotApplicableMessage">
                                                    <xsd:annotation>
                                                       <xsd:documentation source="FieldText">Product Performance per Design</xsd:documentation>
-                                                      <xsd:documentation source="CalculationsAndRules">If Kvertperf05_FenestrationProductType == ChromogenicFen Or DemisingWallFen Or
-GlazedDoorMF
-Or
-If Kvertperf06_TopLevelOccupancy == Nonresidential and Kvertperf06_FenestrationModification == AddLTE50ft2
-Or
-If Kvertperf06_TopLevelOccupancy == HotelMotel and Kvertperf06_FenestrationModification == AddLTE50ft2
-Or
-If Kvertperf06_TopLevelOccupancy == AlteredOccupancy and Kvertperf06_FenestrationModification == ReplaceLTE150ft2
-Or
-If Kvertperf06_TopLevelOccupancy == LowRiseResidential and Kvertperf06_FenestrationModification == ReplaceLTE150ft2
-Or
-If Kvertperf08_ComplianceMethodSHGC_VT == NA_SkylitOverlap
-Or
-If Kvertperf08_ComplianceMethodSHGC_VT == Table170_2A or Table180_2B and Kvertperf05_FenestrationProductType != CurtainWall, StoreFront, FixedWindowMF, or OperableWindowMF
-result = BlankGrayedOut
-End If</xsd:documentation>
+                                                      <xsd:documentation source="CalculationsAndRules">If Kvertperf05_FenestrationProductType = ChromogenicFen Or DemisingWallFen Or GlazedDoorMF
+                                                         Or Kvertperf06_TopLevelOccupancy = RelocableSchoolBuildingAllZones
+                                                         Or Kvertperf06_FenestrationModification = AddLTE50ft2 or ReplaceLTE150ft2
+                                                         Or Kvertperf07_ComplianceMethodSHGC_VT = Table170_2A
+                                                         result = BlankGrayedOut
+                                                         End If</xsd:documentation>
                                                    </xsd:annotation>
                                                    <xsd:simpleType>
                                                       <xsd:restriction base="comp:NotApplicableMessage">
