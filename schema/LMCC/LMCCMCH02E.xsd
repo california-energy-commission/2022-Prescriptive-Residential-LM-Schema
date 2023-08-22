@@ -211,12 +211,6 @@
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="C_BeginNote1" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">[d:u]Required Documentation:[/d:u]</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">[d:u]Required Documentation: [/d:u][d:line1/] LMCI-MCH-01-E - Space Conditioning Systems [d:line1/] - Duct insulation requirement for the new portions of supply-air and return-air ducts or plenums: R6 (CZ 3, 5-7) and R8 (CZ 1, 2, 4, 8-16) [d:line1/] LMCI and LMCV-MCH-20-H Duct Leakage Test [d:line1/]  - Leakage rate compliance: less than or equal to 10%,  or less than or equal to  7% leakage to outside, or seal all accessible leaks [d:line1/] [d:u]Exceptions:[/d:u][d:line1/] Existing duct systems constructed, insulated or sealed with asbestos are exempt from MCH-20 duct leakage testing requirements</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
                   <xsd:element name="TableDuct" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
@@ -254,6 +248,12 @@ End If</xsd:documentation>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
+                  <xsd:element name="CEndNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">[d:u]Required Documentation:[/d:u]</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">[d:u]Required Documentation: [/d:u][d:line1/] LMCI-MCH-01-E - Space Conditioning Systems [d:line1/] - Duct insulation requirement for the new portions of supply-air and return-air ducts or plenums: R6 (CZ 3, 5-7) and R8 (CZ 1, 2, 4, 8-16) [d:line1/] LMCI and LMCV-MCH-20-H Duct Leakage Test [d:line1/]  - Leakage rate compliance: less than or equal to 10%,  or less than or equal to  7% leakage to outside, or seal all accessible leaks [d:line1/] [d:u]Exceptions:[/d:u][d:line1/] Existing duct systems constructed, insulated or sealed with asbestos are exempt from MCH-20 duct leakage testing requirements</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
@@ -265,12 +265,6 @@ End If</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="D_BeginNote1" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Required Documentation:</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">[d:u]Required Documentation:[/d:u][d:line1/] LMCI-MCH-01-E - Space Conditioning Systems [d:line1/]  - Duct insulation requirement for the new portions of supply-air and return-air ducts or plenums: R6 (CZ 3, 5-7) and R8 (CZ 1, 2, 4, 8-16)[d:line1/] LMCI and LMCV-MCH-20-H - Duct Leakage Test required when heating or cooling components are installed in ducted systems, or when more than 25 ft of duct length is replaced[d:line1/] -Leakage rate compliance: less than or equal to 10% or  less than or equal to 7%  leakage to outside,  or seal all accessible leaks.[d:line1/] LMCI and LMCV-MCH-25-H Refrigerant Charge verification required when refrigerant containing components are installed or altered (applicable in CZ 2, 8-15). [d:line1/] LMCI and LMCV-MCH-23 Airflow Rate greater than or equal to 300 CFM per ton required when MCH-25 is required. [d:line1/] [d:u]Exceptions:[/d:u][d:line1/]- Duct systems registered with HERS provider as previously sealed are exempt from MCH-20 Duct Leakage Testing requirements.[d:line1/] - Heating-only systems and Air Handler Furnace changes do not require verification of Air Flow MCH-23, or Refrigerant Charge MCH-25. [d:line1/] -Existing duct systems constructed, insulated or sealed with asbestos are exempt from MCH-20 Duct Leakage Testing requirements.</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
                   <xsd:element name="TableConditioningAltered" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
@@ -505,6 +499,12 @@ End If</xsd:documentation>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
+                  <xsd:element name="DEndNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Required Documentation:</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">[d:u]Required Documentation:[/d:u][d:line1/] LMCI-MCH-01-E - Space Conditioning Systems [d:line1/]  - Duct insulation requirement for the new portions of supply-air and return-air ducts or plenums: R6 (CZ 3, 5-7) and R8 (CZ 1, 2, 4, 8-16)[d:line1/] LMCI and LMCV-MCH-20-H - Duct Leakage Test required when heating or cooling components are installed in ducted systems, or when more than 25 ft of duct length is replaced[d:line1/] -Leakage rate compliance: less than or equal to 10% or  less than or equal to 7%  leakage to outside,  or seal all accessible leaks.[d:line1/] LMCI and LMCV-MCH-25-H Refrigerant Charge verification required when refrigerant containing components are installed or altered (applicable in CZ 2, 8-15). [d:line1/] LMCI and LMCV-MCH-23 Airflow Rate greater than or equal to 300 CFM per ton required when MCH-25 is required. [d:line1/] [d:u]Exceptions:[/d:u][d:line1/]- Duct systems registered with HERS provider as previously sealed are exempt from MCH-20 Duct Leakage Testing requirements.[d:line1/] - Heating-only systems and Air Handler/ Furnace changes do not require verification of Air Flow MCH-23, or Refrigerant Charge MCH-25. [d:line1/] -Existing duct systems constructed, insulated or sealed with asbestos are exempt from MCH-20 Duct Leakage Testing requirements.</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
@@ -516,12 +516,6 @@ End If</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="E_BeginNote1" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Required Documentation:</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">[d:u]Required Documentation:[/d:u][d:line1/] LMCI-MCH-01-E - Space Conditioning Systems [d:line1/]  - Duct insulation requirement for the new portions of supply-air and return-air ducts or plenums: R6 (CZ 3, 5-7) and R8 (CZ 1, 2, 4, 8-16) [d:line1/] LMCI and LMCV-MCH-20-H Duct Leakage Test required [d:line1/]  - Leakage rate compliance: les than or equal to 5 percent. [d:line1/] LMCI and LMCV-MCH-22 Fan Efficacy [d:line1/] LMCI and LMCV-MCH-23 Airflow Rate [d:line1/] - Compliance: Fan Efficacy less than or equal to 0.58 W/cfm for non-gas furnaces and 0.45 W/cfm for gas furnaces and System Airflow greater than or equal to 350 cfm per ton.[d:line1/] - Alternative Compliance: LMCI and LMCV-MCH-28 Return Duct Design verification is an alternative to MCH-22 and MCH-23 verification. [d:line1/] LMCI and LMCV-MCH-25-H Refrigerant Charge verification required when refrigerant containing components are installed or altered (applicable in CZ 2, 8-15).[d:line1/] [d:u]Exceptions:[/d:u][d:line1/]  Heating-only systems are exempt from the 0.58 W per cfm and 350 cfm per ton requirements. [d:line1/] [d:u]Note:[/d:u] An "entirely new or complete replacement duct system" means at least 75 percent  of the duct system is new duct material, and up to 25 percent may consist of reused parts from the dwelling unit's existing duct system (e.g., registers, grilles, boots, air handler, coil, plenums, duct material) if the reused parts are accessible and can be sealed to prevent leakage</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
                   <xsd:element name="TableDuctNew" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
@@ -737,6 +731,12 @@ End If</xsd:documentation>
                         </xsd:sequence>
                      </xsd:complexType>
                   </xsd:element>
+                  <xsd:element name="EEndNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Required Documentation:</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">[d:u]Required Documentation:[/d:u][d:line1/] LMCI-MCH-01-E - Space Conditioning Systems [d:line1/]  - Duct insulation requirement for the new portions of supply-air and return-air ducts or plenums: R6 (CZ 3, 5-7) and R8 (CZ 1, 2, 4, 8-16) [d:line1/] LMCI and LMCV-MCH-20-H Duct Leakage Test required [d:line1/]  - Leakage rate compliance: les than or equal to 5 percent. [d:line1/] LMCI and LMCV-MCH-22 Fan Efficacy [d:line1/] LMCI and LMCV-MCH-23 Airflow Rate [d:line1/] - Compliance: Fan Efficacy less than or equal to 0.58 W/cfm for non-gas furnaces and 0.45 W/cfm for gas furnaces and System Airflow greater than or equal to 350 cfm per ton.[d:line1/] - Alternative Compliance: LMCI and LMCV-MCH-28 Return Duct Design verification is an alternative to MCH-22 and MCH-23 verification. [d:line1/] LMCI and LMCV-MCH-25-H Refrigerant Charge verification required when refrigerant containing components are installed or altered (applicable in CZ 2, 8-15).[d:line1/] [d:u]Exceptions:[/d:u][d:line1/]  Heating-only systems are exempt from the 0.58 W/cfm and 350 cfm/ton requirements. [d:line1/] [d:u]Note:[/d:u] An "entirely new or complete replacement duct system" means at least 75 percent  of the duct system is new duct material, and up to 25 percent may consist of reused parts from the dwelling unit's existing duct system (e.g., registers, grilles, boots, air handler, coil, plenums, duct material) if the reused parts are accessible and can be sealed to prevent leakage</xsd:documentation>
+                     </xsd:annotation>
+                  </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
          </xsd:element>
@@ -748,12 +748,6 @@ End If</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element name="F_BeginNote1" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Required Documentation:</xsd:documentation>
-                        <xsd:documentation source="AdditionalRequirements">[d:u]Required Documentation:[/d:u][d:line1/] LMCI-MCH-01-E - Space Conditioning Systems [d:line1/]  - Duct insulation requirement for the new portions of supply-air and return-air ducts or plenums: R6 (CZ 3, 5-7) and R8 (CZ 1, 2, 4, 8-16) [d:line1/] LMCI and LMCV-MCH-20-H Duct Leakage Test required [d:line1/]  - Leakage rate compliance: less than or equal to 5 percent. [d:line1/] LMCI and LMCV-MCH-22 Fan Efficacy [d:line1/] LMCI and LMCV-MCH-23 Airflow Rate Verification [d:line1/] - Compliance: Fan Efficacy less than or equal to 0.58 W/cfm for non-gas furnaces and 0.45 W/cfm for gas furnaces and System Airflow greater than or equal to 350 cfm per ton.[d:line1/] - Alternative Compliance: LMCI and LMCV-MCH-28 Return Duct Design verification is an alternative to MCH-22 and MCH-23 verification. [d:line1/] LMCI and LMCV-MCH-25-H Refrigerant Charge verification required when refrigerant containing components are installed or altered (applicable in CZ 2, 8-15).[d:line1/] [d:u]Exceptions:[/d:u][d:line1/]  Heating-only systems are exempt from the 0.58 W per cfm and 350 cfm per ton requirements. [d:line1/] [d:u]Note:[/d:u] An "entirely new or replacement duct system" means at least 75 percent of the duct system is new duct material, and up to 25 percent may consist of reused parts from the dwelling unit's existing duct system (e.g., registers, grilles, boots, air handler, coil, plenums, duct material) if the reused parts are accessible and can be sealed to prevent leakage</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
                   <xsd:element name="TableConditioningNew" >
                      <xsd:annotation>
                         <xsd:documentation source="FieldText"></xsd:documentation>
@@ -1000,6 +994,12 @@ End If</xsd:documentation>
                            </xsd:element>
                         </xsd:sequence>
                      </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="FEndNote1" minOccurs="0">
+                     <xsd:annotation>
+                        <xsd:documentation source="FieldText">Required Documentation:</xsd:documentation>
+                        <xsd:documentation source="AdditionalRequirements">[d:u]Required Documentation:[/d:u][d:line1/] LMCI-MCH-01-E - Space Conditioning Systems [d:line1/]  - Duct insulation requirement for the new portions of supply-air and return-air ducts or plenums: R6 (CZ 3, 5-7) and R8 (CZ 1, 2, 4, 8-16) [d:line1/] LMCI and LMCV-MCH-20-H Duct Leakage Test required [d:line1/]  - Leakage rate compliance: less than or equal to 5 percent. [d:line1/] LMCI and LMCV-MCH-22 Fan Efficacy [d:line1/] LMCI and LMCV-MCH-23 Airflow Rate Verification [d:line1/] - Compliance: Fan Efficacy less than or equal to 0.58 W/cfm for non-gas furnaces and 0.45 W/cfm for gas furnaces and System Airflow greater than or equal to 350 cfm/ton.[d:line1/] - Alternative Compliance: LMCI and LMCV-MCH-28 Return Duct Design verification is an alternative to MCH-22 and MCH-23 verification. [d:line1/] LMCI and LMCV-MCH-25-H Refrigerant Charge verification required when refrigerant containing components are installed or altered (applicable in CZ 2, 8-15).[d:line1/] [d:u]Exceptions:[/d:u][d:line1/]  Heating-only systems are exempt from the 0.58 W/cfm and 350 cfm/ton requirements. [d:line1/] [d:u]Note:[/d:u] An "entirely new or replacement duct system" means at least 75 percent of the duct system is new duct material, and up to 25 percent may consist of reused parts from the dwelling unit's existing duct system (e.g., registers, grilles, boots, air handler, coil, plenums, duct material) if the reused parts are accessible and can be sealed to prevent leakage</xsd:documentation>
+                     </xsd:annotation>
                   </xsd:element>
                </xsd:sequence>
             </xsd:complexType>
