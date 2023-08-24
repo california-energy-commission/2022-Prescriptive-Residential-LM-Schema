@@ -17315,7 +17315,7 @@ End If</xsd:documentation>
                                                                      <xsd:documentation source="CalculationsAndRules">User selects occupancy type with the appropriate status value
 If Kvertperf05_FenestrationProductType == GlazedDoorMF Or OperableWindowMF, FixedWindowMF
 User selects from: LowRiseResidential
-Else user selects from list:  Nonresidential display term Nonresidential/ Relocatable 1 CZ,  HotelMotel display term Hotel/ Motel, AlteredOccupancy display term Occupancy other than dwelling unit: LowRiseResidential display term Dwelling Units 
+Else user selects from list:  Nonresidential display term Nonresidential/ Relocatable 1 CZ,  HotelMotel display term Hotel/ Motel, LowRiseResidential display term Dwelling Units 
                                                                         <d:lte/> 3 stories:</xsd:documentation>
                                                                      <xsd:appinfo source="displayterm">
                                                                         <dtyp:displayterm value="HotelMotel">Hotel/ Motel:</dtyp:displayterm>
