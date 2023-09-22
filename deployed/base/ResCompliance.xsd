@@ -12758,6 +12758,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
                <d:t24ref h="120.1(d)5"/>
             </dtyp:displayterm>
             <dtyp:displayterm value="SpaceTypeNA">NA: Not required space type</dtyp:displayterm>
+            <dtyp:displayterm value="AlterationNA">NA: Alteration</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
       <xsd:restriction base="dtyp:EnumerationConstant">
@@ -12766,6 +12767,7 @@ Builders, Manufacturers, And Suppliers</xsd:documentation>
          <xsd:enumeration value="LowPowerNA"/>
          <xsd:enumeration value="ProvidedOccSensors"/>
          <xsd:enumeration value="SpaceTypeNA"/>
+         <xsd:enumeration value="AlterationNA"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:simpleType name="OccupantTrainingGoalsOPR">
