@@ -1380,8 +1380,6 @@ BlankGrayedOut stored in Rscs09_NotApplicableMessage</xsd:documentation>
                                           <xsd:restriction base="hvac:DuctSystemType">
                                              <xsd:enumeration value="DuctedSystem"/>
                                              <xsd:enumeration value="Ductless"/>
-                                             <xsd:enumeration value="Piping"/>
-                                             <xsd:enumeration value="Radiant"/>
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
@@ -1402,18 +1400,33 @@ BlankGrayedOut stored in Rscs09_NotApplicableMessage</xsd:documentation>
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
-                                    <xsd:element name="Rscs13_DuctRValueLimit">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Duct R-Value</xsd:documentation>
-                                          <xsd:documentation source="CalculationsAndRules">User selects from list</xsd:documentation>
-                                       </xsd:annotation>
-                                       <xsd:simpleType>
-                                          <xsd:restriction base="hvac:DuctRValueLimit">
-                                             <xsd:enumeration value="R6"/>
-                                             <xsd:enumeration value="R8"/>
-                                          </xsd:restriction>
-                                       </xsd:simpleType>
-                                    </xsd:element>
+                                    <xsd:choice maxOccurs="1">
+                                       <xsd:element name="Rscs13_DuctRValueLimit">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Duct R-Value</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs11_DuctSystemType != Ductless
+User selects from list</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="hvac:DuctRValueLimit">
+                                                <xsd:enumeration value="R6"/>
+                                                <xsd:enumeration value="R8"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                       <xsd:element name="Rscs13_NotApplicableMessage">
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Duct R-Value</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Rscs11_DuctSystemType == Ductless
+BlankGrayedOut stored in Rscs13_NotApplicableMessage</xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:simpleType>
+                                             <xsd:restriction base="comp:NotApplicableMessage">
+                                                <xsd:enumeration value="BlankGrayedOut"/>
+                                             </xsd:restriction>
+                                          </xsd:simpleType>
+                                       </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="Rscs14_ThermostatType">
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Thermostat Type</xsd:documentation>
