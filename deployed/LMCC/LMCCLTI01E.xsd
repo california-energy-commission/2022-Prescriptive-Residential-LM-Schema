@@ -2235,7 +2235,7 @@ result = true display term COMPLIES
 Else 
 result = false display term DOES NOT COMPLY
 End If
-Else If H01_MandatoryLightingDemandResponseNR, H07_MultilevelControls, H09_PrimarySkylitDaylightControlsIncluded, And H10_SecondaryDaylightControlsIncluded == NA_LTE80PctAllowedLP
+Else If H01_MandatoryLightingDemandResponseNR, H07_MultilevelControls, H09_PrimarySkylitDaylightControlsIncluded, Or H10_SecondaryDaylightControlsIncluded == NA_LTE80PctAllowedLP
 If R09bPercentAllowance_LightingPowerInstalledPowerAllowedRatio LTE 0.8 Or C08Row01_LightingPowerInstalledTotalConditionedAdjusted LTE C05Row01_LightingPowerAllowanceTotalConditioned * 0.80
 result = true
 Else
