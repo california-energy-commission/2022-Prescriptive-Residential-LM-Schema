@@ -257,8 +257,7 @@ End If</xsd:documentation>
                               </d:b>
                            </xsd:documentation>
                            <xsd:documentation source="CalculationsAndRules">If LMCC-SAB-E is included in scope And 
-A06_RequestedMMB == true And 
-A04_SolarReadyBuildingTypeNR ==  HighRiseMultifamilyLTE10Stories Or HotelMotelLTE10Stories
+A06_RequestedMMB == true 
 this Mandatory Measures Noteblock is required 
 
 Else it is not required and nothing is captured or displayed
@@ -2273,11 +2272,6 @@ These documents must be provided to the building inspector during construction a
                      </xsd:annotation>
                   </xsd:element>
                   <xsd:element name="Lmci01a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
-                     </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element name="Lmci02a_VerifedByInspector" type="comp:VerifedByInspector" minOccurs="0">
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Field Inspector</xsd:documentation>
                      </xsd:annotation>
