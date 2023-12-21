@@ -4630,6 +4630,7 @@ Not Shared</dtyp:displayterm>
             <dtyp:displayterm value="FactoryAppliedCoating">Factory applied coating</dtyp:displayterm>
             <dtyp:displayterm value="FieldAppliedCoating">Field applied coating</dtyp:displayterm>
             <dtyp:displayterm value="FluidAppliedMembrane">Fluid applied membrane</dtyp:displayterm>
+            <dtyp:displayterm value="MetalBdgRoof">Metal Building</dtyp:displayterm>
             <dtyp:displayterm value="MetalRoof">Metal roof</dtyp:displayterm>
             <dtyp:displayterm value="MetalShakesShingles">Metal shakes or shingles</dtyp:displayterm>
             <dtyp:displayterm value="ModifiedBitumin">Modified bitumen</dtyp:displayterm>
@@ -4639,6 +4640,7 @@ Not Shared</dtyp:displayterm>
             <dtyp:displayterm value="SinglePlyThermoset">Single ply thermoset</dtyp:displayterm>
             <dtyp:displayterm value="SprayPolyurethaneFoam">Spray polyurethane foam</dtyp:displayterm>
             <dtyp:displayterm value="StoneAggregateBallast">Stone aggregate ballast</dtyp:displayterm>
+            <dtyp:displayterm value="ToBeDetermined">To Be Determined</dtyp:displayterm>
             <dtyp:displayterm value="WoodShakesShingles">Wood shakes shingles</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
@@ -4649,6 +4651,7 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="FactoryAppliedCoating"/>
          <xsd:enumeration value="FieldAppliedCoating"/>
          <xsd:enumeration value="FluidAppliedMembrane"/>
+         <xsd:enumeration value="MetalBdgRoof"/>
          <xsd:enumeration value="MetalRoof"/>
          <xsd:enumeration value="MetalShakesShingles"/>
          <xsd:enumeration value="ModifiedBitumin"/>
@@ -4658,6 +4661,7 @@ Not Shared</dtyp:displayterm>
          <xsd:enumeration value="SinglePlyThermoset"/>
          <xsd:enumeration value="SprayPolyurethaneFoam"/>
          <xsd:enumeration value="StoneAggregateBallast"/>
+         <xsd:enumeration value="ToBeDetermined"/>
          <xsd:enumeration value="WoodShakesShingles"/>
       </xsd:restriction>
    </xsd:simpleType>
