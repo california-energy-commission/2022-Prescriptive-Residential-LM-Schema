@@ -226,7 +226,7 @@ End if</xsd:documentation>
                                        <d:b>APPLIES</d:b>:  
 
 GRAVITY GAS WALL AND/OR FLOOR HEATERS, GRAVITY ROOM HEATERS, NONCENTRAL ELECTRIC HEATERS, FIREPLACES OR DECORATIVE GAS APPLIANCES, WOOD STOVES, ROOM AIR CONDITIONERS, AND ROOM AIR-CONDITIONER HEAT PUMPS.</xsd:documentation>
-                                    <xsd:documentation source="CalculationsAndRules">If MM110_2c_MeasureApplies == true, 
+                                    <xsd:documentation source="CalculationsAndRules">If MM110_2c_MeasureApplies == true or I04_ThermostatType == EquipmentException
 user input
 Else
 result = false
@@ -1850,7 +1850,7 @@ End if</xsd:documentation>
                            </xsd:documentation>
                            <xsd:documentation source="CalculationsAndRules">If LMCC-MCH-E is included in scope And 
 A07_RequestedMMB == true And 
-A03All_WholeBuildingOccupancy == HighRiseResidential Or HotelMotel
+A03All_WholeBuildingOccupancy ==  HotelMotel
 this Mandatory Measures Noteblock is required 
  
 Else it is not required and nothing is captured or displayed
@@ -2125,46 +2125,6 @@ End if</xsd:documentation>
 
 THERMOSTATS THAT ARE INTEGRATED INTO THE ROOM HEATING AND COOLING EQUIPMENT.</xsd:documentation>
                                     <xsd:documentation source="CalculationsAndRules">If DUMM120_2c1_MeasureApplies == true, 
-user input
-Else
-result = false
-End If
- 
-If result == true  FieldText and AdditionalRequirements static text is displayed in the report
-Else If result == false nothing is displayed in the report
-End if</xsd:documentation>
-                                 </xsd:annotation>
-                              </xsd:element>
-                              <xsd:element name="DUMM110_2cExc_ExceptionApplies" type="comp:ExceptionApplies" minOccurs="0">
-                                 <xsd:annotation>
-                                    <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                    <xsd:documentation source="AdditionalRequirements">
-                                       <d:b>EXCEPTION</d:b> TO 
-                                       <d:t24refnolink/>110.2(c) 
-                                       <d:b>APPLIES</d:b>:  
-
-GRAVITY GAS WALL HEATERS, GRAVITY FLOOR HEATERS, GRAVITY ROOM HEATERS, NONCENTRAL ELECTRIC HEATERS, FIREPLACES OR DECORATIVE GAS APPLIANCES, WOOD STOVES, ROOM AIR CONDITIONERS, AND ROOM AIR-CONDITIONER HEAT PUMPS.</xsd:documentation>
-                                    <xsd:documentation source="CalculationsAndRules">If DUMM120_2c1_MeasureApplies == true, 
-user input
-Else
-result = false
-End If
- 
-If result == true  FieldText and AdditionalRequirements static text is displayed in the report
-Else If result == false nothing is displayed in the report
-End if</xsd:documentation>
-                                 </xsd:annotation>
-                              </xsd:element>
-                              <xsd:element name="DUMM110_2c2Exc_ExceptionApplies" type="comp:ExceptionApplies" minOccurs="0">
-                                 <xsd:annotation>
-                                    <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                    <xsd:documentation source="AdditionalRequirements">
-                                       <d:b>EXCEPTION</d:b> TO 
-                                       <d:t24refnolink/>110.2(c) 
-                                       <d:b>APPLIES</d:b>:  
-
-GRAVITY GAS WALL HEATERS, GRAVITY FLOOR HEATERS, GRAVITY ROOM HEATERS, NONCENTRAL ELECTRIC HEATERS, FIREPLACES OR DECORATIVE GAS APPLIANCES, WOOD STOVES, ROOM AIR CONDITIONERS, AND ROOM AIR-CONDITIONER HEAT PUMPS.</xsd:documentation>
-                                    <xsd:documentation source="CalculationsAndRules">If DUMM120_2c2_MeasureApplies == true, 
 user input
 Else
 result = false
@@ -10649,7 +10609,7 @@ End If</xsd:documentation>
                                              </xsd:documentation>
                                              <xsd:documentation source="CalculationsAndRules">Calculated value:
 If H13_FanSystemInputPower GTE 1.0
-If H00d_SystemZoning != DOAS
+If H00d_SystemZoning != DOASZone
 If H00g_Elevation LTE 3,000 ft
 result = ((H12a_SupplyFanBaseAllowance + H12b_ExhaustFanBaseAllowance + SUM ALL (H03_FanCount x H08_FanAllowance))  x  H00f_FanSystemFlowCapacity) / 1000   
 Else If H00g_Elevation GTE 3,000 ft And LT 4,000
@@ -10997,7 +10957,7 @@ End If</xsd:documentation>
                         <xsd:documentation source="FieldText">
                            <d:b>H. EXHAUST AIR HEAT RECOVERY 140.4(q), 170.2(c)4O </d:b>
                         </xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">This table is required If B03c_ProjectHasFanSystems == true  And A03_ClimateZoneNumber != 6 And != 7</xsd:documentation>
+                        <xsd:documentation source="CalculationsAndRules">This table is required If B03c_ProjectHasFanSystems == true  And A02_ClimateZoneNumber != 6 And != 7</xsd:documentation>
                      </xsd:annotation>
                      <xsd:complexType>
                         <xsd:sequence>
@@ -15102,7 +15062,7 @@ End If</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">NRCA-MCH-12-A FDD for Packaged Direct Expansion Units</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated field:Boolean values with default result = false; 
  
-  If O04_RequireNRCAMch05A == true And  F02_HvacSystemType == UnitaryCondensersAC result = true display term selected Yes radio button
+  If Nrca04_RequireNRCAMch05A == true And  F02_HvacSystemType == UnitaryCondensersAC result = true display term selected Yes radio button
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -15111,7 +15071,7 @@ End If</xsd:documentation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If Nrca11_RequireNRCAMch12A == true; this field is loaded with systems/spaces that satisfy this condition:
  
-If O04_RequireNRCAMch05A == true And  F02_HvacSystemType == UnitaryCondensersAC  load value in F01_HvacSystemName
+If Nrca04_RequireNRCAMch05A == true And  F02_HvacSystemType == UnitaryCondensersAC  load value in F01_HvacSystemName
 End If</xsd:documentation>
                      </xsd:annotation>
                   </xsd:element>
@@ -15331,7 +15291,7 @@ End If</xsd:documentation>
                         <xsd:documentation source="AdditionalRequirements">NRCA-MCH-20  Multi-Family Ventilation</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">Calculated field:Boolean values with default result = false; 
  
-If B03e_ProjectHasVentilation == true AND A03All_WholeBuildingOccupancy == HighRiseResidential Or  LowRiseResidential  
+If B03e_ProjectHasVentilation == true AND A03All_WholeBuildingOccupancy ==  LowRiseResidential  
 result = true display term selected Yes radio button
 End If
  
@@ -15345,7 +15305,7 @@ End If</xsd:documentation>
                      <xsd:annotation>
                         <xsd:documentation source="FieldText">Systems/Spaces To Be Field Verified</xsd:documentation>
                         <xsd:documentation source="CalculationsAndRules">If Nrca19_RequireNRCAMch20 == true; this field is loaded with systems/spaces that satisfy this condition:
-If B03e_ProjectHasVentilation == true AND A03All_WholeBuildingOcccupancy ==  HighRiseResidential Or LowRiseResidential  
+If B03e_ProjectHasVentilation == true AND A03All_WholeBuildingOcccupancy ==  LowRiseResidential  
 load value in J19_SpaceName in TableVentMF
 End If</xsd:documentation>
                      </xsd:annotation>

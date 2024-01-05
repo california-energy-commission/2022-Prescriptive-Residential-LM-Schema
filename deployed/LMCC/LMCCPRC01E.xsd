@@ -1222,7 +1222,7 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Maximum Power Allowed<d:sup>1</d:sup>
                                                                </xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">Calculated field: If Row 1 result = A02_FloorArea x 0.6; Else result = BlankGrayedOut stored in NotApplicableMessage</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">Calculated field: If Row 1 result = K02_FloorArea x 0.6; Else result = BlankGrayedOut stored in NotApplicableMessage</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
                                                          <xsd:element name="K07_NotApplicableMessage">
