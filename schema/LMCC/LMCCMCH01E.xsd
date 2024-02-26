@@ -6632,6 +6632,7 @@ EfficiencyException4 display term 4. 4th (or more) chiller in this building.
 EfficiencyException5 display term 5. Water -Cooled Centrifugal Chilling Package per Exception 1 to [d:t24refnolink/]110.2(a)
 EfficiencyException6 display term 6. Water quality at site fails to meet manufacturers specifications per Exception 1 to [d:t24refnolink/]140.4(j)
 EfficiencyException7 display term 7. Chillers used to charge a thermal energy storage system with a design temperature of less than 40[d:deg/]F per Exception 2 to [d:t24refnolink/]140.4(j)
+EfficiencyException8 display term 8. Systems serving healthcare facilities per Exception 3 to [d:t24refnolink/]140.4(j)
 
 If result == EfficiencyException1 Or EfficiencyException2 Or EfficiencyException3 Or EfficiencyException4 minimum efficiency values for path A should be used
 Else If result == NoExceptionTaken minimum efficiency values for path B should be used

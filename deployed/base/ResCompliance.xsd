@@ -1900,6 +1900,8 @@
             <dtyp:displayterm value="EfficiencyException7">7. Chillers used to charge a thermal energy storage system with a design temperature of less than 40
                <d:deg/>F per Exception 2 to 
                <d:t24refnolink/>140.4(j)</dtyp:displayterm>
+            <dtyp:displayterm value="EfficiencyException8">8. Systems serving healthcare facilities per Exception 3 to 
+               <d:t24refnolink/>140.4(j)</dtyp:displayterm>
             <dtyp:displayterm value="NoExceptionTaken">No Exception Taken</dtyp:displayterm>
          </xsd:appinfo>
       </xsd:annotation>
