@@ -2908,6 +2908,8 @@ BlankGrayedOut stored in Rscs09_NotApplicableMessage</xsd:documentation>
                                        <xsd:simpleType>                                      
                                           <xsd:restriction base="hvac:DuctLocation">
                                              <xsd:enumeration value="ConditionedSpace"/>
+                                             <xsd:enumeration value="ConditionedSpaceExcept12ft"/>
+                                             <xsd:enumeration value="DuctedAndDuctlessIndoorUnits"/>
                                              <xsd:enumeration value="Ductless"/>
                                              <xsd:enumeration value="DuctsInMultipleLocations"/>
                                              <xsd:enumeration value="Outdoors"/>
@@ -4452,6 +4454,8 @@ If Fa02_SizeRangeCeilingCRAC ==LT29000
 Switch (F03_ CeilingCRAC) 
 case AirCooledFreeAirNonDucted: 
 result1 = 2.08; 
+case AirCooledFreeAirDucted
+result1 = 2.05;
 case AirCooledEconDucted: 
 result1 = 2.01; 
 case AirCooledEconNonDucted: 
