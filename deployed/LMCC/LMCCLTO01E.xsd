@@ -1785,6 +1785,7 @@ End If</xsd:documentation>
                                              <xsd:enumeration value="StairsRampNA"/>
                                              <xsd:enumeration value="TempLightNA"/>
                                              <xsd:enumeration value="ThemeParkNA"/>
+                                             <xsd:enumeration value="TimeOutNA"/>
                                              <xsd:enumeration value="TunnelsNA"/>
                                           </xsd:restriction>
                                        </xsd:simpleType>
