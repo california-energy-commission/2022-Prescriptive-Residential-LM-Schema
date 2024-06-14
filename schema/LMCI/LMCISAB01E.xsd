@@ -1116,7 +1116,7 @@ End If</xsd:documentation>
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
-                                    <xsd:element name="Bat05CC_BatteryControl" >
+                                    <xsd:element name="Bat05cc_BatteryControl" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Control</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">
