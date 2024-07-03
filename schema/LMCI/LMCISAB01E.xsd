@@ -1096,14 +1096,30 @@ End If</xsd:documentation>
                                           </xsd:simpleType>
                                        </xsd:element>
                                     </xsd:choice>
-                                    <xsd:element name="Bat04cc_NotApplicableMessage" >
+                                    <xsd:choice maxOccurs="1">
+                                    <xsd:element name="Bat04cc_ChargingRate" type="hvac:ChargingRate" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Rated Power Capacity of Battery (kWdc)</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If parent CC_PRF
+result = Bat04_ChargingRate
+End If</xsd:documentation>
+                                             <xsd:appinfo source="CIsrc">
+                                                <dtyp:srcSchema form="CCPRF01E"  usage="copy">Bat04_ChargingRate</dtyp:srcSchema>
+                                             </xsd:appinfo>
+                                          </xsd:annotation>
+                                       </xsd:element>
+                                       <xsd:element name="Bat04cc_NotApplicableMessage" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Rated Power Capacity of Battery (kWdc)</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">if parent LMCC-SAB
 result = BlankGrayedOut
+Else If parent CC-PRF
+If Bat04_NotApplicableMessage isPresent
+result = Bat04_NotApplicableMessage
 End If</xsd:documentation>
                                           <xsd:appinfo source="CIsrc">
                                              <dtyp:srcSchema form="LMCCSAB01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
+                                             <dtyp:srcSchema form="CCPRF01E"  usage="reference">Bat04_NotApplicableMessage</dtyp:srcSchema>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                        <xsd:simpleType>
@@ -1112,9 +1128,28 @@ End If</xsd:documentation>
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
+                                    </xsd:choice>
+                                    <xsd:choice maxOccurs="1">
+                                    <xsd:element name="Bat04_ChargingRate" type="hvac:ChargingRate" >
+                                          <xsd:annotation>
+                                             <xsd:documentation source="FieldText">Rated Power Capacity of Battery (kWdc)</xsd:documentation>
+                                             <xsd:documentation source="CalculationsAndRules">If Bat01_InstalledSameAsCC == true
+If Bat04cc_ChargingRate IsPresent
+result = Bat04cc_ChargingRate 
+End If
+Else If Bat01_InstalledSameAsCC == false
+User input
+End If
+End If</xsd:documentation>
+                                          </xsd:annotation>
+                                       </xsd:element>
                                     <xsd:element name="Bat04_NotApplicableMessage" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Rated Power Capacity of Battery (kWdc)</xsd:documentation>
+                                          <xsd:documentation source="CalculationsAndRules">If Bat04cc_NotApplicableMessage IsPresent
+If Bat01_InstalledSameAsCC == true
+result = Bat04cc_NotApplicableMessage
+End If</xsd:documentation>
                                        </xsd:annotation>
                                        <xsd:simpleType>
                                           <xsd:restriction base="comp:NotApplicableMessage">
@@ -1122,6 +1157,7 @@ End If</xsd:documentation>
                                           </xsd:restriction>
                                        </xsd:simpleType>
                                     </xsd:element>
+                                    </xsd:choice>
                                     <xsd:element name="Bat05cc_BatteryControl" >
                                        <xsd:annotation>
                                           <xsd:documentation source="FieldText">Control</xsd:documentation>
