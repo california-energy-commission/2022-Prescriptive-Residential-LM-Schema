@@ -1572,6 +1572,18 @@ result = Fa09_EfficiencySEER_EER result2
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="copy">Fa09_EfficiencySEER_EER result2</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E" usage="copy">HvacDry08c_EfficiencySEER</dtyp:srcSchema>
+                                                               </xsd:appinfo>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
+                                                         <xsd:element name="Dry11cc_EfficiencyEER" type="hvac:EfficiencyEER">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If CC-PRF parent and HvacDry08c_EfficiencyEER IsPresent
+                                                                      result = HvacDry08c_EfficiencyEER
+                                                                      End If</xsd:documentation>
+                                                               <xsd:appinfo source="CIsrc">
+                                                                  <dtyp:srcSchema form="CCPRF01E" usage="copy">HvacDry08c_EfficiencyEER</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -1581,15 +1593,18 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent and Fa09_EfficiencyEER_IEER NotPresent And Fa09_EfficiencySEER_EER NotPresent Or Fa07_NotApplicableMessage IsPresent Or Fb07_NotApplicableMessage IsPresent
 result = BlankGrayedOut and field is blank and grayed out
 Else If CC-PRF is parent
-result = BlankGrayedOut and field is blank and grayed out
- 
+If HvacDry08c_EfficiencyEER NotPresent And HvacDry08c_EfficiencySEER NotPresent
+result = BlankGrayedOut
+End If
+End If
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="reference">Fa09_EfficiencyEER_IEER result2</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="reference">Fa09_EfficiencySEER_EER result2</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="reference">Fa07_NotApplicableMessage</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="reference">Fb07_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E" usage="value">BlankGrayedOut</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E" usage="copy">HvacDry08c_EfficiencyEER</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E" usage="copy">HvacDry08c_EfficiencySEER</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -1624,6 +1639,18 @@ End if
 End If</xsd:documentation>
                                                             </xsd:annotation>
                                                          </xsd:element>
+                                                         <xsd:element name="Dry11_EfficiencyEER" type="hvac:EfficiencyEER">
+                                                            <xsd:annotation>
+                                                               <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules">If Dry11cc_EfficiencyEER IsPresent
+                                                                      If Dry01_InstalledSameAsCC == true
+                                                                      result = Dry11cc_EfficiencyEER but user can change value
+                                                                      Else If Dry01_InstalledSameAsCC == false
+                                                                      User input
+                                                                      End if
+                                                                      End If</xsd:documentation>
+                                                            </xsd:annotation>
+                                                         </xsd:element>
                                                          <xsd:element name="Dry11_NotApplicableMessage">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Efficiency</xsd:documentation>
@@ -1644,14 +1671,21 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Efficiency Unit</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent and If CoolingEER_IEER_SEER:Fa07_EfficiencyType result 2 IsPresent
 result = CC-MCH CoolingEER_IEER_SEER:Fa07_EfficiencyType result 2
+Else If HvacDry08c_EfficiencyEER IsPresent
+result = EER
+Else If HvacDry08c_EfficiencySEER IsPresent
+result = SEER
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="copy">CoolingEER_IEER_SEER:Fa07_EfficiencyType result 2</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E" usage="copy">HvacDry08c_EfficiencyEER</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E" usage="copy">HvacDry08c_EfficiencySEER</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
                                                                <xsd:restriction base="hvac:EfficiencyType">
                                                                   <xsd:enumeration value="IEER"/>
+                                                                  <xsd:enumeration value="EER"/>
                                                                   <xsd:enumeration value="SEER"/>
                                                                </xsd:restriction>
                                                             </xsd:simpleType>
@@ -3332,7 +3366,7 @@ End If</xsd:documentation>
                                                          </xsd:annotation>
                                                       </xsd:element>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Blr08cc_BoilerIsolationValve" type="hvac:BoilerIsolationValve">
+                                                         <xsd:element name="Blr08cc_BoilerIsolationValve">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Isolation Valve</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent 
@@ -3345,16 +3379,14 @@ End If</xsd:documentation>
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="copy">Fc08_BoilerIsolationValve</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:union memberTypes="hvac:BoilerIsolationValve comp:SeePlansMessage"/>
+                                                            </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Blr08cc_NotApplicableMessage">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Isolation Valve</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-PRF parent
-result =  BlankGrayedOut
-End If</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCPRF01E" usage="value">BlankGrayedOut</dtyp:srcSchema>
-                                                               </xsd:appinfo>
+                                                               <xsd:documentation source="CalculationsAndRules"/>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
                                                                <xsd:restriction base="comp:NotApplicableMessage">
@@ -3394,7 +3426,7 @@ End If</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Blr09cc_TempResetControl" type="hvac:TempResetControl">
+                                                         <xsd:element name="Blr09cc_TempResetControl">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Temperature Reset</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent 
@@ -3407,16 +3439,14 @@ End If</xsd:documentation>
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="copy">Fc09_TempResetControl</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:union memberTypes="hvac:TempResetControl comp:SeePlansMessage"/>
+                                                            </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Blr09cc_NotApplicableMessage">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Temperature Reset</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-PRF parent
-result =  BlankGrayedOut
-End If</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCPRF01E" usage="value">BlankGrayedOut</dtyp:srcSchema>
-                                                               </xsd:appinfo>
+                                                               <xsd:documentation source="CalculationsAndRules"/>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
                                                                <xsd:restriction base="comp:NotApplicableMessage">
@@ -6768,359 +6798,6 @@ And Exhaust04_NotApplicableMessage IsPresent
 And Exhaust05_NotApplicableMessage IsPresent
 And Exhaust06_NotApplicableMessage IsPresent
 )
-result = EqualBetter</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                 </xsd:sequence>
-                              </xsd:complexType>
-                           </xsd:element>
-                        </xsd:sequence>
-                     </xsd:complexType>
-                  </xsd:element>
-                  <xsd:element name="TableDwellingFan" minOccurs="0">
-                     <xsd:annotation>
-                        <xsd:documentation source="FieldText">
-                           <d:b>DWELLING UNIT FAN EFFICACY &amp;amp; ENERGY/HEAT RECOVERY </d:b>
-                        </xsd:documentation>
-                        <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
-If TableDwellingFan IsPresent, 
-this table is REQUIRED
-If CC-PRF parent the data may be captured in different tables, but this table is not in the CC-PRF and mapping has not been provided.</xsd:documentation>
-                     </xsd:annotation>
-                     <xsd:complexType>
-                        <xsd:sequence>
-                           <xsd:element name="Row" minOccurs="1" maxOccurs="unbounded">
-                              <xsd:complexType>
-                                 <xsd:sequence>
-                                    <xsd:element name="Dwell01cc_FanSystemName" type="hvac:FanSystemName">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Fan System Name or Item Tag</xsd:documentation>
-                                          <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
-result = Hdwell01_FanSystemName</xsd:documentation>
-                                          <xsd:appinfo source="CIsrc">
-                                             <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell01_FanSystemName</dtyp:srcSchema>
-                                          </xsd:appinfo>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="Dwell01_InMyScope" type="comp:InMyScope">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText">Is this in your scope?</xsd:documentation>
-                                          <xsd:documentation source="CalculationsAndRules">User selects from true value display term Yes and false value display term No, by others
- If result == false Dwell02cc-Dwell06cc and Dwell02-Dwell06 As-built fields are blank and grayed out
-And D01_ExceptionalConditionMessageCIMCHE += DwellFanNotInScope  
-End If</xsd:documentation>
-                                       </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="DwellChoice">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText"/>
-                                       </xsd:annotation>
-                                       <xsd:complexType>
-                                          <xsd:choice>
-                                             <xsd:element name="DwellNA_NotApplicableMessage">
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText"/>
-                                                   <xsd:documentation source="CalculationsAndRules">If Dwell01_InMyScope == false
-result = BlankGrayedOut for Dwell02cc-Dwell06cc and Dwell02-Dwell06  As-built fields
-End If</xsd:documentation>
-                                                </xsd:annotation>
-                                                <xsd:simpleType>
-                                                   <xsd:restriction base="comp:NotApplicableMessage">
-                                                      <xsd:enumeration value="BlankGrayedOut"/>
-                                                   </xsd:restriction>
-                                                </xsd:simpleType>
-                                             </xsd:element>
-                                             <xsd:element name="DwellInScope">
-                                                <xsd:annotation>
-                                                   <xsd:documentation source="FieldText"/>
-                                                   <xsd:documentation source="CalculationsAndRules">If Dwell01_InMyScope == true
-this subsection is required</xsd:documentation>
-                                                </xsd:annotation>
-                                                <xsd:complexType>
-                                                   <xsd:sequence>
-                                                      <xsd:element name="Dwell01_InstalledSameAsCC" type="comp:InstalledSameAsCC" minOccurs="0">
-                                                         <xsd:annotation>
-                                                            <xsd:documentation source="FieldText">NOT REPORTED IN PDF</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">User selects true if installed is the same as CC value  Or false if installed is different than CC value</xsd:documentation>
-                                                         </xsd:annotation>
-                                                      </xsd:element>
-                                                      <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Dwell02cc_FanSystemFlowCapacity" type="hvac:FanSystemFlowCapacity">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">System Airflow (cfm)</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
-If Hdwell05_FanSystemFlowCapacity IsPresent
-result = Hdwell05_FanSystemFlowCapacity</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell05_FanSystemFlowCapacity</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                         </xsd:element>
-                                                         <xsd:element name="Dwell02cc_NotApplicableMessage">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">System Airflow (cfm)</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
-If Hdwell05_NotApplicableMessage IsPresent
-result = Hdwell05_NotApplicableMessage</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell05_NotApplicableMessage</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                            <xsd:simpleType>
-                                                               <xsd:restriction base="comp:NotApplicableMessage">
-                                                                  <xsd:enumeration value="BlankGrayedOut"/>
-                                                               </xsd:restriction>
-                                                            </xsd:simpleType>
-                                                         </xsd:element>
-                                                      </xsd:choice>
-                                                      <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Dwell02_FanSystemFlowCapacity" type="hvac:FanSystemFlowCapacity">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">System Airflow (cfm)</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Dwell01_InstalledSameAsCC == true
-If Dwell02cc_FanSystemFlowCapacity IsPresent
-result = Dwell02cc_FanSystemFlowCapacity
-End If
-Else If Dwell01_End IfInstalledSameAsCC == false
-user input
-End If
-End If</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell05_FanSystemFlowCapacity</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                         </xsd:element>
-                                                         <xsd:element name="Dwell02_NotApplicableMessage">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">System Airflow (cfm)</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Dwell02cc_NotApplicableMessage IsPresent
-result = Dwell02cc_NotApplicableMessage 
-End If
-End If</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell05_NotApplicableMessage</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                            <xsd:simpleType>
-                                                               <xsd:restriction base="comp:NotApplicableMessage">
-                                                                  <xsd:enumeration value="BlankGrayedOut"/>
-                                                               </xsd:restriction>
-                                                            </xsd:simpleType>
-                                                         </xsd:element>
-                                                      </xsd:choice>
-                                                      <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Dwell03cc_FanSystemInputPower" type="hvac:FanSystemInputPower">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Design Power (kW)</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
-If Hdwell06_FanSystemInputPower IsPresent
-result = Hdwell06_FanSystemInputPower</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell06_FanSystemInputPower</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                         </xsd:element>
-                                                         <xsd:element name="Dwell03cc_NotApplicableMessage">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Design Power (kW)</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
-If Hdwell06_NotApplicableMessage IsPresent
-result = Hdwell06_NotApplicableMessage</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell06_NotApplicableMessage</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                            <xsd:simpleType>
-                                                               <xsd:restriction base="comp:NotApplicableMessage">
-                                                                  <xsd:enumeration value="BlankGrayedOut"/>
-                                                               </xsd:restriction>
-                                                            </xsd:simpleType>
-                                                         </xsd:element>
-                                                      </xsd:choice>
-                                                      <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Dwell03_FanSystemInputPower" type="hvac:FanSystemInputPower">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Design Power (kW)</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Dwell01_InstalledSameAsCC == true
-If Dwell03cc_FanSystemInputPower IsPresent
-result = Dwell03cc_FanSystemInputPower
-End If
-Else If Dwell01_InstalledSameAsCC == false
-user input
-End If</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell06_FanSystemInputPower</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                         </xsd:element>
-                                                         <xsd:element name="Dwell03_NotApplicableMessage">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Design Power (kW)</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Dwell03cc_NotApplicableMessage IsPresent
-result = Dwell03cc_NotApplicableMessage</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell06_NotApplicableMessage</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                            <xsd:simpleType>
-                                                               <xsd:restriction base="comp:NotApplicableMessage">
-                                                                  <xsd:enumeration value="BlankGrayedOut"/>
-                                                               </xsd:restriction>
-                                                            </xsd:simpleType>
-                                                         </xsd:element>
-                                                      </xsd:choice>
-                                                      <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Dwell04cc_FanPowerPerFlow" type="hvac:FanPowerPerFlow">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Watts/CFM</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">Data for this field is a calculation of other CC fields if they are present as follows: 
-result = (Dwell03cc_FanSystemInputPower x 1,000) / Dwell02cc_FanSystemFlowCapacity</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell07_FanPowerPerFlow</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                         </xsd:element>
-                                                         <xsd:element name="Dwell04cc_NotApplicableMessage">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Watts/CFM</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Hdwell07_NotApplicableMessage IsPresent Or 
-If Dwell03cc_NotApplicableMessage Or  Dwell02cc_NotApplicableMessage
-result = BlankGrayedOut</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell07_NotApplicableMessage</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                            <xsd:simpleType>
-                                                               <xsd:restriction base="comp:NotApplicableMessage">
-                                                                  <xsd:enumeration value="BlankGrayedOut"/>
-                                                               </xsd:restriction>
-                                                            </xsd:simpleType>
-                                                         </xsd:element>
-                                                      </xsd:choice>
-                                                      <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Dwell04_FanPowerPerFlow" type="hvac:FanPowerPerFlow">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Watts/CFM</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">Data for this field is a calculation of other fields if they are present as follows: 
-result = (Dwell03_FanSystemInputPower x 1,000) / Dwell02_FanSystemFlowCapacity</xsd:documentation>
-                                                            </xsd:annotation>
-                                                         </xsd:element>
-                                                         <xsd:element name="Dwell04_NotApplicableMessage">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Watts/CFM</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Dwell04cc_NotApplicableMessage IsPresent 
-result = Dwell04cc_NotApplicableMessage</xsd:documentation>
-                                                            </xsd:annotation>
-                                                            <xsd:simpleType>
-                                                               <xsd:restriction base="comp:NotApplicableMessage">
-                                                                  <xsd:enumeration value="BlankGrayedOut"/>
-                                                               </xsd:restriction>
-                                                            </xsd:simpleType>
-                                                         </xsd:element>
-                                                      </xsd:choice>
-                                                      <xsd:element name="Dwell05cc_EnergyHeatRecoveryVent" type="comp:EnergyHeatRecoveryVent">
-                                                         <xsd:annotation>
-                                                            <xsd:documentation source="FieldText">ERV/HRV</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
-result = Hdwell09_EnergyHeatRecoveryVent</xsd:documentation>
-                                                            <xsd:appinfo source="CIsrc">
-                                                               <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell09_EnergyHeatRecoveryVent</dtyp:srcSchema>
-                                                            </xsd:appinfo>
-                                                         </xsd:annotation>
-                                                      </xsd:element>
-                                                      <xsd:element name="Dwell05_EnergyHeatRecoveryVent" type="comp:EnergyHeatRecoveryVent">
-                                                         <xsd:annotation>
-                                                            <xsd:documentation source="FieldText">ERV/HRV</xsd:documentation>
-                                                            <xsd:documentation source="CalculationsAndRules">If Dwell01_InstalledSameAsCC == true
-result = Dwell05cc_EnergyHeatRecoveryVent
-Else If Dwell01_End IfInstalledSameAsCC == false
-user input
-End If</xsd:documentation>
-                                                         </xsd:annotation>
-                                                      </xsd:element>
-                                                      <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Dwell06cc_SensibleRecoveryEfficiency" type="hvac:SensibleRecoveryEfficiency">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Sensible Recovery/Effectiveness</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Hdwell10_SensibleRecoveryEfficiency IsPresent
-result = Hdwell10_SensibleRecoveryEfficiency
-End If</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="copy">Hdwell10_SensibleRecoveryEfficiency</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                         </xsd:element>
-                                                         <xsd:element name="Dwell06cc_NotApplicableMessage">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Sensible Recovery/Effectiveness</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Hdwell10_SensibleRecoveryEfficiency NotPresent
-result = BlankGrayedOut</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCMCH01E" usage="reference">Hdwell10_SensibleRecoveryEfficiency</dtyp:srcSchema>
-                                                               </xsd:appinfo>
-                                                            </xsd:annotation>
-                                                            <xsd:simpleType>
-                                                               <xsd:restriction base="comp:NotApplicableMessage">
-                                                                  <xsd:enumeration value="BlankGrayedOut"/>
-                                                               </xsd:restriction>
-                                                            </xsd:simpleType>
-                                                         </xsd:element>
-                                                      </xsd:choice>
-                                                      <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Dwell06_SensibleRecoveryEfficiency" type="hvac:SensibleRecoveryEfficiency">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Sensible Recovery/Effectiveness</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Dwell01_InstalledSameAsCC == true
-If Dwell06cc_SensibleRecoveryEfficiency IsPresent
-result = Dwell06cc_SensibleRecoveryEfficiency
-Else If Dwell01_InstalledSameAsCC == false
-user input
-End If
-End If</xsd:documentation>
-                                                            </xsd:annotation>
-                                                         </xsd:element>
-                                                         <xsd:element name="Dwell06_NotApplicableMessage">
-                                                            <xsd:annotation>
-                                                               <xsd:documentation source="FieldText">Sensible Recovery/Effectiveness</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If Dwell05_EnergyHeatRecoveryVent !=ProvidesERV And != ProvidesHRV
-result = BlankGrayedOut
-End If</xsd:documentation>
-                                                            </xsd:annotation>
-                                                            <xsd:simpleType>
-                                                               <xsd:restriction base="comp:NotApplicableMessage">
-                                                                  <xsd:enumeration value="BlankGrayedOut"/>
-                                                               </xsd:restriction>
-                                                            </xsd:simpleType>
-                                                         </xsd:element>
-                                                      </xsd:choice>
-                                                   </xsd:sequence>
-                                                </xsd:complexType>
-                                             </xsd:element>
-                                          </xsd:choice>
-                                       </xsd:complexType>
-                                    </xsd:element>
-                                    <xsd:element name="Dwell07_ComplianceResultCI" type="comp:ComplianceResultCI">
-                                       <xsd:annotation>
-                                          <xsd:documentation source="FieldText"/>
-                                          <xsd:documentation source="CalculationsAndRules">If any user input field is blank
-result = TableIncomplete  
-Else If Dwell01_InMyScope == false 
-result = NotInScope
-Else If
-Dwell06_SensibleRecoveryEfficiency IsPresent And Dwell06cc_SensibleRecoveryEfficiency  IsPresent And Dwell06_SensibleRecoveryEfficiency LT Dwell06cc_SensibleRecoveryEfficiency
- result = MayNotComply
- 
-Else If
- Dwell02_NotApplicableMessage IsPresent Or  Dwell02_FanSystemFlowCapacity == Dwell02cc_FanSystemFlowCapacity 
-And Dwell03_NotApplicableMessage IsPresent Or  Dwell03_FanSystemInputPower == Dwell03cc_FanSystemInputPower
-And Dwell04_NotApplicableMessage IsPresent Or  Dwell04_FanPowerPerFlow == Dwell04cc_FanPowerPerFlow
-And Dwell05_EnergyHeatRecoveryVent == Dwell05cc_EnergyHeatRecoveryVent
-And Dwell06_NotApplicableMessage IsPresent Or  Dwell06_SensibleRecoveryEfficiency == Dwell06cc_SensibleRecoveryEfficiency
- 
- result = ExactMatch
- 
-Else If 
-Dwell06_SensibleRecoveryEfficiency IsPresent And Dwell06cc_SensibleRecoveryEfficiency  IsPresent And Dwell06_SensibleRecoveryEfficiency GTE Dwell06cc_SensibleRecoveryEfficiency
 result = EqualBetter</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
