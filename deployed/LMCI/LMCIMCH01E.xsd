@@ -5093,15 +5093,15 @@ Hrej03_HeatRejectionType ==  Hrej3cc_HeatRejectionType
 And
 Hrej04_NotApplicableMessage IsPresent Or Hrej04_HeatRejectionEquipmentCount ==  Hrej04cc_HeatRejectionEquipmentCount    
 And 
-Hrej07_NotApplicableMessage IsPresent Or Hrej07_HeatRejectionFanSpeedControl ==  Hrej07cc_HeatRejectionFanSpeedControl
+Hrej07_NotApplicableMessage IsPresent Or Hrej07_HeatRejectionFanSpeedControl ==  Hrej07cc_HeatRejectionFanSpeedControl Or Hrej07cc_HeatRejectionFanSpeedControl == SeePlans
 And 
-Hrej08_NotApplicableMessage IsPresent Or Hrej08_TowerFlowTurnDown ==  Hrej08cc_TowerFlowTurnDown 
+Hrej08_NotApplicableMessage IsPresent Or Hrej08_TowerFlowTurnDown ==  Hrej08cc_TowerFlowTurnDown Or Hrej08cc_TowerFlowTurnDown == SeePlans
 And  
-Hrej09_NotApplicableMessage IsPresent Or Hrej09_FanControlMultipleCells == Hrej09cc_FanControlMultipleCells
+Hrej09_NotApplicableMessage IsPresent Or Hrej09_FanControlMultipleCells == Hrej09cc_FanControlMultipleCells Or Hrej09cc_FanControlMultipleCells == SeePlans
 And
-Hrej10_NotApplicableMessage IsPresent Or Hrej10_HasWaterEconomizerControls == Hrej10cc_HasWaterEconomizerControls
+Hrej10_NotApplicableMessage IsPresent Or Hrej10_HasWaterEconomizerControls == Hrej10cc_HasWaterEconomizerControls Or Hrej10cc_HasWaterEconomizerControls == SeePlans
 And
-Hrej11_NotApplicableMessage IsPresent Or Hrej11_HasTempResetControls == Hrej11cc_HasTempResetControls
+Hrej11_NotApplicableMessage IsPresent Or Hrej11_HasTempResetControls == Hrej11cc_HasTempResetControls Or Hrej11cc_HasTempResetControls == SeePlans
  
 Then 
 If
@@ -5477,11 +5477,11 @@ End If</xsd:documentation>
                                                             <xsd:documentation source="CalculationsAndRules">If CC-MCH parent 
 result = G04_PumpMotorHP
 Else If CC-PRF parent
-result = Pump05_PumpMotorHP
+result = Pump04_PumpMotorHP
 End If</xsd:documentation>
                                                             <xsd:appinfo source="CIsrc">
                                                                <dtyp:srcSchema form="CCMCH01E" usage="copy">G04_PumpMotorHP</dtyp:srcSchema>
-                                                               <dtyp:srcSchema form="CCPRF01E" usage="copy">Pump05_PumpMotorHP</dtyp:srcSchema>
+                                                               <dtyp:srcSchema form="CCPRF01E" usage="copy">Pump04_PumpMotorHP</dtyp:srcSchema>
                                                             </xsd:appinfo>
                                                          </xsd:annotation>
                                                       </xsd:element>
@@ -5526,12 +5526,12 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And G05_NotApplicableMessage IsPresent
 result = G05_NotApplicableMessage
 Else If CC-PRF parent 
-If Pump06_IsVSD == false
+If Pump07_IsVSD == false
 result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="copy">G05_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E" usage="reference">Pump06_IsVSD</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E" usage="reference">Pump07_IsVSD</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -5572,11 +5572,13 @@ End If</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Pump06cc_HeatPumpIsolation" type="hvac:HeatPumpIsolation">
+                                                         <xsd:element name="Pump06cc_HeatPumpIsolation">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Hydronic Heat Pump Isolation</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And G06_HeatPumpIsolation IsPresent
 result = G06_HeatPumpIsolation
+Else If CC-PRF Parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
                                                                   <dtyp:displayterm value="HasHeatPumpIsolation">Provided</dtyp:displayterm>
@@ -5585,18 +5587,18 @@ End If</xsd:documentation>
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="copy">G06_HeatPumpIsolation</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:union memberTypes="hvac:HeatPumpIsolation comp:SeePlansMessage"/>
+                                                            </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Pump06cc_NotApplicableMessage">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Hydronic Heat Pump Isolation</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And G06_NotApplicableMessage IsPresent
 result = G06_NotApplicableMessage
-Else If NRCC-PRF parent 
-result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="copy">G06_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E" usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -5644,7 +5646,7 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And G07_PumpControlVSD IsPresent
 result = G07_PumpControlVSD
 Else If CC-PRF parent 
-If Pump07_IsVSD == true And Pump05_PumpMotorHP GT 5
+If Pump07_IsVSD == true And Pump04_PumpMotorHP GT 5
 result = HasVariableSpeedDrive
 End If
 End If</xsd:documentation>
@@ -5654,7 +5656,7 @@ End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="copy">G07_PumpControlVSD</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCPRF01E" usage="reference">Pump07_IsVSD</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E" usage="reference">Pump05_PumpMotorHP</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E" usage="reference">Pump04_PumpMotorHP</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
@@ -5665,13 +5667,13 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And G07_NotApplicableMessage IsPresent
 result = G07_NotApplicableMessage
 Else If CC-PRF parent 
-If Pump07_IsVSD == false Or Pump05_PumpMotorHP LTE 5
+If Pump07_IsVSD == false Or Pump04_PumpMotorHP LTE 5
 result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="copy">G07_NotApplicableMessage</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCPRF01E" usage="reference">Pump07_IsVSD</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E" usage="reference">Pump05_PumpMotorHP</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E" usage="reference">Pump04_PumpMotorHP</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -5714,11 +5716,13 @@ End If</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Pump08cc_DifferentialPressureSensorRequired" type="hvac:DifferentialPressureSensorRequired">
+                                                         <xsd:element name="Pump08cc_DifferentialPressureSensorRequired">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Differential Pressure Sensor</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent  
 result = G08_DifferentialPressureSensorRequired
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
                                                                   <dtyp:displayterm value="true">Provided</dtyp:displayterm>
@@ -5728,16 +5732,15 @@ End If</xsd:documentation>
                                                                   <dtyp:srcSchema form="CCMCH01E" usage="copy">G08_DifferentialPressureSensorRequired</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                            <xsd:simpleType>
+                                                               <xsd:union memberTypes="hvac:DifferentialPressureSensorRequired comp:SeePlansMessage"/>
+                                                            </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Pump08cc_NotApplicableMessage">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Differential Pressure Sensor</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-PRF parent 
-result = BlankGrayedOut
-End If</xsd:documentation>
-                                                               <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCPRF01E" usage="value">BlankGrayedOut</dtyp:srcSchema>
-                                                               </xsd:appinfo>
+                                                               <xsd:documentation source="CalculationsAndRules"/>
+                                                               <xsd:appinfo source="CIsrc"/>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
                                                                <xsd:restriction base="comp:NotApplicableMessage">
@@ -6022,7 +6025,7 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Economizer</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-PRF parent 
-If HvacDry09_EconomizerControlMethod  IsPresent for Fan01ccFanSystemName assigned from CC-PRF value And HvacDry09_EconomizerControlMethod == NoEconomizer  
+If HvacDry09_EconomizerControlMethod  IsPresent for Fan01ccFanSystemName assigned from CC-PRF value And HvacDry09_EconomizerControlMethod == NoEconomizer
 result = BlankGrayedOut
 End If
 Else If HvacDry09_NotApplicableMessage  IsPresent for Fan01ccFanSystemName assigned from CC-PRF value
