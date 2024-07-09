@@ -7691,20 +7691,22 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">System Design Transfer Air CFM [d:sup]1[/d:sup]</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
 result = J06_VentSystemTransferAir
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">J06_VentSystemTransferAir</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="hvac:VentSystemTransferAir comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Ventnr03cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">System Design Transfer Air CFM [d:sup]1[/d:sup]</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-PRF parent
-result = BlankGrayedOut
-End If</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules"></xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -7747,12 +7749,15 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Air Filtration [d:sup]2[/d:sup]</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
 result = J07_AirFiltrationRequirements
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">J07_AirFiltrationRequirements</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
+                                                                <xsd:union memberTypes="comp:AirFiltrationRequirements comp:SeePlansMessage"/>
                                                                <xsd:restriction base="comp:AirFiltrationRequirements">
                                                                   <xsd:enumeration value="ProvidedAirFiltration"/>
                                                                   <xsd:enumeration value="ProvidedNA"/>
@@ -7762,11 +7767,8 @@ End If</xsd:documentation>
                                                          <xsd:element name="Ventnr04cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Air Filtration [d:sup]2[/d:sup]</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-PRF parent
-result = BlankGrayedOut
-End If</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules"></xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -8125,9 +8127,9 @@ result = MayNotComply
 Else If 
 Ventnr02_VentSystemOA  == Ventnr02cc_VentSystemOA 
 And
-Ventnr03_NotApplicableMessage IsPresent Or  Ventnr03_VentSystemTransferAir   == Ventnr03cc_VentSystemTransferAir 
+Ventnr03_NotApplicableMessage IsPresent Or  Ventnr03_VentSystemTransferAir   == Ventnr03cc_VentSystemTransferAir Or Ventnr03cc_VentSystemTransferAir == SeePlans
 And
-Ventnr4_NotApplicableMessage IsPresent Or  Ventnr04_AirFiltrationRequirements  == Ventnr04cc_AirFiltrationRequirements 
+Ventnr4_NotApplicableMessage IsPresent Or  Ventnr04_AirFiltrationRequirements  == Ventnr04cc_AirFiltrationRequirements Or Ventnr04cc_AirFiltrationRequirements == SeePlans
 And
 Ventnr08comp_ComplianceResultCI ==  ExactMatch
 result = ExactMatch
@@ -8188,13 +8190,13 @@ End If</xsd:documentation>
                                           <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
 result = J19_SpaceName
 Else If CC-PRF parent
-result = VentRes01_ThermalZoneName
+result = VentRes01_ResidentialDwellingUnitName
 End If
  
 The result is displayed in both the Per C of C and As-built conditions</xsd:documentation>
                                           <xsd:appinfo source="CIsrc">
                                              <dtyp:srcSchema form="CCMCH01E"  usage="copy">J19_SpaceName</dtyp:srcSchema>
-                                             <dtyp:srcSchema form="CCPRF01E"  usage="copy">VentRes01_ThermalZoneName</dtyp:srcSchema>
+                                             <dtyp:srcSchema form="CCPRF01E"  usage="copy">VentRes01_ResidentialDwellingUnitName</dtyp:srcSchema>
                                           </xsd:appinfo>
                                        </xsd:annotation>
                                     </xsd:element>
@@ -8248,7 +8250,7 @@ result = VentRes04_VentSystemOA
 End If</xsd:documentation>
                                                             <xsd:appinfo source="CIsrc">
                                                                <dtyp:srcSchema form="CCMCH01E"  usage="copy">J23_OA_SpaceRequiredMin</dtyp:srcSchema>
-                                                               <dtyp:srcSchema form="CCPRF01E"  usage="copy">VentRes04_VentSystemOA</dtyp:srcSchema>
+                                                               <dtyp:srcSchema form="CCPRF01E"  usage="copy">Vent04_VentSystemOA</dtyp:srcSchema>
                                                             </xsd:appinfo>
                                                          </xsd:annotation>
                                                       </xsd:element>
@@ -8268,20 +8270,23 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Supply Air CFM</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
 result = J24_VentilationPerSpace
+Else If CC-PRF parent
+result = VentRes04_FanFlowCapacity
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">J24_VentilationPerSpace</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">VentRes04_FanFlowCapacity</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                          </xsd:element>
                                                          <xsd:element name="Ventres03cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Supply Air CFM</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-PRF parent
-result = BlankGrayedOut
+                                                               <xsd:documentation source="CalculationsAndRules">If VentRes04_NotApplicableMessage IsPresent
+result = VentRes04_NotApplicableMessage
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
+                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">VentRes04_NotApplicableMessage</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -8328,7 +8333,7 @@ result = VentRes05_ExhaustFlowRate
 End If</xsd:documentation>
                                                             <xsd:appinfo source="CIsrc">
                                                                <dtyp:srcSchema form="CCMCH01E"  usage="copy">J25_ExhaustPerSpace</dtyp:srcSchema>
-                                                               <dtyp:srcSchema form="CCPRF01E"  usage="copy">VentRes05_ExhaustFlowRate</dtyp:srcSchema>
+                                                               <dtyp:srcSchema form="CCPRF01E"  usage="copy">VentRes06_ExhaustFlowRate</dtyp:srcSchema>
                                                             </xsd:appinfo>
                                                          </xsd:annotation>
                                                       </xsd:element>
@@ -8343,7 +8348,7 @@ End If</xsd:documentation>
                                                          </xsd:annotation>
                                                       </xsd:element>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Ventres05cc_LocalExhaustType" type="comp:LocalExhaustType"  maxOccurs="unbounded">
+                                                         <xsd:element name="Ventres05cc_LocalExhaustType" maxOccurs="unbounded">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Local Exhaust</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
@@ -8355,18 +8360,22 @@ result += BathroomVentIAQ
 End If
 If J26c_KitchenHoodRange == true
 result += KitchenHoodRange
-End If 
+End If
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
                                                                   <dtyp:displayterm value="KitchenRangeHood">Kitchen Range Hood[d:sup]2[/d:sup]</dtyp:displayterm>
                                                                </xsd:appinfo>
-                                                               
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">J26a_BathroomIAQ</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">J26b_BathroomVentIAQ</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">J26c_KitchenHoodRange</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="comp:LocalExhaustType comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Ventres05cc_NotApplicableMessage" >
                                                             <xsd:annotation>
@@ -8379,15 +8388,11 @@ And
 J26c_KitchenHoodRange == false
 result = BlankGrayedOut
 End If
- 
-Else  If CC-PRF parent
-result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">J26a_BathroomIAQ</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">J26b_BathroomVentIAQ</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">J26c_KitchenHoodRange</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -8435,12 +8440,15 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Air Filtration [d:sup]3[/d:sup]</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent
 result = J27_AirFiltrationRequirements
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">J27_AirFiltrationRequirements</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
+                                                                <xsd:union memberTypes="comp:AirFiltrationRequirements comp:SeePlansMessage"/>
                                                                <xsd:restriction base="comp:AirFiltrationRequirements">
                                                                   <xsd:enumeration value="EvaporativeCoolerNA"/>
                                                                   <xsd:enumeration value="ProvidedAirFiltration"/>
@@ -8450,11 +8458,8 @@ End If</xsd:documentation>
                                                          <xsd:element name="Ventres06cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Air Filtration [d:sup]3[/d:sup]</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-PRF parent
-result = BlankGrayedOut
-End If</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules"></xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -8526,9 +8531,9 @@ Ventres03_NotApplicableMessage IsPresent Or  Ventres03_VentilationPerSpace  == V
 And
 Ventres04_ExhaustPerSpace  == Ventres04cc_ExhaustPerSpace 
 And
-Ventres05_NotApplicableMessage IsPresent Or  Ventres05_LocalExhaustType  == Ventres05cc_LocalExhaustType 
+Ventres05_NotApplicableMessage IsPresent Or  Ventres05_LocalExhaustType  == Ventres05cc_LocalExhaustType Or Ventres05cc_LocalExhaustType == SeePlans
 And
-Ventres06_NotApplicableMessage IsPresent Or  Ventres06_AirFiltrationRequirements  == Ventres06cc_AirFiltrationRequirements
+Ventres06_NotApplicableMessage IsPresent Or  Ventres06_AirFiltrationRequirements  == Ventres06cc_AirFiltrationRequirements Or Ventres06cc_AirFiltrationRequirements == SeePlans
 result = ExactMatch
  
 Else If  Ventres02_OA_SpaceRequiredMin  GTE Ventres02cc_OA_SpaceRequiredMin 
@@ -8740,10 +8745,14 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Peak Primary Airflow [d:line1/] CFM</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent 
 If K03toK11NA_NotApplicableMessage IsPresent 
-result = BlankGrayedOut.
+result = BlankGrayedOut
+Else If CC-PRF parent
+If Zone07_NotApplicableMessage IsPresent
+result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">K03toK11NA_NotApplicableMessage</dtyp:srcSchema>
+                                                                   <dtyp:srcSchema form="CCPRF01E"  usage="copy">Zone07_NotApplicableMessage</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -8861,23 +8870,25 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Reheated Recooled Mixed Airflow [d:line1/] CFM</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And K05_ReheatRecoolMixAirFlow IsPresent
 result = K05_ReheatRecoolMixAirFlow
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">K05_ReheatRecoolMixAirFlow</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="hvac:ReheatRecoolMixAirFlow comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Zone05cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Reheated Recooled Mixed Airflow [d:line1/] CFM</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And K03toK11NA_NotApplicableMessage IsPresent 
-result = BlankGrayedOut.
-Else If CC-PRF parent 
-result = BlankGrayedOut.
+result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">K03toK11NA_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -8996,24 +9007,26 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">1[d:sup]st[/d:sup] Stage Modulates [d:lte/]95[d:deg/]F and Maintains DB Rate?</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And K10_Stage1ModulatesLTE95F IsPresent
 result = K10_Stage1ModulatesLTE95F
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">K10_Stage1ModulatesLTE95F</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="comp:Stage1ModulatesLTE95F comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Zone07cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">1[d:sup]st[/d:sup] Stage Modulates [d:lte/]95[d:deg/]F and Maintains DB Rate?</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And K03toK11NA_NotApplicableMessage IsPresent Or K10_NotApplicableMessage IsPresent
-result = BlankGrayedOut.
-Else If CC-PRF parent 
-result = BlankGrayedOut.
+result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">K03toK11NA_NotApplicableMessage</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">K10_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -9063,25 +9076,27 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">2[d:sup]nd[/d:sup] Stage Modulates from DB Flow to Heating Max Flow?</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And K11_Stage2ModulatesDBtoHeatFlow IsPresent
 result = K11_Stage2ModulatesDBtoHeatFlow
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">K11_Stage2ModulatesDBtoHeatFlow</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="comp:Stage2ModulatesDBtoHeatFlow comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Zone08cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">2[d:sup]nd[/d:sup] Stage Modulates from DB Flow to Heating Max Flow?</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And K03toK11NA_NotApplicableMessage IsPresent  Or 
 K11_NotApplicableMessage IsPresent 
-result = BlankGrayedOut.
-Else If CC-PRF parent 
-result = BlankGrayedOut.
+result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">K03toK11NA_NotApplicableMessage</dtyp:srcSchema>
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="reference">K11_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -9145,13 +9160,13 @@ Zone03_NotApplicableMessage IsPesent Or Zone03_PrimaryAirFlowMaximum == Zone03cc
 And
 Zone04_NotApplicableMessage IsPesent Or Zone04_PrimaryAirInDeadband == Zone04cc_PrimaryAirInDeadband  
 And
-Zone05_NotApplicableMessage IsPesent Or Zone05_ReheatRecoolMixAirFlow == Zone05cc_ReheatRecoolMixAirFlow
+Zone05_NotApplicableMessage IsPesent Or Zone05_ReheatRecoolMixAirFlow == Zone05cc_ReheatRecoolMixAirFlow or Zone05cc_ReheatRecoolMixAirFlow == SeePlans
 And
 Zone06_NotApplicableMessage IsPesent Or Zone06_TerminalUnitOA == Zone06cc_TerminalUnitOA
 And
-Zone07_NotApplicableMessage IsPesent Or Zone07_Stage1ModulatesLTE95F == Zone07cc_Stage1ModulatesLTE95F
+Zone07_NotApplicableMessage IsPesent Or Zone07_Stage1ModulatesLTE95F == Zone07cc_Stage1ModulatesLTE95F Or Zone07cc_Stage1ModulatesLTE95F == SeePlans
 And
-Zone08_NotApplicableMessage IsPesent Or Zone08_Stage2ModulatesDBtoHeatFlow == Zone08cc_Stage2ModulatesDBtoHeatFlow
+Zone08_NotApplicableMessage IsPesent Or Zone08_Stage2ModulatesDBtoHeatFlow == Zone08cc_Stage2ModulatesDBtoHeatFlow Or Zone08cc_Stage2ModulatesDBtoHeatFlow == SeePlans
  
 result = ExactMatch
  
