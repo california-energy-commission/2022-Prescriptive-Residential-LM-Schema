@@ -3352,6 +3352,8 @@ End If</xsd:documentation>
                                                                <xsd:documentation source="FieldText">Isolation Valve</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent 
 result = CC-MCH  Fc08_BoilerIsolationValve
+Else If CC-PRF Parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
                                                                   <dtyp:displayterm value="HasValve">Provided</dtyp:displayterm>
@@ -3413,7 +3415,9 @@ End If</xsd:documentation>
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Temperature Reset</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent 
-result = CC-MCH  Fc09_TempResetControl 
+result = CC-MCH  Fc09_TempResetControl
+Else If CC-PRF
+result = See Plans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
                                                                   <dtyp:displayterm value="HasTempReset">Provided</dtyp:displayterm>
@@ -3514,9 +3518,9 @@ Or
 Blr05_BoilerRatedInput IsPresent And Blr05_BoilerRatedInput == Blr05cc_BoilerRatedInput
 )
 And 
-Blr08_NotApplicableMessage IsPresent Or Blr08_BoilerIsolationValve ==  Blr08cc_BoilerIsolationValve 
+Blr08_NotApplicableMessage IsPresent Or Blr08_BoilerIsolationValve ==  Blr08cc_BoilerIsolationValve  Or Blr08cc_BoilerIsolationValve == SeePlans
 And 
-Blr09_NotApplicableMessage IsPresent Or Blr09_TempResetControl ==  Blr09cc_TempResetControl
+Blr09_NotApplicableMessage IsPresent Or Blr09_TempResetControl ==  Blr09cc_TempResetControl Or Blr09cc_TempResetControl == SeePlans
  
 Then If
 (
@@ -4185,27 +4189,29 @@ End If</xsd:documentation>
                                                          </xsd:annotation>
                                                       </xsd:element>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Chlr10cc_ChillerIsolationValve" type="hvac:ChillerIsolationValve" >
+                                                         <xsd:element name="Chlr10cc_ChillerIsolationValve">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Isolation Valve</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent 
-result = CC-MCH   Fd09_ChillerIsolationValve  
+result = CC-MCH   Fd09_ChillerIsolationValve
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
                                                                   <dtyp:displayterm value="HasValve">Provided</dtyp:displayterm>
                                                                </xsd:appinfo>
-                                                               
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fd09_ChillerIsolationValve</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="hvac:ChillerIsolationValve comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
-                                                         <xsd:element name="Chlr10cc_NotApplicableMessage" >
+                                                         <xsd:element name="Chlr10cc_NotApplicableMessage">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Isolation Valve</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-PRF parent
-result = BlankGrayedOut
-End If</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules"></xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
@@ -4249,28 +4255,29 @@ End If</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Chlr11cc_TempResetControl" type="hvac:TempResetControl" >
+                                                         <xsd:element name="Chlr11cc_TempResetControl">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Temperature Reset</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent 
-result = CC-MCH   Fd10_TempResetControl   
+result = CC-MCH Fd10_TempResetControl
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
-                                                                  <dtyp:displayterm value="HasTempReset">Provided
-</dtyp:displayterm>
+                                                                  <dtyp:displayterm value="HasTempReset">Provided</dtyp:displayterm>
                                                                </xsd:appinfo>
-                                                               
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fd10_TempResetControl</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="hvac:TempResetControl comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Chlr11cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Temperature Reset</xsd:documentation>
-                                                               <xsd:documentation source="CalculationsAndRules">If CC-PRF parent
-result = BlankGrayedOut
-End If</xsd:documentation>
+                                                               <xsd:documentation source="CalculationsAndRules"></xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
@@ -4363,9 +4370,9 @@ And
 Chlr05_ChillerTonsRange IsPresent And  Chlr05_ChillerTonsRange IsPresent == Chlr05cc_ChillerTonsRange 
 Or Chlr05_ChillerCapacity IsPresent And Chlr05_ChillerCapacity == Chlr05cc_ChillerCapacity
 And 
-Chlr10_NotApplicableMessage IsPresent Or Chlr10_ChillerIsolationValve IsPresent ==  Chlr10cc_ChillerIsolationValve 
+Chlr10_NotApplicableMessage IsPresent Or Chlr10_ChillerIsolationValve IsPresent ==  Chlr10cc_ChillerIsolationValve Or Chlr10cc_ChillerIsolationValve == SeePlans
 And 
-Chlr11_NotApplicableMessage IsPresent Or Chlr11_TempResetControl IsPresent And ==  Chlr11cc_TempResetControl
+Chlr11_NotApplicableMessage IsPresent Or Chlr11_TempResetControl IsPresent And ==  Chlr11cc_TempResetControl Or Chlr11cc_TempResetControl == See Plans
  
 Then If
 (
@@ -4713,32 +4720,33 @@ End If</xsd:documentation>
                                                          </xsd:annotation>
                                                       </xsd:element>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Hrej07cc_HeatRejectionFanSpeedControl" type="hvac:HeatRejectionFanSpeedControl" >
+                                                         <xsd:element name="Hrej07cc_HeatRejectionFanSpeedControl">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Fan Speed Control</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Fe08_HeatRejectionFanSpeedControl IsPresent
-result = Fe08_HeatRejectionFanSpeedControl 
+result = Fe08_HeatRejectionFanSpeedControl
+Else If CC-PRF Parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
                                                                   <dtyp:displayterm value="HasSpeedControl">Provided</dtyp:displayterm>
                                                                </xsd:appinfo>
-                                                               
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fe08_HeatRejectionFanSpeedControl</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="hvac:HeatRejectionFanSpeedControl comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Hrej07cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Fan Speed Control</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Fe08_NotApplicableMessage IsPresent
 result = Fe08_NotApplicableMessage
-Else If CC-PRF parent
-result = BlankGrayedOut 
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fe08_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -4749,7 +4757,7 @@ End If</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Hrej07_HeatRejectionFanSpeedControl" type="hvac:HeatRejectionFanSpeedControl" >
+                                                         <xsd:element name="Hrej07_HeatRejectionFanSpeedControl">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Fan Speed Control</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If Hrej07cc_HeatRejectionFanSpeedControl IsPresent
@@ -4780,32 +4788,33 @@ End If</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Hrej08cc_TowerFlowTurnDown" type="hvac:TowerFlowTurnDown" >
+                                                         <xsd:element name="Hrej08cc_TowerFlowTurnDown">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Tower Flow Turndown</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Fe09_TowerFlowTurnDown IsPresent
 result = Fe09_TowerFlowTurnDown
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
                                                                   <dtyp:displayterm value="HasTowerFlowTurnDown">Provided</dtyp:displayterm>
                                                                </xsd:appinfo>
-                                                               
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fe09_TowerFlowTurnDown</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="hvac:TowerFlowTurnDown comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Hrej08cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Tower Flow Turndown</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Fe09_NotApplicableMessage IsPresent
 result = Fe09_NotApplicableMessage
-Else If CC-PRF parent
-result = BlankGrayedOut 
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fe09_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -4847,20 +4856,24 @@ End If</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Hrej09cc_FanControlMultipleCells" type="hvac:FanControlMultipleCells" >
+                                                         <xsd:element name="Hrej09cc_FanControlMultipleCells">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Fan Control in Multiple Cell Equipment</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Fe10_FanControlMultipleCells IsPresent
 result = Fe10_FanControlMultipleCells
+Else If CC-PRF Parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
                                                                   <dtyp:displayterm value="HasControlInMultipleCells">Provided</dtyp:displayterm>
                                                                </xsd:appinfo>
-                                                               
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fe10_FanControlMultipleCells</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="hvac:FanControlMultipleCells comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Hrej09cc_NotApplicableMessage" >
                                                             <xsd:annotation>
@@ -4872,7 +4885,6 @@ result = BlankGrayedOut
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fe10_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -4914,28 +4926,30 @@ End If</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Hrej10cc_HasWaterEconomizerControls" type="hvac:HasWaterEconomizerControls" >
+                                                         <xsd:element name="Hrej10cc_HasWaterEconomizerControls">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Economizer Controls</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Fe11_HasWaterEconomizerControls IsPresent
 result = Fe11_HasWaterEconomizerControls
+If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fe11_HasWaterEconomizerControls</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="hvac:HasWaterEconomizerControls comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Hrej10cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Economizer Controls</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Fe11_NotApplicableMessage IsPresent
 result = Fe11_NotApplicableMessage
-Else If CC-PRF parent 
-result = BlankGrayedOut 
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fe11_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
@@ -4973,33 +4987,34 @@ End If</xsd:documentation>
                                                          </xsd:element>
                                                       </xsd:choice>
                                                       <xsd:choice maxOccurs="1">
-                                                         <xsd:element name="Hrej11cc_HasTempResetControls" type="hvac:HasTempResetControls" >
+                                                         <xsd:element name="Hrej11cc_HasTempResetControls">
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Condenser Water Temp. Reset Controls</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Fe12_HasTempResetControls IsPresent
 result = Fe12_HasTempResetControls
+Else If CC-PRF parent
+result = SeePlans
 End If</xsd:documentation>
                                                                <xsd:appinfo source="displayterm">
                                                                   <dtyp:displayterm value="true">Provided</dtyp:displayterm>
                                                                   <dtyp:displayterm value="false">Not Provided</dtyp:displayterm>
                                                                </xsd:appinfo>
-                                                               
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fe12_HasTempResetControls</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
+                                                             <xsd:simpleType>
+                                                                 <xsd:union memberTypes="hvac:HasTempResetControls comp:SeePlansMessage"/>
+                                                             </xsd:simpleType>
                                                          </xsd:element>
                                                          <xsd:element name="Hrej11cc_NotApplicableMessage" >
                                                             <xsd:annotation>
                                                                <xsd:documentation source="FieldText">Condenser Water Temp. Reset Controls</xsd:documentation>
                                                                <xsd:documentation source="CalculationsAndRules">If CC-MCH parent And Fe12_NotApplicableMessage IsPresent
 result = Fe12_NotApplicableMessage
-Else If CC-PRF parent 
-result = BlankGrayedOut 
 End If</xsd:documentation>
                                                                <xsd:appinfo source="CIsrc">
                                                                   <dtyp:srcSchema form="CCMCH01E"  usage="copy">Fe12_NotApplicableMessage</dtyp:srcSchema>
-                                                                  <dtyp:srcSchema form="CCPRF01E"  usage="value">BlankGrayedOut</dtyp:srcSchema>
                                                                </xsd:appinfo>
                                                             </xsd:annotation>
                                                             <xsd:simpleType>
