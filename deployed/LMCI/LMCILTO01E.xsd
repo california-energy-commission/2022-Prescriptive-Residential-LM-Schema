@@ -727,28 +727,6 @@ End If</xsd:documentation>
 Else If Lum02_ScopeIncludesFixture == false
 result = NotInScope
  
-Else If Lum07_LuminairePowerByType IsPresent 
-and Lum07cc_LuminairePowerByType LT  Lum07_LuminairePowerByType
-or
-Lum04cc_IsLuminaireLinear == SeePlans
-or
-Lum05cc_LuminairePower == SeePlans and Lum05cc_LuminaireWattsPerLF IsNotPresent
-or
-Lum05cc_LuminaireWattsPerLF == SeePlans and Lum05cc_LuminaireWattsPerLF IsNotPresent
-or
-Lum05cc_LuminairePower == SeePlans and Lum05cc_LuminaireWattsPerLF == SeePlans
-or
-Lum06cc_LuminaireCountByType == SeePlans and Lum06cc_LuminairesTotalLF IsNotPresent
-or
-Lum06cc_LuminairesTotalLF == SeePlans and Lum06cc_LuminaireCountByType IsNotPresent
-or
-Lum06cc_LuminaireCountByType == SeePlans and Lum06cc_LuminairesTotalLF == SeePlans
-or
-Lum07cc_LuminairePowerByType == SeePlans and Lum07_NotApplicableMessage IsNotPresent
-or
-Lum08cc_LuminairePowerCutoffCompliance == SeePlans and Lum08_NotApplicableMessage IsNotPresent
- result = MayNotComply
- 
  Else  If  
 Lum02_ScopeIncludesFixture == true And 
 Lum03_LuminaireDescription == Lum03cc_LuminaireDescription
@@ -773,6 +751,10 @@ result = ExactMatch
 Else If Lum07_LuminairePowerByType IsPresent And Lum07_LuminairePowerByType GTE  Lum07cc_LuminairePowerByType
 result = EqualBetter
 End If
+
+Else
+result = MayNotComply
+
 End If</xsd:documentation>
                                        </xsd:annotation>
                                     </xsd:element>
